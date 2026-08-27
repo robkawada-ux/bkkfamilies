@@ -50,7 +50,7 @@ export default function ContactPage() {
             <p className="mt-1 font-heading text-lg font-bold">@bachsuites</p>
           </a>
           <a
-            href="https://www.facebook.com/groups/bangkokexpatfamilies"
+            href="https://www.facebook.com/share/g/1BtUEcrkLS/?mibextid=wwXIfr"
             target="_blank"
             rel="noreferrer"
             className="rounded-xl bg-green p-6 text-center text-white transition hover:opacity-90"

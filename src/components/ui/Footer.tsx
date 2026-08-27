@@ -37,7 +37,7 @@ export default function Footer() {
               <li><a href="https://line.me/ti/p/~bachsuites" target="_blank" rel="noreferrer" className="hover:text-white">LINE: @bachsuites</a></li>
               <li>
                 <a
-                  href="https://www.facebook.com/groups/bangkokexpatfamilies"
+                  href="https://www.facebook.com/share/g/1BtUEcrkLS/?mibextid=wwXIfr"
                   className="hover:text-white"
                   target="_blank"
                   rel="noreferrer"
