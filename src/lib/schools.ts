@@ -66,6 +66,13 @@ export const SCHOOLS: School[] = [
   { name: "Trinity International School", slug: "trinity-international-school", curricula: ["American"], budget: "under400k" },
   { name: "Verso International School", slug: "verso-international-school", curricula: ["American"], budget: "over400k" },
   { name: "Wellington International School Bangkok", slug: "wellington-international-school-bangkok", curricula: ["British"], budget: "over400k" },
+  { name: "Shrewsbury International School Bangkok", slug: "shrewsbury-international-school-bangkok", curricula: ["British"], budget: "over400k" },
+  { name: "International School Bangkok (ISB)", slug: "international-school-bangkok-isb", curricula: ["American", "International Baccalaureate"], budget: "over400k" },
+  { name: "Ruamrudee International School (RIS)", slug: "ruamrudee-international-school-ris", curricula: ["American", "International Baccalaureate"], budget: "over400k" },
+  { name: "King's College International School Bangkok", slug: "kings-college-international-school-bangkok", curricula: ["British"], budget: "over400k" },
+  { name: "UWC Thailand", slug: "uwc-thailand", curricula: ["International Baccalaureate"], budget: "over400k" },
+  { name: "St Andrews International School Bangkok", slug: "st-andrews-international-school-bangkok", curricula: ["British", "International Baccalaureate"], budget: "over400k" },
+  { name: "Wells International School", slug: "wells-international-school", curricula: ["British", "International Baccalaureate"], budget: "over400k" },
 ];
 
 export const ALL_CURRICULA = Array.from(
