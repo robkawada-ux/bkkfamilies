@@ -16,7 +16,7 @@ export default function SchoolDirectory() {
         curriculum === "All" || s.curricula.includes(curriculum);
       const matchesBudget = budget === "All" || s.budget === budget;
       return matchesQuery && matchesCurriculum && matchesBudget;
-    });
+    }).sort((a, b) => a.name.localeCompare(b.name));
   }, [query, curriculum, budget]);
 
   return (
