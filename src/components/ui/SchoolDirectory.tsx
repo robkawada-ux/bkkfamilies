@@ -61,6 +61,7 @@ export default function SchoolDirectory() {
             <option value="All">All Budgets</option>
             <option value="under400k">400,000 THB or less / year</option>
             <option value="over400k">400,000 THB or more / year</option>
+            <option value="unknown">Fees not published</option>
           </select>
         </div>
       </div>
@@ -92,7 +93,9 @@ export default function SchoolDirectory() {
             <p className="mt-2 text-xs text-neutral-500">
               {s.budget === "under400k"
                 ? "Under 400,000 THB / year"
-                : "Over 400,000 THB / year"}
+                : s.budget === "over400k"
+                ? "Over 400,000 THB / year"
+                : "Fees not published — confirm with school"}
             </p>
           </div>
         ))}
