@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { SCHOOLS, ALL_CURRICULA, type Budget } from "@/lib/schools";
 
 export default function SchoolDirectory() {
@@ -73,9 +74,10 @@ export default function SchoolDirectory() {
       {/* Results */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((s) => (
-          <div
+          <Link
             key={s.slug}
-            className="rounded-xl border border-black/5 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            href={`/schools/${s.slug}`}
+            className="block rounded-xl border border-black/5 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <h3 className="font-heading text-base font-bold text-purple-dark">
               {s.name}
@@ -97,7 +99,7 @@ export default function SchoolDirectory() {
                 ? "Over 400,000 THB / year"
                 : "Fees not published — confirm with school"}
             </p>
-          </div>
+          </Link>
         ))}
         {filtered.length === 0 && (
           <p className="col-span-full py-10 text-center text-neutral-400">
