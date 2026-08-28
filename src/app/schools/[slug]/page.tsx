@@ -39,30 +39,55 @@ export default async function SchoolPage({
   if (!school) return notFound();
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-16">
-      <Link href="/schools" className="text-sm font-semibold text-orange">
-        Back to Schools
-      </Link>
-
-      <h1 className="mt-4 font-heading text-3xl font-bold text-purple-dark md:text-4xl">
-        {school.name}
-      </h1>
-
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {school.curricula.map((c) => (
-          <span
-            key={c}
-            className="rounded-full bg-teal-50 px-2.5 py-1 text-xs font-medium text-teal"
-          >
-            {c}
-          </span>
-        ))}
+    <article className="mx-auto max-w-3xl">
+      <div className="bg-purple px-4 py-12 text-white">
+        <div className="mx-auto max-w-3xl">
+          <Link href="/schools" className="text-sm font-semibold text-white/80 hover:text-white">
+            Back to Schools
+          </Link>
+          <h1 className="mt-4 font-heading text-3xl font-bold md:text-4xl">
+            {school.name}
+          </h1>
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {school.curricula.map((c) => (
+              <span
+                key={c}
+                className="rounded-full bg-white/15 px-2.5 py-1 text-xs font-medium"
+              >
+                {c}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <p className="mt-3 text-sm text-neutral-500">
-        {BUDGET_LABEL[school.budget]}
-        {school.founded && ` Founded ${school.founded}`}
-      </p>
+      <div className="px-4 py-12">
+      <div className="grid gap-3 sm:grid-cols-2">
+        {school.ageRange && (
+          <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
+            <p className="text-xs uppercase tracking-wide text-neutral-400">Ages</p>
+            <p className="text-sm font-semibold text-purple-dark">{school.ageRange}</p>
+          </div>
+        )}
+        {school.languageOfInstruction && (
+          <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
+            <p className="text-xs uppercase tracking-wide text-neutral-400">Language of Instruction</p>
+            <p className="text-sm font-semibold text-purple-dark">{school.languageOfInstruction}</p>
+          </div>
+        )}
+        <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
+          <p className="text-xs uppercase tracking-wide text-neutral-400">Yearly Fees</p>
+          <p className="text-sm font-semibold text-purple-dark">
+            {school.feeRange ?? BUDGET_LABEL[school.budget]}
+          </p>
+        </div>
+        {school.founded && (
+          <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
+            <p className="text-xs uppercase tracking-wide text-neutral-400">Founded</p>
+            <p className="text-sm font-semibold text-purple-dark">{school.founded}</p>
+          </div>
+        )}
+      </div>
 
       {school.description ? (
         <p className="mt-8 leading-relaxed text-neutral-700">
@@ -107,6 +132,7 @@ export default async function SchoolPage({
         <Link href="/schools" className="text-sm font-semibold text-orange">
           Back to all schools
         </Link>
+      </div>
       </div>
     </article>
   );
