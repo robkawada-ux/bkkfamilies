@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { ARTICLES, getArticle } from "@/lib/articles";
 
 export function generateStaticParams() {
@@ -143,13 +142,12 @@ export default async function ArticlePage({
       </p>
 
       {article.heroImage && (
-        <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-xl">
-          <Image
+        <div className="mt-8 w-full overflow-hidden rounded-xl">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={article.heroImage}
             alt={article.title}
-            fill
-            className="object-cover"
-            priority
+            className="h-auto w-full"
           />
         </div>
       )}
@@ -169,16 +167,9 @@ export default async function ArticlePage({
               )}
               <p className="mb-4 leading-relaxed text-neutral-700">{p}</p>
               {inlineImages?.map((img, j) => (
-                <div
-                  key={j}
-                  className="relative my-6 aspect-[16/9] w-full overflow-hidden rounded-xl"
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                  />
+                <div key={j} className="my-6 w-full overflow-hidden rounded-xl">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={img.src} alt={img.alt} className="h-auto w-full" />
                 </div>
               ))}
             </div>

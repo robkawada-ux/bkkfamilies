@@ -76,7 +76,6 @@ export const ARTICLES: Article[] = [
       "From the theme parks my kids loved at 6 to the mall waterparks they still ask for now, plus real prices, real tips, and a scary few minutes at Dream World I still think about.",
     heroImage: "/images/articles/9-things-to-do-in-bangkok-with-kids/dream-world.jpg",
     images: [
-      { src: "/images/articles/9-things-to-do-in-bangkok-with-kids/dream-world.jpg", alt: "Dream World Bangkok with kids", afterParagraph: 1 },
       { src: "/images/articles/9-things-to-do-in-bangkok-with-kids/lumpini-paddle-boats.jpg", alt: "Paddle boats at Lumpini Park Bangkok", afterParagraph: 3 },
       { src: "/images/articles/9-things-to-do-in-bangkok-with-kids/discovery-museum-splash.jpg", alt: "Outdoor water spray area at Children's Discovery Museum Bangkok", afterParagraph: 4 },
     ],
