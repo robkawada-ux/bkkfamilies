@@ -40,26 +40,60 @@ export default async function SchoolPage({
 
   return (
     <article className="mx-auto max-w-3xl">
-      <div className="bg-purple px-4 py-12 text-white">
-        <div className="mx-auto max-w-3xl">
-          <Link href="/schools" className="text-sm font-semibold text-white/80 hover:text-white">
-            Back to Schools
-          </Link>
-          <h1 className="mt-4 font-heading text-3xl font-bold md:text-4xl">
-            {school.name}
-          </h1>
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {school.curricula.map((c) => (
-              <span
-                key={c}
-                className="rounded-full bg-white/15 px-2.5 py-1 text-xs font-medium"
-              >
-                {c}
-              </span>
-            ))}
+      {school.photo ? (
+        <div className="relative aspect-[21/9] w-full overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={school.photo}
+            alt={school.name}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40" />
+          <div className="absolute inset-0 flex flex-col justify-between px-4 py-6">
+            <div className="mx-auto w-full max-w-3xl">
+              <Link href="/schools" className="text-sm font-semibold text-white/90 hover:text-white">
+                Back to Schools
+              </Link>
+            </div>
+            <div className="mx-auto w-full max-w-3xl">
+              <h1 className="font-heading text-3xl font-bold text-white md:text-4xl">
+                {school.name}
+              </h1>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {school.curricula.map((c) => (
+                  <span
+                    key={c}
+                    className="rounded-full bg-white/20 px-2.5 py-1 text-xs font-medium text-white"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="bg-purple px-4 py-12 text-white">
+          <div className="mx-auto max-w-3xl">
+            <Link href="/schools" className="text-sm font-semibold text-white/80 hover:text-white">
+              Back to Schools
+            </Link>
+            <h1 className="mt-4 font-heading text-3xl font-bold md:text-4xl">
+              {school.name}
+            </h1>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {school.curricula.map((c) => (
+                <span
+                  key={c}
+                  className="rounded-full bg-white/15 px-2.5 py-1 text-xs font-medium"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="px-4 py-12">
       <div className="grid gap-3 sm:grid-cols-2">
