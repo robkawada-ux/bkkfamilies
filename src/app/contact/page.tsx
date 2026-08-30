@@ -4,7 +4,7 @@ import PageHero from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Contact & Advertising",
   description:
-    "Get in touch with BKK Families, or explore advertising opportunities to reach our 35,700+ member community.",
+    "Get in touch with BKK Families, or explore advertising opportunities to reach our 40,000+ member community.",
 };
 
 const FB_RATES = [
@@ -41,16 +41,14 @@ export default function ContactPage() {
             </p>
           </a>
           <a
-            href="https://line.me/ti/p/~bachsuites"
-            target="_blank"
-            rel="noreferrer"
+            href="tel:021365038"
             className="rounded-xl bg-orange p-6 text-center text-white transition hover:opacity-90"
           >
-            <p className="text-xs uppercase tracking-wide text-white/80">LINE</p>
-            <p className="mt-1 font-heading text-lg font-bold">@bachsuites</p>
+            <p className="text-xs uppercase tracking-wide text-white/80">Phone</p>
+            <p className="mt-1 font-heading text-lg font-bold">02-136-5038</p>
           </a>
           <a
-            href="https://www.facebook.com/share/g/1BtUEcrkLS/?mibextid=wwXIfr"
+            href="https://www.facebook.com/groups/bangkokexpatfamilies"
             target="_blank"
             rel="noreferrer"
             className="rounded-xl bg-green p-6 text-center text-white transition hover:opacity-90"
@@ -69,7 +67,7 @@ export default function ContactPage() {
           </h2>
           <p className="mt-2 max-w-2xl text-neutral-600">
             Our community is close-knit and high-spending-power. Reach
-            35,700+ family decision-makers through Facebook, homepage
+            40,000+ family decision-makers through Facebook, homepage
             placements, sponsored reviews, and group emails.
           </p>
 

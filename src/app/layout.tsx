@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     template: "%s | BKK Families",
   },
   description:
-    "The largest, longest-running community for expat and Thai families in Bangkok. Find international schools, family activities, and health resources — plus a 35,700+ member Facebook community.",
+    "The largest, longest-running community for expat and Thai families in Bangkok. Find international schools, family activities, and health resources — plus a 40,000+ member Facebook community.",
   openGraph: {
     title: "BKK Families — Your Bangkok Roadmap",
     description:
-      "Schools, activities, and healthcare resources for families in Bangkok, backed by a 35,700+ member community.",
+      "Schools, activities, and healthcare resources for families in Bangkok, backed by a 40,000+ member community.",
     url: "https://bkkfamilies.com",
     siteName: "BKK Families",
     locale: "en_US",

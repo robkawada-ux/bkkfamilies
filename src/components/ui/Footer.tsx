@@ -12,7 +12,7 @@ export default function Footer() {
               <span className="font-heading text-lg font-bold">BKK Families</span>
             </div>
             <p className="mt-3 max-w-xs text-sm text-white/70">
-              Your Bangkok Roadmap. A community of 35,700+ expat and Thai
+              Your Bangkok Roadmap. A community of 40,000+ expat and Thai
               families sharing resources on schools, activities, and
               healthcare in Bangkok since 2012.
             </p>
@@ -34,10 +34,10 @@ export default function Footer() {
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
               <li>info@bkkfamilies.com</li>
-              <li><a href="https://line.me/ti/p/~bachsuites" target="_blank" rel="noreferrer" className="hover:text-white">LINE: @bachsuites</a></li>
+              <li>02-136-5038</li>
               <li>
                 <a
-                  href="https://www.facebook.com/share/g/1BtUEcrkLS/?mibextid=wwXIfr"
+                  href="https://www.facebook.com/groups/bangkokexpatfamilies"
                   className="hover:text-white"
                   target="_blank"
                   rel="noreferrer"

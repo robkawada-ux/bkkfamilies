@@ -20,7 +20,7 @@ export default function HomePage() {
             The community every Bangkok family finds eventually.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">
-            35,700+ expat and Thai families sharing what actually works —
+            40,000+ expat and Thai families sharing what actually works —
             schools, activities, healthcare, and everything in between.
             Community since 2012.
           </p>
@@ -32,7 +32,7 @@ export default function HomePage() {
               Browse Schools
             </Link>
             <a
-              href="https://www.facebook.com/share/g/1BtUEcrkLS/?mibextid=wwXIfr"
+              href="https://www.facebook.com/groups/bangkokexpatfamilies"
               target="_blank"
               rel="noreferrer"
               className="rounded-full border-2 border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10"
@@ -46,7 +46,7 @@ export default function HomePage() {
       {/* STATS */}
       <section className="mx-auto -mt-10 max-w-6xl px-4">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <StatCard value="35,700" label="Facebook Members" color="green" />
+          <StatCard value="40,000" label="Facebook Members" color="green" />
           <StatCard value="+115/wk" label="New Members" color="teal" />
           <StatCard value="5+/day" label="New Posts" color="purple" />
           <StatCard value="14 yrs" label="Community Since 2012" color="orange" />
@@ -141,7 +141,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-20">
         <div className="rounded-2xl bg-purple px-8 py-12 text-center text-white">
           <h2 className="font-heading text-3xl font-bold">
-            Reach 35,700+ Bangkok Families
+            Reach 40,000+ Bangkok Families
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-white/85">
             Banner placements, sponsored reviews, group emails, and Facebook
