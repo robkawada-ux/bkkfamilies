@@ -102,7 +102,7 @@ export default async function SchoolPage({
             first-hand experience.
           </p>
           <a
-            href="https://www.facebook.com/share/g/1BtUEcrkLS/?mibextid=wwXIfr"
+            href="https://www.facebook.com/groups/395501457186828"
             target="_blank"
             rel="noreferrer"
             className="mt-3 inline-block font-semibold text-orange"

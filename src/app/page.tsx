@@ -32,7 +32,7 @@ export default function HomePage() {
               Browse Schools
             </Link>
             <a
-              href="https://www.facebook.com/groups/bangkokexpatfamilies"
+              href="https://www.facebook.com/groups/395501457186828"
               target="_blank"
               rel="noreferrer"
               className="rounded-full border-2 border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10"

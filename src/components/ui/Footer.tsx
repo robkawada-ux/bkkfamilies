@@ -37,7 +37,7 @@ export default function Footer() {
               <li>02-136-5038</li>
               <li>
                 <a
-                  href="https://www.facebook.com/groups/bangkokexpatfamilies"
+                  href="https://www.facebook.com/groups/395501457186828"
                   className="hover:text-white"
                   target="_blank"
                   rel="noreferrer"
