@@ -46,7 +46,7 @@ export default async function SchoolPage({
           <img
             src={school.photo}
             alt={school.name}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40" />
           <div className="absolute inset-0 flex flex-col justify-between px-4 py-6">
