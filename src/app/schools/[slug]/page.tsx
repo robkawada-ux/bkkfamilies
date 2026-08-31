@@ -41,7 +41,7 @@ export default async function SchoolPage({
   return (
     <article className="mx-auto max-w-3xl">
       {school.photo ? (
-        <div className="relative aspect-[21/9] w-full overflow-hidden">
+        <div className="relative aspect-[16/9] w-full overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={school.photo}
@@ -124,9 +124,13 @@ export default async function SchoolPage({
       </div>
 
       {school.description ? (
-        <p className="mt-8 leading-relaxed text-neutral-700">
-          {school.description}
-        </p>
+        <div className="mt-8 space-y-4">
+          {school.description.split("\n\n").map((para, i) => (
+            <p key={i} className="leading-relaxed text-neutral-700">
+              {para}
+            </p>
+          ))}
+        </div>
       ) : (
         <div className="mt-8 rounded-xl border border-black/5 bg-neutral-50 p-6 text-sm text-neutral-500">
           <p>
