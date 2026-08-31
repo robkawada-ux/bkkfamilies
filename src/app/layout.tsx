@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bkkfamilies.com"),
@@ -30,9 +32,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col font-body">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-QMXV649DCH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QMXV649DCH');
+          `}
+        </Script>
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
