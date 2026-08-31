@@ -48,17 +48,97 @@ export default function ContactPage() {
           </a>
         </div>
 
-        {/* Advertising opportunities */}
-        <div className="mt-16">
-          <h2 className="font-heading text-2xl font-bold text-purple-dark">
-            Advertising Opportunities
+        {/* Why advertise */}
+        <div className="mt-20">
+          <p className="text-xs font-bold uppercase tracking-wide text-orange">
+            Advertise With Us
+          </p>
+          <h2 className="mt-2 font-heading text-3xl font-bold text-purple-dark md:text-4xl">
+            Get in front of 40,000+ families who are already spending on
+            exactly what you sell.
           </h2>
-          <p className="mt-2 max-w-2xl text-neutral-600">
-            Our community is close-knit and high-spending-power. Reach
-            40,000+ family decision-makers through Facebook and homepage
-            placements, or a sponsored review.
+          <p className="mt-4 max-w-3xl text-lg text-neutral-600">
+            Bangkok Expat Families is the largest and longest-running
+            community of its kind in the city, expat and Thai households
+            together, built around the decisions every parent has to make:
+            which school, which doctor, which activities, which insurance.
+            When our members are researching those decisions, they're
+            asking us first.
           </p>
 
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-xl bg-purple p-6 text-white">
+              <p className="font-heading text-3xl font-bold">40,000+</p>
+              <p className="mt-1 text-sm text-white/80">
+                Members, growing by roughly 120 new families every week
+              </p>
+            </div>
+            <div className="rounded-xl bg-teal p-6 text-white">
+              <p className="font-heading text-3xl font-bold">80%</p>
+              <p className="mt-1 text-sm text-white/80">
+                Have children under 10, the exact window when school,
+                healthcare, and family spending decisions are made
+              </p>
+            </div>
+            <div className="rounded-xl bg-green p-6 text-white">
+              <p className="font-heading text-3xl font-bold">14 yrs</p>
+              <p className="mt-1 text-sm text-white/80">
+                Of trust built in this community since 2012, not a paid
+                audience you're renting for a month
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Who it's perfect for */}
+        <div className="mt-20">
+          <h2 className="font-heading text-2xl font-bold text-purple-dark">
+            Built for the businesses families actually search for
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="rounded-xl border border-black/5 bg-white p-6 shadow-sm">
+              <h3 className="font-heading text-lg font-bold text-purple-dark">
+                Schools
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                Every week, parents in our group ask which school to
+                choose, whether a specific campus is worth the fees, and
+                who has a spot open mid-year. Your school can be the
+                answer they see first, not the fifth search result they
+                click through to find you.
+              </p>
+            </div>
+            <div className="rounded-xl border border-black/5 bg-white p-6 shadow-sm">
+              <h3 className="font-heading text-lg font-bold text-purple-dark">
+                Medical Clinics &amp; Health Insurance
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                Families relocating to Bangkok need a pediatrician, a
+                dentist, and a health insurance plan almost immediately,
+                and they trust recommendations from other parents far more
+                than an ad on Google. That trust is exactly what this
+                community runs on.
+              </p>
+            </div>
+            <div className="rounded-xl border border-black/5 bg-white p-6 shadow-sm">
+              <h3 className="font-heading text-lg font-bold text-purple-dark">
+                Family Services &amp; Beyond
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                Tutors, activity centers, real estate agents, movers,
+                photographers, restaurants that welcome kids. If a family
+                relocating to or living in Bangkok needs it, our members
+                are asking each other for a recommendation right now.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* How to reach them */}
+        <div className="mt-20">
+          <h2 className="font-heading text-2xl font-bold text-purple-dark">
+            How You Can Reach Them
+          </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-xl border border-black/5 bg-white p-6 shadow-sm">
               <h3 className="font-heading text-lg font-bold text-purple-dark">
@@ -91,14 +171,33 @@ export default function ContactPage() {
               <li>✓ Facebook pinned post</li>
             </ul>
           </div>
+        </div>
 
-          <p className="mt-10 text-sm text-neutral-500">
-            Have something more specific in mind? Email{" "}
-            <a href="mailto:info@bkkfamilies.com" className="font-semibold text-orange">
-              info@bkkfamilies.com
-            </a>{" "}
-            and we'll put together a custom package.
+        {/* CTA */}
+        <div className="mt-20 rounded-2xl bg-purple-dark px-8 py-12 text-center text-white">
+          <h2 className="font-heading text-3xl font-bold">
+            Let's put your business in front of Bangkok's families.
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-white/80">
+            Tell us a bit about what you offer, and we'll put together a
+            package that actually fits your goals and budget.
           </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href="mailto:info@bkkfamilies.com"
+              className="rounded-full bg-orange px-8 py-3 font-semibold text-white transition hover:opacity-90"
+            >
+              Email info@bkkfamilies.com
+            </a>
+            <a
+              href="https://line.me/ti/p/~bachsuites"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border-2 border-white px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-purple-dark"
+            >
+              Add us on LINE: bachsuites
+            </a>
+          </div>
         </div>
       </div>
     </>
