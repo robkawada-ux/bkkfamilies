@@ -17,28 +17,64 @@ export interface Article {
 export const ARTICLES: Article[] = [
   {
     slug: "what-does-international-school-actually-cost-bangkok-2026",
-    title: "What Does International School Actually Cost in Bangkok? A 2026 Fee Breakdown",
+    title: "Bangkok International School Fees 2026/2027: What Tuition Actually Costs",
     category: "Schools",
     date: "2026-08-31",
+    metaDescription: "How much is tuition at international schools in Bangkok for 2026/2027? Real published fee ranges from 45+ schools, broken down by tier, plus the hidden costs most guides leave out.",
+    keywords: ["Bangkok school fees", "Thailand international school fees", "Bangkok international school tuition", "how much is tuition Bangkok international school", "international school fees Bangkok 2026", "international school fees Bangkok 2027", "cheapest international school Bangkok"],
     excerpt:
-      "From 2014 to 2020 I sent my own kids through three different Bangkok international schools, and worked in marketing and admissions for two of them. Here is what families actually pay, by tier, using real published numbers instead of vague marketing ranges.",
+      "From 2014 to 2020 I sent my own kids through three different Bangkok international schools, and worked in marketing and admissions for two of them. Here is what families actually pay for the 2026/2027 school year, by tier, using real published numbers instead of vague marketing ranges.",
     heroImage: "/images/articles/what-does-international-school-actually-cost-bangkok-2026/hero-skyline.jpg",
     images: [
       { src: "/images/articles/what-does-international-school-actually-cost-bangkok-2026/students-walking.jpg", alt: "International school students in Bangkok", afterParagraph: 2 },
     ],
+    headings: [
+      { beforeParagraph: 3, text: "Premium tier: over 900,000 THB" },
+      { beforeParagraph: 4, text: "Upper mid tier: 400,000 to 800,000 THB" },
+      { beforeParagraph: 5, text: "Mid tier: 250,000 to 550,000 THB" },
+      { beforeParagraph: 6, text: "Value tier: under 350,000 THB" },
+      { beforeParagraph: 7, text: "The hidden fees nobody puts on the front page" },
+      { beforeParagraph: 9, text: "How to actually save money on Bangkok school fees" },
+    ],
+    relatedSchools: [
+      { name: "Ruamrudee International School (RIS)", slug: "ruamrudee-international-school-ris" },
+      { name: "KIS International School Bangkok", slug: "kis-international-school-bangkok" },
+      { name: "The American School of Bangkok (ASB)", slug: "the-american-school-of-bangkok-asb" },
+      { name: "International Community School", slug: "international-community-school" },
+      { name: "Bangkok Christian International School", slug: "bangkok-christian-international-school" },
+      { name: "Sarasas Ektra School", slug: "sarasas-ektra-school" },
+    ],
+    faq: [
+      {
+        question: "How much is tuition at international schools in Bangkok for 2026/2027?",
+        answer: "It depends heavily on tier. Value tier schools like Bangkok Christian International and Sarasas Ektra run from around 67,000 to 260,000 THB a year. Mid and upper mid tier schools generally fall between 250,000 and 800,000 THB. Premium schools like ISB, NIST, Wellington, and Ruamrudee run from around 550,000 up to 1,500,000 THB a year depending on grade level.",
+      },
+      {
+        question: "What is the cheapest international school in Bangkok?",
+        answer: "Among schools with published fees, Sarasas Ektra and Bangkok Christian International School are among the lowest, both with entry level fees under 150,000 THB a year. These are genuine international curriculum schools, not just low cost by accident, but families should compare curriculum and outcomes alongside price.",
+      },
+      {
+        question: "Are there hidden fees beyond tuition at Bangkok international schools?",
+        answer: "Yes, almost always. Expect an application fee, a separate registration or enrollment fee that can run into six figures at some schools, and possibly a capital or development levy. Add transport, exam registration fees in IGCSE, IB, or AP years, and boarding if relevant. Tuition alone is usually only 75 to 85 percent of the real first year cost.",
+      },
+      {
+        question: "Do Bangkok international schools offer sibling discounts?",
+        answer: "Many do, typically 5 to 15 percent starting from the second child, though this varies by school and does not always stack with scholarships. Always ask directly rather than assuming.",
+      },
+    ],
     body: [
       "From 2014 to 2020, I sent my two kids to different international schools in Bangkok: The American School of Bangkok, KIS International School, and The International Community School (ICS). Each school came with its positives and challenges, but my kids greatly benefited from their time spent there. Ultimately we ended up moving back to the USA for a number of reasons, but that is something I will get into later.",
       "I also worked in marketing and admissions for both The American School of Bangkok and for KIS International School. This required me to know a lot about not only those schools, but the international school landscape in Bangkok and the surrounding areas. I can tell you that the biggest three factors when choosing a school are typically these: price, location, and curriculum.",
-      "While there are many other factors, let us dive into the first one, price. Every guide to Bangkok school fees I have read gives you a vague band, something like 400,000 to 900,000 baht a year, and calls it a day. That is not actually useful when you are trying to budget for a specific child at a specific school. So instead of estimating, I pulled the real published tuition ranges for more than 45 schools in our own directory and sorted them by tier. These are actual numbers schools have published, not averages I made up.",
-      "Premium tier, generally over 900,000 baht at the top end. This is Ruamrudee at 548,400 to 1,527,000 baht a year, Wellington at 615,250 to 1,240,137, Shrewsbury at 691,800 to 1,208,400, International School Bangkok at 681,000 to 1,219,000, and NIST at 650,200 to 1,132,800. Harrow, Bangkok Patana, and King's College all land in a similar range, roughly 545,000 to just over a million depending on year group. These are the schools with decades of history, extensive facilities, and university counseling offices that genuinely know how to get kids into competitive programs abroad. You are paying for that infrastructure as much as the classroom itself.",
-      "Upper mid tier, generally 400,000 to 800,000 baht depending on year group. Concordian runs 626,400 to 963,400, Bromsgrove 259,100 to 680,100, Regent's 430,800 to 759,600, KIS 459,800 to 984,700, BASIS 545,000 to 998,000, and Berkeley 519,200 to 839,200. This is where a lot of genuinely strong academic options sit, often 20 to 30 percent cheaper than the premium tier for outcomes that are honestly not that different at the primary level. The gap widens more in the senior years.",
-      "Mid tier, generally 250,000 to 550,000 baht. Astra Academy sits at 516,600 to 550,200, Australian International School Bangkok at 322,000 to 520,000, Charter at 270,000 to 594,000, DPREP at 320,000 to 580,000, and Traill at 358,200 to 558,000. Hampton, a Reggio Emilia early years school, runs 326,000 to 494,000, which tells you early years pricing does not always track with primary and secondary the way you would expect.",
-      "Value tier, generally under 350,000 baht. This is where the real savings live if the specific curriculum and campus fit your family. Modern International School Bangkok runs 199,500 to 260,100, Raffles American School 198,000 to 297,000, Trinity 198,000 to 220,870, Canadian International School of Thailand 198,500 to 545,000 depending heavily on year group, and Bangkok Christian International School as low as 84,000 to 136,000. Sarasas Ektra, a bilingual Thai English school, runs just 67,000 to 151,200 a year, which is a fraction of what the premium schools charge for a genuinely different but still solid academic option.",
-      "Here is the thing nobody puts on the front page: tuition is usually only 75 to 85 percent of what you will actually pay in year one. Almost every school charges an application fee, typically 5,000 to 15,000 baht, plus a registration or enrollment fee that can run anywhere from 50,000 to 250,000 baht depending on the school, and this is separate from tuition and rarely refundable. On top of that, expect a capital or development levy at some schools, another 100,000 to 400,000 baht, sometimes partially refundable if you stay long enough, sometimes not refundable at all. Always ask which category you are in before you sign anything.",
+      "While there are many other factors, let us dive into the first one, price. Every guide to Bangkok school fees I have read gives you a vague band, something like 400,000 to 900,000 baht a year, and calls it a day. That is not actually useful when you are trying to budget for a specific child at a specific school for the 2026/2027 school year. So instead of estimating, I pulled the real published tuition ranges for more than 45 schools in our own directory and sorted them by tier. These are actual numbers schools have published for the current fee cycle, not averages I made up.",
+      "This is Ruamrudee at 548,400 to 1,527,000 baht a year, Wellington at 615,250 to 1,240,137, Shrewsbury at 691,800 to 1,208,400, International School Bangkok at 681,000 to 1,219,000, and NIST at 650,200 to 1,132,800. Harrow, Bangkok Patana, and King's College all land in a similar range, roughly 545,000 to just over a million depending on year group. These are the schools with decades of history, extensive facilities, and university counseling offices that genuinely know how to get kids into competitive programs abroad. You are paying for that infrastructure as much as the classroom itself.",
+      "Concordian runs 626,400 to 963,400, Bromsgrove 259,100 to 680,100, Regent's 430,800 to 759,600, KIS 459,800 to 984,700, BASIS 545,000 to 998,000, and Berkeley 519,200 to 839,200. This is where a lot of genuinely strong academic options sit, often 20 to 30 percent cheaper than the premium tier for outcomes that are honestly not that different at the primary level. The gap widens more in the senior years.",
+      "Astra Academy sits at 516,600 to 550,200, Australian International School Bangkok at 322,000 to 520,000, Charter at 270,000 to 594,000, DPREP at 320,000 to 580,000, and Traill at 358,200 to 558,000. Hampton, a Reggio Emilia early years school, runs 326,000 to 494,000, which tells you early years pricing does not always track with primary and secondary the way you would expect.",
+      "This is where the real savings live if the specific curriculum and campus fit your family. Modern International School Bangkok runs 199,500 to 260,100, Raffles American School 198,000 to 297,000, Trinity 198,000 to 220,870, Canadian International School of Thailand 198,500 to 545,000 depending heavily on year group, and Bangkok Christian International School as low as 84,000 to 136,000. Sarasas Ektra, a bilingual Thai English school, runs just 67,000 to 151,200 a year, which is a fraction of what the premium schools charge for a genuinely different but still solid academic option.",
+      "Tuition is usually only 75 to 85 percent of what you will actually pay in year one. Almost every school charges an application fee, typically 5,000 to 15,000 baht, plus a registration or enrollment fee that can run anywhere from 50,000 to 250,000 baht depending on the school, and this is separate from tuition and rarely refundable. On top of that, expect a capital or development levy at some schools, another 100,000 to 400,000 baht, sometimes partially refundable if you stay long enough, sometimes not refundable at all. Always ask which category you are in before you sign anything.",
       "Beyond the entry fees, budget for a school bus if you need one, typically 45,000 to 85,000 baht a year depending on distance, and factor in that Bangkok traffic means a bus route that looks reasonable on a map can still mean an hour each way. Exam registration for IGCSE, IB Diploma, or AP years is usually billed separately too, often 30,000 to 80,000 baht in the relevant year, and boarding, where it is offered at all, adds another 300,000 to 600,000 baht on top of day tuition.",
       "A few practical things I have learned the hard way. Sibling discounts are common, usually 5 to 15 percent starting from the second child, but they do not always stack with scholarships, so ask specifically. Most schools invoice in three terms and offer a small discount if you pay the full year upfront in August. If your employer is covering tuition as part of a relocation package, get in writing whether that covers just tuition or the capital levy and registration fees too, since that single detail can move your real out of pocket cost by six figures.",
       "If you are earning in a currency other than baht, keep an eye on timing. Almost every school here invoices in THB only, and a 3 percent swing in the exchange rate between accepting a place and your first invoice is a real number, not a rounding error. A few schools let you lock in an advance payment at a fixed rate, which is worth asking about if your income is in USD, GBP, EUR, or SGD.",
-      "My honest advice: shortlist three to five schools across at least two different tiers before you start touring campuses. It is the only way to actually see whether the extra 300,000 or 400,000 baht a year at the premium tier is buying you something your family genuinely needs, or whether a strong mid tier or value tier option gets your kid to the same place for a lot less money. You can browse our full directory, with real fee ranges where we have them, to start building that shortlist yourself.",
+      "My honest advice: shortlist three to five schools across at least two different tiers before you start touring campuses. It is the only way to actually see whether the extra 300,000 or 400,000 baht a year at the premium tier is buying you something your family genuinely needs, or whether a strong mid tier or value tier option gets your kid to the same place for a lot less money. You can browse our full directory, with real 2026/2027 fee ranges where we have them, to start building that shortlist yourself.",
     ],
   },
 
