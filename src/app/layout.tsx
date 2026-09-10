@@ -7,6 +7,9 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bkkfamilies.com"),
+  verification: {
+    google: "YIOkUdSD6iRmcG79RvsGXkggPDjZYy2WBbvTaRtFbR4",
+  },
   title: {
     default: "BKK Families — Your Bangkok Roadmap",
     template: "%s | BKK Families",
