@@ -76,7 +76,7 @@ export const ARTICLES: Article[] = [
       },
     ],
     body: [
-      "Ask a kid who grew up in Bangkok where they are from and watch how long the pause is. Mine still pause. One was born here, one was born in Massachusetts, both of them spent nearly their whole childhood in Thailand, and both of them now live in a country whose passport they have always held and whose schools they had never attended until they were 10 and 8 years old.",
+      "Ask a western kid who grew up in Bangkok where they are from and watch how long the pause is. Mine still pause. One was born here, one was born in Massachusetts, both of them spent nearly their whole childhood in Thailand, and both of them now live in a country whose passport they have always held and whose schools they had never attended until they were 10 and 8 years old.",
       "There is a term for this. They are third culture kids, and if you are raising children in Bangkok, you are raising them too.",
       "There is a lot written about helping a third culture kid settle into a new country. There is almost nothing honest written about what happens when you take them out again. We did the whole loop, arrival to departure to the years afterward, and the second half was nothing like what I had read.",
       "The phrase was coined by the sociologist Ruth Hill Useem in the 1950s, and the three cultures are easier to understand than the name suggests. The first culture is the parents' passport country. The second is the country the child actually grows up in. The third is neither of those. It is the shared culture of internationally mobile kids, the one they build with each other, and it is very often the one where they feel most at home.",
