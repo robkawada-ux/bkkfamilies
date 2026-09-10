@@ -15,11 +15,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const school = SCHOOLS.find((s) => s.slug === slug);
   if (!school) return {};
+  const firstPara = school.description?.split("\n\n")[0] ?? "";
+  const description = firstPara
+    ? firstPara.length <= 158
+      ? firstPara
+      : firstPara.slice(0, firstPara.lastIndexOf(" ", 155)) + "..."
+    : `${school.name} international school in Bangkok. Curriculum: ${school.curricula.join(", ")}.`;
+
   return {
     title: school.name,
-    description:
-      school.description ??
-      `${school.name} international school in Bangkok. Curriculum: ${school.curricula.join(", ")}.`,
+    description,
+    alternates: {
+      canonical: `https://www.bkkfamilies.com/schools/${school.slug}`,
+    },
   };
 }
 

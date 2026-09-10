@@ -6,7 +6,7 @@ import Footer from "@/components/ui/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bkkfamilies.com"),
+  metadataBase: new URL("https://www.bkkfamilies.com"),
   title: {
     default: "BKK Families — Your Bangkok Roadmap",
     template: "%s | BKK Families",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "BKK Families — Your Bangkok Roadmap",
     description:
       "Schools, activities, and healthcare resources for families in Bangkok, backed by a 40,000+ member community.",
-    url: "https://bkkfamilies.com",
+    url: "https://www.bkkfamilies.com",
     siteName: "BKK Families",
     locale: "en_US",
     type: "website",

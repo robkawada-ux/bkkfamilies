@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (!article) return {};
 
   const description = article.metaDescription ?? article.excerpt;
-  const url = "https://bkkfamilies.com/blog/" + article.slug;
+  const url = "https://www.bkkfamilies.com/blog/" + article.slug;
 
   return {
     title: article.title,
@@ -53,7 +53,7 @@ export default async function ArticlePage({
   const article = getArticle(slug);
   if (!article) return notFound();
 
-  const url = "https://bkkfamilies.com/blog/" + article.slug;
+  const url = "https://www.bkkfamilies.com/blog/" + article.slug;
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -63,12 +63,12 @@ export default async function ArticlePage({
     datePublished: article.date,
     dateModified: article.date,
     image: article.heroImage
-      ? "https://bkkfamilies.com" + article.heroImage
+      ? "https://www.bkkfamilies.com" + article.heroImage
       : undefined,
     author: {
       "@type": "Organization",
       name: "BKK Families",
-      url: "https://bkkfamilies.com",
+      url: "https://www.bkkfamilies.com",
     },
     publisher: {
       "@type": "Organization",
@@ -84,8 +84,8 @@ export default async function ArticlePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://bkkfamilies.com" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://bkkfamilies.com/blog" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bkkfamilies.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.bkkfamilies.com/blog" },
       { "@type": "ListItem", position: 3, name: article.title, item: url },
     ],
   };
