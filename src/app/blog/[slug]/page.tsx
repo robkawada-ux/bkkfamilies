@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ARTICLES, getArticle } from "@/lib/articles";
+import { SCHOOLS } from "@/lib/schools";
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }));
@@ -198,7 +199,7 @@ export default async function ArticlePage({
             href="/schools"
             className="mt-4 inline-block text-sm font-semibold text-teal hover:underline"
           >
-            Browse all 120 schools in our directory →
+            Browse all {SCHOOLS.length} schools in our directory →
           </Link>
         </div>
       )}
