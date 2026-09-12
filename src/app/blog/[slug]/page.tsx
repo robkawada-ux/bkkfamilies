@@ -4,6 +4,27 @@ import Link from "next/link";
 import { ARTICLES, getArticle } from "@/lib/articles";
 import { SCHOOLS } from "@/lib/schools";
 
+/**
+ * Articles that ship a generated Open Graph card, keyed by slug. Anything
+ * without a heroImage and not listed here falls back to the generic blog
+ * card, so a new article can never end up with no share image at all.
+ */
+const OG_CARDS = new Set([
+  "third-culture-kids-bangkok-moving-back",
+  "is-bangkok-safe-for-kids",
+  "top-5-hospitals-in-bangkok",
+  "staying-fit-in-bangkok",
+  "dental-health-for-families-in-bangkok",
+  "top-museums-for-kids-in-bangkok",
+]);
+
+/** Hero photo if there is one, else a generated card, else the blog default. */
+function shareImage(slug: string, heroImage?: string) {
+  if (heroImage) return heroImage;
+  if (OG_CARDS.has(slug)) return `/images/og/blog/${slug}.png`;
+  return "/images/og/blog-default.png";
+}
+
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }));
 }
@@ -19,6 +40,7 @@ export async function generateMetadata({
 
   const description = article.metaDescription ?? article.excerpt;
   const url = "https://www.bkkfamilies.com/blog/" + article.slug;
+  const image = shareImage(article.slug, article.heroImage);
 
   return {
     title: article.title,
@@ -33,13 +55,13 @@ export async function generateMetadata({
       url,
       type: "article",
       publishedTime: article.date,
-      images: article.heroImage ? [{ url: article.heroImage }] : undefined,
+      images: [{ url: image, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description,
-      images: article.heroImage ? [article.heroImage] : undefined,
+      images: [image],
     },
   };
 }
@@ -62,9 +84,9 @@ export default async function ArticlePage({
     description: article.metaDescription ?? article.excerpt,
     datePublished: article.date,
     dateModified: article.date,
-    image: article.heroImage
-      ? "https://www.bkkfamilies.com" + article.heroImage
-      : undefined,
+    image:
+      "https://www.bkkfamilies.com" +
+      shareImage(article.slug, article.heroImage),
     author: {
       "@type": "Organization",
       name: "BKK Families",
