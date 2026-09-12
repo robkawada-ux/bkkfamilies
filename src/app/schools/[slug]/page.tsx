@@ -3,6 +3,7 @@ import { og } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SCHOOLS } from "@/lib/schools";
+import { SITE } from "@/lib/seo";
 
 export function generateStaticParams() {
   return SCHOOLS.map((s) => ({ slug: s.slug }));
@@ -29,11 +30,18 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://www.bkkfamilies.com/schools/${school.slug}`,
     },
-    openGraph: og({
-      title: school.name,
-      description,
-      path: `/schools/${school.slug}`,
-    }),
+    openGraph: {
+      ...og({
+        title: school.name,
+        description,
+        path: `/schools/${school.slug}`,
+      }),
+      // Schools that have sent us a photo share with it; the rest fall back
+      // to the schools directory card.
+      ...(school.photo
+        ? { images: [{ url: school.photo, width: 1200, height: 630 }] }
+        : {}),
+    },
   };
 }
 
@@ -52,8 +60,50 @@ export default async function SchoolPage({
   const school = SCHOOLS.find((s) => s.slug === slug);
   if (!school) return notFound();
 
+  const pageUrl = `${SITE}/schools/${school.slug}`;
+  const firstPara = school.description?.split("\n\n")[0];
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Schools",
+          item: `${SITE}/schools`,
+        },
+        { "@type": "ListItem", position: 3, name: school.name, item: pageUrl },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      url: pageUrl,
+      name: school.name,
+      mainEntity: {
+        "@type": "School",
+        name: school.name,
+        areaServed: "Bangkok, Thailand",
+        ...(firstPara ? { description: firstPara } : {}),
+        ...(school.website ? { url: school.website } : {}),
+        ...(school.photo ? { image: `${SITE}${school.photo}` } : {}),
+        ...(school.founded ? { foundingDate: String(school.founded) } : {}),
+        ...(school.languageOfInstruction
+          ? { knowsLanguage: school.languageOfInstruction }
+          : {}),
+      },
+    },
+  ];
+
   return (
     <article className="mx-auto max-w-3xl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {school.photo ? (
         <div className="relative aspect-[16/9] w-full overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
