@@ -102,6 +102,22 @@ export default function LearningSupportPage() {
         imageAlt="A mother crouching down in a Bangkok park to hug her young son, both of them calm, with a lake and trees behind them."
       />
 
+      {/* Straight to the list, for people who already know what they need */}
+      <div className="border-b border-black/5 bg-neutral-50">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-4 py-5 sm:flex-row sm:justify-between">
+          <p className="text-sm text-neutral-600">
+            Already know what you are looking for?
+          </p>
+          <a
+            href="#directory"
+            className="inline-flex items-center gap-2 rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+          >
+            Skip to the directory
+            <span aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+      </div>
+
       <div className="mx-auto max-w-6xl px-4 py-12">
         {/* Intro */}
         <div className="mx-auto max-w-3xl space-y-4 leading-relaxed text-neutral-700">
@@ -127,6 +143,19 @@ export default function LearningSupportPage() {
             something, we say so. Where a provider looks miscategorised or their
             website has gone bad, we say that too.
           </p>
+        </div>
+
+        {/* Directory */}
+        <div id="directory" className="mt-16 scroll-mt-28">
+          <h2 className="font-heading text-2xl font-bold text-purple-dark">
+            The directory
+          </h2>
+          <p className="mb-8 mt-2 max-w-3xl text-neutral-600">
+            Filter by the kind of support you need, by area, or by specialism.
+            Every listing has its own page with contact details and an honest
+            description of what the provider does and does not do.
+          </p>
+          <LearningSupportDirectory />
         </div>
 
         {/* Where to start */}
@@ -177,19 +206,6 @@ export default function LearningSupportPage() {
               </li>
             ))}
           </ol>
-        </div>
-
-        {/* Directory */}
-        <div className="mt-16">
-          <h2 className="font-heading text-2xl font-bold text-purple-dark">
-            The directory
-          </h2>
-          <p className="mb-8 mt-2 max-w-3xl text-neutral-600">
-            Filter by the kind of support you need, by area, or by specialism.
-            Every listing has its own page with contact details and an honest
-            description of what the provider does and does not do.
-          </p>
-          <LearningSupportDirectory />
         </div>
 
         {/* Inline photo */}
