@@ -54,6 +54,8 @@ export default function PageHero({
           <img
             src={image}
             alt={imageAlt ?? ""}
+            fetchPriority="high"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
           {imageCredit && (

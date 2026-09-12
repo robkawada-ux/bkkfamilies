@@ -40,16 +40,30 @@ const FAQ = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function LearningSupportPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHero
         eyebrow="You are not the only one"
         title="Learning Support in Bangkok"
         subtitle={`Assessment, therapy, specialist schools and parent support, all in one place. ${PROVIDERS.length} providers, checked and described honestly.`}
         color="purple"
-        image="/images/learning-support/hero.jpg"
-        imageAlt="A mother leaning over a homework book at the kitchen table, trying to explain something to her son, who has his chin in his hand and is looking away."
+        image="/images/learning-support/mother-comforting-son-bangkok-park.jpg"
+        imageAlt="A mother crouching down in a Bangkok park to hug her young son, both of them calm, with a lake and trees behind them."
       />
 
       <div className="mx-auto max-w-6xl px-4 py-12">
@@ -141,6 +155,27 @@ export default function LearningSupportPage() {
           </p>
           <LearningSupportDirectory />
         </div>
+
+        {/* Inline photo */}
+        <figure className="mx-auto mt-16 max-w-3xl">
+          <div className="overflow-hidden rounded-xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/learning-support/mother-helping-son-with-homework-bangkok.jpg"
+              alt="A mother sitting beside her son at a table in Bangkok, pointing at his homework book while he rests his chin on his hand and looks away."
+              width={1400}
+              height={1022}
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full"
+            />
+          </div>
+          <figcaption className="mt-3 text-sm leading-relaxed text-neutral-500">
+            Homework becoming a nightly fight is one of the most common reasons
+            families start looking. It is rarely about effort, and it is almost
+            never a battle of wills, however much it feels like one at the time.
+          </figcaption>
+        </figure>
 
         {/* FAQ */}
         <div className="mx-auto mt-16 max-w-3xl">
