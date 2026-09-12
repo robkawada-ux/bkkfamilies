@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SCHOOLS } from "@/lib/schools";
@@ -28,6 +29,11 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://www.bkkfamilies.com/schools/${school.slug}`,
     },
+    openGraph: og({
+      title: school.name,
+      description,
+      path: `/schools/${school.slug}`,
+    }),
   };
 }
 

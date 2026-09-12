@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
@@ -6,6 +7,12 @@ export const metadata: Metadata = {
   title: "Contact & Advertising",
   description:
     "Get in touch with BKK Families, or explore advertising opportunities to reach our 40,000+ member community.",
+  openGraph: og({
+    title: "Contact & Advertising",
+    description:
+      "Get in touch with BKK Families, or explore advertising opportunities to reach our 40,000+ member community.",
+    path: "/contact",
+  }),
 };
 
 export default function ContactPage() {

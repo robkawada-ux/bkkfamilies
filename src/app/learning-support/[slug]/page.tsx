@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PROVIDERS, type ProviderCategory } from "@/lib/learningSupport";
@@ -45,6 +46,11 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://www.bkkfamilies.com/learning-support/${provider.slug}`,
     },
+    openGraph: og({
+      title: `${provider.name} | Learning Support in Bangkok`,
+      description,
+      path: `/learning-support/${provider.slug}`,
+    }),
   };
 }
 

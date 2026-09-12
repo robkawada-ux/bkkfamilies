@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import PageHero from "@/components/ui/PageHero";
 import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
@@ -8,6 +9,12 @@ export const metadata: Metadata = {
   title: "Family Activities in Bangkok",
   description:
     "Playgrounds, sports, cooking classes, theme parks, and things to do with kids in Bangkok.",
+  openGraph: og({
+    title: "Family Activities in Bangkok",
+    description:
+      "Playgrounds, sports, cooking classes, theme parks, and things to do with kids in Bangkok.",
+    path: "/activities",
+  }),
 };
 
 const CATEGORIES = [

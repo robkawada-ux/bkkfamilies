@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import Link from "next/link";
 import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
@@ -6,6 +7,12 @@ import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
+  openGraph: og({
+    title: "BKK Families — Your Bangkok Roadmap",
+    description:
+      "Schools, activities, and healthcare resources for families in Bangkok, backed by a 40,000+ member community.",
+    path: "/",
+  }),
 };
 
 export default function HomePage() {

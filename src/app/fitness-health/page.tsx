@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import PageHero from "@/components/ui/PageHero";
 import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
@@ -8,6 +9,12 @@ export const metadata: Metadata = {
   title: "Fitness & Health for Families in Bangkok",
   description:
     "Hospitals, dentists, and staying active as a family in Bangkok.",
+  openGraph: og({
+    title: "Fitness & Health for Families in Bangkok",
+    description:
+      "Hospitals, dentists, and staying active as a family in Bangkok.",
+    path: "/fitness-health",
+  }),
 };
 
 export default function FitnessHealthPage() {

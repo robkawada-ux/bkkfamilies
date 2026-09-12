@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import LearningSupportDirectory from "@/components/ui/LearningSupportDirectory";
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.bkkfamilies.com/learning-support",
   },
+  openGraph: og({
+    title: "Learning Support in Bangkok",
+    description:
+      "A directory of learning support, assessment, therapy and special educational needs providers in Bangkok, with plain-English guidance on where to start.",
+    path: "/learning-support",
+  }),
 };
 
 const FAQ = [

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "BKK Families — Your Bangkok Roadmap",
     description:
       "Schools, activities, and healthcare resources for families in Bangkok, backed by a 40,000+ member community.",
-    url: "https://www.bkkfamilies.com",
+    // no url here on purpose: it would be inherited by every page
     siteName: "BKK Families",
     locale: "en_US",
     type: "website",
