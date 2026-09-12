@@ -48,6 +48,8 @@ export default function LearningSupportPage() {
         title="Learning Support in Bangkok"
         subtitle={`Assessment, therapy, specialist schools and parent support, all in one place. ${PROVIDERS.length} providers, checked and described honestly.`}
         color="purple"
+        image="/images/learning-support/hero.jpg"
+        imageAlt="A mother leaning over a homework book at the kitchen table, trying to explain something to her son, who has his chin in his hand and is looking away."
       />
 
       <div className="mx-auto max-w-6xl px-4 py-12">
