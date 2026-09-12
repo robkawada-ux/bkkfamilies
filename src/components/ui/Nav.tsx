@@ -6,6 +6,7 @@ const LINKS = [
   { href: "/schools", label: "Schools" },
   { href: "/activities", label: "Activities" },
   { href: "/fitness-health", label: "Fitness/Health" },
+  { href: "/learning-support", label: "Learning Support" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
