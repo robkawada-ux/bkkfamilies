@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-2">
-              <Logo size={32} />
+              <Logo size={28} />
               <span className="font-heading text-lg font-bold">BKK Families</span>
             </div>
             <p className="mt-3 max-w-xs text-sm text-white/70">
@@ -25,6 +25,7 @@ export default function Footer() {
               <li><Link href="/schools" className="hover:text-white">Schools</Link></li>
               <li><Link href="/activities" className="hover:text-white">Activities</Link></li>
               <li><Link href="/fitness-health" className="hover:text-white">Fitness/Health</Link></li>
+              <li><Link href="/learning-support" className="hover:text-white">Learning Support</Link></li>
               <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
             </ul>
           </div>

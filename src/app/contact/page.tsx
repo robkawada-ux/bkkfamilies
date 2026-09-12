@@ -49,7 +49,7 @@ export default function ContactPage() {
         </div>
 
         {/* Why advertise */}
-        <div className="mt-20">
+        <div id="advertise" className="mt-20 scroll-mt-32">
           <p className="text-xs font-bold uppercase tracking-wide text-orange">
             Advertise With Us
           </p>
