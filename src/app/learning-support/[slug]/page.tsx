@@ -1,7 +1,24 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { PROVIDERS } from "@/lib/learningSupport";
+import { PROVIDERS, type ProviderCategory } from "@/lib/learningSupport";
+
+const SITE = "https://www.bkkfamilies.com";
+
+/** Closest schema.org type for each kind of provider */
+const SCHEMA_TYPE: Record<ProviderCategory, string> = {
+  "Assessment & diagnosis": "MedicalBusiness",
+  "Therapy clinic": "MedicalBusiness",
+  "ABA & behaviour support": "MedicalBusiness",
+  "Hospital clinic": "MedicalClinic",
+  "Specialist school": "EducationalOrganization",
+  "School learning support": "EducationalOrganization",
+  "Tutoring & mentoring": "EducationalOrganization",
+  "Vocational & transition": "EducationalOrganization",
+  "Enrichment & general learning": "EducationalOrganization",
+  "Government service": "GovernmentOrganization",
+  "Parent support": "Organization",
+};
 
 export function generateStaticParams() {
   return PROVIDERS.map((p) => ({ slug: p.slug }));
@@ -49,12 +66,64 @@ export default async function ProviderPage({
   const provider = PROVIDERS.find((p) => p.slug === slug);
   if (!provider) return notFound();
 
+  const url = `${SITE}/learning-support/${provider.slug}`;
+  const sameAs = [provider.facebook, provider.instagram].filter(Boolean);
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Learning Support",
+          item: `${SITE}/learning-support`,
+        },
+        { "@type": "ListItem", position: 3, name: provider.name, item: url },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      url,
+      name: provider.name,
+      mainEntity: {
+        "@type": SCHEMA_TYPE[provider.category],
+        name: provider.name,
+        description: provider.description.split("\n\n")[0],
+        areaServed: provider.area,
+        ...(provider.website ? { url: provider.website } : {}),
+        ...(provider.phone ? { telephone: provider.phone } : {}),
+        ...(provider.email ? { email: provider.email } : {}),
+        ...(provider.address
+          ? {
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: provider.address,
+                addressCountry: "TH",
+              },
+            }
+          : {}),
+        ...(provider.languages?.length
+          ? { availableLanguage: provider.languages }
+          : {}),
+        ...(sameAs.length ? { sameAs } : {}),
+      },
+    },
+  ];
+
   const related = PROVIDERS.filter(
     (p) => p.category === provider.category && p.slug !== provider.slug,
   ).slice(0, 3);
 
   return (
     <article className="mx-auto max-w-3xl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="bg-purple px-4 py-12 text-white">
         <div className="mx-auto max-w-3xl">
           <Link
