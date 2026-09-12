@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   const latest = ARTICLES.slice()

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact & Advertising",
   description:
     "Get in touch with BKK Families, or explore advertising opportunities to reach our 40,000+ member community.",
@@ -29,11 +30,13 @@ export default function ContactPage() {
             </p>
           </a>
           <a
-            href="tel:021365038"
+            href="https://line.me/ti/p/~bachsuites"
+            target="_blank"
+            rel="noreferrer"
             className="rounded-xl bg-orange p-6 text-center text-white transition hover:opacity-90"
           >
-            <p className="text-xs uppercase tracking-wide text-white/80">Phone</p>
-            <p className="mt-1 font-heading text-lg font-bold">02-136-5038</p>
+            <p className="text-xs uppercase tracking-wide text-white/80">LINE</p>
+            <p className="mt-1 font-heading text-lg font-bold">bachsuites</p>
           </a>
           <a
             href="https://www.facebook.com/groups/395501457186828"

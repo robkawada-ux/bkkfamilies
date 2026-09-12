@@ -35,7 +35,16 @@ export default function Footer() {
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
               <li>info@bkkfamilies.com</li>
-              <li>02-136-5038</li>
+              <li>
+                <a
+                  href="https://line.me/ti/p/~bachsuites"
+                  className="hover:text-white"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LINE: bachsuites
+                </a>
+              </li>
               <li>
                 <a
                   href="https://www.facebook.com/groups/395501457186828"

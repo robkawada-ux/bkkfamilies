@@ -4,6 +4,7 @@ import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog" },
   title: "Blog",
   description: "Guides and roundups for families living in Bangkok.",
 };

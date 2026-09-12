@@ -3,6 +3,7 @@ import PageHero from "@/components/ui/PageHero";
 import SchoolDirectory from "@/components/ui/SchoolDirectory";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/schools" },
   title: "International Schools in Bangkok",
   description:
     "Browse 50+ international schools in Bangkok, filterable by curriculum and budget.",

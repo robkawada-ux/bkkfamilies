@@ -4,6 +4,7 @@ import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/fitness-health" },
   title: "Fitness & Health for Families in Bangkok",
   description:
     "Hospitals, dentists, and staying active as a family in Bangkok.",
