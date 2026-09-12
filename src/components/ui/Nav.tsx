@@ -99,7 +99,7 @@ export default function Nav() {
 
       <nav
         aria-label="Main"
-        className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8"
+        className="grid grid-cols-2 border-b-[3px] border-white sm:grid-cols-4 md:grid-cols-8"
       >
         {LINKS.map((l) => {
           const active = isActive(l.href);

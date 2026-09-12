@@ -69,9 +69,9 @@ export default async function ProviderPage({
           <h1 className="mt-2 font-heading text-3xl font-bold md:text-4xl">
             {provider.name}
           </h1>
-          {provider.specialisms && provider.specialisms.length > 0 && (
+          {provider.tags && provider.tags.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-1.5">
-              {provider.specialisms.map((s) => (
+              {provider.tags.map((s) => (
                 <span
                   key={s}
                   className="rounded-full bg-white/15 px-2.5 py-1 text-xs font-medium"

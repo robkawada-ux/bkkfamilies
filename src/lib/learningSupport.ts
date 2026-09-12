@@ -1,3 +1,27 @@
+export type Tag =
+  | "ADHD & attention"
+  | "Anxiety & mood"
+  | "Assessment & diagnosis"
+  | "Autism"
+  | "Behaviour"
+  | "Developmental delay"
+  | "Dyslexia & literacy"
+  | "Early intervention"
+  | "Exam access arrangements"
+  | "Executive function"
+  | "Hearing"
+  | "In-school support"
+  | "Intellectual disability"
+  | "Life skills & independence"
+  | "Occupational therapy"
+  | "Parent support & training"
+  | "Play, art & music therapy"
+  | "Sensory processing"
+  | "Social skills"
+  | "Speech & language"
+  | "Visual impairment"
+  | "Vocational & employment";
+
 export type ProviderCategory =
   | "Assessment & diagnosis"
   | "Therapy clinic"
@@ -23,7 +47,8 @@ export interface Provider {
   ages?: string;
   languages?: string[];
   services: string[];
-  specialisms?: string[];
+  /** Controlled vocabulary, drives the directory filter */
+  tags?: Tag[];
   delivery?: Delivery[];
   website?: string;
   phone?: string;
@@ -55,7 +80,12 @@ export const PROVIDERS: Provider[] = [
       "Mental health support",
       "Group sessions",
     ],
-    specialisms: ["Speech and language", "Literacy", "School liaison"],
+    tags: [
+      "Speech & language",
+      "Occupational therapy",
+      "Assessment & diagnosis",
+      "Anxiety & mood",
+    ],
     website: "https://australiantherapyservices.com.au",
     phone: "+66 88 805 0435",
     email: "lorelle@australiantherapyservices.com.au",
@@ -81,7 +111,10 @@ export const PROVIDERS: Provider[] = [
       "Attention and handwriting programmes",
       "Holiday programmes",
     ],
-    specialisms: ["Attention", "Working memory", "Reading fluency"],
+    tags: [
+      "ADHD & attention",
+      "Dyslexia & literacy",
+    ],
     website: "https://www.brainfit.co.th/en/",
     description:
       "BrainFit runs structured cognitive training programmes for children aged 3 to 18, built around attention, memory, listening and motor coordination rather than subject tutoring. Children start with a CognitiveMAP assessment and are then placed into a programme track: play-based BrainFit Junior for the early years, or BrainFit Scholar for school-age children working on the skills that sit underneath reading and maths.\n\nThe centre licenses Fast ForWord and ClearFluency, both established computer-based language and reading programmes, and runs shorter holiday intensives. It is a convenient location, a two-minute walk from BTS Ploenchit.",
@@ -107,12 +140,12 @@ export const PROVIDERS: Provider[] = [
       "Parent training",
       "School staff training and professional development",
     ],
-    specialisms: [
+    tags: [
       "Autism",
-      "Communication",
-      "Social skills",
-      "Emotional regulation",
       "Behaviour",
+      "Social skills",
+      "In-school support",
+      "Parent support & training",
     ],
     website: "https://www.buildingbridgesbangkok.com",
     phone: "+66 90 996 9062",
@@ -140,7 +173,14 @@ export const PROVIDERS: Provider[] = [
       "Supervision packages for other providers",
       "Training workshops",
     ],
-    specialisms: ["Autism", "Developmental delay", "Life skills", "Independence"],
+    tags: [
+      "Autism",
+      "Behaviour",
+      "Early intervention",
+      "Life skills & independence",
+      "Vocational & employment",
+      "In-school support",
+    ],
     website: "https://www.carethailand.co.th",
     phone: "+66 2 689 1818",
     email: "contact.info@carethaiautism.com",
@@ -162,13 +202,11 @@ export const PROVIDERS: Provider[] = [
       "On-site sessions at childcare centres, preschools and schools",
       "Home visits",
     ],
-    specialisms: [
-      "Language disorders",
-      "Articulation",
-      "Auditory processing disorder",
-      "Verbal apraxia",
-      "Voice and resonance",
-      "Stuttering",
+    tags: [
+      "Speech & language",
+      "Assessment & diagnosis",
+      "Intellectual disability",
+      "In-school support",
     ],
     website: "https://www.cluecentre.com",
     phone: "+66 64 635 4954",
@@ -193,7 +231,6 @@ export const PROVIDERS: Provider[] = [
       "English lending library",
       "Indoor play space",
     ],
-    specialisms: ["English literacy", "Small-group teaching"],
     phone: "+66 61 447 3002",
     email: "hopecenterbkk@gmail.com",
     facebook: "https://www.facebook.com/HOPEcenterbkk/",
@@ -219,11 +256,14 @@ export const PROVIDERS: Provider[] = [
       "Individual education plans",
       "Speech, occupational therapy and psychology on site",
     ],
-    specialisms: [
+    tags: [
       "Intellectual disability",
-      "Developmental disability",
-      "Life skills",
-      "Highly able learners",
+      "Developmental delay",
+      "Speech & language",
+      "Occupational therapy",
+      "Assessment & diagnosis",
+      "Life skills & independence",
+      "In-school support",
     ],
     website: "https://www.isb.ac.th",
     email: "admissions@isb.ac.th",
@@ -247,7 +287,6 @@ export const PROVIDERS: Provider[] = [
       "Let's Read and Write",
       "Mandarin Language Learners",
     ],
-    specialisms: ["Confidence and expression", "Early literacy", "Spoken English"],
     website: "https://juliagabriel.co.th",
     phone: "+66 81 624 5141",
     email: "enquiries.bkk@juliagabriel.co.th",
@@ -295,12 +334,8 @@ export const PROVIDERS: Provider[] = [
       "Seminars and workshops",
       "Informal coffee meet-ups",
     ],
-    specialisms: [
-      "Learning difficulties",
-      "Developmental delay",
-      "Sensory integration",
-      "Attention",
-      "Autism",
+    tags: [
+      "Parent support & training",
     ],
     email: "leapbangkok@gmail.com",
     description:
@@ -329,13 +364,20 @@ export const PROVIDERS: Provider[] = [
       "Inclusive pre-nursery",
       "School outreach",
     ],
-    specialisms: [
+    tags: [
+      "Speech & language",
+      "Occupational therapy",
+      "Assessment & diagnosis",
       "Autism",
-      "ADHD",
+      "ADHD & attention",
+      "Dyslexia & literacy",
       "Developmental delay",
-      "Dyslexia",
       "Sensory processing",
-      "Anxiety and low mood",
+      "Early intervention",
+      "Social skills",
+      "Play, art & music therapy",
+      "Anxiety & mood",
+      "In-school support",
     ],
     website: "https://littlesproutscentre.com",
     phone: "+66 2 712 5204",
@@ -364,11 +406,15 @@ export const PROVIDERS: Provider[] = [
       "Parenting skills training",
       "School consultation",
     ],
-    specialisms: [
-      "Developmental concerns",
+    tags: [
+      "Assessment & diagnosis",
       "Behaviour",
-      "Anxiety and depression",
-      "Family relationships",
+      "Anxiety & mood",
+      "Developmental delay",
+      "Early intervention",
+      "Play, art & music therapy",
+      "Parent support & training",
+      "In-school support",
     ],
     website: "https://www.merakclinic.com",
     phone: "+66 84 733 0444",
@@ -399,11 +445,15 @@ export const PROVIDERS: Provider[] = [
       "Camps and clubs",
       "Professional development training",
     ],
-    specialisms: [
-      "Special educational needs",
-      "Literacy",
+    tags: [
+      "Assessment & diagnosis",
+      "Speech & language",
+      "Occupational therapy",
+      "Dyslexia & literacy",
       "Visual impairment",
-      "Multisensory teaching",
+      "Early intervention",
+      "Life skills & independence",
+      "Vocational & employment",
     ],
     website: "https://newdaylearningco.com",
     email: "newdaylearning@ndlbkk.com",
@@ -428,7 +478,16 @@ export const PROVIDERS: Provider[] = [
       "Family training workshops",
       "Early childhood intervention",
     ],
-    specialisms: ["Autism", "ADHD", "Behaviour", "Social development"],
+    tags: [
+      "Autism",
+      "ADHD & attention",
+      "Behaviour",
+      "Social skills",
+      "Sensory processing",
+      "Early intervention",
+      "Parent support & training",
+      "In-school support",
+    ],
     website: "https://nolimitscs.com",
     phone: "+66 63 331 9266",
     email: "info@nolimitscs.com",
@@ -454,10 +513,12 @@ export const PROVIDERS: Provider[] = [
       "Parent education and coaching",
       "Occupational therapy developmental stimulation",
     ],
-    specialisms: [
-      "Deaf and hard of hearing",
-      "Listening and spoken language",
-      "Cochlear implants and hearing aids",
+    tags: [
+      "Hearing",
+      "Speech & language",
+      "Occupational therapy",
+      "Early intervention",
+      "Parent support & training",
     ],
     website: "https://northlightcenter.com",
     phone: "+66 2 271 4455",
@@ -481,7 +542,11 @@ export const PROVIDERS: Provider[] = [
       "Individual learning goals",
       "Team referral process with counsellor and school psychologist",
     ],
-    specialisms: ["Reading", "Writing", "Mathematics", "Learning difficulties"],
+    tags: [
+      "Dyslexia & literacy",
+      "Assessment & diagnosis",
+      "In-school support",
+    ],
     website: "https://www.rism.ac.th",
     phone: "+66 2 791 8900",
     email: "info@rism.ac.th",
@@ -503,12 +568,11 @@ export const PROVIDERS: Provider[] = [
       "Mentoring",
       "Executive function coaching",
     ],
-    specialisms: [
+    tags: [
       "Autism",
-      "ADHD traits",
-      "Mild learning difficulties",
-      "Social, emotional and mental health needs",
-      "Anxiety",
+      "ADHD & attention",
+      "Executive function",
+      "Anxiety & mood",
     ],
     description:
       "SEN Tutors offers bespoke one-to-one tuition and mentoring from tutors experienced in neurodivergent education, plus executive function coaching, the practical work of planning, starting tasks, managing time and keeping track of deadlines that so often derails otherwise capable teenagers. The stated range covers autism, ADHD traits, mild learning difficulties, social, emotional and mental health needs, trauma and anxiety. Sessions are available seven days a week.",
@@ -532,7 +596,11 @@ export const PROVIDERS: Provider[] = [
       "Individualised programming",
       "Farm-based residential and day activities",
     ],
-    specialisms: ["Autism", "Neurodiversity", "Confidence and social skills"],
+    tags: [
+      "Autism",
+      "Social skills",
+      "Play, art & music therapy",
+    ],
     phone: "+66 96 774 3610",
     email: "info@sparkcentre.net",
     facebook: "https://www.facebook.com/sparkcentrethailand",
@@ -557,7 +625,12 @@ export const PROVIDERS: Provider[] = [
       "Alternative education pathway alongside mainstream school",
       "Life skills and transition support",
     ],
-    specialisms: ["Autism", "Neurodiversity", "Employability", "Transition"],
+    tags: [
+      "Autism",
+      "Vocational & employment",
+      "Life skills & independence",
+      "In-school support",
+    ],
     website: "https://www.standrews-schools.com",
     email: "sukhumvit@standrews-schools.com",
     description:
@@ -584,11 +657,15 @@ export const PROVIDERS: Provider[] = [
       "Physiotherapy",
       "Sensory rooms and therapy spaces",
     ],
-    specialisms: [
-      "Complex needs",
-      "Functional and social skills",
-      "Community access",
-      "Vocational preparation",
+    tags: [
+      "Intellectual disability",
+      "Speech & language",
+      "Occupational therapy",
+      "Play, art & music therapy",
+      "Social skills",
+      "Life skills & independence",
+      "Vocational & employment",
+      "In-school support",
     ],
     website:
       "https://www.nordangliaeducation.com/sta-bangkok/academic-excellence/special-educational-needs",
@@ -619,11 +696,11 @@ export const PROVIDERS: Provider[] = [
       "Inclusion consulting for employers and schools",
       "ASDAN and BTEC pathways",
     ],
-    specialisms: [
-      "Neurodiversity",
-      "Employability",
-      "Independence",
-      "Vocational training",
+    tags: [
+      "Autism",
+      "Vocational & employment",
+      "Life skills & independence",
+      "Social skills",
     ],
     website: "https://www.stepscommunity.com",
     phone: "+66 81 819 6967",
@@ -647,11 +724,12 @@ export const PROVIDERS: Provider[] = [
       "Positive parenting training",
       "Individualised programmes",
     ],
-    specialisms: [
-      "Learning challenges",
-      "Social and emotional development",
+    tags: [
+      "Play, art & music therapy",
+      "Early intervention",
       "Behaviour",
-      "Parenting",
+      "Anxiety & mood",
+      "Parent support & training",
     ],
     phone: "+66 81 661 5551",
     email: "sunshine.childandfamily@gmail.com",
@@ -677,11 +755,13 @@ export const PROVIDERS: Provider[] = [
       "Ontario Curriculum adapted for neurodiverse learners",
       "Summer programme",
     ],
-    specialisms: [
-      "Complex communication needs",
+    tags: [
       "Autism",
+      "Speech & language",
       "Sensory processing",
-      "Functional life skills",
+      "Intellectual disability",
+      "Life skills & independence",
+      "In-school support",
     ],
     website: "https://www.elc.ac.th/schools/city-school/the-dove-programme/",
     phone: "+66 2 381 2919",
@@ -704,7 +784,11 @@ export const PROVIDERS: Provider[] = [
       "Classroom strategy recommendations",
       "Guidance on exam access arrangements",
     ],
-    specialisms: ["Dyslexia", "Literacy difficulties", "Exam access arrangements"],
+    tags: [
+      "Dyslexia & literacy",
+      "Assessment & diagnosis",
+      "Exam access arrangements",
+    ],
     email: "admin@thedyslexiahub.com",
     description:
       "The Dyslexia Hub does one thing: full diagnostic dyslexia assessments for children aged 8 to 16, in person in the Asok area. The assessor is trained in line with British Dyslexia Association guidance and professional standards, which matters if the report needs to be accepted by a British-curriculum school or an exam board.\n\nThe output is a detailed written report mapping strengths as well as difficulties, with practical recommendations aimed at things a class teacher can actually start doing on Monday, plus guidance on next steps and, where appropriate, exam access arrangements such as extra time.\n\nThat last point is the one parents underestimate. An IGCSE or A Level access arrangement generally needs evidence from a properly qualified assessor, obtained well before the exam series, not a note from a tutor.",
@@ -728,12 +812,10 @@ export const PROVIDERS: Provider[] = [
       "Lending library",
       "Self-advocacy programmes",
     ],
-    specialisms: [
-      "Down syndrome",
+    tags: [
+      "Parent support & training",
       "Autism",
-      "Cerebral palsy",
-      "ADHD",
-      "Genetic conditions",
+      "Intellectual disability",
     ],
     website: "https://therainbowroom.org",
     phone: "+66 2 023 2396",
@@ -769,11 +851,15 @@ export const PROVIDERS: Provider[] = [
       "Behaviour support",
       "Educational psychology and dyslexia assessment",
     ],
-    specialisms: [
-      "Special educational needs",
-      "Individual education plans",
-      "Life skills",
-      "Employment access",
+    tags: [
+      "Assessment & diagnosis",
+      "Speech & language",
+      "Occupational therapy",
+      "Dyslexia & literacy",
+      "Behaviour",
+      "Life skills & independence",
+      "Vocational & employment",
+      "In-school support",
     ],
     website: "https://www.village-education.com",
     phone: "+66 2 391 4453",
@@ -800,10 +886,12 @@ export const PROVIDERS: Provider[] = [
       "Parent coaching",
       "Social-emotional group therapy",
     ],
-    specialisms: [
-      "Speech and language",
-      "Developmental milestones",
-      "Motor skills",
+    tags: [
+      "Speech & language",
+      "Occupational therapy",
+      "Developmental delay",
+      "Social skills",
+      "Parent support & training",
     ],
     phone: "+66 99 369 4744",
     email: "a.speechstation@gmail.com",
@@ -823,7 +911,9 @@ export const PROVIDERS: Provider[] = [
       "Referral to English-speaking speech and language therapists",
       "Speech and language therapy",
     ],
-    specialisms: ["Speech and language", "English-medium therapy"],
+    tags: [
+      "Speech & language",
+    ],
     phone: "+66 81 822 2008",
     email: "englishspeechtherapybkk@gmail.com",
     description:
@@ -851,12 +941,17 @@ export const PROVIDERS: Provider[] = [
       "Neurofeedback and biofeedback, Srinakarin only",
       "Child Development and Learning Center for early development",
     ],
-    specialisms: [
+    tags: [
+      "Assessment & diagnosis",
       "Autism",
-      "ADHD and attention",
-      "Developmental disorders",
-      "Learning disabilities",
-      "Behaviour and emotions",
+      "ADHD & attention",
+      "Developmental delay",
+      "Speech & language",
+      "Occupational therapy",
+      "Play, art & music therapy",
+      "Social skills",
+      "Behaviour",
+      "Dyslexia & literacy",
     ],
     website:
       "https://www.samitivejhospitals.com/center/detail/special-needs-child-center",
@@ -880,13 +975,14 @@ export const PROVIDERS: Provider[] = [
       "Counselling",
       "Treatment and medication management",
     ],
-    specialisms: [
-      "Dyslexia and learning disorders",
-      "ADHD and oppositional behaviour",
-      "Tics and Tourette syndrome",
-      "Autism and cerebral palsy",
-      "Speech, language and motor delay",
-      "Sleep, feeding and toileting difficulties",
+    tags: [
+      "Assessment & diagnosis",
+      "Autism",
+      "ADHD & attention",
+      "Dyslexia & literacy",
+      "Speech & language",
+      "Developmental delay",
+      "Behaviour",
     ],
     website:
       "https://www.bangkokhospital.com/en/bangkok/center-clinic/child-wellness/the-chidevelopment-neuropsychiatric-clinic/overview",
@@ -912,12 +1008,13 @@ export const PROVIDERS: Provider[] = [
       "Family counselling",
       "Medication consultation",
     ],
-    specialisms: [
-      "Child and adolescent psychiatry",
-      "ADHD",
+    tags: [
+      "Assessment & diagnosis",
       "Autism",
-      "Anxiety and mood",
-      "Behavioural disorders",
+      "ADHD & attention",
+      "Anxiety & mood",
+      "Behaviour",
+      "Developmental delay",
     ],
     website: "https://www.manarom.com/child_eng.html",
     phone: "+66 2725 9595",
@@ -945,11 +1042,14 @@ export const PROVIDERS: Provider[] = [
       "Department of Special Education",
       "Department of Medical Rehabilitation",
     ],
-    specialisms: [
+    tags: [
+      "Assessment & diagnosis",
       "Intellectual disability",
-      "Learning disorders",
-      "Down syndrome",
-      "Behavioural and emotional difficulties",
+      "Dyslexia & literacy",
+      "Developmental delay",
+      "Early intervention",
+      "Behaviour",
+      "Parent support & training",
     ],
     website: "https://eng.rajanukul.go.th",
     phone: "+66 2 248 8900",
@@ -968,6 +1068,12 @@ export const ALL_AREAS: string[] = Array.from(
   new Set(PROVIDERS.map((p) => p.area)),
 ).sort();
 
-export const ALL_SPECIALISMS: string[] = Array.from(
-  new Set(PROVIDERS.flatMap((p) => p.specialisms ?? [])),
-).sort();
+/** Tags in use, with how many providers carry each */
+export const ALL_TAGS: { tag: Tag; count: number }[] = Array.from(
+  PROVIDERS.flatMap((p) => p.tags ?? []).reduce(
+    (m, t) => m.set(t, (m.get(t) ?? 0) + 1),
+    new Map<Tag, number>(),
+  ),
+)
+  .map(([tag, count]) => ({ tag, count }))
+  .sort((a, b) => a.tag.localeCompare(b.tag));
