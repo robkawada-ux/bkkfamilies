@@ -44,8 +44,8 @@ const LINKS: NavLink[] = [
     bar: "bg-white",
   },
   {
-    href: "/fitness-health",
-    label: "Fitness/Health",
+    href: "/healthcare",
+    label: "Healthcare",
     block: "bg-orange text-purple-dark",
     hover: "hover:brightness-105",
     bar: "bg-purple-dark",

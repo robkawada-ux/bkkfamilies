@@ -5,26 +5,26 @@ import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/fitness-health" },
-  title: "Fitness & Health for Families in Bangkok",
+  alternates: { canonical: "/healthcare" },
+  title: "Healthcare for Families in Bangkok",
   description:
     "Hospitals, dentists, and staying active as a family in Bangkok.",
   openGraph: og({
-    title: "Fitness & Health for Families in Bangkok",
+    title: "Healthcare for Families in Bangkok",
     description:
       "Hospitals, dentists, and staying active as a family in Bangkok.",
-    path: "/fitness-health",
+    path: "/healthcare",
   }),
 };
 
 export default function FitnessHealthPage() {
-  const articles = ARTICLES.filter((a) => a.category === "Fitness/Health");
+  const articles = ARTICLES.filter((a) => a.category === "Healthcare");
 
   return (
     <>
       <PageHero
         eyebrow="Trust is a primary concern"
-        title="Fitness & Health in Bangkok"
+        title="Healthcare in Bangkok"
         subtitle="Finding the right hospital, dentist, or fitness routine is one of the biggest concerns for expat families. Here's what our community trusts."
         color="purple"
       />

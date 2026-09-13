@@ -305,7 +305,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "top-5-hospitals-in-bangkok",
     title: "Top Hospitals in Bangkok for Family Care",
-    category: "Fitness/Health",
+    category: "Healthcare",
     date: "2026-05-02",
     excerpt:
       "Bangkok's private hospital system is one of the best reasons to raise a family here — here's what families in our community rely on.",
@@ -318,7 +318,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "staying-fit-in-bangkok",
     title: "Staying Fit in Bangkok: Easier Than You Think",
-    category: "Fitness/Health",
+    category: "Healthcare",
     date: "2026-04-20",
     excerpt:
       "Heat and traffic make outdoor fitness feel daunting at first — here's how families actually make it work.",
@@ -331,7 +331,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "dental-health-for-families-in-bangkok",
     title: "Why Dental Health Matters More Than You'd Think in Bangkok",
-    category: "Fitness/Health",
+    category: "Healthcare",
     date: "2026-03-11",
     excerpt:
       "Bangkok's dental care is excellent and affordable by international standards — worth prioritizing rather than putting off.",

@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/schools`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/activities`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/fitness-health`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/healthcare`, changeFrequency: "monthly", priority: 0.6 },
     {
       url: `${baseUrl}/learning-support`,
       changeFrequency: "weekly",

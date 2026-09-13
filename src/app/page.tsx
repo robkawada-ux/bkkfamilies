@@ -107,11 +107,11 @@ export default function HomePage() {
               </p>
             </Link>
             <Link
-              href="/fitness-health"
+              href="/healthcare"
               className="rounded-xl bg-purple p-6 text-white transition hover:opacity-90"
             >
               <h3 className="font-heading text-xl font-bold">
-                Fitness/Health
+                Healthcare
               </h3>
               <p className="mt-1 text-sm text-white/90">
                 Hospitals, dentists, and staying active as a family.
