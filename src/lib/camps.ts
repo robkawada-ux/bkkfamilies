@@ -866,7 +866,7 @@ export const CAMPS: Camp[] = [
     description:
       "iCamp is a residential English camp in Kanchanaburi, about 160km from Bangkok in the River Kwai valley, and has been running for ten years. Mornings are English missions and projects pitched at Cambridge levels A1 to B2; afternoons are swimming, water games, sports, adventure and team challenges, with evening programmes after dinner. Accommodation is eight boys and eight girls cabins built from bamboo, twelve campers and two staff in each, all air conditioned, arranged in a circle around the canteen. Staff ratio is around one to ten depending on age. The kitchen caters Western, Asian, halal and vegetarian, with vegan, gluten free and dairy free options at every meal.",
     worthKnowing:
-      "iCamp runs a strict no-screen policy: phones are collected at check-in and returned on departure day, and parents cannot phone their child directly, though the office will pass on messages and posts daily photos to Facebook. Visits need two days notice. For a lot of families that is the appeal, but it is worth knowing before you book if your child has never been away from home. Bookings are by the week with the option to extend once they are there. The camp is a two to three hour drive from Bangkok, so this is a genuine residential trip rather than a day camp.",
+      "iCamp runs a strict no-screen policy: phones are collected at check-in and returned on departure day, and parents cannot phone their child directly, though the office will pass on messages and posts daily photos to Facebook. Visits need two days notice. For a lot of families that is the appeal, but it is worth knowing before you book if your child has never been away from home. Bookings are by the week with the option to extend once they are there. The camp is a two to three hour drive from Bangkok, so this is a genuine residential trip rather than a day camp. There is full-time nursing cover during camp, and Synphaet and Dan Makham Tia hospitals in Kanchanaburi are their emergency partners. iCamp does not publish prices on its public pages, so you have to email for a figure.",
     website: "https://icampthailand.com/october-camp/",
     email: "info@icampthailand.com",
     phone: "02 399 5400 ext 503",
@@ -876,7 +876,7 @@ export const CAMPS: Camp[] = [
     sessions: [
       {
         id: "icamp-oct-2026",
-        programme: "Active Discovery English Camp",
+        programme: "English Active Discovery Camp",
         window: "oct-2026",
         dateStatus: "tba",
         categories: ["language-learning", "nature-and-outdoors", "sport-and-fitness", "swimming"],
@@ -889,7 +889,7 @@ export const CAMPS: Camp[] = [
         lunchIncluded: true,
         venue: "iCamp Thailand, Kanchanaburi",
         note:
-          "Six day residential. Registration is open but exact dates and prices are not published on the site front page. Day three includes a sports competition, the Kanchanaburi Skywalk and a meal by the river. English activities are matched to Cambridge A1, A2, B1 and B2.",
+          "Two weeks running this October, and the first year iCamp has run its English Active Discovery programme. Registration opened 11 September 2026. The exact dates and the price are not published anywhere public; contact iCamp directly. English activities are matched to Cambridge A1, A2, B1 and B2, and day three includes a sports competition, the Kanchanaburi Skywalk and a meal by the river.",
         lastVerified: "2026-09-12",
       },
       {
@@ -906,7 +906,25 @@ export const CAMPS: Camp[] = [
         minimumBooking: "1 week, extendable once on site",
         lunchIncluded: true,
         venue: "iCamp Thailand, Kanchanaburi",
-        note: "Places are capped per week to hold staff ratios.",
+        note: "Places are capped per week to hold staff ratios. A buy-one-bring-a-friend-free anniversary offer ran in 2026.",
+        lastVerified: "2026-09-12",
+      },
+      {
+        id: "icamp-songkran-2027",
+        programme: "iCamp Songkran Camp",
+        window: "songkran-2027",
+        dateStatus: "ran-previously",
+        previousRun: "22 to 28 March, 29 March to 4 April and 5 to 11 April 2026",
+        categories: ["language-learning", "nature-and-outdoors", "sport-and-fitness", "swimming"],
+        minAge: 7,
+        maxAge: 16,
+        format: "residential",
+        nights: 6,
+        supervisionRatio: "roughly 1 to 10, varies by age",
+        minimumBooking: "1 week",
+        lunchIncluded: true,
+        venue: "iCamp Thailand, Kanchanaburi",
+        note: "Seven day sessions. Includes a supervised water celebration over Songkran itself.",
         lastVerified: "2026-09-12",
       },
     ],
