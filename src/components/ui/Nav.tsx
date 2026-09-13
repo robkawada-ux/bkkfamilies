@@ -37,32 +37,39 @@ const LINKS: NavLink[] = [
     bar: "bg-purple-dark",
   },
   {
-    href: "/activities",
-    label: "Activities",
+    href: "/camps",
+    label: "Camps",
     block: "bg-purple text-white",
     hover: "hover:brightness-125",
     bar: "bg-white",
   },
   {
+    href: "/activities",
+    label: "Activities",
+    block: "bg-orange text-purple-dark",
+    hover: "hover:brightness-125",
+    bar: "bg-purple-dark",
+  },
+  {
     href: "/healthcare",
     label: "Healthcare",
-    block: "bg-orange text-purple-dark",
+    block: "bg-teal text-purple-dark",
     hover: "hover:brightness-105",
     bar: "bg-purple-dark",
   },
   {
     href: "/blog",
     label: "Blog",
-    block: "bg-teal text-purple-dark",
+    block: "bg-green text-purple-dark",
     hover: "hover:brightness-105",
     bar: "bg-purple-dark",
   },
   {
     href: "/contact",
     label: "Contact",
-    block: "bg-green text-purple-dark",
-    hover: "hover:brightness-105",
-    bar: "bg-purple-dark",
+    block: "bg-purple text-white",
+    hover: "hover:brightness-125",
+    bar: "bg-white",
   },
   {
     href: "/contact#advertise",
@@ -99,7 +106,7 @@ export default function Nav() {
 
       <nav
         aria-label="Main"
-        className="grid grid-cols-2 border-b-[3px] border-white sm:grid-cols-4 md:grid-cols-8"
+        className="grid grid-cols-2 border-b-[3px] border-white sm:grid-cols-3 md:grid-cols-9"
       >
         {LINKS.map((l) => {
           const active = isActive(l.href);
@@ -108,7 +115,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               aria-current={active ? "page" : undefined}
-              className={`relative px-2 py-3 text-center text-xs font-bold uppercase tracking-wide transition md:text-[0.7rem] lg:text-xs ${l.block} ${l.hover}`}
+              className={`relative px-1 py-3 text-center text-xs font-bold uppercase tracking-tight transition md:px-1 md:text-[0.62rem] lg:px-2 lg:text-[0.7rem] xl:tracking-wide ${l.block} ${l.hover}`}
             >
               {l.label}
               {active && (

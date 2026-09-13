@@ -83,6 +83,8 @@ export interface Camp {
   name: string;
   /** Bangkok area, or the province for residential camps. */
   area: string;
+  /** Where camps physically run, when it is worth naming. Shown in the hero. */
+  mainVenue?: string;
   /** True for residential camps outside Bangkok. No upcountry DAY camps. */
   outsideBangkok?: boolean;
   description: string;
@@ -109,6 +111,7 @@ export const CAMPS: Camp[] = [
     slug: "bangkok-prep-holiday-camps",
     name: "Bangkok Prep Holiday Camps",
     area: "Watthana",
+    mainVenue: "Bangkok Prep Secondary Campus, 77 Soi Sukhumvit 77, Phra Khanong Nuea",
     description:
       "Bangkok Prep runs one of the largest and best documented holiday camp programmes in the city, spanning seven weeks of the summer break with a different mix of programmes each week. Camps are open to children from any school, not just Bangkok Prep families. Everything runs 9am to 3pm at the Secondary Campus on Sukhumvit 77, and lunch and snacks are included in every fee. The range is unusually wide, from Thai literacy and EAL English through to Minecraft coding, robotics, design, multi-sports and an elite swimming programme.",
     worthKnowing:
@@ -427,6 +430,7 @@ export const CAMPS: Camp[] = [
     slug: "carroll-prep-october-camp",
     name: "Carroll Prep October Camp",
     area: "Nonthaburi",
+    mainVenue: "Carroll Preparatory Primary and Preschool, Nonthaburi",
     description:
       "Carroll Prep runs a five-week October camp for younger children, built around life skills and language rather than weekly themes. English is used throughout as a working language rather than taught as a lesson, and the camp also carries a Chinese strand. Days mix hands-on projects, arts, crafts and cooking. The age range starts at two, which is unusually young for a Bangkok holiday camp and makes this one of the few real options for preschoolers.",
     worthKnowing:
@@ -527,6 +531,7 @@ export const CAMPS: Camp[] = [
     slug: "regents-english-camps",
     name: "Regent's English Camps",
     area: "Huai Khwang",
+    mainVenue: "Regent's Boarding Campus, 592 Pracha Uthit Road, Huai Khwang",
     description:
       "Regent's runs English language camps out of its Boarding Campus on Pracha Uthit Road, aimed at children aged 3 to 12 and open to non-Regent's students. Classes are taught by native English-speaking teachers with a teaching assistant alongside, and mornings cover listening, speaking, reading, writing, grammar and role play, plus English-medium science, maths and thinking skills. Afternoons are activity led, with swimming, cooking, arts and crafts and a water slide. Children are grouped 3 to 5, 6 to 8 and 9 to 12.",
     worthKnowing:

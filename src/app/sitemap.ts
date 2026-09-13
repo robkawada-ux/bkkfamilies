@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SCHOOLS } from "@/lib/schools";
+import { CAMPS } from "@/lib/camps";
 import { ARTICLES } from "@/lib/articles";
 import { PROVIDERS } from "@/lib/learningSupport";
 
@@ -21,6 +22,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/school-breaks`,
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/camps`,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     { url: `${baseUrl}/contact`, changeFrequency: "yearly", priority: 0.3 },
   ];
@@ -44,10 +50,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const campPages: MetadataRoute.Sitemap = CAMPS.map((c) => ({
+    url: `${baseUrl}/camps/${c.slug}`,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
     ...articlePages,
     ...schoolPages,
     ...learningSupportPages,
+    ...campPages,
   ];
 }
