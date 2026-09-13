@@ -203,6 +203,25 @@ export default async function CampPage({
           </div>
         )}
 
+        {camp.photo && (
+          <figure className="mt-12">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={camp.photo}
+              alt={camp.photoAlt ?? camp.name}
+              loading="lazy"
+              decoding="async"
+              className="mx-auto h-auto w-full max-w-sm rounded-xl"
+            />
+            <figcaption className="mx-auto mt-3 max-w-sm text-xs leading-relaxed text-neutral-500">
+              {camp.photoCaption}
+              {camp.photoCredit && (
+                <span className="block">Image: {camp.photoCredit}.</span>
+              )}
+            </figcaption>
+          </figure>
+        )}
+
         {/* Contact */}
         <div className="mt-12 rounded-xl border border-black/5 bg-neutral-50 p-6">
           <h2 className="font-heading text-lg font-bold text-purple-dark">

@@ -85,6 +85,18 @@ export interface Camp {
   area: string;
   /** Where camps physically run, when it is worth naming. Shown in the hero. */
   mainVenue?: string;
+  /**
+   * Operator-supplied image, path under /public. Only with explicit
+   * permission. Some operators permit use but forbid alteration, so this
+   * renders whole and unclipped rather than cropped to a hero band.
+   */
+  photo?: string;
+  /** Alt text. Required whenever photo is set. */
+  photoAlt?: string;
+  /** Who to credit, rendered under the image. */
+  photoCredit?: string;
+  /** Context line under the image, e.g. what it is and when it was published. */
+  photoCaption?: string;
   /** True for residential camps outside Bangkok. No upcountry DAY camps. */
   outsideBangkok?: boolean;
   description: string;
@@ -862,6 +874,10 @@ export const CAMPS: Camp[] = [
     name: "iCamp Thailand",
     area: "Kanchanaburi",
     mainVenue: "9/9 Moo 6, Tambon Klondo, Dan Makhamtia District, Kanchanaburi",
+    photo: "/images/camps/icamp-thailand-october-2026.jpg",
+    photoAlt: "iCamp Thailand promotional flyer for the October 2026 English Active Discovery Camp, showing teenagers reading a map together by a lake in Kanchanaburi.",
+    photoCredit: "iCamp Thailand, used with permission",
+    photoCaption: "iCamp's campaign flyer for the October 2026 English Active Discovery Camp, published September 2026.",
     outsideBangkok: true,
     description:
       "iCamp is a residential English camp in Kanchanaburi, about 160km from Bangkok in the River Kwai valley, and has been running for ten years. Mornings are English missions and projects pitched at Cambridge levels A1 to B2; afternoons are swimming, water games, sports, adventure and team challenges, with evening programmes after dinner. Accommodation is eight boys and eight girls cabins built from bamboo, twelve campers and two staff in each, all air conditioned, arranged in a circle around the canteen. Staff ratio is around one to ten depending on age. The kitchen caters Western, Asian, halal and vegetarian, with vegan, gluten free and dairy free options at every meal.",
