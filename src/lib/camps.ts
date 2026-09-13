@@ -523,6 +523,62 @@ export const CAMPS: Camp[] = [
       },
     ],
   },
+  {
+    slug: "regents-english-camps",
+    name: "Regent's English Camps",
+    area: "Huai Khwang",
+    description:
+      "Regent's runs English language camps out of its Boarding Campus on Pracha Uthit Road, aimed at children aged 3 to 12 and open to non-Regent's students. Classes are taught by native English-speaking teachers with a teaching assistant alongside, and mornings cover listening, speaking, reading, writing, grammar and role play, plus English-medium science, maths and thinking skills. Afternoons are activity led, with swimming, cooking, arts and crafts and a water slide. Children are grouped 3 to 5, 6 to 8 and 9 to 12.",
+    worthKnowing:
+      "Regent's is at the expensive end. The stated regular price of 28,350 baht a week is roughly two and a half times Bangkok Prep and nearly three times Carroll Prep, and it is consistently advertised with a large discount attached: the promotion moved from 50 percent to 40 percent within a single day in September 2026. Treat the regular price as a list price rather than what anyone pays. Separately, the Winter Camp runs through term time and its refund policy covers visa denial, which tells you it is aimed at students travelling into Bangkok rather than at local families.",
+    website: "https://regents.ac.th/extra-programme/course-camps/",
+    email: "aew.pichaisriswad@regents.ac.th",
+    phone: "081 522 9191",
+    lineId: "@regentscamps",
+    lastVerified: "2026-09-12",
+    sessions: [
+      {
+        id: "regents-oct-2026",
+        programme: "Regent's English October Camp",
+        window: "oct-2026",
+        startDate: "2026-10-12",
+        endDate: "2026-10-30",
+        dateStatus: "confirmed",
+        categories: ["language-learning", "academic", "swimming"],
+        minAge: 3,
+        maxAge: 12,
+        format: "day",
+        priceFrom: 17010,
+        priceTo: 40967,
+        priceUnit: "per-session",
+        venue: "Regent's Boarding Campus, 592 Pracha Uthit Road, Huai Khwang",
+        hours: "9:00am to 2:30pm, Monday to Friday",
+        minimumBooking: "1 week",
+        bookingUrl: "https://forms.cloud.microsoft/r/7X4DYptQZm",
+        note:
+          "Three weeks available. Discounted prices: 17,010 for one week, 34,136 for two, 40,967 for all three. Regular prices are quoted as 28,350, 56,894 and 68,279.",
+        lastVerified: "2026-09-12",
+      },
+      {
+        id: "regents-winter-2027",
+        programme: "Regent's English Winter Camp",
+        window: "spring-2027",
+        startDate: "2027-01-11",
+        endDate: "2027-02-19",
+        dateStatus: "confirmed",
+        categories: ["language-learning", "academic", "swimming"],
+        minAge: 3,
+        maxAge: 12,
+        format: "day",
+        venue: "Regent's Boarding Campus, 592 Pracha Uthit Road, Huai Khwang",
+        minimumBooking: "1 week",
+        bookingUrl: "https://forms.cloud.microsoft/r/3upr52KQHW",
+        note:
+          "Runs through term time and is aimed at students travelling into Bangkok. For a local family the only usable week is 15 to 19 February, which matches the St Andrews half term. Maximum class size 25. Prices not published; 20 percent off for payment by 30 September 2026 and a further 10 percent for groups of three or more.",
+        lastVerified: "2026-09-12",
+      },
+    ],
+  },
 ];
 
 /** Flattened view for the directory filter. */
