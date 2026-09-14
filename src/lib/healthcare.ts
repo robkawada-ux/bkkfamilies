@@ -1,0 +1,797 @@
+// Healthcare directory. One Facility per PLACE YOU GO.
+//
+// Unlike camps, where a parent shops for a specific bookable week, a family
+// choosing healthcare is choosing a building: where do I deliver, where do I
+// take a feverish four year old at 11pm, who will my insurer pay directly.
+// So the directory filters on facilities, not on services, and services are
+// tags carried by the facility.
+//
+// The two views that matter most are the maternity filter and the paediatric
+// filter. Both are just this list with a service tag applied, which is why
+// maternity and paediatric detail live in their own optional blocks rather
+// than being smeared across the top-level fields.
+//
+// MAINTENANCE: prices and phone numbers rot faster than anything else on
+// this site. Every facility carries lastVerified, and the maternity block
+// carries its own because package prices change on a different cycle from
+// the rest of the entry. See isStale and STALE_AFTER_DAYS.
+//
+// EDITORIAL: nothing here is medical advice and no facility pays to be
+// listed. Where a hospital does not publish a price we say so rather than
+// estimating, because a wrong number on a maternity package is worse than
+// no number at all. Every price below was read from the hospital's own
+// published package page, and packageUrl is the receipt.
+
+export type FacilityType =
+  | "international-hospital"
+  | "private-hospital"
+  | "public-hospital"
+  | "specialist-hospital"
+  | "clinic"
+  | "dental";
+
+/**
+ * Controlled vocabulary. Typed as a union so an unrecognised tag fails the
+ * build rather than silently producing a filter option nobody selected.
+ */
+export type Service =
+  | "maternity"
+  | "nicu"
+  | "fertility"
+  | "paediatrics"
+  | "paediatric-emergency"
+  | "developmental-paediatrics"
+  | "vaccinations"
+  | "emergency-24h"
+  | "family-medicine"
+  | "mental-health"
+  | "allergy"
+  | "dermatology"
+  | "physiotherapy"
+  | "travel-medicine"
+  | "dental"
+  | "paediatric-dentistry"
+  | "orthodontics";
+
+/**
+ * How much of the insurance admin the facility absorbs. "most" means the
+ * international desk settles directly with the major expat insurers;
+ * "some" means a short panel; "none" means pay and claim back.
+ */
+export type DirectBilling = "most" | "some" | "none" | "unknown";
+
+export interface MaternityInfo {
+  /** Baht, published package for an uncomplicated vaginal delivery. */
+  packageFrom?: number;
+  /** Baht, top of the published range, normally the caesarean package. */
+  packageTo?: number;
+  /** What the package does and does not cover. Quoted fairly, not sold. */
+  packageNote?: string;
+  /** Where the price was read. The receipt for the number above. */
+  packageUrl?: string;
+  /** 2 = special care, 3 = full intensive care including ventilation. */
+  nicuLevel?: 2 | 3;
+  /** Whether a partner can stay overnight in the room. Asked constantly. */
+  partnerCanStay?: boolean;
+  waterBirth?: boolean;
+  /** Vaginal birth after caesarean. Several Bangkok hospitals decline it. */
+  vbacSupported?: boolean;
+  /** Package prices move independently of the rest of the entry. */
+  lastVerified: string;
+}
+
+export interface PaediatricInfo {
+  /** A children's ER with its own entrance, not the adult ER with a nurse. */
+  separateChildrensEr?: boolean;
+  /** Opening hours of the children's service, when it is not 24h. */
+  erHours?: string;
+  /** Assessment and therapy for development, not just acute illness. */
+  developmentalServices?: boolean;
+  note?: string;
+  lastVerified: string;
+}
+
+export interface Facility {
+  slug: string;
+  name: string;
+  /** Thai name, where it helps a taxi driver or a Grab pin. */
+  thaiName?: string;
+  type: FacilityType;
+  /** Bangkok district or well-known neighbourhood. Drives the area filter. */
+  area: string;
+  address?: string;
+  /** Nearest BTS, MRT or ARL station, phrased as a parent would say it. */
+  nearestTransit?: string;
+  /**
+   * Facility-supplied image, path under /public. Only with explicit
+   * permission, same rule as camps and schools. No scraping.
+   */
+  photo?: string;
+  photoAlt?: string;
+  photoCredit?: string;
+  photoCaption?: string;
+  description: string;
+  /** The honesty box. What we would tell a friend, including the downsides. */
+  worthKnowing?: string;
+  services: Service[];
+  /** Languages reliably available, beyond Thai. */
+  languages?: string[];
+  directBilling?: DirectBilling;
+  directBillingNote?: string;
+  /** Joint Commission International accreditation. */
+  jciAccredited?: boolean;
+  maternity?: MaternityInfo;
+  paediatrics?: PaediatricInfo;
+  website?: string;
+  email?: string;
+  phone?: string;
+  /** Separate emergency or ambulance line, where one is published. */
+  emergencyPhone?: string;
+  lineId?: string;
+  facebook?: string;
+  lastVerified: string;
+}
+
+/** Thailand's national emergency medical number. Surfaced on every page. */
+export const EMERGENCY_NUMBER = "1669";
+
+export const FACILITIES: Facility[] = [
+  {
+    slug: "bumrungrad-international-hospital",
+    name: "Bumrungrad International Hospital",
+    type: "international-hospital",
+    area: "Watthana",
+    address: "33 Sukhumvit 3 (Soi Nana Nuea), Watthana, Bangkok 10110",
+    nearestTransit: "BTS Nana, about five minutes on foot up Soi 3",
+    description:
+      "The hospital most people outside Thailand have heard of, and for many expat families the default first stop. Bumrungrad runs at the scale of an airport terminal: interpreters in dozens of languages, a dedicated international floor, and a paediatrics centre that handles everything from a routine vaccination to complex specialist care. The machinery for foreign patients is the most practised in the country, which is exactly what you want at 2am in your first year here and exactly what you are paying for.",
+    worthKnowing:
+      "Bumrungrad is the most expensive of the mainstream options and it does not publish delivery package prices online, which makes it the hardest hospital in this directory to budget for in advance. Call the Women's Centre for a written quote before you commit, and ask specifically what happens to the price if you need a caesarean or the baby needs the NICU. Families who use it for everything tend to find routine paediatric visits cost noticeably more than the same visit at a good local private hospital.",
+    services: [
+      "maternity",
+      "nicu",
+      "fertility",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+      "allergy",
+      "dermatology",
+      "travel-medicine",
+      "dental",
+    ],
+    languages: ["English", "Japanese", "Arabic", "Mandarin", "German"],
+    directBilling: "most",
+    directBillingNote:
+      "Direct settlement with most international insurers through the international patient desk. Confirm your specific policy before admission rather than on the day.",
+    jciAccredited: true,
+    maternity: {
+      packageNote:
+        "Bumrungrad does not publish delivery package prices on its website and quotes on enquiry. Third-party comparisons in late 2024 put a normal delivery around 139,000 baht and a caesarean around 159,000, but we have not been able to verify those figures against the hospital, so treat them as a rough order of magnitude and get your own quote.",
+      packageUrl: "https://www.bumrungrad.com/en/packages/normal-delivery",
+      partnerCanStay: true,
+      lastVerified: "2026-09-14",
+    },
+    paediatrics: {
+      separateChildrensEr: false,
+      note: "Paediatrics runs as a dedicated centre rather than a separate children's hospital, and out of hours children go through the main emergency department.",
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.bumrungrad.com",
+    phone: "+66 2066 8888",
+    emergencyPhone: "+66 2011 5222, or 1378 within Thailand",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "samitivej-sukhumvit-hospital",
+    name: "Samitivej Sukhumvit Hospital",
+    type: "international-hospital",
+    area: "Watthana",
+    address: "133 Sukhumvit 49, Khlong Tan Nuea, Watthana, Bangkok 10110",
+    nearestTransit: "BTS Thong Lor or Phrom Phong, then a short taxi up Soi 49",
+    description:
+      "The hospital the Sukhumvit international school crowd actually uses, and the one most often named in the Facebook group. Samitivej sits in the middle of the expat residential corridor, which is half its appeal, and it has built its reputation on children's and women's health specifically rather than on medical tourism generally. Paediatricians who speak English, Japanese and Arabic, walk-in appointments that usually work, and a children's wing that feels designed for children rather than retrofitted.",
+    worthKnowing:
+      "Convenience is the product here and it is priced accordingly, though it still undercuts Bumrungrad for routine visits. The Sukhumvit campus is the one families reach for, but the serious paediatric firepower, the PICU, the children's emergency department and the specialist units, is out at the Srinakarin campus rather than on Soi 49. Worth knowing before you drive to the wrong one with a sick child.",
+    services: [
+      "maternity",
+      "nicu",
+      "fertility",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+      "allergy",
+      "dermatology",
+      "travel-medicine",
+    ],
+    languages: ["English", "Japanese", "Arabic"],
+    directBilling: "most",
+    jciAccredited: true,
+    maternity: {
+      packageFrom: 110000,
+      packageTo: 230000,
+      packageNote:
+        "Four published packages. Platinum natural birth 110,000 baht for three nights, Platinum caesarean 135,500 for four nights, Exclusive natural birth 170,000 for four nights, Exclusive caesarean 230,000 for six nights. All include physician fees, medication, lab work, newborn vaccinations and lactation support. Prices published as valid to 31 December 2026. Elective surgery is not scheduled between 9pm and 7am, and packages cannot be combined with other promotions.",
+      packageUrl:
+        "https://www.samitivejhospitals.com/package/detail/childbirth-delivery-packages-svh",
+      partnerCanStay: true,
+      lastVerified: "2026-09-14",
+    },
+    paediatrics: {
+      separateChildrensEr: false,
+      note: "General paediatrics and walk-in consultations on site. The dedicated children's emergency department and intensive care are at the Srinakarin campus.",
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.samitivejhospitals.com",
+    phone: "+66 2022 2222",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "samitivej-international-childrens-hospital",
+    name: "Samitivej International Children's Hospital",
+    type: "specialist-hospital",
+    area: "Suan Luang",
+    address:
+      "Samitivej Srinakarin campus, 488 Srinagarindra Road, Suan Luang, Bangkok 10250",
+    nearestTransit:
+      "No convenient rail link. Roughly 20 minutes by car from Suvarnabhumi and 30 or more from Sukhumvit depending on traffic",
+    description:
+      "Thailand's only private hospital built entirely for children, opened in March 2025 on the Samitivej Srinakarin campus. Eight floors and 111 beds, with private PICU and NICU rooms, a hybrid operating theatre for minimally invasive surgery, and separate air handling for infectious and non-infectious zones. The paediatric emergency department runs 24 hours with its own paediatricians rather than adult emergency doctors covering children, and there is a paediatric ground and air transport service. For a seriously ill child this is the most capable private facility in the city.",
+    worthKnowing:
+      "The location is the catch and it is a real one. From most of the international school corridor this is a long drive, and in the wrong traffic it is a very long drive, which is worth thinking through now rather than in an emergency. The trade is simple: Sukhumvit for convenience and routine care, Srinakarin when it is serious. Families in Bang Na, On Nut and the eastern suburbs get the best of it.",
+    services: [
+      "paediatrics",
+      "paediatric-emergency",
+      "developmental-paediatrics",
+      "nicu",
+      "vaccinations",
+      "emergency-24h",
+      "physiotherapy",
+    ],
+    languages: ["English", "Japanese", "Arabic"],
+    directBilling: "most",
+    paediatrics: {
+      separateChildrensEr: true,
+      erHours: "24 hours",
+      developmentalServices: true,
+      note: "Paediatric emergency department staffed by paediatricians around the clock, with PICU, NICU, a burns unit and paediatric surgery on site. Rehabilitation includes robot-assisted gait training, and there are dedicated services for epilepsy, neurological conditions and developmental delay.",
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.samitivejhospitals.com/children-hospital",
+    phone: "+66 2022 2222 press 1",
+    emergencyPhone: "+66 2378 9420",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "bnh-hospital",
+    name: "BNH Hospital",
+    type: "international-hospital",
+    area: "Bang Rak",
+    address: "9/1 Convent Road, Silom, Bang Rak, Bangkok 10500",
+    nearestTransit: "BTS Sala Daeng or MRT Si Lom, a few minutes down Convent Road",
+    description:
+      "Bangkok Nursing Home opened in 1898 and is the oldest private hospital in Thailand, which shows in the best way: it is small, personal and unhurried in a city where private healthcare often is not. The maternity service is its best known offering among expat families, and the draw is continuity, you see the same obstetrician through the pregnancy and that person delivers you. For families in Silom and Sathorn it is also simply the nearest good option.",
+    worthKnowing:
+      "BNH does not publish delivery package prices, so you will need to call the Women's Health Centre for a quote. Being small cuts both ways: the experience is more personal than the big international hospitals, but the range of paediatric sub-specialists is narrower, and a complex case may be referred on. Excellent for a straightforward pregnancy and routine family care, less so as a one-stop hospital for everything.",
+    services: [
+      "maternity",
+      "nicu",
+      "fertility",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+    ],
+    languages: ["English"],
+    directBilling: "most",
+    maternity: {
+      packageNote:
+        "BNH markets an all-inclusive maternity package but does not publish the price online, directing enquiries to staff instead. Call the Women's Health Centre on +662 022 0700 extension 4455 or 4456 for a written quote.",
+      packageUrl: "https://www.bnhhospital.com/delivery-care/",
+      partnerCanStay: true,
+      lastVerified: "2026-09-14",
+    },
+    paediatrics: {
+      separateChildrensEr: false,
+      note: "Paediatric care built around seeing the same doctor each visit rather than whoever is on rota.",
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.bnhhospital.com",
+    phone: "+662 022 0700",
+    emergencyPhone: "+662 632 1000",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "medpark-hospital",
+    name: "MedPark Hospital",
+    type: "international-hospital",
+    area: "Khlong Toei",
+    address: "3333 Rama IV Road, Khlong Toei, Bangkok 10110",
+    nearestTransit:
+      "MRT Khlong Toei exit 2, or MRT Queen Sirikit National Convention Centre exit 2 through The PARQ",
+    description:
+      "The newest of the big private hospitals and the most transparent about money, which is why it is worth a look even if you have never heard of it. MedPark publishes its delivery packages as a straightforward price list with the number of nights and the room type attached, something most of its competitors will not do. The maternity ward is on the sixteenth floor with river and lake views, and the building is new enough that everything still works.",
+    worthKnowing:
+      "The published prices carry a condition worth reading: they are reserved for Thai citizens and expatriates residing in Thailand, they require payment in advance in full, and they are non-refundable in all circumstances. The exclusions are also unusually specific, phototherapy for jaundice and any treatment of newborn complications are outside the package, and jaundice is common enough that it is worth budgeting for rather than being surprised by.",
+    services: [
+      "maternity",
+      "nicu",
+      "fertility",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+      "allergy",
+      "dermatology",
+    ],
+    languages: ["English"],
+    directBilling: "most",
+    maternity: {
+      packageFrom: 118690,
+      packageTo: 229000,
+      packageNote:
+        "Normal delivery 118,690 baht for two nights or 209,000 for five, caesarean 133,900 for three nights or 229,000 for five, twin caesarean 209,000 for three nights, all in an Executive room. Includes doctor fees, ward accommodation, newborn BCG, hepatitis B and vitamin K, birth certificate processing and lactation counselling. The five-night packages add an infant vaccination package covering one to eighteen months. Excludes phototherapy for jaundice, treatment of newborn complications, and personal items. Published as valid to 31 December 2026.",
+      packageUrl:
+        "https://www.medparkhospital.com/en-US/packages/labour-delivery-program",
+      partnerCanStay: true,
+      lastVerified: "2026-09-14",
+    },
+    paediatrics: {
+      separateChildrensEr: false,
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.medparkhospital.com",
+    phone: "+662 023 3333",
+    emergencyPhone: "+662 090 3000",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "bangkok-hospital-headquarters",
+    name: "Bangkok Hospital (Soi Soonvijai)",
+    type: "international-hospital",
+    area: "Huai Khwang",
+    address: "2 Soi Soonvijai 7, New Petchburi Road, Huai Khwang, Bangkok 10310",
+    nearestTransit: "MRT Phetchaburi or ARL Makkasan, then a short taxi",
+    description:
+      "The flagship of the largest private hospital group in Thailand, and a genuine full-service hospital rather than a clinic with a good marketing department. It runs a dedicated children's health centre alongside combined paediatric and neonatal intensive care operating 24 hours, with ground and air emergency transport. Delivery packages are published openly, including an unusual tubal ligation add-on price for families who know they are finished.",
+    worthKnowing:
+      "The campus is large and spread across several buildings, and first visits often involve more walking and more desk-to-desk navigation than you expect. The children's intensive care is strong, but there is no separate paediatric emergency entrance, so out of hours a child goes through the general emergency department. The ELITE maternity packages are roughly double the standard ones and buy a seven-night stay rather than better clinical care.",
+    services: [
+      "maternity",
+      "nicu",
+      "fertility",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+      "mental-health",
+      "allergy",
+      "dermatology",
+      "physiotherapy",
+    ],
+    languages: ["English", "Arabic", "Japanese", "Mandarin"],
+    directBilling: "most",
+    jciAccredited: true,
+    maternity: {
+      packageFrom: 110400,
+      packageTo: 288000,
+      packageNote:
+        "Normal labour 110,400 baht for two nights, caesarean 151,800 for three nights, caesarean twins 240,000 for three nights. The ELITE packages run seven nights at 262,200 for a normal delivery and 288,000 for a caesarean. Tubal ligation after delivery is a separate 38,000. Published as valid to 31 December 2026. Room types and detailed inclusions are not published, so ask.",
+      packageUrl:
+        "https://www.bangkokhospital.com/en/bangkok/package/obstetric-delivery-packages",
+      nicuLevel: 3,
+      partnerCanStay: true,
+      lastVerified: "2026-09-14",
+    },
+    paediatrics: {
+      separateChildrensEr: false,
+      developmentalServices: true,
+      note: "Combined paediatric and neonatal intensive care running 24 hours, covering preterm infants, congenital conditions and post-surgical care, with ground and air transport. Children are seen through the general emergency department out of hours.",
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.bangkokhospital.com",
+    phone: "+662 310 3005",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "praram-9-hospital",
+    name: "Praram 9 Hospital",
+    type: "private-hospital",
+    area: "Huai Khwang",
+    address: "99 Rama IX Road, Bang Kapi, Huai Khwang, Bangkok 10310",
+    nearestTransit: "MRT Phetchaburi exit 1, with a free shuttle van from the station",
+    description:
+      "A solid mid-market private hospital that expat families in the Rama 9 and Ratchada corridor use as their everyday option, with an international desk and dedicated phone lines for foreign patients. Good for routine paediatric visits, vaccinations and the ordinary run of childhood illness without the international-hospital surcharge, and the free shuttle from the MRT is more useful than it sounds when you are carrying a sick toddler.",
+    worthKnowing:
+      "Less English signage and fewer interpreters than the Sukhumvit international hospitals, so the experience leans more Thai-hospital than concierge. The dedicated expat line is the shortcut, use it rather than the main switchboard.",
+    services: [
+      "maternity",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+      "fertility",
+    ],
+    languages: ["English", "Mandarin", "Arabic"],
+    directBilling: "some",
+    paediatrics: {
+      separateChildrensEr: false,
+      lastVerified: "2026-09-14",
+    },
+    website: "https://praram9.com/en/",
+    phone: "1270, or +66 63 329 5449 for the expat line",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "phyathai-2-hospital",
+    name: "Phyathai 2 Hospital",
+    type: "private-hospital",
+    area: "Phaya Thai",
+    address: "943 Phahonyothin Road, Samsen Nai, Phaya Thai, Bangkok 10400",
+    nearestTransit: "BTS Victory Monument, a short walk or one stop by taxi",
+    description:
+      "A 550-bed private hospital near Victory Monument handling around 50,000 outpatients a month, and the practical choice for families living in Ari, Sanam Pao and the northern stretch of the BTS. Full range of specialties including paediatrics, at prices well below the Sukhumvit international hospitals.",
+    worthKnowing:
+      "Busy, and it feels it. Wait times at peak hours are longer than at the boutique international hospitals, and the English-language experience is patchier depending on which department you land in. Fine for routine care if you are nearby, and the emergency line is worth saving.",
+    services: [
+      "maternity",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+    ],
+    languages: ["English"],
+    directBilling: "some",
+    paediatrics: {
+      separateChildrensEr: false,
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.phyathai.com/en/pyt2",
+    phone: "02 617 2444",
+    emergencyPhone: "1772",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "vichaiyut-hospital",
+    name: "Vichaiyut Hospital",
+    type: "private-hospital",
+    area: "Phaya Thai",
+    address: "Sethsiri Road, Phaya Thai, Bangkok 10400",
+    nearestTransit: "BTS Sanam Pao or Victory Monument",
+    description:
+      "A long-established private hospital in the Phaya Thai cluster, and the cheapest published delivery package of any hospital in this directory by a wide margin. If budget is the binding constraint and the pregnancy is straightforward, this is the number to compare everything else against.",
+    worthKnowing:
+      "The low headline price comes with conditions that matter. The package covers a single uncomplicated baby only, prenatal care is excluded entirely, and if complications such as pre-eclampsia or insulin-dependent gestational diabetes arise you revert to standard rates with a 10 percent discount rather than staying inside the package. Read the terms properly before treating this as a like-for-like comparison with the all-inclusive packages elsewhere.",
+    services: [
+      "maternity",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+    ],
+    languages: ["English"],
+    directBilling: "some",
+    maternity: {
+      packageFrom: 63800,
+      packageNote:
+        "One published childbirth programme at 63,800 baht, covering delivery of a single uncomplicated baby and postpartum care, with a membership card giving 10 percent off outpatient and inpatient services. Prenatal care, take-home medication and supplies are excluded. Mothers may upgrade from normal to caesarean if needed. Published as valid from 30 December 2025 to 31 December 2026. The page does not break the price down by delivery type or nights, so confirm what you are actually buying.",
+      packageUrl:
+        "https://www.vichaiyut.com/en/healthpackage/delivery-package/pm313-24",
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.vichaiyut.com/en/",
+    phone: "0 2265 7777 for the Women's Health Centre",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "nakornthon-hospital",
+    name: "Nakornthon Hospital",
+    type: "private-hospital",
+    area: "Bang Khun Thian",
+    address: "1 Soi Phra Ram 2 Soi 56, Samae Dam, Bang Khun Thian, Bangkok 10150",
+    nearestTransit: "No rail link. Car access from Rama II Road",
+    description:
+      "Out on Rama II and well away from the expat corridor, but included here because it publishes the clearest tiered delivery pricing in the city and the numbers are roughly half what the Sukhumvit hospitals charge. Three tiers for each delivery type, so you can see exactly what an extra 20,000 baht buys.",
+    worthKnowing:
+      "Location rules this out for most international school families, and English-language support is more limited than anywhere else in this list. It earns its place as a price benchmark and as a real option for families living on the Thonburi side. Note the 7,000 baht surcharge for an elective caesarean scheduled between 10pm and 7:59am, and the BMI 35 exclusion.",
+    services: [
+      "maternity",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+    ],
+    languages: ["English"],
+    directBilling: "some",
+    maternity: {
+      packageFrom: 48900,
+      packageTo: 99900,
+      packageNote:
+        "Three tiers. Perfect 48,900 baht for a normal delivery over two nights and 72,900 for a caesarean over three, Premium 58,900 and 82,900, Platinum 75,900 and 99,900. Includes room and meals for mother and baby, nursing and physician fees, medication, standard labs, and newborn jaundice, thyroid, blood typing, hearing and vaccination screening. Excludes infant complications, maternal complications, stays beyond the set duration, and a BMI above 35. An elective caesarean booked between 10pm and 7:59am adds 7,000 baht. Published as valid to 31 December 2026.",
+      packageUrl: "https://en.nakornthon.com/package/detail/delivery-package",
+      lastVerified: "2026-09-14",
+    },
+    website: "https://en.nakornthon.com",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "saint-louis-hospital",
+    name: "Saint Louis Hospital",
+    type: "private-hospital",
+    area: "Sathon",
+    address: "27 South Sathorn Road, Yan Nawa, Sathon, Bangkok 10120",
+    nearestTransit: "BTS Surasak, a few minutes on foot",
+    description:
+      "A Catholic mission hospital on South Sathorn, and the budget-sensible option for families in the Sathorn and Silom area who do not need an international patient desk. Routine paediatric consultations run well below what the same visit costs a few stops up the BTS, and it is a genuinely useful alternative for checkups, minor illness and vaccinations.",
+    worthKnowing:
+      "Expect a Thai hospital experience rather than an international one: less English, more queueing, and a system that assumes you know how Thai hospitals work. Best treated as the sensible everyday option once you have found your feet here, not as your first week in Bangkok choice.",
+    services: [
+      "maternity",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+    ],
+    languages: ["English"],
+    directBilling: "some",
+    paediatrics: {
+      separateChildrensEr: false,
+      lastVerified: "2026-09-14",
+    },
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "camillian-hospital",
+    name: "Camillian Hospital",
+    type: "private-hospital",
+    area: "Watthana",
+    address:
+      "423 Sukhumvit 55 (Thong Lor), Khlong Tan Nuea, Watthana, Bangkok 10110",
+    nearestTransit: "BTS Thong Lor, then up Soi 55",
+    description:
+      "A small Catholic hospital sitting right in the middle of Thong Lor, which makes it the closest hospital to a large slice of the expat family population. Quieter and cheaper than the big names a few minutes away, with a 24-hour advice line, and a reasonable option for the ordinary run of family medicine when you do not want to spend an afternoon at Samitivej.",
+    worthKnowing:
+      "Small, so the specialist range is limited and anything complicated will be referred on. The value here is proximity and a shorter queue for straightforward things, not comprehensive care. Worth knowing it exists before the night you need somewhere within walking distance.",
+    services: [
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+      "physiotherapy",
+    ],
+    languages: ["English"],
+    directBilling: "some",
+    website: "https://camillianhospital.org/en/",
+    phone: "02 185 1444, 24-hour advice line",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "queen-sirikit-national-institute-of-child-health",
+    name: "Queen Sirikit National Institute of Child Health",
+    thaiName: "สถาบันสุขภาพเด็กแห่งชาติมหาราชินี",
+    type: "public-hospital",
+    area: "Ratchathewi",
+    address:
+      "420/8 Ratchawithi Road, Thung Phaya Thai, Ratchathewi, Bangkok 10400",
+    nearestTransit: "BTS Victory Monument, then a short taxi",
+    description:
+      "Thailand's national children's hospital, universally known as Children's Hospital, and the country's deepest concentration of paediatric sub-specialists. This is where the rare conditions and the complex cases go, including referrals from the private hospitals when something is beyond them. Included here not as an everyday option but because it is the thing behind the private system, and it is worth knowing that it exists.",
+    worthKnowing:
+      "This is a public hospital and it runs like one: long waits, limited English, and a referral-led system that is hard to navigate as a walk-in foreigner. It is not a substitute for a private paediatrician for everyday illness. It is where you may end up, via referral, for something genuinely rare, and the expertise there is real.",
+    services: [
+      "paediatrics",
+      "paediatric-emergency",
+      "developmental-paediatrics",
+      "nicu",
+      "emergency-24h",
+      "vaccinations",
+    ],
+    directBilling: "none",
+    paediatrics: {
+      separateChildrensEr: true,
+      erHours: "24 hours",
+      developmentalServices: true,
+      note: "An entirely paediatric institution, so every service including the emergency department is designed for children.",
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.childrenhospital.go.th/en/home/",
+    phone: "1415",
+    emergencyPhone: "1415 extension 2201 or 2202",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "manarom-hospital",
+    name: "Manarom Hospital",
+    type: "specialist-hospital",
+    area: "Bang Na",
+    address: "9 Sukhumvit 70/3, Bang Na Tai, Bang Na, Bangkok 10260",
+    nearestTransit: "BTS Udom Suk or Bang Na, then a short taxi",
+    description:
+      "A dedicated psychiatric hospital covering children and adolescents from infancy to 18 as a distinct service rather than an afterthought on an adult ward. Psychiatric assessment, psychological and neuropsychological testing, and treatment for ADHD, autism, anxiety, mood disorders and eating disorders, with individual and family therapy and parent education programmes alongside.",
+    worthKnowing:
+      "The most substantial dedicated child and adolescent mental health provision in Bangkok, and listed on International School Bangkok's own community resource list, which is a meaningful endorsement. Bang Na is a long way from the Sukhumvit and Sathorn school corridor, so factor the journey into a course of weekly appointments rather than a single visit. Confirm English-speaking clinician availability when you book, since it varies by specialty.",
+    services: ["mental-health", "developmental-paediatrics"],
+    languages: ["English"],
+    directBilling: "some",
+    website: "https://www.manarom.com",
+    email: "contact@manarom.com",
+    phone: "+66 2 725 9595 or +66 2 032 9595",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "bangkok-mental-health-rehabilitation-and-recovery-center",
+    name: "Bangkok Mental Health Rehabilitation and Recovery Center",
+    type: "clinic",
+    area: "Huai Khwang",
+    address: "2 Soi Soonvijai 7, New Petchburi Road, Huai Khwang, Bangkok 10310",
+    nearestTransit: "MRT Phetchaburi or ARL Makkasan, then a short taxi",
+    description:
+      "The mental health arm of Bangkok Hospital, with a child and adolescent psychiatry service running alongside adult and older-adult care. Being attached to a full hospital matters when a young person's presentation has a medical dimension, or when medication needs coordinating with other care.",
+    worthKnowing:
+      "Also on International School Bangkok's community resource list. Works in Thai and English. Being inside a large hospital campus means more process than a standalone clinic, but it also means continuity if your family already uses Bangkok Hospital.",
+    services: ["mental-health"],
+    languages: ["English"],
+    directBilling: "most",
+    website:
+      "https://www.bangkokhospital.com/en/bangkok/center-clinic/brain/bangkok-mental-health-rehabilitation-and-recovery-center/child-and-adolescent-psychiatry-services",
+    phone: "+66 2 310 3027 or +66 2 310 3751",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "merak-clinic",
+    name: "Merak Clinic",
+    type: "clinic",
+    area: "Nonthaburi",
+    address: "146/5 Tiwanon Road, Tha Sai, Mueang Nonthaburi, Nonthaburi 11000",
+    description:
+      "A small clinic working specifically with children and adolescents, in English and Thai. Standalone rather than hospital-attached, which usually means a shorter route to an actual appointment and a more consistent clinician than a large hospital rota provides.",
+    worthKnowing:
+      "Nonthaburi is outside Bangkok proper and a long trip from the southern and eastern school corridor, which is the main practical obstacle. Listed on International School Bangkok's community resource list. Small practices change hours and availability more often than hospitals, so call ahead rather than turning up.",
+    services: ["mental-health", "developmental-paediatrics"],
+    languages: ["English"],
+    directBilling: "unknown",
+    website: "https://merakclinic.com",
+    email: "merakclinic@hotmail.com",
+    phone: "084 733 0444",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "mind-and-body-clinic",
+    name: "Mind & Body Clinic",
+    type: "clinic",
+    area: "Pathum Wan",
+    address:
+      "Chamchuri Square, 2nd floor room 253, Phayathai Road, Pathum Wan, Bangkok 10330",
+    nearestTransit: "MRT Sam Yan, directly under the building",
+    description:
+      "A central, easy-to-reach mental health clinic working in English and Thai, sitting directly above an MRT station in Chamchuri Square. The location is the practical advantage: for a family coming from anywhere on the MRT it removes the taxi from the equation, which matters for appointments that repeat weekly.",
+    worthKnowing:
+      "Listed on International School Bangkok's community resource list. Confirm directly whether the clinicians available take children or adolescents, since that is not stated up front and varies by practitioner.",
+    services: ["mental-health"],
+    languages: ["English"],
+    directBilling: "unknown",
+    website: "https://bodyandmindclinicbkk.com",
+    email: "bodyandmindclinic.bkk@gmail.com",
+    phone: "+66 93 332 2511 or 02 160 5389",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "the-oasis",
+    name: "The Oasis",
+    type: "clinic",
+    area: "Chatuchak",
+    address:
+      "1408/41 Phahonyothin Road, Chom Phon, Chatuchak, Bangkok 10900",
+    nearestTransit: "BTS Mo Chit or MRT Chatuchak Park",
+    description:
+      "A counselling practice working in English and Thai with a defined age split, children from eight to twelve, then teenagers, then adults. The explicit age banding is unusual in Bangkok and useful, since it means a nine year old is not being seen by someone whose practice is really adult therapy.",
+    worthKnowing:
+      "Listed on International School Bangkok's community resource list. No published phone number, so contact goes through the website. Children under eight are not covered, which is worth knowing before you enquire.",
+    services: ["mental-health"],
+    languages: ["English"],
+    directBilling: "unknown",
+    website: "https://theoasiscare.com",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "bangkok-international-dental-hospital",
+    name: "Bangkok International Dental Hospital (BIDH)",
+    type: "dental",
+    area: "Khlong Toei",
+    address: "98 Sukhumvit Soi 2, Khlong Toei, Bangkok 10110",
+    nearestTransit: "BTS Nana or Ploenchit",
+    description:
+      "A licensed dental hospital rather than a clinic, at the bottom of Sukhumvit Soi 2, offering paediatric dentistry within a full general and specialist service. Outpatient hours run late into the evening six days a week and through Sunday afternoon, which is the single most useful fact here for a working parent with school-age children.",
+    worthKnowing:
+      "Hospital status means it operates under hospital-grade safety and sterilisation standards and can handle treatment under general anaesthesia, which matters for a very young or very anxious child who cannot be treated in a normal dental chair. Run by the same group as BIDC, so pricing and standards are comparable. Open Monday to Saturday 9am to 8pm and Sunday 9am to 6pm.",
+    services: ["dental", "paediatric-dentistry", "orthodontics"],
+    languages: ["English"],
+    directBilling: "some",
+    website: "https://dentalhospitalthailand.com",
+    email: "contact@dentalhospitalthailand.com",
+    phone: "02 115 8977, WhatsApp +66 95 517 1587",
+    lastVerified: "2026-09-14",
+  },
+  {
+    slug: "bangkok-international-dental-center",
+    name: "Bangkok International Dental Center (BIDC)",
+    type: "dental",
+    area: "Din Daeng",
+    address: "157, 159 Ratchadaphisek Soi 7, Din Daeng, Bangkok 10400",
+    nearestTransit: "MRT Ratchadaphisek or Sutthisan",
+    description:
+      "The first JCI-accredited dental centre in Thailand and one of the largest, on Ratchadaphisek. Strongest on orthodontics, with specialist orthodontists trained abroad and Invisalign Diamond Provider status, which makes it a common destination for teenagers starting braces.",
+    worthKnowing:
+      "The accreditation and the specialist-only orthodontics are the real differentiators, since plenty of Bangkok clinics let a general dentist run orthodontic cases. Paediatric dentistry is not advertised as a named specialty here, so for a young child BIDH on Sukhumvit 2, run by the same group, is the better first call. JCI accredited and ISO 9001:2015 certified.",
+    services: ["dental", "orthodontics"],
+    languages: ["English"],
+    directBilling: "some",
+    jciAccredited: true,
+    website: "https://bangkokdentalcenter.com",
+    email: "contact@bangkokdentalcenter.com",
+    phone: "+66 2 692 4433",
+    lastVerified: "2026-09-14",
+  },
+];
+
+export const ALL_AREAS: string[] = Array.from(
+  new Set(FACILITIES.map((f) => f.area))
+).sort();
+
+export const ALL_SERVICES: Service[] = Array.from(
+  new Set(FACILITIES.flatMap((f) => f.services))
+).sort();
+
+export const ALL_TYPES: FacilityType[] = Array.from(
+  new Set(FACILITIES.map((f) => f.type))
+).sort();
+
+/** Facilities that deliver babies, the highest-intent view in the section. */
+export const MATERNITY_FACILITIES: Facility[] = FACILITIES.filter((f) =>
+  f.services.includes("maternity")
+);
+
+/** Facilities with a paediatric service, the other high-intent view. */
+export const PAEDIATRIC_FACILITIES: Facility[] = FACILITIES.filter((f) =>
+  f.services.includes("paediatrics")
+);
+
+/** Days since an entry was last checked. Drives the staleness warning. */
+export function daysSinceVerified(iso: string, now: Date = new Date()): number {
+  const then = new Date(`${iso}T00:00:00Z`).getTime();
+  return Math.floor((now.getTime() - then) / 86_400_000);
+}
+
+/**
+ * Shorter than the camps window. Camp dates are annual; a phone number or a
+ * package price can change any week, and health content carries a higher
+ * trust bar than a football camp.
+ */
+export const STALE_AFTER_DAYS = 60;
+
+export function isStale(iso: string, now: Date = new Date()): boolean {
+  return daysSinceVerified(iso, now) > STALE_AFTER_DAYS;
+}
+
+export function facilityBySlug(slug: string): Facility | undefined {
+  return FACILITIES.find((f) => f.slug === slug);
+}
+
+/** Lowest published delivery package across the directory, for the intro copy. */
+export function lowestPublishedPackage(): number | null {
+  const prices = FACILITIES.map((f) => f.maternity?.packageFrom).filter(
+    (p): p is number => typeof p === "number"
+  );
+  return prices.length ? Math.min(...prices) : null;
+}
+
+/** Highest published delivery package across the directory. */
+export function highestPublishedPackage(): number | null {
+  const prices = FACILITIES.flatMap((f) =>
+    [f.maternity?.packageFrom, f.maternity?.packageTo].filter(
+      (p): p is number => typeof p === "number"
+    )
+  );
+  return prices.length ? Math.max(...prices) : null;
+}

@@ -3,6 +3,7 @@ import { SCHOOLS } from "@/lib/schools";
 import { CAMPS } from "@/lib/camps";
 import { ARTICLES } from "@/lib/articles";
 import { PROVIDERS } from "@/lib/learningSupport";
+import { FACILITIES } from "@/lib/healthcare";
 
 export const baseUrl = "https://www.bkkfamilies.com";
 
@@ -12,7 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/schools`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/activities`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/healthcare`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/healthcare`, changeFrequency: "monthly", priority: 0.8 },
+    {
+      url: `${baseUrl}/healthcare/hospitals`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     {
       url: `${baseUrl}/learning-support`,
       changeFrequency: "weekly",
@@ -56,11 +62,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const healthcarePages: MetadataRoute.Sitemap = FACILITIES.map((f) => ({
+    url: `${baseUrl}/healthcare/hospitals/${f.slug}`,
+    lastModified: new Date(f.lastVerified),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
     ...articlePages,
     ...schoolPages,
     ...learningSupportPages,
     ...campPages,
+    ...healthcarePages,
   ];
 }
