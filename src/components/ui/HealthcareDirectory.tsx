@@ -7,38 +7,11 @@ import {
   ALL_AREAS,
   ALL_SERVICES,
   ALL_TYPES,
+  SERVICE_LABEL,
+  TYPE_LABEL,
   type Service,
   type FacilityType,
 } from "@/lib/healthcare";
-
-export const SERVICE_LABEL: Record<Service, string> = {
-  maternity: "Maternity",
-  nicu: "Neonatal intensive care",
-  fertility: "Fertility",
-  paediatrics: "Paediatrics",
-  "paediatric-emergency": "Children's emergency",
-  "developmental-paediatrics": "Developmental",
-  vaccinations: "Vaccinations",
-  "emergency-24h": "24h emergency",
-  "family-medicine": "Family medicine",
-  "mental-health": "Mental health",
-  allergy: "Allergy",
-  dermatology: "Dermatology",
-  physiotherapy: "Physiotherapy",
-  "travel-medicine": "Travel medicine",
-  dental: "Dental",
-  "paediatric-dentistry": "Children's dentistry",
-  orthodontics: "Orthodontics",
-};
-
-export const TYPE_LABEL: Record<FacilityType, string> = {
-  "international-hospital": "International hospital",
-  "private-hospital": "Private hospital",
-  "public-hospital": "Public hospital",
-  "specialist-hospital": "Specialist hospital",
-  clinic: "Clinic",
-  dental: "Dental",
-};
 
 function baht(n: number): string {
   return `฿${n.toLocaleString()}`;

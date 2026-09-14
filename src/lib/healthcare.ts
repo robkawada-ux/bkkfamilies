@@ -132,6 +132,45 @@ export interface Facility {
   lastVerified: string;
 }
 
+/**
+ * Display labels for the controlled vocabularies.
+ *
+ * These MUST live here rather than in the directory component. Next replaces
+ * a "use client" module's exports with client references when a server
+ * component imports them, so a label map defined in the client component
+ * silently resolves to undefined on every server-rendered page. That shipped
+ * once and produced empty service pills and nameless MedicalProcedure
+ * entries in the structured data.
+ */
+export const SERVICE_LABEL: Record<Service, string> = {
+  maternity: "Maternity",
+  nicu: "Neonatal intensive care",
+  fertility: "Fertility",
+  paediatrics: "Paediatrics",
+  "paediatric-emergency": "Children's emergency",
+  "developmental-paediatrics": "Developmental",
+  vaccinations: "Vaccinations",
+  "emergency-24h": "24h emergency",
+  "family-medicine": "Family medicine",
+  "mental-health": "Mental health",
+  allergy: "Allergy",
+  dermatology: "Dermatology",
+  physiotherapy: "Physiotherapy",
+  "travel-medicine": "Travel medicine",
+  dental: "Dental",
+  "paediatric-dentistry": "Children's dentistry",
+  orthodontics: "Orthodontics",
+};
+
+export const TYPE_LABEL: Record<FacilityType, string> = {
+  "international-hospital": "International hospital",
+  "private-hospital": "Private hospital",
+  "public-hospital": "Public hospital",
+  "specialist-hospital": "Specialist hospital",
+  clinic: "Clinic",
+  dental: "Dental",
+};
+
 /** Thailand's national emergency medical number. Surfaced on every page. */
 export const EMERGENCY_NUMBER = "1669";
 

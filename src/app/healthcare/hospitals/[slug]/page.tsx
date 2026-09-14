@@ -7,13 +7,11 @@ import {
   facilityBySlug,
   isStale,
   EMERGENCY_NUMBER,
+  SERVICE_LABEL,
+  TYPE_LABEL,
   type Facility,
   type DirectBilling,
 } from "@/lib/healthcare";
-import {
-  SERVICE_LABEL,
-  TYPE_LABEL,
-} from "@/components/ui/HealthcareDirectory";
 
 const SITE = "https://www.bkkfamilies.com";
 
