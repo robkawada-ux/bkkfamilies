@@ -10,6 +10,14 @@ import RichText, { stripRichText } from "@/components/ui/RichText";
  * Articles that ship a generated Open Graph card, keyed by slug. Anything
  * without a heroImage and not listed here falls back to the generic blog
  * card, so a new article can never end up with no share image at all.
+ *
+ * A slug listed here MUST have a matching file at
+ * public/images/og/blog/<slug>.png, or the share image 404s, which is worse
+ * than the default. Add the file and the slug together.
+ *
+ * The cards carry the article title, so RETITLING AN ARTICLE MEANS
+ * REGENERATING ITS CARD. Three cards here were left showing old titles after
+ * a round of rewrites before anyone noticed.
  */
 const OG_CARDS = new Set([
   "third-culture-kids-bangkok-moving-back",
@@ -18,6 +26,11 @@ const OG_CARDS = new Set([
   "staying-fit-in-bangkok",
   "dental-health-for-families-in-bangkok",
   "top-museums-for-kids-in-bangkok",
+  "having-a-baby-in-bangkok",
+  "bangkok-smog-season-kids",
+  "pharmacies-in-thailand-guide",
+  "health-insurance-expat-families-bangkok",
+  "heatstroke-thailand-hot-season",
 ]);
 
 /** Hero photo if there is one, else a generated card, else the blog default. */
