@@ -36,15 +36,15 @@ export const ARTICLES: Article[] = [
       "The first thing that surprises people about having a baby in Bangkok is how good it is. The second is how hard it is to find out what it costs. Here are the published prices side by side, and the exclusions that actually decide your bill.",
     headings: [
       { beforeParagraph: 3, text: "What it actually costs" },
-      { beforeParagraph: 9, text: "The exclusions are the real story" },
-      { beforeParagraph: 15, text: "Prenatal care is usually a separate bill" },
-      { beforeParagraph: 18, text: "Choosing a hospital" },
-      { beforeParagraph: 24, text: "You are choosing a doctor, not just a building" },
-      { beforeParagraph: 28, text: "Insurance, and the waiting period that catches everyone" },
-      { beforeParagraph: 33, text: "Registering the birth" },
-      { beforeParagraph: 38, text: "Your baby will need their own paperwork" },
-      { beforeParagraph: 41, text: "The first weeks at home" },
-      { beforeParagraph: 44, text: "What we would tell a friend" },
+      { beforeParagraph: 10, text: "The exclusions are the real story" },
+      { beforeParagraph: 17, text: "Prenatal care is usually a separate bill" },
+      { beforeParagraph: 20, text: "Choosing a hospital" },
+      { beforeParagraph: 26, text: "You are choosing a doctor, not just a building" },
+      { beforeParagraph: 30, text: "Insurance, and the waiting period that catches everyone" },
+      { beforeParagraph: 35, text: "Registering the birth" },
+      { beforeParagraph: 40, text: "Your baby will need their own paperwork" },
+      { beforeParagraph: 43, text: "The first weeks at home" },
+      { beforeParagraph: 46, text: "What we would tell a friend" },
     ],
     relatedFacilities: [
       { name: "Samitivej Sukhumvit Hospital", slug: "samitivej-sukhumvit-hospital" },
@@ -59,15 +59,17 @@ export const ARTICLES: Article[] = [
     body: [
       "The first thing that surprises most people about having a baby in Bangkok is how good it is. The second is how hard it is to find out what it will cost.",
       "The care itself is rarely the worry. Obstetricians at the private hospitals here are frequently trained abroad, the rooms are better than most people are used to at home, the nursing is attentive, and the whole thing costs a fraction of what an uninsured birth costs in the United States. Families who have babies in both countries almost always say the Bangkok experience was the better one.",
-      "The money is where it gets murky. Every hospital packages its pricing differently, several of the best known ones will not publish a number at all, and the figures that are published cover only the birth that goes exactly to plan. So this guide does the part nobody else does: the real published prices next to each other, and then the exclusions, which are where your actual bill gets decided.",
+      "The money is where it gets murky. Every hospital packages its pricing differently, some bury the figure in an image so it never shows up in a search, at least one will not publish a number at all, and the prices that are published cover only the birth that goes exactly to plan. So this guide does the part nobody else does: the real published prices next to each other, and then the exclusions, which are where your actual bill gets decided.",
       "Published delivery packages at Bangkok private hospitals currently run from about 48,900 baht at the cheapest end to 230,000 and beyond at the top. We keep the full list, updated with the date each figure was checked and a link to the hospital's own page, in the [hospital directory](/healthcare/hospitals).",
       "The mainstream band, where most expat families actually land, is roughly 110,000 to 155,000 baht for either a normal delivery or a caesarean at a well-known private hospital. [Samitivej Sukhumvit](/healthcare/hospitals/samitivej-sukhumvit-hospital) publishes 110,000 for a natural birth over three nights and 135,500 for a caesarean over four. [Bangkok Hospital](/healthcare/hospitals/bangkok-hospital-headquarters) publishes 110,400 and 151,800 for the equivalent. [MedPark](/healthcare/hospitals/medpark-hospital) publishes 118,690 and 133,900.",
       "Below that band the savings are real but conditional. [Nakornthon](/healthcare/hospitals/nakornthon-hospital) out on Rama II publishes a tiered structure starting at 48,900 for a normal delivery and 72,900 for a caesarean, roughly half the Sukhumvit price. [Vichaiyut](/healthcare/hospitals/vichaiyut-hospital) in Phaya Thai publishes a single childbirth programme at 63,800. Both are genuine options. Both come with conditions worth reading properly, which we get to below.",
       "At the top end, Samitivej's Exclusive packages reach 230,000 for a caesarean over six nights, and Bangkok Hospital's ELITE packages reach 288,000 over seven. It is worth being clear about what the extra money buys, because it is mostly nights and room, not better medicine. The clinical team is the same team.",
-      "Two of the hospitals expat families ask about most, [Bumrungrad](/healthcare/hospitals/bumrungrad-international-hospital) and [BNH](/healthcare/hospitals/bnh-hospital), do not publish delivery prices at all and quote on enquiry. That is their right, but it does mean you cannot compare them against anything without picking up the phone. If you are considering either, ask for a written quote early, and ask specifically what changes if you need a caesarean or the baby needs intensive care.",
+      "[Bumrungrad](/healthcare/hospitals/bumrungrad-international-hospital), the hospital most people have heard of, sits above the mainstream band: 139,000 baht for a normal delivery over two nights, 165,000 with an epidural block, 169,000 for a caesarean over three nights, and 249,000 for a twin caesarean. Those are published as valid to the end of 2026. Worth knowing that Bumrungrad puts its prices on the page as images rather than text, which is why a lot of comparison articles either skip it or quote figures that are years stale.",
+      "[BNH](/healthcare/hospitals/bnh-hospital) is the one hospital in this guide that genuinely does not publish. It markets an all-inclusive maternity package and quotes on enquiry only, so you cannot compare it against anything without picking up the phone. If you are considering it, ask for a written quote early, and ask specifically what changes if you need a caesarean or the baby needs intensive care.",
       "One more thing on price before we move on: several hospitals restrict their published rates to Thai citizens and foreigners resident in Thailand. If you are considering flying in to give birth, the number on the website may not be the number you are offered.",
       "Here is the part that matters more than the headline figure. A delivery package is priced for a birth that goes to plan. Almost every line item that makes a bill unexpectedly large sits outside it.",
       "The clearest example is jaundice. MedPark's package explicitly excludes phototherapy for jaundice and any treatment of newborn complications. Newborn jaundice is common, it often needs a day or two under lights, and it is exactly the sort of ordinary complication that a first-time parent does not think to budget for.",
+      "Bumrungrad's packages contain the most precisely worded version of this, and it is worth reading twice. If a complication affects the baby but not the mother, 15,000 baht is deducted from the package price and every charge for the baby and the paediatrician reverts to standard rates. In other words the package quietly stops applying to the person it was mostly about, and the refund is a rounding error against what neonatal care actually costs.",
       "Nakornthon's low prices carry two conditions people miss. An elective caesarean scheduled between 10pm and 7:59am adds 7,000 baht. A maternal BMI above 35 falls outside the package entirely.",
       "Vichaiyut's 63,800 figure is for the delivery only. Prenatal care is excluded, as are take-home medication and supplies. The package also covers a single uncomplicated baby, and if something like pre-eclampsia or insulin-dependent gestational diabetes develops, you revert to standard rates with a 10 percent discount rather than staying inside the package. That is not a criticism of the hospital, it is simply a different product from an all-inclusive package, and comparing the two numbers directly will mislead you.",
       "Samitivej does not schedule elective surgery between 9pm and 7am, which is worth knowing if you are planning a caesarean date.",
@@ -965,3 +967,48 @@ export const ARTICLES: Article[] = [
 export function getArticle(slug: string) {
   return ARTICLES.find((a) => a.slug === slug);
 }
+
+/**
+ * Fail the build on article data that would render wrong but not crash.
+ *
+ * headings and images are positioned by paragraph index, so an index past
+ * the end of body simply never renders: the heading silently disappears and
+ * the article ships with a missing section. Types cannot catch that, and the
+ * page still builds, so it has to be asserted. Duplicate slugs are checked
+ * here too, since two articles sharing one would quietly shadow each other
+ * in generateStaticParams.
+ *
+ * Runs at module load, which means during next build.
+ */
+(function validateArticles() {
+  const seen = new Set<string>();
+
+  for (const a of ARTICLES) {
+    if (seen.has(a.slug)) {
+      throw new Error(`articles.ts: duplicate slug "${a.slug}"`);
+    }
+    seen.add(a.slug);
+
+    const last = a.body.length - 1;
+
+    for (const h of a.headings ?? []) {
+      if (h.beforeParagraph < 0 || h.beforeParagraph > last) {
+        throw new Error(
+          `articles.ts: "${a.slug}" heading "${h.text}" points at paragraph ` +
+            `${h.beforeParagraph}, but body has ${a.body.length} paragraphs ` +
+            `(0 to ${last}). The heading would never render.`
+        );
+      }
+    }
+
+    for (const img of a.images ?? []) {
+      if (img.afterParagraph < 0 || img.afterParagraph > last) {
+        throw new Error(
+          `articles.ts: "${a.slug}" image "${img.src}" points at paragraph ` +
+            `${img.afterParagraph}, but body has ${a.body.length} paragraphs ` +
+            `(0 to ${last}). The image would never render.`
+        );
+      }
+    }
+  }
+})();

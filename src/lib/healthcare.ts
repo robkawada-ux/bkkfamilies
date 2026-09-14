@@ -185,7 +185,7 @@ export const FACILITIES: Facility[] = [
     description:
       "The hospital most people outside Thailand have heard of, and for many expat families the default first stop. Bumrungrad runs at the scale of an airport terminal: interpreters in dozens of languages, a dedicated international floor, and a paediatrics centre that handles everything from a routine vaccination to complex specialist care. The machinery for foreign patients is the most practised in the country, which is exactly what you want at 2am in your first year here and exactly what you are paying for.",
     worthKnowing:
-      "Bumrungrad is the most expensive of the mainstream options and it does not publish delivery package prices online, which makes it the hardest hospital in this directory to budget for in advance. Call the Women's Centre for a written quote before you commit, and ask specifically what happens to the price if you need a caesarean or the baby needs the NICU. Families who use it for everything tend to find routine paediatric visits cost noticeably more than the same visit at a good local private hospital.",
+      "Bumrungrad is the most expensive of the mainstream options, and the delivery packages show it: 139,000 baht for a normal birth against 110,400 at Bangkok Hospital for the same thing. The gap buys the most practised international patient operation in the country rather than better obstetrics. Note also that the package prices are published as images rather than text on Bumrungrad's site, which is why most price comparison articles you will find either omit them or quote figures years out of date. Families who use Bumrungrad for everything tend to find routine paediatric visits cost noticeably more than the same visit at a good local private hospital.",
     services: [
       "maternity",
       "nicu",
@@ -205,8 +205,10 @@ export const FACILITIES: Facility[] = [
       "Direct settlement with most international insurers through the international patient desk. Confirm your specific policy before admission rather than on the day.",
     jciAccredited: true,
     maternity: {
+      packageFrom: 139000,
+      packageTo: 249000,
       packageNote:
-        "Bumrungrad does not publish delivery package prices on its website and quotes on enquiry. Third-party comparisons in late 2024 put a normal delivery around 139,000 baht and a caesarean around 159,000, but we have not been able to verify those figures against the hospital, so treat them as a rough order of magnitude and get your own quote.",
+        "Four published packages: normal delivery 139,000 baht over two nights, normal delivery with epidural block 165,000 over two nights, caesarean 169,000 over three nights, and twin caesarean 249,000 over three nights. Published as valid to 31 December 2026. Includes obstetrician and paediatrician fees, maternity accommodation, newborn screening for hypothyroidism and metabolic disorders, newborn hearing screening, pulse oximetry screening for congenital heart disease, and BCG and first hepatitis B vaccines. Each package covers a single uncomplicated birth. Read the complication clause carefully: if a complication affects the baby but not the mother, 15,000 baht is deducted from the package and all charges for the baby and the paediatrician revert to standard rates. Vaginal birth after caesarean is outside the package.",
       packageUrl: "https://www.bumrungrad.com/en/packages/normal-delivery",
       partnerCanStay: true,
       lastVerified: "2026-09-14",

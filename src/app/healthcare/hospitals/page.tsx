@@ -50,7 +50,7 @@ const FAQ = [
   },
   {
     q: "Why are some prices missing?",
-    a: "Because the hospital does not publish them. Several of the best known hospitals in Bangkok, including Bumrungrad and BNH, quote maternity packages only on enquiry. We would rather show that plainly than fill the gap with an estimate, because a wrong number on a maternity package is worse than no number at all. Every price here was read from the hospital's own published page, and each entry links to the page it came from.",
+    a: "Because the hospital does not publish them. BNH markets an all-inclusive maternity package but quotes only on enquiry, so we show that plainly rather than filling the gap with an estimate. A wrong number on a maternity package is worse than no number at all. Every price here was read from the hospital's own published page, and each entry links to the page it came from.",
   },
 ];
 
