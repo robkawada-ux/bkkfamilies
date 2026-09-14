@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ARTICLES, getArticle } from "@/lib/articles";
 import { SCHOOLS } from "@/lib/schools";
+import { FACILITIES } from "@/lib/healthcare";
+import RichText, { stripRichText } from "@/components/ui/RichText";
 
 /**
  * Articles that ship a generated Open Graph card, keyed by slug. Anything
@@ -118,8 +120,11 @@ export default async function ArticlePage({
         "@type": "FAQPage",
         mainEntity: article.faq.map((f) => ({
           "@type": "Question",
-          name: f.question,
-          acceptedAnswer: { "@type": "Answer", text: f.answer },
+          name: stripRichText(f.question),
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: stripRichText(f.answer),
+          },
         })),
       }
     : null;
@@ -188,7 +193,9 @@ export default async function ArticlePage({
                   {heading.text}
                 </h2>
               )}
-              <p className="mb-4 leading-relaxed text-neutral-700">{p}</p>
+              <p className="mb-4 leading-relaxed text-neutral-700">
+                <RichText text={p} />
+              </p>
               {inlineImages?.map((img, j) => (
                 <div key={j} className="my-6 w-full overflow-hidden rounded-xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -226,6 +233,32 @@ export default async function ArticlePage({
         </div>
       )}
 
+      {article.relatedFacilities && article.relatedFacilities.length > 0 && (
+        <div className="mt-10 rounded-xl border border-black/5 bg-teal-50 p-6">
+          <h2 className="font-heading text-lg font-bold text-purple-dark">
+            Places mentioned in this guide
+          </h2>
+          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            {article.relatedFacilities.map((f) => (
+              <li key={f.slug}>
+                <Link
+                  href={"/healthcare/hospitals/" + f.slug}
+                  className="text-sm font-semibold text-orange hover:underline"
+                >
+                  {f.name} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/healthcare/hospitals"
+            className="mt-4 inline-block text-sm font-semibold text-teal hover:underline"
+          >
+            Browse all {FACILITIES.length} hospitals, clinics and dentists →
+          </Link>
+        </div>
+      )}
+
       {article.faq && article.faq.length > 0 && (
         <div className="mt-10">
           <h2 className="font-heading text-xl font-bold text-purple-dark">
@@ -238,12 +271,24 @@ export default async function ArticlePage({
                   {f.question}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-                  {f.answer}
+                  <RichText text={f.answer} />
                 </p>
               </div>
             ))}
           </div>
         </div>
+      )}
+
+      {article.category === "Healthcare" && (
+        <p className="mt-10 text-xs leading-relaxed text-neutral-500">
+          This article is information, not medical advice. We are parents who
+          have lived here, not clinicians, and nothing here is a recommendation
+          to use or avoid any particular hospital, doctor, medication or
+          treatment. Prices, rules and services change, so confirm anything
+          important with the provider or the relevant authority before you rely
+          on it. In an emergency, Thailand&rsquo;s national ambulance number is
+          1669.
+        </p>
       )}
 
       <div className="mt-12 border-t border-black/10 pt-8">
