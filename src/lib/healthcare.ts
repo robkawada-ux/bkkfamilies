@@ -557,6 +557,46 @@ export const FACILITIES: Facility[] = [
     lastVerified: "2026-09-14",
   },
   {
+    slug: "nonthavej-hospital",
+    name: "Nonthavej Hospital",
+    thaiName: "โรงพยาบาลนนทเวช",
+    type: "private-hospital",
+    area: "Nonthaburi",
+    address: "432 Ngamwongwan Road, Bang Khen, Mueang Nonthaburi, Nonthaburi 11000",
+    nearestTransit: "No direct rail link, car access from Ngamwongwan Road",
+    description:
+      "A long-established private hospital in Nonthaburi with a dedicated pregnancy centre covering pre-pregnancy planning, antenatal care, delivery and postpartum support, plus a neonatal intensive care unit staffed by neonatologists. It matters to this directory mostly for geography: it is one of the main private hospitals serving Nonthaburi, which is where a large number of international school families live, particularly around Nichada Thani.",
+    worthKnowing:
+      "This is a Thai private hospital rather than an international one, so expect less English and less hand-holding than at the Sukhumvit hospitals, and expect to pay considerably less for the same routine care. It does not publish delivery package prices online, so call the pregnancy centre for a quote. For families out in Nonthaburi it is the practical everyday option, and the drive to Sukhumvit in an emergency is long enough that knowing what is nearby genuinely matters.",
+    services: [
+      "maternity",
+      "nicu",
+      "fertility",
+      "paediatrics",
+      "vaccinations",
+      "emergency-24h",
+      "family-medicine",
+    ],
+    languages: ["English"],
+    directBilling: "some",
+    maternity: {
+      packageNote:
+        "Nonthavej runs a dedicated pregnancy centre with antenatal classes, 4D ultrasound, high-risk pregnancy care and a NICU with neonatologists, but does not publish package prices online. Call for a quote, and ask what prenatal care costs separately from the delivery.",
+      packageUrl:
+        "https://www.nonthavej.co.th/quality-pregnancy-center-section-EN.php",
+      lastVerified: "2026-09-14",
+    },
+    paediatrics: {
+      separateChildrensEr: false,
+      lastVerified: "2026-09-14",
+    },
+    website: "https://www.nonthavej.co.th",
+    email: "contactus@nonthavej.co.th",
+    phone: "+66 2596 7888",
+    emergencyPhone: "+66 2951 8585",
+    lastVerified: "2026-09-14",
+  },
+  {
     slug: "saint-louis-hospital",
     name: "Saint Louis Hospital",
     type: "private-hospital",
