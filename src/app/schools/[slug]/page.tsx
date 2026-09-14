@@ -214,21 +214,33 @@ export default async function SchoolPage({
         </div>
       )}
 
-      {school.website ? (
-        <a
-          href={school.website}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-8 inline-block rounded-full bg-orange px-6 py-3 font-semibold text-white transition hover:opacity-90"
-        >
-          Visit official website
-        </a>
-      ) : (
-        <p className="mt-8 text-sm text-neutral-400">
-          Official website not yet listed, search the school name directly
-          to find it.
-        </p>
-      )}
+      <div className="mt-8 flex flex-wrap items-center gap-3">
+        {school.website ? (
+          <a
+            href={school.website}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block rounded-full bg-orange px-6 py-3 font-semibold text-white transition hover:opacity-90"
+          >
+            Visit official website
+          </a>
+        ) : (
+          <p className="text-sm text-neutral-400">
+            Official website not yet listed, search the school name directly
+            to find it.
+          </p>
+        )}
+        {school.virtualTour && (
+          <a
+            href={school.virtualTour}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block rounded-full border border-orange px-6 py-3 font-semibold text-orange transition hover:bg-orange hover:text-white"
+          >
+            Watch the campus tour
+          </a>
+        )}
+      </div>
 
       <div className="mt-12 border-t border-black/10 pt-8">
         <Link href="/schools" className="text-sm font-semibold text-orange">
