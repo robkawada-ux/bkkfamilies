@@ -5,3 +5,6 @@ out
 .DS_Store
 *.log
 tsconfig.tsbuildinfo
+
+# Local scratch from Claude sessions
+Claude outputs/
