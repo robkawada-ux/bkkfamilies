@@ -53,9 +53,15 @@ export interface CampSession {
   previousRun?: string;
   /** On the session, not the operator. A provider spans categories. */
   categories: CampCategory[];
-  /** Real numbers, not brackets, so the age filter can be a single input. */
-  minAge: number;
-  maxAge: number;
+  /**
+   * Real numbers, not brackets, so the age filter can be a single input.
+   * Omit BOTH when the operator genuinely does not publish an age range,
+   * the same rule as price. A session with no ages renders as "Age range
+   * not published" and is never hidden by the age filter, because hiding
+   * it would punish the parent for the operator's omission.
+   */
+  minAge?: number;
+  maxAge?: number;
   format: CampFormat;
   /** Baht. Omit all three when genuinely unpublished rather than guessing. */
   priceFrom?: number;
@@ -942,6 +948,60 @@ export const CAMPS: Camp[] = [
         venue: "iCamp Thailand, Kanchanaburi",
         note: "Seven day sessions. Includes a supervised water celebration over Songkran itself.",
         lastVerified: "2026-09-12",
+      },
+    ],
+  },
+  {
+    slug: "hoyhon-park-silom",
+    name: "HoyHon Park Silom",
+    area: "Bang Rak",
+    mainVenue: "Park Silom, 3rd floor, BTS Saladaeng exit 2",
+    photo: "/images/camps/hoyhon-october-2026.jpg",
+    photoAlt: "HoyHon promotional flyer for the October 2026 Acro and Aerial Camp, showing young children dancing under stage lights and making crafts at the Park Silom studio.",
+    photoCredit: "HoyHon and Kids Mindfulness Co., Ltd, used with permission",
+    photoCaption: "HoyHon's flyer for the October 2026 Acro and Aerial Camp, published September 2026.",
+    description:
+      "HoyHon is an aerial arts, pole and dance studio with branches at Park Silom and RCA. For the October break its Silom branch runs an Acro and Aerial Camp with Kids Mindfulness Co., Ltd, on a Halloween theme. The day alternates movement and making: an aerial or acro class in the morning, an hour of art after lunch, then a final class before four o'clock. Across the week that means silks and hoop, dance, stretching and contortion, acro gym, and on the art side tie dye, clay, painting, mask and ornament making and slime, finishing with a performance on the Friday. Lunch, snacks and drinks are included, and the studio is a two minute walk from Saladaeng BTS.",
+    worthKnowing:
+      "HoyHon does not publish an age range for the camp anywhere we can find, and its own booking system lists only adult classes, so the camp sits outside it. The children in the operator's own photographs look preschool to early primary, but that is our reading of a flyer rather than a stated policy, so ask before you book. The published programme grid covers both weeks rather than one each, which suggests the two weeks run the same five-day sequence; worth confirming if you are thinking of booking both. On the plus side this is one of the few camps with a genuine day rate, at 1,700 baht, and one of the few open on 13 and 23 October, which are both public holidays when most camps close.",
+    website: "https://app.hoyhon.com/ads/silom",
+    phone: "063 343 4055",
+    facebook: "https://www.facebook.com/p/Hoyhon-Park-Silom-61560942192144/",
+    lastVerified: "2026-09-16",
+    sessions: [
+      {
+        id: "hoyhon-oct-2026-w1",
+        programme: "October Acro and Aerial Camp",
+        window: "oct-2026",
+        startDate: "2026-10-12",
+        endDate: "2026-10-16",
+        dateStatus: "confirmed",
+        categories: ["sport-and-fitness", "art-and-design", "music-and-drama"],
+        format: "day",
+        priceFrom: 7900,
+        priceUnit: "per-week",
+        hours: "10am to 4pm",
+        minimumBooking: "1 day, at 1,700 baht",
+        lunchIncluded: true,
+        note: "Matches the Patana and St Andrews half term. Runs on 13 October, King Rama IX Memorial Day, when many camps close.",
+        lastVerified: "2026-09-16",
+      },
+      {
+        id: "hoyhon-oct-2026-w2",
+        programme: "October Acro and Aerial Camp",
+        window: "oct-2026",
+        startDate: "2026-10-19",
+        endDate: "2026-10-23",
+        dateStatus: "confirmed",
+        categories: ["sport-and-fitness", "art-and-design", "music-and-drama"],
+        format: "day",
+        priceFrom: 7900,
+        priceUnit: "per-week",
+        hours: "10am to 4pm",
+        minimumBooking: "1 day, at 1,700 baht",
+        lunchIncluded: true,
+        note: "Matches the King's College half term. Runs on 23 October, Chulalongkorn Day.",
+        lastVerified: "2026-09-16",
       },
     ],
   },

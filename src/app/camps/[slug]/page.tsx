@@ -317,7 +317,13 @@ export default async function CampPage({
                       <div>
                         <dt className="inline font-semibold">Ages: </dt>
                         <dd className="inline">
-                          {s.minAge} to {s.maxAge}
+                          {s.minAge !== undefined && s.maxAge !== undefined ? (
+                            `${s.minAge} to ${s.maxAge}`
+                          ) : (
+                            <span className="text-neutral-400">
+                              Not published, ask the operator
+                            </span>
+                          )}
                         </dd>
                       </div>
                       <div>

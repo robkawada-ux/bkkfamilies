@@ -83,8 +83,13 @@ export default function CampsDirectory() {
         category === "All" || s.categories.includes(category);
       const matchesArea = area === "All" || s.camp.area === area;
       const matchesFormat = format === "All" || s.format === format;
+      // A session whose operator publishes no age range always passes the
+      // age filter. Excluding it would hide a real camp for a gap that is
+      // the operator's, not the parent's.
       const matchesAge =
         ageNum === null ||
+        s.minAge === undefined ||
+        s.maxAge === undefined ||
         (Number.isFinite(ageNum) && ageNum >= s.minAge && ageNum <= s.maxAge);
       return (
         matchesQuery &&
@@ -285,7 +290,10 @@ export default function CampsDirectory() {
               </div>
 
               <p className="mt-3 text-xs text-neutral-500">
-                Ages {s.minAge} to {s.maxAge} &middot; {s.camp.area}
+                {s.minAge !== undefined && s.maxAge !== undefined
+                  ? `Ages ${s.minAge} to ${s.maxAge}`
+                  : "Age range not published"}{" "}
+                &middot; {s.camp.area}
               </p>
               <p className="mt-1 text-sm font-semibold text-neutral-700">
                 {cost ?? (
