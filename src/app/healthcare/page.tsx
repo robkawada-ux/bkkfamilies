@@ -80,7 +80,7 @@ export default function HealthcarePage() {
       <PageHero
         eyebrow={`${FACILITIES.length} places across ${ALL_AREAS.length} areas`}
         title="Healthcare in Bangkok"
-        subtitle="Working out where to have a baby, who to call at 2am, and what any of it costs is one of the hardest parts of moving here. Here is what we have checked."
+        subtitle="Working out where to have a baby, who to call at 2am with a fever, and what any of it costs is one of the hardest parts of moving here. We have made the searching easier below."
         color="teal"
       />
 
@@ -97,54 +97,74 @@ export default function HealthcarePage() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          <Link
-            href="/healthcare/hospitals"
-            className="block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <p className="font-heading text-3xl font-bold text-teal">
-              {FACILITIES.length}
-            </p>
-            <h2 className="mt-1 font-heading text-lg font-bold text-purple-dark">
-              Hospitals, clinics and dentists
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-              The full directory, filterable by what you need, where you are and
-              what kind of place it is.
-            </p>
-          </Link>
+        <div className="mt-12">
+          <h2 className="font-heading text-2xl font-bold text-purple-dark">
+            Search the directory
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600">
+            Pick whichever of these three is closest to what you need. Each one
+            opens a searchable list you can narrow by area, by service and by
+            the kind of place it is.
+          </p>
 
-          <Link
-            href="/healthcare/maternity"
-            className="block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <p className="font-heading text-3xl font-bold text-teal">
-              {MATERNITY_FACILITIES.length}
-            </p>
-            <h2 className="mt-1 font-heading text-lg font-bold text-purple-dark">
-              Places that deliver babies
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-              Every published delivery package price in one table, cheapest
-              first, plus what each package leaves out.
-            </p>
-          </Link>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            <Link
+              href="/healthcare/hospitals"
+              className="group flex flex-col rounded-xl border-2 border-teal/30 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-teal hover:shadow-md"
+            >
+              <p className="font-heading text-3xl font-bold text-teal">
+                {FACILITIES.length}
+              </p>
+              <h3 className="mt-1 font-heading text-lg font-bold text-purple-dark">
+                Hospitals, clinics and dentists
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
+                The full directory, filterable by what you need, where you are
+                and what kind of place it is.
+              </p>
+              <span className="mt-4 inline-block text-sm font-semibold text-orange group-hover:underline">
+                Search all {FACILITIES.length} →
+              </span>
+            </Link>
 
-          <Link
-            href="/healthcare/paediatrics"
-            className="block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <p className="font-heading text-3xl font-bold text-teal">
-              {PAEDIATRIC_FACILITIES.length}
-            </p>
-            <h2 className="mt-1 font-heading text-lg font-bold text-purple-dark">
-              Paediatric services
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-              Including which hospitals have a children&rsquo;s emergency
-              department staffed by paediatricians, and which do not.
-            </p>
-          </Link>
+            <Link
+              href="/healthcare/maternity"
+              className="group flex flex-col rounded-xl border-2 border-teal/30 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-teal hover:shadow-md"
+            >
+              <p className="font-heading text-3xl font-bold text-teal">
+                {MATERNITY_FACILITIES.length}
+              </p>
+              <h3 className="mt-1 font-heading text-lg font-bold text-purple-dark">
+                Places that deliver babies
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
+                Every published delivery package price in one table, cheapest
+                first, plus what each package leaves out.
+              </p>
+              <span className="mt-4 inline-block text-sm font-semibold text-orange group-hover:underline">
+                Compare delivery prices →
+              </span>
+            </Link>
+
+            <Link
+              href="/healthcare/paediatrics"
+              className="group flex flex-col rounded-xl border-2 border-teal/30 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-teal hover:shadow-md"
+            >
+              <p className="font-heading text-3xl font-bold text-teal">
+                {PAEDIATRIC_FACILITIES.length}
+              </p>
+              <h3 className="mt-1 font-heading text-lg font-bold text-purple-dark">
+                Paediatric services
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
+                Including which hospitals have a children&rsquo;s emergency
+                department staffed by paediatricians, and which do not.
+              </p>
+              <span className="mt-4 inline-block text-sm font-semibold text-orange group-hover:underline">
+                Find care for a child →
+              </span>
+            </Link>
+          </div>
         </div>
 
         {pillars.length > 0 && (
