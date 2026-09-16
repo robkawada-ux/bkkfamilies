@@ -84,8 +84,8 @@ const jsonLd = [
   },
 ];
 
-function baht(n?: number): string {
-  return typeof n === "number" ? `฿${n.toLocaleString()}` : "Not published";
+function baht(n: number): string {
+  return `฿${n.toLocaleString()}`;
 }
 
 export default function MaternityPage() {
@@ -94,9 +94,14 @@ export default function MaternityPage() {
   ).sort(
     (a, b) => (a.maternity!.packageFrom ?? 0) - (b.maternity!.packageFrom ?? 0)
   );
+  /**
+   * Every hospital that delivers babies gets a row, priced or not. Hiding the
+   * unpriced ones in a footnote below the table made them effectively
+   * invisible, which is how a hospital already in the directory looked missing.
+   */
   const unpriced = MATERNITY_FACILITIES.filter(
     (f) => typeof f.maternity?.packageFrom !== "number"
-  );
+  ).sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <>
@@ -120,10 +125,10 @@ export default function MaternityPage() {
             never shows up in a search, and at least one will not publish at all.
           </p>
           <p>
-            So here they are together. Cheapest first, with the date each was
-            checked and a link to the page it came from on every entry. Then the
-            part that matters more than the headline price, which is what each
-            package leaves out.
+            So here they are together, cheapest first, with the date each price
+            was checked and a link to the page it came from. Then the part that
+            matters more than the headline price, which is what each package
+            leaves out.
           </p>
         </div>
 
@@ -158,7 +163,7 @@ export default function MaternityPage() {
                   </td>
                   <td className="py-2.5 pr-4 text-neutral-600">{f.area}</td>
                   <td className="py-2.5 pr-4 font-semibold text-neutral-800">
-                    {baht(f.maternity?.packageFrom)}
+                    {baht(f.maternity!.packageFrom!)}
                   </td>
                   <td className="py-2.5 text-neutral-600">
                     {f.maternity?.packageTo
@@ -171,27 +176,47 @@ export default function MaternityPage() {
           </table>
         </div>
 
+        <p className="mx-auto mt-4 max-w-3xl text-xs leading-relaxed text-neutral-500">
+          Prices are each hospital&rsquo;s own published figure for an
+          uncomplicated birth, read from their package page and dated on their
+          entry. Only hospitals that publish a price appear above.
+        </p>
+
         {unpriced.length > 0 && (
-          <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-neutral-600">
-            These hospitals deliver babies but have no package price in the table
-            above:{" "}
-            {unpriced.map((f, i) => (
-              <span key={f.slug}>
-                {i > 0 && ", "}
-                <Link
-                  href={`/healthcare/hospitals/${f.slug}`}
-                  className="font-semibold text-teal hover:underline"
-                >
-                  {f.name}
-                </Link>
-              </span>
-            ))}
-            . BNH markets a maternity package and quotes on enquiry rather than
-            publishing a figure. For the others we have simply not confirmed a
-            published package yet, which is a gap in our research rather than
-            anything about the hospital. Call them, and tell us what they say so
-            we can add it.
-          </p>
+          <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-black/5 bg-neutral-50 p-6">
+            <h2 className="font-heading text-lg font-bold text-purple-dark">
+              Also deliver babies, but do not publish a price
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+              These {unpriced.length} are not in the table because there is no
+              figure to put in it. They are worth calling, particularly if one is
+              near you, since an unpublished price is not the same as a high one.
+            </p>
+            <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+              {unpriced.map((f) => (
+                <li key={f.slug}>
+                  <Link
+                    href={`/healthcare/hospitals/${f.slug}`}
+                    className="text-sm font-semibold text-teal hover:underline"
+                  >
+                    {f.name}
+                  </Link>
+                  <span className="block text-xs text-neutral-500">
+                    {f.area}
+                    {f.maternity?.pricing === "on-enquiry"
+                      ? " · quotes on enquiry"
+                      : " · not yet confirmed by us"}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-xs leading-relaxed text-neutral-500">
+              &ldquo;Quotes on enquiry&rdquo; means we checked and the hospital
+              does not publish. &ldquo;Not yet confirmed&rdquo; means we have not
+              finished checking, which is on us rather than on them. If you get a
+              quote from any of these, send it over and we will add it.
+            </p>
+          </div>
         )}
 
         <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-orange/30 bg-orange-50 p-6">

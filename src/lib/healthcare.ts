@@ -60,7 +60,16 @@ export type Service =
  */
 export type DirectBilling = "most" | "some" | "none" | "unknown";
 
+/**
+ * Why a hospital has no price in the comparison table. These are not the
+ * same thing and the table must not conflate them: "on-enquiry" is a choice
+ * the hospital made, "unverified" is unfinished work on our side.
+ */
+export type MaternityPricing = "published" | "on-enquiry" | "unverified";
+
 export interface MaternityInfo {
+  /** Defaults to "published" when packageFrom is set, "unverified" when not. */
+  pricing?: MaternityPricing;
   /** Baht, published package for an uncomplicated vaginal delivery. */
   packageFrom?: number;
   /** Baht, top of the published range, normally the caesarean package. */
@@ -327,6 +336,7 @@ export const FACILITIES: Facility[] = [
     languages: ["English"],
     directBilling: "most",
     maternity: {
+      pricing: "on-enquiry",
       packageNote:
         "BNH markets an all-inclusive maternity package but does not publish the price online, directing enquiries to staff instead. Call the Women's Health Centre on +662 022 0700 extension 4455 or 4456 for a written quote.",
       packageUrl: "https://www.bnhhospital.com/delivery-care/",
@@ -580,6 +590,7 @@ export const FACILITIES: Facility[] = [
     languages: ["English"],
     directBilling: "some",
     maternity: {
+      pricing: "on-enquiry",
       packageNote:
         "Nonthavej runs a dedicated pregnancy centre with antenatal classes, 4D ultrasound, high-risk pregnancy care and a NICU with neonatologists, but does not publish package prices online. Call for a quote, and ask what prenatal care costs separately from the delivery.",
       packageUrl:
