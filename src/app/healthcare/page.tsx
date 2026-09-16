@@ -8,27 +8,77 @@ import {
   FACILITIES,
   MATERNITY_FACILITIES,
   PAEDIATRIC_FACILITIES,
+  ALL_AREAS,
   EMERGENCY_NUMBER,
 } from "@/lib/healthcare";
 
 const TITLE = "Healthcare for Families in Bangkok";
 const DESCRIPTION =
-  "Hospitals, maternity care, paediatrics, clinics and dentists for expat families in Bangkok, with real prices and honest write-ups.";
+  "Hospitals, maternity, paediatrics, clinics, dentists and mental health support for expat families in Bangkok, with published prices where they exist and honest write-ups where they do not.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/healthcare" },
+  alternates: { canonical: "https://www.bkkfamilies.com/healthcare" },
   title: TITLE,
   description: DESCRIPTION,
   openGraph: og({ title: TITLE, description: DESCRIPTION, path: "/healthcare" }),
 };
 
+const SITE = "https://www.bkkfamilies.com";
+
+/** Two pieces carry this section. Everything else is supporting. */
+const PILLARS = ["having-a-baby-in-bangkok", "bangkok-smog-season-kids"];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Healthcare",
+        item: `${SITE}/healthcare`,
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Healthcare resources for families in Bangkok",
+    itemListElement: [
+      { name: "Hospitals, clinics and dentists", path: "/healthcare/hospitals" },
+      { name: "Having a baby in Bangkok", path: "/healthcare/maternity" },
+      { name: "Paediatric care in Bangkok", path: "/healthcare/paediatrics" },
+    ].map((x, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: x.name,
+      url: `${SITE}${x.path}`,
+    })),
+  },
+];
+
 export default function HealthcarePage() {
   const articles = ARTICLES.filter((a) => a.category === "Healthcare");
+  const pillars = PILLARS.map((s) => articles.find((a) => a.slug === s)).filter(
+    (a): a is NonNullable<typeof a> => Boolean(a)
+  );
+  const rest = articles.filter((a) => !PILLARS.includes(a.slug));
+
+  const dental = FACILITIES.filter((f) => f.services.includes("dental"));
+  const mentalHealth = FACILITIES.filter((f) =>
+    f.services.includes("mental-health")
+  );
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PageHero
-        eyebrow="Trust is a primary concern"
+        eyebrow={`${FACILITIES.length} places across ${ALL_AREAS.length} areas`}
         title="Healthcare in Bangkok"
         subtitle="Working out where to have a baby, who to call at 2am, and what any of it costs is one of the hardest parts of moving here. Here is what we have checked."
         color="teal"
@@ -59,13 +109,13 @@ export default function HealthcarePage() {
               Hospitals, clinics and dentists
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-              Filterable by what you need, where you are and what kind of place
-              it is. Every entry says what it is good at and what it is not.
+              The full directory, filterable by what you need, where you are and
+              what kind of place it is.
             </p>
           </Link>
 
           <Link
-            href="/healthcare/hospitals"
+            href="/healthcare/maternity"
             className="block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <p className="font-heading text-3xl font-bold text-teal">
@@ -75,13 +125,13 @@ export default function HealthcarePage() {
               Places that deliver babies
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-              With published package prices side by side, so you can see what a
-              birth actually costs before you choose a hospital.
+              Every published delivery package price in one table, cheapest
+              first, plus what each package leaves out.
             </p>
           </Link>
 
           <Link
-            href="/healthcare/hospitals"
+            href="/healthcare/paediatrics"
             className="block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <p className="font-heading text-3xl font-bold text-teal">
@@ -97,18 +147,139 @@ export default function HealthcarePage() {
           </Link>
         </div>
 
-        {articles.length > 0 && (
+        {pillars.length > 0 && (
           <div className="mt-16">
             <h2 className="font-heading text-2xl font-bold text-purple-dark">
-              Reading
+              Start here
+            </h2>
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              {pillars.map((a) => (
+                <Link
+                  key={a.slug}
+                  href={`/blog/${a.slug}`}
+                  className="block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <h3 className="font-heading text-xl font-bold text-purple-dark">
+                    {a.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                    {a.excerpt}
+                  </p>
+                  <span className="mt-4 inline-block text-sm font-semibold text-orange">
+                    Read it →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="mt-16 grid gap-5 md:grid-cols-2">
+          <div className="rounded-xl border border-black/5 bg-neutral-50 p-6">
+            <h2 className="font-heading text-lg font-bold text-purple-dark">
+              Dentists
+            </h2>
+            <p className="mt-1 text-sm text-neutral-600">
+              Bangkok dental is cheap and good, so the mistake is saving it for a
+              trip home.
+            </p>
+            <ul className="mt-4 space-y-1.5">
+              {dental.map((f) => (
+                <li key={f.slug}>
+                  <Link
+                    href={`/healthcare/hospitals/${f.slug}`}
+                    className="text-sm font-semibold text-teal hover:underline"
+                  >
+                    {f.name}
+                  </Link>
+                  <span className="ml-2 text-xs text-neutral-500">{f.area}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/blog/dental-health-for-families-in-bangkok"
+              className="mt-4 inline-block text-sm font-semibold text-orange hover:underline"
+            >
+              What it actually costs →
+            </Link>
+          </div>
+
+          <div className="rounded-xl border border-black/5 bg-neutral-50 p-6">
+            <h2 className="font-heading text-lg font-bold text-purple-dark">
+              Mental health
+            </h2>
+            <p className="mt-1 text-sm text-neutral-600">
+              Including services that see children and adolescents, not only
+              adults.
+            </p>
+            <ul className="mt-4 space-y-1.5">
+              {mentalHealth.map((f) => (
+                <li key={f.slug}>
+                  <Link
+                    href={`/healthcare/hospitals/${f.slug}`}
+                    className="text-sm font-semibold text-teal hover:underline"
+                  >
+                    {f.name}
+                  </Link>
+                  <span className="ml-2 text-xs text-neutral-500">{f.area}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/learning-support"
+              className="mt-4 inline-block text-sm font-semibold text-orange hover:underline"
+            >
+              For developmental and educational support, see Learning Support →
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-16 rounded-xl border border-black/5 bg-teal-50 p-6">
+          <h2 className="font-heading text-lg font-bold text-purple-dark">
+            Where we cover
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+            {ALL_AREAS.length} areas across Bangkok and Nonthaburi, because in
+            this city the right hospital is often just the good one you can
+            actually reach: {ALL_AREAS.join(", ")}.
+          </p>
+          <Link
+            href="/healthcare/hospitals"
+            className="mt-4 inline-block rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+          >
+            Filter the directory by area
+          </Link>
+        </div>
+
+        {rest.length > 0 && (
+          <div className="mt-16">
+            <h2 className="font-heading text-2xl font-bold text-purple-dark">
+              More reading
             </h2>
             <div className="mt-6 grid gap-6 md:grid-cols-3">
-              {articles.map((a) => (
+              {rest.map((a) => (
                 <ArticleCard key={a.slug} article={a} />
               ))}
             </div>
           </div>
         )}
+
+        <div className="mt-16 rounded-xl border border-black/5 bg-neutral-50 p-6">
+          <h2 className="font-heading text-lg font-bold text-purple-dark">
+            Know somewhere we have missed?
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+            This directory grows from what families actually tell us. If your
+            paediatrician, clinic or dentist should be here, or something listed
+            is out of date, send it over. Listing is free and always will be.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-4 inline-block rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+          >
+            Tell us about a provider
+          </Link>
+        </div>
 
         <p className="mx-auto mt-16 max-w-3xl text-xs leading-relaxed text-neutral-500">
           Everything in this section is information, not medical advice. We are

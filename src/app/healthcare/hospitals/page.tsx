@@ -29,28 +29,24 @@ const SITE = "https://www.bkkfamilies.com";
 
 const FAQ = [
   {
-    q: "How much does it cost to have a baby in Bangkok?",
-    a: "At a private hospital the published packages run from about 49,000 baht at the cheapest end to 230,000 or more for the premium packages at the international hospitals, with most mainstream options landing between 110,000 and 155,000 for a normal delivery or caesarean. Those are package prices for an uncomplicated birth. Complications, a longer stay, and anything the baby needs are almost always outside the package, which is the single most common source of a bill that is larger than expected.",
-  },
-  {
-    q: "Which hospital should I choose for the birth?",
-    a: "The honest answer is that for a straightforward pregnancy most of the private hospitals in this directory will deliver your baby safely, so the real variables are the obstetrician you click with, how far you are willing to travel in labour, and how much you want to pay. Where it stops being a matter of preference is if the pregnancy is high risk or the baby may need intensive care, in which case go where the NICU is, and ask directly what level of neonatal care the hospital can provide without transferring.",
+    q: "How do I choose between all of these?",
+    a: "Start by narrowing on three things: how far it is in the traffic you will actually be in rather than on an empty Sunday, whether your insurer settles directly with them, and how much English-language hand-holding you need right now. That usually leaves two or three realistic candidates rather than thirty. It also helps to accept that you are choosing two hospitals, an everyday one picked for convenience and an emergency one picked for capability, and that they are often not the same building.",
   },
   {
     q: "Will my insurance be billed directly?",
     a: "At the big international hospitals, usually yes, through their international patient desk. At mid-market Thai private hospitals it depends on a shorter panel of insurers, and at small clinics you should expect to pay and claim back. Confirm before admission rather than on the day, and be aware that maternity in particular usually carries a waiting period of ten to twelve months or longer, so a policy bought after conception will not cover the birth.",
   },
   {
-    q: "Where do I take a sick child at 2am?",
-    a: "Any of the 24-hour hospitals in this directory will see a child, but there is a real difference between a hospital that sees children in its general emergency department and one with a paediatric emergency department staffed by paediatricians. In Bangkok the dedicated children's emergency services are at Samitivej's children's hospital in Srinakarin and at the national children's hospital in Ratchathewi. For anything genuinely critical, the national ambulance number is 1669.",
+    q: "What is the difference between the hospital types here?",
+    a: "International hospitals are built around foreign patients, with interpreters, an international desk and prices to match. Private hospitals are the mainstream Thai private sector, usually excellent and considerably cheaper, with English that varies by department. Specialist hospitals do one thing, such as children or psychiatry. Public hospitals are where the deepest expertise often sits, and also where the queues and the language barrier are, so they are mostly a referral destination rather than an everyday option. Clinics handle the routine things that do not need a hospital at all.",
   },
   {
     q: "Do I need to speak Thai?",
     a: "Not at the international hospitals, where English is routine and several also work in Japanese, Arabic and Mandarin. At mid-market private hospitals English is usually available but patchier by department, and at public hospitals you should not rely on it. The gap in cost between an international hospital and a good Thai private hospital is substantially a gap in how much translation and hand-holding is included.",
   },
   {
-    q: "Why are some prices missing?",
-    a: "Because the hospital does not publish them. BNH markets an all-inclusive maternity package but quotes only on enquiry, so we show that plainly rather than filling the gap with an estimate. A wrong number on a maternity package is worse than no number at all. Every price here was read from the hospital's own published page, and each entry links to the page it came from.",
+    q: "How current is this?",
+    a: "Every entry carries the date we last checked it, and so does each maternity package price separately, because prices move on a different cycle from phone numbers. Anything older than sixty days shows a warning on its page. Prices were read from each provider's own published page and each entry links to the page it came from, so you can check our working. Where a provider does not publish something we say so rather than estimating.",
   },
 ];
 
@@ -97,20 +93,7 @@ const jsonLd = [
   },
 ];
 
-function baht(n?: number): string {
-  return typeof n === "number" ? `฿${n.toLocaleString()}` : "Not published";
-}
-
 export default function HospitalsPage() {
-  const priced = MATERNITY_FACILITIES.filter(
-    (f) => typeof f.maternity?.packageFrom === "number"
-  ).sort(
-    (a, b) => (a.maternity!.packageFrom ?? 0) - (b.maternity!.packageFrom ?? 0)
-  );
-  const unpriced = MATERNITY_FACILITIES.filter(
-    (f) => typeof f.maternity?.packageFrom !== "number"
-  );
-
   return (
     <>
       <script
@@ -160,79 +143,38 @@ export default function HospitalsPage() {
           <HealthcareDirectory />
         </div>
 
-        <div className="mx-auto mt-16 max-w-3xl">
-          <h2 className="font-heading text-2xl font-bold text-purple-dark">
-            What it costs to have a baby
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-            Published delivery package prices, cheapest first. These are the
-            hospitals&rsquo; own figures for an uncomplicated birth, read from
-            their package pages. Anything that goes wrong, and almost anything
-            the baby needs beyond routine newborn care, sits outside the
-            package.
-          </p>
-
-          <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[34rem] border-collapse text-sm">
-              <thead>
-                <tr className="border-b-2 border-purple-dark text-left">
-                  <th className="py-2 pr-4 font-heading font-bold text-purple-dark">
-                    Hospital
-                  </th>
-                  <th className="py-2 pr-4 font-heading font-bold text-purple-dark">
-                    Area
-                  </th>
-                  <th className="py-2 pr-4 font-heading font-bold text-purple-dark">
-                    From
-                  </th>
-                  <th className="py-2 font-heading font-bold text-purple-dark">
-                    Up to
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {priced.map((f) => (
-                  <tr key={f.slug} className="border-b border-black/5">
-                    <td className="py-2.5 pr-4">
-                      <Link
-                        href={`/healthcare/hospitals/${f.slug}`}
-                        className="font-semibold text-teal hover:underline"
-                      >
-                        {f.name}
-                      </Link>
-                    </td>
-                    <td className="py-2.5 pr-4 text-neutral-600">{f.area}</td>
-                    <td className="py-2.5 pr-4 font-semibold text-neutral-800">
-                      {baht(f.maternity?.packageFrom)}
-                    </td>
-                    <td className="py-2.5 text-neutral-600">
-                      {f.maternity?.packageTo
-                        ? baht(f.maternity.packageTo)
-                        : "One package only"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {unpriced.length > 0 && (
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600">
-              Quoting on enquiry rather than publishing a price:{" "}
-              {unpriced.map((f, i) => (
-                <span key={f.slug}>
-                  {i > 0 && ", "}
-                  <Link
-                    href={`/healthcare/hospitals/${f.slug}`}
-                    className="font-semibold text-teal hover:underline"
-                  >
-                    {f.name}
-                  </Link>
-                </span>
-              ))}
-              .
+        <div className="mx-auto mt-16 grid max-w-3xl gap-5 md:grid-cols-2">
+          <Link
+            href="/healthcare/maternity"
+            className="block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <p className="font-heading text-3xl font-bold text-teal">
+              {MATERNITY_FACILITIES.length}
             </p>
-          )}
+            <h2 className="mt-1 font-heading text-lg font-bold text-purple-dark">
+              Hospitals that deliver babies
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+              With every published delivery package price in one table, cheapest
+              first, and the exclusions that decide your actual bill.
+            </p>
+          </Link>
+
+          <Link
+            href="/healthcare/paediatrics"
+            className="block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <p className="font-heading text-3xl font-bold text-teal">
+              {PAEDIATRIC_FACILITIES.length}
+            </p>
+            <h2 className="mt-1 font-heading text-lg font-bold text-purple-dark">
+              Paediatric services
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+              Including which hospitals have a children&rsquo;s emergency
+              department staffed by paediatricians, and which do not.
+            </p>
+          </Link>
         </div>
 
         <div className="mx-auto mt-16 max-w-3xl">
