@@ -239,6 +239,12 @@ export default function MaternityPage() {
           >
             Read the full guide, including the five questions to ask
           </Link>
+          <Link
+            href="/healthcare/insurance#maternity"
+            className="mt-3 inline-block text-sm font-semibold text-teal hover:underline sm:ml-4"
+          >
+            Will insurance pay? Check the waiting period →
+          </Link>
         </div>
 
         <div id="directory" className="mt-16 scroll-mt-28">

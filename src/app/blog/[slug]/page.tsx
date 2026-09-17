@@ -29,7 +29,6 @@ const OG_CARDS = new Set([
   "having-a-baby-in-bangkok",
   "bangkok-smog-season-kids",
   "pharmacies-in-thailand-guide",
-  "health-insurance-expat-families-bangkok",
   "heatstroke-thailand-hot-season",
 ]);
 

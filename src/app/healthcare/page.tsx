@@ -4,6 +4,7 @@ import { og } from "@/lib/seo";
 import PageHero from "@/components/ui/PageHero";
 import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
+import { INSURERS } from "@/lib/insurance";
 import {
   FACILITIES,
   MATERNITY_FACILITIES,
@@ -50,6 +51,7 @@ const jsonLd = [
       { name: "Hospitals, clinics and dentists", path: "/healthcare/hospitals" },
       { name: "Having a baby in Bangkok", path: "/healthcare/maternity" },
       { name: "Paediatric care in Bangkok", path: "/healthcare/paediatrics" },
+      { name: "Health insurance in Thailand", path: "/healthcare/insurance" },
     ].map((x, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -166,6 +168,34 @@ export default function HealthcarePage() {
             </Link>
           </div>
         </div>
+
+        {/*
+          Insurance gets its own boxed entry rather than a fourth card: it is
+          a different kind of decision from choosing a hospital, and the slot
+          is where a future section sponsor would sit.
+        */}
+        <Link
+          href="/healthcare/insurance"
+          className="group mt-10 flex flex-col gap-4 rounded-2xl border-2 border-purple/30 bg-purple-50 p-6 transition hover:-translate-y-0.5 hover:border-purple hover:shadow-md md:flex-row md:items-center md:justify-between md:p-8"
+        >
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-purple">
+              Health insurance
+            </p>
+            <h2 className="mt-1 font-heading text-2xl font-bold text-purple-dark">
+              Need health insurance answers?
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-700">
+              Local or international, what Social Security does and does not
+              cover, real prices where anyone publishes them, and reviews of{" "}
+              {INSURERS.length} insurers and brokers, from Pacific Cross and
+              LUMA to Cigna and AIA.
+            </p>
+          </div>
+          <span className="inline-block shrink-0 self-start rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition group-hover:opacity-90 md:self-center">
+            Compare insurance options →
+          </span>
+        </Link>
 
         {pillars.length > 0 && (
           <div className="mt-16">

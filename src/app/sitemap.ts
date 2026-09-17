@@ -4,6 +4,7 @@ import { CAMPS } from "@/lib/camps";
 import { ARTICLES } from "@/lib/articles";
 import { PROVIDERS } from "@/lib/learningSupport";
 import { FACILITIES } from "@/lib/healthcare";
+import { INSURERS } from "@/lib/insurance";
 
 export const baseUrl = "https://www.bkkfamilies.com";
 
@@ -26,6 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/healthcare/paediatrics`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/healthcare/insurance`,
+      lastModified: new Date("2026-09-17"),
       changeFrequency: "weekly",
       priority: 0.9,
     },
@@ -79,6 +86,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const insurancePages: MetadataRoute.Sitemap = INSURERS.map((i) => ({
+    url: `${baseUrl}/healthcare/insurance/${i.slug}`,
+    lastModified: new Date(i.lastVerified),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   return [
     ...staticPages,
     ...articlePages,
@@ -86,5 +100,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...learningSupportPages,
     ...campPages,
     ...healthcarePages,
+    ...insurancePages,
   ];
 }

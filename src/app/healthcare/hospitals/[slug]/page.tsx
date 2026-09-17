@@ -413,7 +413,13 @@ export default async function FacilityPage({
                   {BILLING_LABEL[facility.directBilling]}
                   {facility.directBillingNote
                     ? `. ${facility.directBillingNote}`
-                    : ""}
+                    : ""}{" "}
+                  <Link
+                    href="/healthcare/insurance"
+                    className="font-semibold text-teal hover:underline"
+                  >
+                    Compare health insurance
+                  </Link>
                 </dd>
               </div>
             )}
