@@ -133,8 +133,8 @@ export default function LearningSupportPage() {
             Finding help in Bangkok is harder than it should be. The good
             providers do not advertise much, the directories that exist are
             mostly paid listings, and the difference between a speech therapist
-            and a speech and drama class is not obvious until you have wasted a
-            term on the wrong one. So we built this: every learning support
+            and a speech and drama class is not obvious until you have wasted
+            both time and money on the wrong one. So we built this: every learning support
             provider we could verify, described in plain language, with the
             caveats included rather than removed.
           </p>
