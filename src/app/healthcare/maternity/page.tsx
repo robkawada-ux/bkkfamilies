@@ -89,10 +89,15 @@ function baht(n: number): string {
 }
 
 export default function MaternityPage() {
+  /**
+   * Most expensive first. The international hospitals are the names families
+   * arrive already knowing, so the table starts where their expectations are
+   * and works down to what the same birth costs elsewhere.
+   */
   const priced = MATERNITY_FACILITIES.filter(
     (f) => typeof f.maternity?.packageFrom === "number"
   ).sort(
-    (a, b) => (a.maternity!.packageFrom ?? 0) - (b.maternity!.packageFrom ?? 0)
+    (a, b) => (b.maternity!.packageFrom ?? 0) - (a.maternity!.packageFrom ?? 0)
   );
   /**
    * Every hospital that delivers babies gets a row, priced or not. Hiding the
@@ -125,10 +130,10 @@ export default function MaternityPage() {
             never shows up in a search, and at least one will not publish at all.
           </p>
           <p>
-            So here they are together, cheapest first, with the date each price
-            was checked and a link to the page it came from. Then the part that
-            matters more than the headline price, which is what each package
-            leaves out.
+            So here they are together, most expensive first, with the date each
+            price was checked and a link to the page it came from. Then the part
+            that matters more than the headline price, which is what each
+            package leaves out.
           </p>
         </div>
 

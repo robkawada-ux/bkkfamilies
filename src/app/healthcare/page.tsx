@@ -140,8 +140,9 @@ export default function HealthcarePage() {
                 Places that deliver babies
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
-                Every published delivery package price in one table, cheapest
-                first, plus what each package leaves out.
+                Every published delivery package price in one table, the
+                international hospitals first, plus what each package leaves
+                out.
               </p>
               <span className="mt-4 inline-block text-sm font-semibold text-orange group-hover:underline">
                 Compare delivery prices →

@@ -155,8 +155,9 @@ export default function HospitalsPage() {
               Hospitals that deliver babies
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-              With every published delivery package price in one table, cheapest
-              first, and the exclusions that decide your actual bill.
+              With every published delivery package price in one table, the
+              international hospitals first, and the exclusions that decide your
+              actual bill.
             </p>
           </Link>
 
