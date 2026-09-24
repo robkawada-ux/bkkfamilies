@@ -19,6 +19,7 @@ const SCHEMA_TYPE: Record<ProviderCategory, string> = {
   "Enrichment & general learning": "EducationalOrganization",
   "Government service": "GovernmentOrganization",
   "Parent support": "Organization",
+  "Special Needs Support and Consultancy": "EducationalOrganization",
 };
 
 export function generateStaticParams() {
