@@ -33,7 +33,8 @@ export type ProviderCategory =
   | "Parent support"
   | "Hospital clinic"
   | "Government service"
-  | "Enrichment & general learning";
+  | "Enrichment & general learning"
+  | "Special Needs Support and Consultancy";
 
 export type Delivery = "At a centre" | "In school" | "At home" | "Online";
 
@@ -463,8 +464,8 @@ export const PROVIDERS: Provider[] = [
   },
   {
     slug: "no-limits",
-    name: "No Limits",
-    category: "ABA & behaviour support",
+    name: "No Limits Community Services",
+    category: "Special Needs Support and Consultancy",
     area: "Watthana",
     address:
       "Muban Kasem Samran 2 Soi 5, Phra Khanong Nuea, Watthana, Bangkok 10110",
@@ -472,11 +473,11 @@ export const PROVIDERS: Provider[] = [
     languages: ["English", "Thai"],
     delivery: ["At a centre", "In school", "At home"],
     services: [
-      "Centre-based social skills and sensory programmes",
-      "In-home support and respite",
-      "School partnerships and in-class support",
-      "Family training workshops",
-      "Early childhood intervention",
+      "Ready2Learn small-group programme",
+      "1:1 specialist support at our centre, at home and in the community",
+      "Parent training and consultations",
+      "School workshops and training",
+      "Individual learner profiles",
     ],
     tags: [
       "Autism",
@@ -492,7 +493,7 @@ export const PROVIDERS: Provider[] = [
     phone: "+66 63 331 9266",
     email: "info@nolimitscs.com",
     description:
-      "No Limits provides SEND support for children with autism, ADHD and other developmental differences, working across its own centre, families' homes and partner schools. The offer covers social skills and sensory programmes, early intervention, behaviour and social development support, and family training.\n\nThe in-home and respite element is the part parents should notice. Respite is badly under-supplied in Bangkok, and a service that will come to your home rather than requiring you to get a dysregulated child across the city is worth a lot. They cover Sukhumvit, Thong Lo, Ekkamai, Phrom Phong, Asok, Silom, Sathorn and the surrounding areas, in English and Thai.",
+      "No Limits Community Services is an inclusive support centre in Bangkok for children with additional needs and developmental differences. Our specialist-led Ready2Learn programme offers a small-group setting focused on communication, independence, play, social connection and emotional regulation for primary aged children. We also provide individual 1:1 specialist support at our centre, at home and in the community, tailored to each child and family.",
     checked: "September 2026",
   },
   {
