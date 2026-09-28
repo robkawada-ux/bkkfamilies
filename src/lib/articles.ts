@@ -936,12 +936,53 @@ export const ARTICLES: Article[] = [
     slug: "top-museums-for-kids-in-bangkok",
     title: "Top Museums for Kids in Bangkok",
     category: "Activities",
-    date: "2026-02-18",
+    date: "2026-08-20",
+    metaDescription:
+      "The Bangkok museums that actually work with kids, what they cost, and what is closed right now, including the October 2026 closure of both free children's museums and the planetarium renovation.",
+    keywords: ["museums for kids Bangkok", "Bangkok museums with children", "Children's Discovery Museum Bangkok", "Bangkok children's museum closed", "Bangkok Planetarium", "Museum Siam kids", "National Science Museum Thailand", "Royal Thai Air Force Museum", "Ancient City Muang Boran kids", "free museums Bangkok", "rainy day Bangkok kids"],
     excerpt:
-      "Educational, air-conditioned, and genuinely fun — Bangkok's kid-focused museums are an underrated family outing.",
+      "Free, air conditioned and built for children, Bangkok's best museums are an underrated family outing. Here is what is open, what it costs, and what is closed right now.",
+    headings: [
+      { beforeParagraph: 1, text: "Before you go: what is closed right now" },
+      { beforeParagraph: 2, text: "Best for younger children" },
+      { beforeParagraph: 5, text: "Best for school age kids" },
+      { beforeParagraph: 8, text: "Worth a half day trip" },
+      { beforeParagraph: 10, text: "Also worth knowing" },
+      { beforeParagraph: 12, text: "Practical tips" },
+    ],
+    faq: [
+      {
+        question: "Is the Children's Discovery Museum in Bangkok open?",
+        answer: "Both Bangkok children's museums, in Chatuchak and Thung Khru, close from 1 October 2026 while the city appoints a new operator. The city has said the closure is temporary but has not given a reopening date, so check before you go.",
+      },
+      {
+        question: "Which Bangkok museums are free for kids?",
+        answer: "The two Children's Discovery Museums (when open), the Royal Thai Air Force Museum and the Bangkok Art and Culture Centre are free. Museum Siam has historically let children under 15 in free, and the Science Centre for Education in Ekkamai costs only a few tens of baht.",
+      },
+      {
+        question: "Is the Bangkok Planetarium open?",
+        answer: "The planetarium dome closed on 30 March 2026 for a renovation of about eight months, with reopening expected late in 2026. The rest of the Science Centre for Education, including its dinosaur, marine life and insect exhibitions, stays open.",
+      },
+      {
+        question: "Are Bangkok museums open on Mondays?",
+        answer: "Mostly not. Nearly every museum on this list closes on Mondays, and several also close on Thai public holidays. The Ancient City in Samut Prakan is the main exception and opens daily.",
+      },
+    ],
     body: [
-      "The Children's Discovery Museum remains the anchor for younger kids, with hands-on science and art exhibits built specifically for their age group. For older kids, the Museum of Siam does a great job making Thai history interactive rather than a lecture.",
-      "The Grand Palace and Wat Phra Kaew are worth the trip even with younger kids in tow, though the heat means an early-morning visit is far more manageable than a midday one.",
+      "Bangkok is better for museums with kids than its reputation suggests. Several of the best options are free, most are air conditioned, and a few are built from the ground up for children rather than adapted for them. The catch is that the city's museum scene changes more than guidebooks admit, so this list covers what is actually open, what it costs, and what is closed right now.",
+      "**Update, September 2026:** both of Bangkok's free children's museums, the Chatuchak and Thung Khru branches, close from 1 October 2026 while the city appoints a new operator. The deputy governor has said this is a gap between contracts, not a permanent closure, but no reopening date has been given. Separately, the Bangkok Planetarium's dome theatre closed at the end of March 2026 for a renovation of roughly eight months, with reopening expected late in the year. The rest of that science centre stays open. Check both before you go.",
+      "**Children's Discovery Museum, Chatuchak.** When it is open, this is the best value museum in the city for children up to about 12. Entry is free, you just register with a passport or ID at the door. There are four buildings and a large courtyard, with activities split by age (under 3, 3 to 6, and 7 to 12), a dinosaur dig, a climbing area, and an outdoor water play zone with fountains and jets. My kids ran through that water area for a solid hour, so pack swimsuits and a towel. It is a five minute walk from MRT Chatuchak Park or BTS Mo Chit, which makes it easy to pair with the weekend market. Two honest caveats from recent visitors: a lot of the signage is in Thai only, and a few exhibits are usually out of order. Normally open Tuesday to Sunday, 10am to 4pm.",
+      "**Children's Discovery Museum II, Thung Khru.** The second branch, on Pracha Uthit Road on the Thonburi side, runs the same model: free entry with registration, hands on science, nature, art and technology zones, giant block building, and water play that is busiest at weekends. It is not worth crossing the city for if you live in Sukhumvit, but for families on the Rama 2 or Thonburi side it is the closest good indoor option by some distance. Normally open Tuesday to Sunday, 10am to 4pm, and affected by the same October closure.",
+      "**Science Centre for Education, Ekkamai.** Home of the Bangkok Planetarium, open since 1964 and a short walk from BTS Ekkamai (Exit 2). The exhibition halls cover marine life, dinosaurs, insects and hands on science, and they cost almost nothing: around 30 baht for adults and 20 baht for children. The planetarium show, when it reopens, has been 50 baht for adults and 30 for children, with an English narrated session that has historically run on Tuesday mornings. While the dome is closed, the exhibitions alone are still a cheap, air conditioned couple of hours. Tuesday to Sunday, 9am to 4pm.",
+      "**Museum Siam.** The best museum in the city for making Thai history interesting to kids, because it is built around questions and interactive displays rather than glass cases and labels. Children under 15 have historically entered free, with a modest adult ticket. It sits right outside Exit 1 of MRT Sanam Chai, which puts it walking distance from Wat Pho. Plan 60 to 90 minutes for the highlights. Until 4 October 2026 there is also a free temporary exhibition, Thai Dialogue: Foreign Quote, on how foreign visitors saw old Siam, with a photobooth and 20 baht souvenir coins that younger kids tend to enjoy more than the history. Tuesday to Sunday, 10am to 6pm.",
+      "**National Science Museum, Pathum Thani.** The biggest science museum in the country, in the Technopolis complex at Khlong 5, roughly an hour north of central Bangkok depending on traffic. The main building is the one kids remember, and the complex includes several other museums alongside it, so treat it as a full day trip rather than an afternoon. Hours and fees change, so check nsm.or.th before you go.",
+      "**Royal Thai Air Force Museum, Don Mueang.** Free, and a guaranteed hit with any child who likes planes. There are more than 50 aircraft across indoor hangars and an outdoor display, spanning over a century of Thai aviation. It is about 500 metres from Don Mueang railway station. Hours vary between sources, so go in the morning, which is also when the outdoor section is bearable. Closed Mondays.",
+      "**Ancient City (Muang Boran), Samut Prakan.** Technically an open air museum: more than 115 replica buildings and monuments from around Thailand spread over roughly 240 acres, about 40 kilometres south of the city. What makes it work for families is that bicycles are included in the ticket, so it becomes a long bike ride with something to look at every few minutes. Walk up prices for foreigners have been 700 baht for adults and 350 baht for children aged 6 to 14, with under 6s free, and golf carts are available by the hour for younger kids who cannot cycle. Open daily, 9am to 7pm. Go early or late, because there is very little shade.",
+      "**Siam Serpentarium, Lat Krabang.** A newer, private attraction near Suvarnabhumi airport, and closer to a snake museum than a zoo: an immersive exhibition on how snakes are born, hunt and survive, more than 70 species, and live shows in a 400 seat theatre. It costs a lot more than anything else on this list, but it is genuinely educational, and it fits neatly into a day when you are already out toward the airport.",
+      "**Bangkok Art and Culture Centre (BACC).** Free, central, and connected by walkway to BTS National Stadium. The rotating exhibitions suit older children better than toddlers, but the building itself is easy to wander, and it opens late (10am to 8pm, closed Mondays), which makes it a good evening option when the day has been too hot for anything outdoors.",
+      "**The Grand Palace and Wat Phra Kaew.** Not a museum, but worth doing once even with younger kids. Go at opening time: by late morning the heat and the crowds make it hard work for small children. The dress code covering shoulders and knees applies to kids too.",
+      "Almost every museum on this list is closed on Mondays, and several close on Thai public holidays. The free city museums in particular change their hours and occasionally close without much notice, so check the official page or Facebook account on the morning you go rather than relying on a listing, including this one.",
+      "For the free city museums, bring a passport or ID for registration. Plan outdoor sites like the Ancient City and the Air Force Museum for the morning, and keep the air conditioned ones for the afternoon, particularly between March and May. Our [guide to heatstroke and the hot season](/blog/heatstroke-thailand-hot-season) covers what to watch for in children.",
     ],
   },
   {
