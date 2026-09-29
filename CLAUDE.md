@@ -25,6 +25,13 @@ Rebuild of bkkfamilies.com (site for the Bangkok Expat Families community) from 
 - `src/app/sitemap.ts` and `src/app/robots.ts` (added 2026-09-10) generate the sitemap from `SCHOOLS` and `ARTICLES` arrays so it never goes stale — currently 6 static pages, 9 articles, 119 school pages.
 - The "Browse all N schools" link reads `SCHOOLS.length` dynamically, not a hardcoded number.
 
+## Share images (Facebook previews), required on every page
+- Every page must emit an og:image. Rob wants a photo preview whenever any page is shared on Facebook.
+- `og()` in `src/lib/seo.ts` attaches the nearest section card automatically (`SECTION_CARDS` list), falling back to the homepage card. A page-specific image can be passed as `og({ ..., image })`.
+- A page that sets openGraph does NOT inherit a parent folder's `opengraph-image.png`, which is why detail pages used to share with no picture.
+- New section: add a 1200x630 `opengraph-image.png` plus `opengraph-image.alt.txt` to its folder (same purple card style as /camps and /playgroups) and add the path to `SECTION_CARDS`.
+- After deploying, re-scrape the URL in Facebook's Sharing Debugger (developers.facebook.com/tools/debug) because Facebook caches previews.
+
 ## Schools directory
 - 119 schools (started at 58, expanded to 121 via international-schools-database.com, then trimmed: IPC International Kindergarten deleted after confirmed closure, UWC Thailand still under discussion — it's actually in Phuket, not Bangkok, so may not belong in a Bangkok-specific directory).
 - 120 of 121 schools have full write-ups (description, curriculum, age range, language of instruction, website link where available).
