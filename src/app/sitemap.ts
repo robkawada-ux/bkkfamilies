@@ -5,6 +5,7 @@ import { ARTICLES } from "@/lib/articles";
 import { PROVIDERS } from "@/lib/learningSupport";
 import { FACILITIES } from "@/lib/healthcare";
 import { INSURERS } from "@/lib/insurance";
+import { PLAYGROUPS } from "@/lib/playgroups";
 
 export const baseUrl = "https://www.bkkfamilies.com";
 
@@ -51,6 +52,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/playgroups`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     { url: `${baseUrl}/contact`, changeFrequency: "yearly", priority: 0.3 },
   ];
 
@@ -93,6 +99,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const playgroupPages: MetadataRoute.Sitemap = PLAYGROUPS.map((p) => ({
+    url: `${baseUrl}/playgroups/${p.slug}`,
+    lastModified: new Date(p.lastVerified),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
     ...articlePages,
@@ -101,5 +114,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...campPages,
     ...healthcarePages,
     ...insurancePages,
+    ...playgroupPages,
   ];
 }

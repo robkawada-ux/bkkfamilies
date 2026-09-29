@@ -44,6 +44,13 @@ const LINKS: NavLink[] = [
     bar: "bg-white",
   },
   {
+    href: "/playgroups",
+    label: "Playgroups",
+    block: "bg-green text-purple-dark",
+    hover: "hover:brightness-105",
+    bar: "bg-purple-dark",
+  },
+  {
     href: "/activities",
     label: "Activities",
     block: "bg-orange text-purple-dark",
@@ -106,7 +113,7 @@ export default function Nav() {
 
       <nav
         aria-label="Main"
-        className="grid grid-cols-2 border-b-[3px] border-white sm:grid-cols-3 md:grid-cols-9"
+        className="grid grid-cols-2 border-b-[3px] border-white sm:grid-cols-5 lg:grid-cols-10"
       >
         {LINKS.map((l) => {
           const active = isActive(l.href);
@@ -115,7 +122,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               aria-current={active ? "page" : undefined}
-              className={`relative px-1 py-3 text-center text-xs font-bold uppercase tracking-tight transition md:px-1 md:text-[0.62rem] lg:px-2 lg:text-[0.7rem] xl:tracking-wide ${l.block} ${l.hover}`}
+              className={`relative flex items-center justify-center px-1 py-3 text-center text-xs font-bold uppercase tracking-tight transition md:px-1 md:text-[0.62rem] lg:px-2 lg:text-[0.7rem] xl:tracking-wide ${l.block} ${l.hover}`}
             >
               {l.label}
               {active && (
