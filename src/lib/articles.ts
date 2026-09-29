@@ -917,6 +917,8 @@ export const ARTICLES: Article[] = [
     images: [
       { src: "/images/articles/9-things-to-do-in-bangkok-with-kids/lumpini-paddle-boats.jpg", alt: "Paddle boats at Lumpini Park Bangkok", afterParagraph: 3 },
       { src: "/images/articles/9-things-to-do-in-bangkok-with-kids/discovery-museum-splash.jpg", alt: "Outdoor water spray area at Children's Discovery Museum Bangkok", afterParagraph: 4 },
+      { src: "/images/articles/9-things-to-do-in-bangkok-with-kids/iconsiam-flower-arch.jpg", alt: "A family under the pink and gold flower arch outside IconSiam, Bangkok", afterParagraph: 5 },
+      { src: "/images/articles/9-things-to-do-in-bangkok-with-kids/terminal21-golden-gate.jpg", alt: "The Golden Gate Bridge replica spanning the San Francisco floors at Terminal 21, Bangkok", afterParagraph: 6 },
     ],
     body: [
       "My kids have been going on Bangkok outings with me since they were about 6 years old, and this is the list I actually stand behind, not just what shows up in every generic roundup. Some of these we have done a dozen times over the years, and I have picked up enough tips along the way that I figured they were worth writing down properly, prices included.",
