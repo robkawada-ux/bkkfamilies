@@ -1,7 +1,7 @@
 // Playgroups directory. One Playgroup per VENUE or PROGRAMME, with nested
 // sessions, because one venue often runs two sessions for different ages
 // on different days at different prices (Bangkok Prep's Little Pups and
-// Big Pups, Little Treehouse's own sessions and its BAMBI morning).
+// Big Pups, Little Treehouse's own sessions and its parents' group morning).
 //
 // The directory filters on PLAYGROUPS, but day, age and price live on the
 // SESSION so the filters match the session a parent would actually attend.
@@ -10,14 +10,15 @@
 // - Never guess a price, a time or an age. Omit the field and the UI says
 //   "not published".
 // - status "confirmed" means we read it on the organiser's own current page
-//   or on BAMBI's live event calendar for the current term. "check" means
+//   or on the organiser's live booking calendar for the current term. "check" means
 //   the best available detail came from an older or secondary listing and
 //   the UI tells parents to confirm before going.
 //
 // MAINTENANCE: playgroups change every term and pause for school holidays.
-// Re-verify each term start (late August, January, April). BAMBI prices
-// come from the individual Glue Up event pages, not bambiweb.org, whose
-// playgroup page still shows older, lower prices.
+// Re-verify each term start (late August, January, April). Parents' group
+// prices come from the individual Glue Up event pages, which are more
+// current than the group's own website. No membership discounts are shown,
+// by editorial decision.
 
 export type Day = "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun";
 
@@ -38,7 +39,7 @@ export type Frequency = "weekly" | "fortnightly" | "monthly" | "occasional";
 export type Organiser =
   | "International school"
   | "Preschool or nursery"
-  | "BAMBI"
+  | "Parents' group"
   | "Play centre or cafe"
   | "Community or library";
 
@@ -64,13 +65,11 @@ export const ZONES: Zone[] = [
 export type PriceUnit = "session" | "course" | "year";
 
 export interface Price {
-  /** Baht, non-member price. Omit when not published. */
+  /** Baht. Omit when not published. */
   amount?: number;
   /** Upper end when the organiser quotes a range. */
   to?: number;
   unit: PriceUnit;
-  /** BAMBI member price, where different. */
-  member?: number;
   free?: boolean;
   note?: string;
 }
@@ -95,7 +94,7 @@ export interface PlaygroupSession {
 export interface Playgroup {
   slug: string;
   name: string;
-  /** Who runs it. For BAMBI sessions, the host venue is `venue`. */
+  /** Who runs it. For parents' group sessions, the host venue is `venue`. */
   organiser: Organiser;
   kind: Kind;
   venue: string;
@@ -125,11 +124,11 @@ export interface Playgroup {
 const Y = 12; // months per year, for readability
 
 export const PLAYGROUPS: Playgroup[] = [
-  // ---------------------------------------------------------------- BAMBI
+  // ------------------------------------------------------- Parents' group
   {
-    slug: "bambi-little-gaia-one-bangkok",
-    name: "Little Gaia Playgroup (BAMBI)",
-    organiser: "BAMBI",
+    slug: "little-gaia-one-bangkok",
+    name: "Little Gaia Playgroup",
+    organiser: "Parents' group",
     kind: "Drop-in playgroup",
     venue: "Little Gaia, Parade at One Bangkok",
     address: "Unit 1420, 4th floor, Parade, One Bangkok, 1877 Rama IV Road, Lumphini, Pathum Wan",
@@ -144,27 +143,25 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "12:00",
         minAgeMonths: 6,
         maxAgeMonths: 6 * Y,
-        price: { amount: 450, member: 300, unit: "session", note: "Per family, one adult. Extra adults ฿100." },
+        price: { amount: 450, unit: "session", note: "Per family, one adult. Extra adults ฿100." },
         note: "Upcoming: Tue 29 Sep, Wed 7 Oct, Wed 21 Oct 2026.",
       },
     ],
     languages: ["English"],
     description:
-      "BAMBI's newest playgroup, held inside Little Gaia, the indoor play and creative learning space in the Parade zone at One Bangkok. The morning opens with circle time and a story, then children have the run of a soft play area built for under tens. It is one of the easiest playgroups in the city to reach by MRT.",
+      "A newer parent-run playgroup held inside Little Gaia, the indoor play and creative learning space in the Parade zone at One Bangkok. The morning opens with circle time and a story, then children have the run of a soft play area built for under tens. It is one of the easiest playgroups in the city to reach by MRT.",
     worthKnowing:
-      "BAMBI launched this as an every Tuesday session, but the October calendar lists Wednesday sessions roughly every two weeks, and the 22 September session was cancelled. Check the BAMBI calendar before you go. Little Gaia stamps receipts for two hours of free mall parking.",
+      "Launched as an every Tuesday session, but the October booking calendar lists Wednesday sessions roughly every two weeks, and the 22 September session was cancelled. Check the booking page before you go. Little Gaia stamps receipts for two hours of free mall parking.",
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/193670",
-    website: "https://www.bambiweb.org/bambi-playgroups",
-    email: "playgroupassist@bambiweb.org",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/193670",
     lastVerified: "2026-09-28",
   },
   {
-    slug: "bambi-kira-kira-sukhumvit-61",
-    name: "Kira Kira Playgroup (BAMBI)",
-    organiser: "BAMBI",
+    slug: "kira-kira-sukhumvit-61",
+    name: "Kira Kira Playgroup",
+    organiser: "Parents' group",
     kind: "Drop-in playgroup",
     venue: "Kirakira Kids International Kindergarten",
     address: "81-83 Sukhumvit 61, Khlong Tan Nuea, Watthana",
@@ -179,7 +176,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:00",
         minAgeMonths: 0,
         maxAgeMonths: 3 * Y,
-        price: { amount: 400, member: 250, unit: "session", note: "Per family. Extra adults ฿100." },
+        price: { amount: 400, unit: "session", note: "Per family. Extra adults ฿100." },
         language: ["Japanese", "English"],
         note: "Upcoming: 30 Sep, 14 Oct, 28 Oct 2026.",
       },
@@ -189,16 +186,14 @@ export const PLAYGROUPS: Playgroup[] = [
       "A Japanese and English bilingual playgroup hosted at a Japanese international kindergarten off Ekkamai. Sessions run through circle time, crafts, sensory play and music, with indoor and outdoor playgrounds and a sand area to finish. Families of every nationality are welcome, not just Japanese speakers.",
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/193676",
-    website: "https://www.bambiweb.org/bambi-playgroups",
-    email: "playgroupassist@bambiweb.org",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/193676",
     lastVerified: "2026-09-28",
   },
   {
-    slug: "bambi-kiddieville-playville",
-    name: "Kiddieville Playgroup at Playville (BAMBI)",
-    organiser: "BAMBI",
+    slug: "kiddieville-playville",
+    name: "Kiddieville Playgroup at Playville",
+    organiser: "Parents' group",
     kind: "Drop-in playgroup",
     venue: "Playville, 49 Playscape",
     address: "2nd floor, 49 Playscape, 8/3 Sukhumvit 49, Khlong Tan Nuea, Watthana",
@@ -213,26 +208,25 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:00",
         minAgeMonths: 6,
         maxAgeMonths: 3 * Y,
-        price: { amount: 450, member: 300, unit: "session", note: "Per family, one adult only." },
+        price: { amount: 450, unit: "session", note: "Per family, one adult only." },
       },
     ],
     languages: ["English"],
     description:
-      "A weekly BAMBI morning at Playville, a clean, well kept indoor playground on Sukhumvit 49 aimed at crawlers up to three. There is a ball pit, climbing and slides, a reading corner and a sand play area, plus a cafe with a kids' menu. It suits families who want free play rather than a structured class.",
+      "A weekly parent-run morning at Playville, a clean, well kept indoor playground on Sukhumvit 49 aimed at crawlers up to three. There is a ball pit, climbing and slides, a reading corner and a sand play area, plus a cafe with a kids' menu. It suits families who want free play rather than a structured class.",
     worthKnowing:
       "Playville only allows one adult per family at this session, so a second parent or nanny cannot come in. Bring non-slip socks and cash.",
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/195661",
     website: "https://www.playville.co.th/",
-    email: "playgroupassist@bambiweb.org",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/195661",
     lastVerified: "2026-09-28",
   },
   {
-    slug: "bambi-little-steps-future-steps",
-    name: "Little Steps Playgroup (BAMBI)",
-    organiser: "BAMBI",
+    slug: "little-steps-future-steps",
+    name: "Little Steps Playgroup",
+    organiser: "Parents' group",
     kind: "Drop-in playgroup",
     venue: "Future Steps International School",
     address: "154/1 Soi Sukhumvit 31, Khlong Tan Nuea, Watthana",
@@ -246,25 +240,23 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:00",
         minAgeMonths: 12,
         maxAgeMonths: 3 * Y,
-        price: { amount: 400, member: 250, unit: "session", note: "Per family, one adult only." },
+        price: { amount: 400, unit: "session", note: "Per family, one adult only." },
       },
     ],
     languages: ["English"],
     description:
-      "A weekly BAMBI playgroup at a small international preschool on Sukhumvit 31, led by the school's own teachers. Expect circle time, sensory activities and a story, with indoor and outdoor play areas and a sand pit. It is one of the more structured BAMBI mornings.",
+      "A weekly parent-run playgroup at a small international preschool on Sukhumvit 31, led by the school's own teachers. Expect circle time, sensory activities and a story, with indoor and outdoor play areas and a sand pit. It is one of the more structured of the parent-run mornings.",
     worthKnowing: "One adult per family, and payment is cash at the door.",
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/195664",
-    website: "https://www.bambiweb.org/bambi-playgroups",
-    email: "playgroupassist@bambiweb.org",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/195664",
     lastVerified: "2026-09-28",
   },
   {
-    slug: "bambi-niko-niko-sukhumvit-49",
-    name: "Niko Niko Japanese Playgroup (BAMBI)",
-    organiser: "BAMBI",
+    slug: "niko-niko-sukhumvit-49",
+    name: "Niko Niko Japanese Playgroup",
+    organiser: "Parents' group",
     kind: "Drop-in playgroup",
     venue: "The Prestige 49 Condominium",
     address: "Sukhumvit 49, Khlong Tan Nuea, Watthana",
@@ -278,27 +270,25 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:00",
         minAgeMonths: 12,
         maxAgeMonths: 4 * Y,
-        price: { amount: 400, member: 250, unit: "session", note: "Per family. Extra adults ฿100." },
+        price: { amount: 400, unit: "session", note: "Per family. Extra adults ฿100." },
         language: ["Japanese", "English"],
       },
     ],
     languages: ["Japanese", "English"],
     description:
-      "A newer BAMBI playgroup led by a Japanese teacher using a Montessori approach, run in Japanese and English. Mornings include circle time, crafts, sensory play, stories and bubbles. Like Kira Kira, it welcomes families of any background.",
+      "A newer playgroup led by a Japanese teacher using a Montessori approach, run in Japanese and English. Mornings include circle time, crafts, sensory play, stories and bubbles. Like Kira Kira, it welcomes families of any background.",
     worthKnowing:
       "The event page notes that the theme, and sometimes the venue, changes from week to week, so check the address on each week's booking page.",
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/195666",
-    website: "https://www.bambiweb.org/bambi-playgroups",
-    email: "playgroupassist@bambiweb.org",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/195666",
     lastVerified: "2026-09-28",
   },
   {
-    slug: "bambi-little-tots-sathorn",
-    name: "Little Tots Playgroup (BAMBI)",
-    organiser: "BAMBI",
+    slug: "little-tots-sathorn",
+    name: "Little Tots Playgroup",
+    organiser: "Parents' group",
     kind: "Drop-in playgroup",
     venue: "Tiny Tots International Learning Centre, Sathorn",
     address: "148/7 Sathorn Soi 6 (Soi Keng Chuan), Nang Linchi, Sathorn",
@@ -312,27 +302,24 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "12:00",
         minAgeMonths: 12,
         maxAgeMonths: 5 * Y,
-        price: { amount: 350, member: 150, unit: "session", note: "Per family. Extra adults ฿100." },
+        price: { amount: 350, unit: "session", note: "Per family. Extra adults ฿100." },
         note: "One Saturday a month. Next: 3 Oct 2026.",
       },
     ],
     languages: ["English"],
     description:
-      "BAMBI's only regular weekend playgroup, held one Saturday a month at Tiny Tots in Sathorn. A teacher leads sensory play, gym time and an English story, and children can use the indoor and outdoor play areas and the pool. It is a good option for working parents who cannot make a weekday morning.",
-    worthKnowing: "It is also the cheapest BAMBI playgroup for members, at ฿150 a family.",
+      "A parent-run weekend playgroup, held one Saturday a month at Tiny Tots in Sathorn. A teacher leads sensory play, gym time and an English story, and children can use the indoor and outdoor play areas and the pool. It is a good option for working parents who cannot make a weekday morning.",
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/195665",
-    website: "https://www.bambiweb.org/bambi-playgroups",
-    email: "playgroupassist@bambiweb.org",
     schoolSlug: "tiny-tots-international-school",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/195665",
     lastVerified: "2026-09-28",
   },
   {
-    slug: "bambi-wonderkids-wonder-woods",
-    name: "Wonderkids Playgroup at Wonder Woods (BAMBI)",
-    organiser: "BAMBI",
+    slug: "wonderkids-wonder-woods",
+    name: "Wonderkids Playgroup at Wonder Woods",
+    organiser: "Parents' group",
     kind: "Drop-in playgroup",
     venue: "Wonder Woods Kids Cafe and Co-Learning Space",
     address: "Soi Phatthanakan 51, Suan Luang",
@@ -347,26 +334,25 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "12:00",
         minAgeMonths: 12,
         maxAgeMonths: 6 * Y,
-        price: { amount: 450, member: 300, unit: "session", note: "Per family. Extra adults ฿100. Pool access ฿150 extra, paid to Wonder Woods." },
+        price: { amount: 450, unit: "session", note: "Per family. Extra adults ฿100. Pool access ฿150 extra, paid to Wonder Woods." },
       },
     ],
     languages: ["English"],
     description:
-      "The longest BAMBI morning of the week, two and a half hours at a kids cafe off Phatthanakan with indoor and outdoor playgrounds, sand play and a splash area. It is messier and more outdoorsy than most, so bring a change of clothes. Parents can eat and drink at the cafe while children play.",
+      "One of the longest playgroup mornings of the week, two and a half hours at a kids cafe off Phatthanakan with indoor and outdoor playgrounds, sand play and a splash area. It is messier and more outdoorsy than most, so bring a change of clothes. Parents can eat and drink at the cafe while children play.",
     worthKnowing:
-      "Free parking for BAMBI members who spend ฿200 at the cafe. The event page still asks for masks indoors, so carry one.",
+      "The booking page still asks for masks indoors, so carry one.",
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/195676",
     website: "https://www.facebook.com/wonderwoodskidscafe",
-    email: "playgroupassist@bambiweb.org",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/195676",
     lastVerified: "2026-09-28",
   },
   {
-    slug: "bambi-little-seeds-tiny-seeds",
-    name: "Little Seeds Playgroup (BAMBI)",
-    organiser: "BAMBI",
+    slug: "little-seeds-tiny-seeds",
+    name: "Little Seeds Playgroup",
+    organiser: "Parents' group",
     kind: "Drop-in playgroup",
     venue: "The Tiny Seeds International Pre-School",
     address: "105/1-3 Soi Naphasap Yaek 5, Khlong Toei",
@@ -380,7 +366,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:30",
         minAgeMonths: 12,
         maxAgeMonths: 6 * Y,
-        price: { amount: 400, member: 250, unit: "session", note: "Per family. Extra adults ฿100." },
+        price: { amount: 400, unit: "session", note: "Per family. Extra adults ฿100." },
       },
     ],
     languages: ["English"],
@@ -388,17 +374,15 @@ export const PLAYGROUPS: Playgroup[] = [
       "A weekly Monday playgroup at a small international preschool in the Sukhumvit 36 to 40 area. An international teacher runs circle time and activity stations, followed by free play indoors and outside.",
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/195667",
-    website: "https://www.bambiweb.org/bambi-playgroups",
-    email: "playgroupassist@bambiweb.org",
     schoolSlug: "the-tiny-seeds-international-pre-school-bangkok",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/195667",
     lastVerified: "2026-09-28",
   },
   {
-    slug: "bambi-little-panda-mandarin",
-    name: "Little Panda Mandarin Playgroup (BAMBI)",
-    organiser: "BAMBI",
+    slug: "little-panda-mandarin",
+    name: "Little Panda Mandarin Playgroup",
+    organiser: "Parents' group",
     kind: "Drop-in playgroup",
     venue: "Nancy Language School, K Village",
     address: "93-95 K Village, Sukhumvit Road, Khlong Tan, Khlong Toei",
@@ -412,7 +396,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:30",
         minAgeMonths: 12,
         maxAgeMonths: 6 * Y,
-        price: { amount: 400, member: 250, unit: "session", note: "Per family. Extra adults ฿100." },
+        price: { amount: 400, unit: "session", note: "Per family. Extra adults ฿100." },
         language: ["Mandarin"],
         note: "Upcoming: 9 Oct and 30 Oct 2026. Registration opens a week ahead.",
       },
@@ -425,7 +409,6 @@ export const PLAYGROUPS: Playgroup[] = [
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/195673",
     website: "https://www.nancylanguageclub.com/",
-    email: "playgroupassist@bambiweb.org",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/195673",
     lastVerified: "2026-09-28",
@@ -441,15 +424,15 @@ export const PLAYGROUPS: Playgroup[] = [
     zone: "Sukhumvit",
     sessions: [
       {
-        label: "BAMBI morning",
+        label: "Parents' group morning",
         days: ["Sat"],
         frequency: "occasional",
         start: "09:00",
         end: "10:30",
         minAgeMonths: 12,
         maxAgeMonths: 3 * Y,
-        price: { amount: 400, member: 250, unit: "session", note: "Per family." },
-        note: "Next BAMBI session: Sat 10 Oct 2026.",
+        price: { amount: 400, unit: "session", note: "Per family." },
+        note: "Next session: Sat 10 Oct 2026.",
       },
       {
         label: "Nursery's own playgroup",
@@ -462,41 +445,13 @@ export const PLAYGROUPS: Playgroup[] = [
     ],
     languages: ["English"],
     description:
-      "A small nursery that runs its own monthly playgroup and also hosts BAMBI sessions. Mornings mix circle time, a story, playdough, free play and a sensory or art activity pitched to each age group.",
+      "A small nursery that runs its own monthly playgroup and also hosts a parent-run group. Mornings mix circle time, a story, playdough, free play and a sensory or art activity pitched to each age group.",
     worthKnowing:
-      "The BAMBI session is about half the price of the nursery's own session, so it is worth watching the BAMBI calendar.",
+      "The parents' group session is about half the price of the nursery's own session.",
     bookingRequired: true,
     bookingUrl: "https://bambi.glueup.com/event/195992",
     status: "confirmed",
     sourceUrl: "https://bambi.glueup.com/event/195992",
-    lastVerified: "2026-09-28",
-  },
-  {
-    slug: "bambi-pop-up-playgroups",
-    name: "BAMBI Pop-up Playgroups",
-    organiser: "BAMBI",
-    kind: "Drop-in playgroup",
-    venue: "Rotating schools and family venues",
-    district: "Various",
-    zone: "Several locations",
-    sessions: [
-      {
-        days: ["Sat"],
-        frequency: "occasional",
-        minAgeMonths: 0,
-        maxAgeMonths: 5 * Y,
-        price: { free: true, amount: 350, unit: "session", note: "Free for BAMBI members. Suggested ฿350 donation per family for non-members." },
-        note: "None scheduled at the time of checking.",
-      },
-    ],
-    languages: ["English"],
-    description:
-      "One-off Saturday playgroups that BAMBI holds once or twice a month in a different school or venue each time, mixing some structured activities with free play. They are a low-commitment way to see inside a school you are considering.",
-    worthKnowing:
-      "BAMBI had no pop-ups on the calendar when we checked. Between 1 December and 31 March, BAMBI cancels playgroups automatically when PM2.5 air quality passes its threshold.",
-    website: "https://www.bambiweb.org/pop-playgroups",
-    status: "check",
-    sourceUrl: "https://www.bambiweb.org/pop-playgroups",
     lastVerified: "2026-09-28",
   },
 
@@ -797,7 +752,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:00",
         minAgeMonths: 12,
         maxAgeMonths: 4 * Y,
-        price: { amount: 350, member: 300, unit: "session", note: "Per child." },
+        price: { amount: 350, unit: "session", note: "Per child." },
       },
     ],
     languages: ["English"],
@@ -866,7 +821,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "10:30",
         minAgeMonths: 8,
         maxAgeMonths: 3 * Y,
-        price: { amount: 400, member: 200, unit: "session", note: "Drink and light snack included." },
+        price: { amount: 400, unit: "session", note: "Drink and light snack included." },
       },
     ],
     languages: ["English"],
@@ -899,7 +854,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "09:30",
         minAgeMonths: 12,
         maxAgeMonths: 3 * Y,
-        price: { amount: 300, member: 200, unit: "session" },
+        price: { amount: 300, unit: "session" },
         note: "Term time only.",
       },
     ],
@@ -1087,7 +1042,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:15",
         minAgeMonths: 15,
         maxAgeMonths: 3 * Y,
-        price: { amount: 500, member: 450, unit: "session", note: "Five and ten session packages are cheaper." },
+        price: { amount: 500, unit: "session", note: "Five and ten session packages are cheaper." },
       },
     ],
     languages: ["English"],
@@ -1153,7 +1108,7 @@ export const PLAYGROUPS: Playgroup[] = [
     description:
       "Theme-based Saturday sessions at Annabel's leafy Ekamai nursery, led by qualified Early Years teachers in a Reggio Emilia inspired setting. Parking on site, and a chance for parents to meet while children play.",
     worthKnowing:
-      "One listing quotes ฿300 a session and BAMBI's quotes ฿400 per child for members, so confirm the price when you reserve.",
+      "Published listings quote ฿300 and ฿400 a session, so confirm the price when you reserve.",
     bookingRequired: true,
     bookingUrl: "https://forms.gle/3i2AzMRGo4R28Tvd6",
     email: "annabels@annabels.ac.th",
@@ -1221,7 +1176,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:00",
         minAgeMonths: 8,
         maxAgeMonths: 3 * Y + 6,
-        price: { amount: 350, member: 300, unit: "session" },
+        price: { amount: 350, unit: "session" },
       },
       {
         label: "Last Saturday of the month",
@@ -1405,7 +1360,7 @@ export const PLAYGROUPS: Playgroup[] = [
         start: "10:00",
         minAgeMonths: 12,
         maxAgeMonths: 5 * Y,
-        price: { amount: 500, member: 400, unit: "session", note: "Per child. Siblings ฿400." },
+        price: { amount: 500, unit: "session", note: "Per child. Siblings ฿400." },
       },
       {
         label: "Saturday playgroup",
@@ -1415,7 +1370,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "12:00",
         minAgeMonths: 12,
         maxAgeMonths: 4 * Y,
-        price: { amount: 500, member: 400, unit: "session", note: "Per child." },
+        price: { amount: 500, unit: "session", note: "Per child." },
       },
     ],
     languages: ["English"],
@@ -1446,7 +1401,7 @@ export const PLAYGROUPS: Playgroup[] = [
     ],
     languages: ["English"],
     description: "A Friday morning playgroup at a small kindergarten off Phetchaburi Road, open to children from birth to five.",
-    worthKnowing: "Details come from an older BAMBI listing. Contact the kindergarten before going.",
+    worthKnowing: "Details come from an older listing. Contact the kindergarten before going.",
     status: "check",
     sourceUrl: "https://www.bambiweb.org/non-bambi-playgroups?page=1",
     lastVerified: "2026-09-28",
@@ -1589,7 +1544,7 @@ export const PLAYGROUPS: Playgroup[] = [
     ],
     languages: ["English"],
     description: "Weekday morning playgroups at an indoor play centre in The Nine mall on Rama 9, with parking on site.",
-    worthKnowing: "Details come from an older BAMBI listing. Contact the centre before going.",
+    worthKnowing: "Details come from an older listing. Contact the centre before going.",
     status: "check",
     sourceUrl: "https://www.bambiweb.org/non-bambi-playgroups?page=1",
     lastVerified: "2026-09-28",
@@ -1759,23 +1714,22 @@ export const FREQUENCY_LABEL: Record<Frequency, string> = {
 
 export function priceLabel(p?: Price): string | null {
   if (!p) return null;
-  if (p.free && !p.member) return p.amount ? `Free for BAMBI members, ฿${p.amount.toLocaleString()} suggested otherwise` : "Free";
+  if (p.free) return "Free";
   if (p.amount === undefined) return null;
   const base = p.to && p.to !== p.amount
     ? `฿${p.amount.toLocaleString()} to ฿${p.to.toLocaleString()}`
     : `฿${p.amount.toLocaleString()}`;
   const unit = p.unit === "year" ? " a year" : p.unit === "course" ? " a course" : " a session";
-  const member = p.member !== undefined ? ` (BAMBI members ฿${p.member.toLocaleString()})` : "";
-  return base + unit + member;
+  return base + unit;
 }
 
-/** Cheapest non-member per-session price across sessions, for the budget filter. */
+/** Cheapest per-session price across sessions, for the budget filter. */
 export function lowestSessionPrice(pg: Playgroup): number | "free" | null {
   let best: number | null = null;
   for (const s of pg.sessions) {
     const p = s.price;
     if (!p) continue;
-    if (p.free && p.member === undefined && pg.organiser !== "BAMBI") return "free";
+    if (p.free) return "free";
     if (p.unit !== "session" || p.amount === undefined) continue;
     best = best === null ? p.amount : Math.min(best, p.amount);
   }
@@ -1789,7 +1743,7 @@ export const ALL_LANGUAGES = Array.from(
 export const ORGANISERS: Organiser[] = [
   "International school",
   "Preschool or nursery",
-  "BAMBI",
+  "Parents' group",
   "Play centre or cafe",
   "Community or library",
 ];

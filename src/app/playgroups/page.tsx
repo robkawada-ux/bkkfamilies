@@ -23,15 +23,11 @@ const CONFIRMED = PLAYGROUPS.filter((p) => p.status === "confirmed").length;
 const FAQ = [
   {
     q: "How much does a playgroup cost in Bangkok?",
-    a: "Most drop-in playgroups cost between 200 and 500 baht a session, usually per family or per child with one adult. A few school playgroups are free, BAMBI members pay 150 to 300 baht, and specialist sessions such as forest school or music classes run from about 1,000 to 1,250 baht. Termly programmes like Harrow's Lion Cubs are priced per year and are a different thing altogether.",
-  },
-  {
-    q: "What is BAMBI and do I need to join?",
-    a: "BAMBI (Bangkok Mothers and Babies International) is a volunteer-run parents' association that organises around ten weekly, fortnightly and monthly playgroups around the city and negotiates member discounts at school playgroups. You do not need to join to attend, but membership cuts roughly a third off every BAMBI session and gets you into free pop-up playgroups, so it pays for itself quickly if you go weekly.",
+    a: "Most drop-in playgroups cost between 200 and 500 baht a session, usually per family or per child with one adult. A few school playgroups are free, and specialist sessions such as forest school or music classes run from about 1,000 to 1,250 baht. Termly programmes like Harrow's Lion Cubs are priced per year and are a different thing altogether.",
   },
   {
     q: "Can my nanny take my child to a playgroup?",
-    a: "Often, but not everywhere. Shrewsbury's playgroups require a parent or grandparent and do not admit nannies alone, and several BAMBI venues allow only one adult per family. Where a playgroup has a rule like this we note it on its page.",
+    a: "Often, but not everywhere. Shrewsbury's playgroups require a parent or grandparent and do not admit nannies alone, and several venues allow only one adult per family. Where a playgroup has a rule like this we note it on its page.",
   },
   {
     q: "What age can my baby start a playgroup?",
@@ -39,11 +35,11 @@ const FAQ = [
   },
   {
     q: "Are there playgroups at weekends?",
-    a: "Yes, though far fewer than on weekdays. Use the Weekend option in the Day filter. Bangkok Prep, Kids Kingdom Ruamrudee, Annabel's, HEI's Music Club, Firefly Forest and Kids' Academy Ekkamai all run Saturday sessions, and BAMBI holds one Saturday playgroup a month.",
+    a: "Yes, though far fewer than on weekdays. Use the Weekend option in the Day filter. Bangkok Prep, Kids Kingdom Ruamrudee, Annabel's, HEI's Music Club, Firefly Forest and Kids' Academy Ekkamai all run Saturday sessions, and there is a parent-run Saturday playgroup once a month in Sathorn.",
   },
   {
     q: "Do playgroups run during school holidays and bad air days?",
-    a: "Most school-run playgroups follow the school term and stop for holidays, so check around October half term, Christmas, Songkran and the long summer break. BAMBI automatically cancels its playgroups between December and March when PM2.5 pollution passes its air quality threshold.",
+    a: "Most school-run playgroups follow the school term and stop for holidays, so check around October half term, Christmas, Songkran and the long summer break. Between December and March, some playgroups also cancel on high PM2.5 days, so check before you set out.",
   },
 ];
 
@@ -105,8 +101,8 @@ export default function PlaygroupsPage() {
           </p>
           <p>
             The trouble is that the information is scattered. Schools bury
-            their playgroups in admissions pages, BAMBI&rsquo;s calendar lives
-            on a separate booking site, and most listings online are a year or
+            their playgroups in admissions pages, parents&rsquo; groups keep their calendars
+            on separate booking sites, and most listings online are a year or
             two out of date. We went through them one by one. Filter by the day
             you are free, the age of your child and the part of town you live
             in, and every card shows when it runs, who it is for and what it
@@ -114,11 +110,16 @@ export default function PlaygroupsPage() {
           </p>
           <p>
             Anything marked <strong>Confirmed this term</strong> we read on the
-            organiser&rsquo;s own current page or BAMBI&rsquo;s live calendar.
+            organiser&rsquo;s own current page or live booking calendar.
             Anything marked <strong>Check before going</strong> is a playgroup
             that runs, but whose latest published details are older or come
             from another listing, so message them first. Nobody pays to be
             listed.
+          </p>
+          <p>
+            You&rsquo;ll notice that some playgroup bookings link directly to a
+            group called BAMBI. BAMBI is a trusted group that helps to organise
+            many playgroups around Bangkok.
           </p>
         </div>
 

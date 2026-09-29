@@ -178,9 +178,11 @@ export default async function PlaygroupPage({
               checked {formatDate(pg.lastVerified)}.
             </>
           )}{" "}
-          <a href={pg.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-teal hover:underline">
-            Source
-          </a>
+          {!/bambi/i.test(pg.sourceUrl) && (
+            <a href={pg.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-teal hover:underline">
+              Source
+            </a>
+          )}
         </div>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-2">
