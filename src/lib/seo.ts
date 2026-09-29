@@ -36,6 +36,7 @@ const SECTION_CARDS = [
   "/learning-support",
   "/school-breaks",
   "/playgroups",
+  "/activities",
   "/schools",
   "/camps",
   "/blog",
