@@ -33,12 +33,12 @@ Rebuild of bkkfamilies.com (site for the Bangkok Expat Families community) from 
 - After deploying, re-scrape the URL in Facebook's Sharing Debugger (developers.facebook.com/tools/debug) because Facebook caches previews.
 
 ## Schools directory
-- 119 schools (started at 58, expanded to 121 via international-schools-database.com, then trimmed: IPC International Kindergarten deleted after confirmed closure, UWC Thailand still under discussion — it's actually in Phuket, not Bangkok, so may not belong in a Bangkok-specific directory).
+- 119 schools (started at 58, expanded to 121 via international-schools-database.com, then trimmed: IPC International Kindergarten and VERSO deleted after closing, UWC Thailand removed because it is in Phuket, Brighton College Vibhavadi added).
 - 120 of 121 schools have full write-ups (description, curriculum, age range, language of instruction, website link where available).
 - Individual detail pages at `/schools/[slug]` exist for a first batch of 14 major/premium schools (Bangkok Patana, NIST, ISB, Shrewsbury, Harrow, Bangkok Prep, Brighton College, Wellington, RIS, KIS, Concordian, Bromsgrove, St Andrews, King's College) with full descriptions, age range, language of instruction, and exact fee range (sourced from international-schools-database.com, paraphrased/factual only — did NOT reproduce their proprietary schema like admissions contacts, class sizes, facilities lists).
 - Detail pages use a purple header band (school name + curriculum tags) instead of a photo, to avoid copyright issues from rehosting school website images.
 - **In progress:** emailing schools' marketing/admissions teams asking for a photo to replace the purple band, with photo guidelines and a credit/backlink offer. First batch of 14 Gmail drafts created 2026-08-28, not yet sent.
-- Known open item: VERSO International School closed in 2026 and its campus reopened as Wycombe Abbey International School Bangkok — already noted in VERSO's listing.
+- VERSO International School (closed 2026, campus now Wycombe Abbey) was removed on 2026-10-02 and its URL 301s to Wycombe Abbey. UWC Thailand (Phuket) is out of the directory and its URL 301s to /schools. Brighton College Bangkok Vibhavadi (opened Aug 2025) added as its own entry; the original Brighton entry is the Krungthep Kreetha campus. Traill's site is traillschool.com.
 - Minor cleanups already done: removed IPC name-drops from 5 sibling descriptions, dropped KiddyKare's website field (no working site), pointed Bright Skies at its Instagram, fixed Lycée Français URL, upgraded Global Indian International School and Pan-Asia to https. Global English School deliberately keeps its Facebook page as its listed site.
 
 ## School fees (single source of truth, added 2026-10-02)
@@ -56,7 +56,6 @@ Rebuild of bkkfamilies.com (site for the Bangkok Expat Families community) from 
 - Link-checker script at `scripts/linkcheck.sh` for external school website URLs. Run with `bash ~/Projects/bkkfamilies/scripts/linkcheck.sh`. Default parallelism of 12 causes timeout false positives — use 4 instead.
 
 ## Open decisions waiting on Rob
-1. UWC Thailand — remove from directory (it's in Phuket) or keep?
-2. Whether/when to send the 14 school photo-request email drafts.
-3. Vercel "DNS Change Recommended" warning on the apex domain — unaddressed.
-4. Duplicate Vercel project `bkk_families` — never cleaned up.
+1. Whether/when to send the 14 school photo-request email drafts.
+2. Vercel "DNS Change Recommended" warning on the apex domain — unaddressed.
+3. Duplicate Vercel project `bkk_families` — never cleaned up.

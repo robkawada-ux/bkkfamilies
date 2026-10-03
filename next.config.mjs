@@ -57,6 +57,10 @@ const legacyRedirects = [
 
   // Orphaned school slugs
   { source: "/schools/ipc-international-kindergarten", destination: "/schools" },
+  // VERSO closed in 2026; its campus reopened as Wycombe Abbey
+  { source: "/schools/verso-international-school", destination: "/schools/wycombe-abbey-international-school-bangkok" },
+  // UWC Thailand is in Phuket and was removed from the Bangkok directory
+  { source: "/schools/uwc-thailand", destination: "/schools" },
   { source: "/schools/the-ideal-classroom-bangk", destination: "/schools" },
 
   // Structural
@@ -68,6 +72,11 @@ const legacyRedirects = [
   { source: "/amy-diener-bkk-families-interview", destination: "/blog" },
   { source: "/lazada-making-parenting-in-2020-easier", destination: "/blog" },
   { source: "/start-business-thailand", destination: "/blog" },
+
+  // Remaining WordPress category archives. Must stay after the specific
+  // /category/... rules above, which Next checks in order.
+  { source: "/category/schools", destination: "/schools" },
+  { source: "/category/:slug*", destination: "/blog" },
 ];
 
 const nextConfig = {
