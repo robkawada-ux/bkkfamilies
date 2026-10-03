@@ -4,6 +4,17 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SCHOOLS } from "@/lib/schools";
 import { SITE } from "@/lib/seo";
+import {
+  schoolFees,
+  feesOnEnquiry,
+  feeSummary,
+  formatThb,
+  formatVerifiedDate,
+  INCLUSION_LABEL,
+  ONE_TIME_LABEL,
+  type SchoolFees,
+  type OneTimeFees,
+} from "@/lib/schoolFees";
 
 export function generateStaticParams() {
   return SCHOOLS.map((s) => ({ slug: s.slug }));
@@ -61,6 +72,9 @@ export default async function SchoolPage({
   if (!school) return notFound();
 
   const pageUrl = `${SITE}/schools/${school.slug}`;
+  const fees = schoolFees[school.slug];
+  const summary = feeSummary(school.slug);
+  const onEnquiry = feesOnEnquiry[school.slug];
   const firstPara = school.description?.split("\n\n")[0];
 
   const jsonLd = [
@@ -174,10 +188,54 @@ export default async function SchoolPage({
           </div>
         )}
         <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
-          <p className="text-xs uppercase tracking-wide text-neutral-400">Yearly Fees</p>
-          <p className="text-sm font-semibold text-purple-dark">
-            {school.feeRange ?? BUDGET_LABEL[school.budget]}
+          <p className="text-xs uppercase tracking-wide text-neutral-400">
+            Yearly Fees{summary ? ` ${summary.feeYear}` : ""}
           </p>
+          {summary ? (
+            <>
+              {summary.primary ? (
+                <p className="text-sm font-semibold text-purple-dark">
+                  {summary.primary.label}: {formatThb(summary.primary.annual)} THB
+                </p>
+              ) : (
+                <p className="text-sm font-semibold text-purple-dark">
+                  {formatThb(summary.from.annual)} to {formatThb(summary.to.annual)} THB
+                </p>
+              )}
+              <p className="mt-0.5 text-xs text-neutral-500">
+                {summary.primary
+                  ? `From ${formatThb(summary.from.annual)} (${summary.from.label}) to ${formatThb(summary.to.annual)} (${summary.to.label}). `
+                  : `${summary.from.label} to ${summary.to.label}. `}
+                <a href="#fees" className="font-semibold text-orange">
+                  Full fee table
+                </a>
+              </p>
+            </>
+          ) : onEnquiry ? (
+            <>
+              <p className="text-sm font-semibold text-purple-dark">
+                Not published, on enquiry
+              </p>
+              <p className="mt-0.5 text-xs text-neutral-500">
+                The school does not publish a fee schedule. Checked{" "}
+                {formatVerifiedDate(onEnquiry.checked)}.
+              </p>
+            </>
+          ) : school.feeRange ? (
+            <>
+              <p className="text-sm font-semibold text-purple-dark">
+                {school.feeRange}
+              </p>
+              <p className="mt-0.5 text-xs text-neutral-500">
+                Indicative, from third-party data. Not yet checked against
+                the school&apos;s own schedule, so confirm with the school.
+              </p>
+            </>
+          ) : (
+            <p className="text-sm font-semibold text-purple-dark">
+              {BUDGET_LABEL[school.budget]}
+            </p>
+          )}
         </div>
         {school.founded && (
           <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
@@ -214,6 +272,8 @@ export default async function SchoolPage({
         </div>
       )}
 
+      {fees && summary && <FeeTable fees={fees} schoolName={school.name} />}
+
       <div className="mt-8 flex flex-wrap items-center gap-3">
         {school.website ? (
           <a
@@ -249,5 +309,145 @@ export default async function SchoolPage({
       </div>
       </div>
     </article>
+  );
+}
+
+function FeeTable({ fees, schoolName }: { fees: SchoolFees; schoolName: string }) {
+  const rows = fees.rows ?? [];
+  const oneTime = Object.entries(fees.oneTime ?? {}).filter(
+    ([, v]) => typeof v === "number",
+  ) as [keyof OneTimeFees, number][];
+  const sourceIsUrl = fees.sourceUrl?.startsWith("http");
+  const partial = rows.length <= 2;
+
+  return (
+    <section id="fees" className="mt-12 scroll-mt-40">
+      <h2 className="font-heading text-2xl font-bold text-purple-dark">
+        {schoolName} fees {fees.feeYear}
+      </h2>
+      <p className="mt-2 text-sm text-neutral-600">
+        Annual tuition in Thai baht, read from the school&apos;s own fee
+        schedule
+        {fees.verified ? ` on ${formatVerifiedDate(fees.verified)}` : ""}.
+        {partial
+          ? " The school gave us the lowest and highest figures only, not every year group."
+          : ""}
+      </p>
+
+      <div className="mt-5 overflow-hidden rounded-xl border border-black/10">
+        <table className="w-full text-left text-sm">
+          <thead className="bg-neutral-50 text-xs uppercase tracking-wide text-neutral-500">
+            <tr>
+              <th scope="col" className="px-4 py-2.5 font-semibold">Year group</th>
+              <th scope="col" className="px-4 py-2.5 text-right font-semibold">THB per year</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.label} className="border-t border-black/5">
+                <td className="px-4 py-2.5 text-neutral-700">
+                  {r.label}
+                  {r.billedTerms === 2 && (
+                    <span className="block text-xs text-neutral-400">
+                      Exam year, billed over two terms
+                    </span>
+                  )}
+                </td>
+                <td className="px-4 py-2.5 text-right font-semibold tabular-nums text-purple-dark">
+                  {formatThb(r.annual)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {oneTime.length > 0 && (
+        <div className="mt-6">
+          <h3 className="font-heading text-lg font-bold text-purple-dark">
+            One-time fees at entry
+          </h3>
+          <ul className="mt-2 space-y-1 text-sm text-neutral-700">
+            {oneTime.map(([k, v]) => (
+              <li key={k} className="flex justify-between gap-4 border-b border-black/5 py-1.5">
+                <span>{ONE_TIME_LABEL[k]}</span>
+                <span className="font-semibold tabular-nums text-purple-dark">
+                  {formatThb(v)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {fees.extras && fees.extras.length > 0 && (
+        <div className="mt-6">
+          <h3 className="font-heading text-lg font-bold text-purple-dark">
+            Charged on top of tuition
+          </h3>
+          <ul className="mt-2 space-y-1 text-sm text-neutral-700">
+            {fees.extras.map((e) => (
+              <li key={e.label} className="flex justify-between gap-4 border-b border-black/5 py-1.5">
+                <span>
+                  {e.label}
+                  {e.compulsory && (
+                    <span className="ml-2 rounded-full bg-orange/10 px-2 py-0.5 text-xs font-semibold text-orange">
+                      Compulsory
+                    </span>
+                  )}
+                </span>
+                <span className="whitespace-nowrap font-semibold tabular-nums text-purple-dark">
+                  {formatThb(e.annualFrom)}
+                  {e.annualTo ? ` to ${formatThb(e.annualTo)}` : ""} / yr
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {(fees.includes?.length || fees.excludes?.length) ? (
+        <div className="mt-6 grid gap-4 text-sm sm:grid-cols-2">
+          {fees.includes && fees.includes.length > 0 && (
+            <div className="rounded-xl bg-neutral-50 p-4">
+              <p className="text-xs uppercase tracking-wide text-neutral-400">Included in tuition</p>
+              <p className="mt-1 text-neutral-700">
+                {fees.includes.map((i) => INCLUSION_LABEL[i]).join(", ")}
+              </p>
+            </div>
+          )}
+          {fees.excludes && fees.excludes.length > 0 && (
+            <div className="rounded-xl bg-neutral-50 p-4">
+              <p className="text-xs uppercase tracking-wide text-neutral-400">Not included</p>
+              <p className="mt-1 text-neutral-700">
+                {fees.excludes.map((i) => INCLUSION_LABEL[i]).join(", ")}
+              </p>
+            </div>
+          )}
+        </div>
+      ) : null}
+
+      {fees.note && (
+        <p className="mt-6 rounded-xl border-l-4 border-orange bg-orange/5 p-4 text-sm leading-relaxed text-neutral-700">
+          <span className="font-semibold text-purple-dark">Worth knowing: </span>
+          {fees.note}
+        </p>
+      )}
+
+      <p className="mt-4 text-xs text-neutral-500">
+        Source:{" "}
+        {sourceIsUrl ? (
+          <a href={fees.sourceUrl} target="_blank" rel="noreferrer" className="font-semibold text-orange">
+            {schoolName} fee schedule
+          </a>
+        ) : (
+          fees.sourceUrl ?? "the school"
+        )}
+        . Fees change every year, so confirm with the school before you budget.{" "}
+        <Link href="/blog/what-does-international-school-actually-cost-bangkok-2026" className="font-semibold text-orange">
+          What international school really costs in Bangkok
+        </Link>
+      </p>
+    </section>
   );
 }

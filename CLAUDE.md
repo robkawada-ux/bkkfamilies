@@ -41,6 +41,13 @@ Rebuild of bkkfamilies.com (site for the Bangkok Expat Families community) from 
 - Known open item: VERSO International School closed in 2026 and its campus reopened as Wycombe Abbey International School Bangkok — already noted in VERSO's listing.
 - Minor cleanups already done: removed IPC name-drops from 5 sibling descriptions, dropped KiddyKare's website field (no working site), pointed Bright Skies at its Instagram, fixed Lycée Français URL, upgraded Global Indian International School and Pan-Asia to https. Global English School deliberately keeps its Facebook page as its listed site.
 
+## School fees (single source of truth, added 2026-10-02)
+- `src/lib/schoolFees.ts` holds fees read from 30 schools' own 2026/27 schedules on 18 Sept 2026, per year group, with one-time fees, extras, inclusions, source link and verified date. `feesOnEnquiry` lists 6 schools that publish nothing (NIST, Dulwich, Concordian, Anglo Singapore, Sarasas Ektra, Bromsgrove). Raw research notes: `data/school-fees-research-notes.md`.
+- School pages build their fee card and full fee table from it (`feeSummary`). Headline is the first primary-stage row (Year 1 / Grade 1), never a min/max comparison.
+- Budget tags for those 30 schools are recomputed from the primary-stage fee (`verifiedBudget`), overriding the tag in `schools.ts`.
+- `feeRange` in `schools.ts` is now third-party indicative data only (18 schools) and renders with an "unverified" label. Never add `feeRange` to a school that is in `schoolFees.ts` or `feesOnEnquiry`.
+- To update a school's fees: edit `schoolFees.ts` only. Articles quoting fees (`what-does-international-school-actually-cost-bangkok-2026`) must be updated by hand and given a new `updated` date.
+
 ## Content published so far
 - Nanny hiring guide (`how-to-find-a-nanny-in-bangkok`, Local Life) — draws on the family's own 2011-2020 Bangkok experience, lists nanny agencies neutrally without recommending any (deliberately independent positioning).
 - Third culture kids article (`third-culture-kids-bangkok-moving-back`, Local Life, ~2,500 words, 7 FAQ entries, 11 headings, 6 relatedSchools) — positioned as a competitor to bkkkids.com's TCK piece but focused on the "return leg" (moving back), which competitors skip. Draws on the family's 2020 move from Bangkok to Massachusetts. Still has no images.

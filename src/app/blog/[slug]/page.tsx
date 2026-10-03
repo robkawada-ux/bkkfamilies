@@ -97,7 +97,7 @@ export default async function ArticlePage({
     headline: article.title,
     description: article.metaDescription ?? article.excerpt,
     datePublished: article.date,
-    dateModified: article.date,
+    dateModified: article.updated ?? article.date,
     image:
       "https://www.bkkfamilies.com" +
       shareImage(article.slug, article.heroImage),
@@ -177,7 +177,18 @@ export default async function ArticlePage({
           month: "long",
           day: "numeric",
           year: "numeric",
-        })}{" "}
+        })}
+        {article.updated && article.updated !== article.date && (
+          <>
+            {" "}· Updated{" "}
+            {new Date(article.updated).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+              timeZone: "UTC",
+            })}
+          </>
+        )}{" "}
         · by BKK Families
       </p>
 
