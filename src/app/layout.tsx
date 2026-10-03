@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     google: "YIOkUdSD6iRmcG79RvsGXkggPDjZYy2WBbvTaRtFbR4",
   },
   title: {
-    default: "BKK Families — Your Bangkok Roadmap",
+    default: "BKK Families: Schools, Healthcare and Family Life in Bangkok",
     template: "%s | BKK Families",
   },
   description:
-    "The largest, longest-running community for expat and Thai families in Bangkok. Find international schools, family activities, and health resources — plus a 40,000+ member Facebook community.",
+    "The largest, longest-running community for expat and Thai families in Bangkok. Find international schools with verified fees, healthcare, camps, playgroups and activities, plus a 40,000+ member Facebook community.",
   openGraph: {
-    title: "BKK Families — Your Bangkok Roadmap",
+    title: "BKK Families: Schools, Healthcare and Family Life in Bangkok",
     description:
       "Schools, activities, and healthcare resources for families in Bangkok, backed by a 40,000+ member community.",
     // no url here on purpose: it would be inherited by every page

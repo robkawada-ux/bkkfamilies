@@ -192,6 +192,21 @@ export default async function ArticlePage({
         · by BKK Families
       </p>
 
+      {article.sponsored && (
+        <p className="mt-4 rounded-lg border border-orange/30 bg-orange-50 px-4 py-3 text-sm text-neutral-700">
+          <span className="font-semibold text-purple-dark">Sponsored feature.</span>{" "}
+          This article was paid for by{" "}
+          {article.sponsored.url ? (
+            <a href={article.sponsored.url} target="_blank" rel="sponsored noopener" className="font-semibold text-orange">
+              {article.sponsored.sponsor}
+            </a>
+          ) : (
+            article.sponsored.sponsor
+          )}
+          . It is not a review, and it does not affect our directories or reviews.
+        </p>
+      )}
+
       {article.heroImage && (
         <div className="mt-8 w-full overflow-hidden rounded-xl">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -217,7 +232,7 @@ export default async function ArticlePage({
                 </h2>
               )}
               <p className="mb-4 leading-relaxed text-neutral-700">
-                <RichText text={p} />
+                <RichText text={p} sponsored={!!article.sponsored} />
               </p>
               {inlineImages?.map((img, j) => (
                 <div key={j} className="my-6 w-full overflow-hidden rounded-xl">
@@ -294,7 +309,7 @@ export default async function ArticlePage({
                   {f.question}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-                  <RichText text={f.answer} />
+                  <RichText text={f.answer} sponsored={!!article.sponsored} />
                 </p>
               </div>
             ))}

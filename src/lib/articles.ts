@@ -23,6 +23,12 @@ export interface Article {
   relatedFacilities?: { name: string; slug: string }[];
   metaDescription?: string;
   keywords?: string[];
+  /**
+   * Set on a paid Sponsored Feature. The page shows a "Sponsored by" notice
+   * above the article and every outbound link gets rel="sponsored". Never
+   * set this on a review or a directory listing: those are not for sale.
+   */
+  sponsored?: { sponsor: string; url?: string };
 }
 
 export const ARTICLES: Article[] = [

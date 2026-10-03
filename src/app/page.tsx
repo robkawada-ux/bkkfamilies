@@ -4,11 +4,17 @@ import Link from "next/link";
 import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
+import { SCHOOLS } from "@/lib/schools";
+import { TopBanner, SidebarSlot } from "@/components/ui/AdSlot";
+
+// Re-render hourly so booked banners start and end on their dates.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
+  title: { absolute: "BKK Families: Schools, Healthcare and Family Life in Bangkok" },
   alternates: { canonical: "/" },
   openGraph: og({
-    title: "BKK Families — Your Bangkok Roadmap",
+    title: "BKK Families: Schools, Healthcare and Family Life in Bangkok",
     description:
       "Schools, activities, and healthcare resources for families in Bangkok, backed by a 40,000+ member community.",
     path: "/",
@@ -32,7 +38,7 @@ export default function HomePage() {
             The community every Bangkok family finds eventually.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">
-            40,000+ expat and Thai families sharing what actually works —
+            40,000+ expat and Thai families sharing what actually works:
             schools, activities, healthcare, and everything in between.
             Community since 2012.
           </p>
@@ -58,11 +64,16 @@ export default function HomePage() {
       {/* STATS */}
       <section className="mx-auto -mt-10 max-w-6xl px-4">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <StatCard value="40,000" label="Facebook Members" color="green" />
-          <StatCard value="+115/wk" label="New Members" color="teal" />
+          <StatCard value="40,000+" label="Facebook Members" color="green" />
+          <StatCard value="+120/wk" label="New Members" color="teal" />
           <StatCard value="5+/day" label="New Posts" color="purple" />
           <StatCard value="14 yrs" label="Community Since 2012" color="orange" />
         </div>
+      </section>
+
+      {/* TOP BANNER (paid slot, see lib/ads.ts) */}
+      <section className="mx-auto mt-10 max-w-6xl px-4">
+        <TopBanner />
       </section>
 
       {/* COMMUNITY BUILDS TRUST */}
@@ -76,7 +87,7 @@ export default function HomePage() {
               Being a parent in Thailand can be an extraordinary experience
               filled with trials and tribulations. We're a community built
               around resources on education, family activities, and
-              healthcare — helping minimize the headaches while maximizing
+              healthcare, helping minimize the headaches while maximizing
               the positive experience of raising a family in Bangkok.
             </p>
             <p className="mt-4 text-neutral-700">
@@ -93,8 +104,8 @@ export default function HomePage() {
             >
               <h3 className="font-heading text-xl font-bold">Schools</h3>
               <p className="mt-1 text-sm text-white/90">
-                50+ international schools, filterable by curriculum and
-                budget.
+                {SCHOOLS.length} international schools, with verified fees
+                where schools publish them.
               </p>
             </Link>
             <Link
@@ -114,7 +125,7 @@ export default function HomePage() {
                 Healthcare
               </h3>
               <p className="mt-1 text-sm text-white/90">
-                Hospitals, dentists, and staying active as a family.
+                Hospitals, maternity, dentists and health insurance.
               </p>
             </Link>
             <Link
@@ -141,10 +152,18 @@ export default function HomePage() {
               View all →
             </Link>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {latest.map((a) => (
-              <ArticleCard key={a.slug} article={a} />
-            ))}
+          <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
+            <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {latest.map((a) => (
+                <ArticleCard key={a.slug} article={a} />
+              ))}
+            </div>
+            {/* SIDEBAR (paid slots, see lib/ads.ts) */}
+            <aside aria-label="Featured" className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 lg:content-start">
+              <SidebarSlot slot="home-sidebar-top" />
+              <SidebarSlot slot="home-sidebar-middle" />
+              <SidebarSlot slot="home-sidebar-bottom" />
+            </aside>
           </div>
         </div>
       </section>
@@ -156,8 +175,8 @@ export default function HomePage() {
             Reach 40,000+ Bangkok Families
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-white/85">
-            Banner placements, sponsored reviews, group emails, and Facebook
-            promotion — we'll help you find the right fit.
+            Banner placements, sponsored features, and Facebook promotion,
+            always clearly labelled. We will help you find the right fit.
           </p>
           <Link
             href="/contact"

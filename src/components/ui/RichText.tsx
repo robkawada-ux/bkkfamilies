@@ -32,7 +32,7 @@ function isInternal(href: string): boolean {
   return href.startsWith("/");
 }
 
-export function renderRichText(text: string): ReactNode[] {
+export function renderRichText(text: string, sponsored = false): ReactNode[] {
   const nodes: ReactNode[] = [];
   let lastIndex = 0;
   let key = 0;
@@ -63,7 +63,7 @@ export function renderRichText(text: string): ReactNode[] {
             key={key++}
             href={href}
             target="_blank"
-            rel="noopener noreferrer"
+            rel={sponsored ? "sponsored noopener" : "noopener noreferrer"}
             className="font-semibold text-teal underline decoration-teal/30 underline-offset-2 hover:decoration-teal"
           >
             {linkLabel}
@@ -76,7 +76,7 @@ export function renderRichText(text: string): ReactNode[] {
       // left to find and cannot loop.
       nodes.push(
         <strong key={key++} className="font-bold text-neutral-900">
-          {renderRichText(boldText)}
+          {renderRichText(boldText, sponsored)}
         </strong>
       );
     }
@@ -102,6 +102,7 @@ export function stripRichText(text: string): string {
     .replace(/\*\*([^*]+)\*\*/g, "$1");
 }
 
-export default function RichText({ text }: { text: string }) {
-  return <>{renderRichText(text)}</>;
+/** In a sponsored article, outbound links carry rel="sponsored" as Google requires for paid links. */
+export default function RichText({ text, sponsored = false }: { text: string; sponsored?: boolean }) {
+  return <>{renderRichText(text, sponsored)}</>;
 }

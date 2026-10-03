@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/schools" },
   title: "International Schools in Bangkok",
   description:
-    "Browse 50+ international schools in Bangkok, filterable by curriculum and budget.",
+    `Browse ${SCHOOLS.length} international schools in Bangkok by curriculum and budget, with fees read from each school's own 2026/27 schedule where it publishes one.`,
   openGraph: og({
     title: "International Schools in Bangkok",
     description:
-      "Browse 50+ international schools in Bangkok, filterable by curriculum and budget.",
+      `Browse ${SCHOOLS.length} international schools in Bangkok by curriculum and budget, with fees read from each school's own 2026/27 schedule where it publishes one.`,
     path: "/schools",
   }),
 };
@@ -51,7 +51,7 @@ export default function SchoolsPage() {
       <PageHero
         eyebrow="Find the right fit"
         title="International Schools in Bangkok"
-        subtitle="Searching for schools in Bangkok is daunting — filter by curriculum and budget to narrow it down fast."
+        subtitle="Searching for schools in Bangkok is daunting. Filter by curriculum and budget to narrow it down fast."
         color="teal"
       />
       <div className="mx-auto max-w-6xl px-4 py-12">

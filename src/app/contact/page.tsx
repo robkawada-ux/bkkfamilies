@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { og } from "@/lib/seo";
 import PageHero from "@/components/ui/PageHero";
+import { SLOT_SPECS } from "@/lib/ads";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
@@ -88,6 +89,9 @@ export default function ContactPage() {
               <p className="mt-1 text-sm text-white/80">
                 Have children under 10, the exact window when school,
                 healthcare, and family spending decisions are made
+                <span className="mt-2 block text-xs text-white/70">
+                  Source: BKK Families member survey
+                </span>
               </p>
             </div>
             <div className="rounded-xl bg-green p-6 text-white">
@@ -164,22 +168,32 @@ export default function ContactPage() {
                 Homepage Placement
               </h3>
               <ul className="mt-3 space-y-1 text-sm text-neutral-600">
-                <li>✓ Top banner (sole ownership)</li>
+                <li>✓ Top banner (sole ownership, never rotated)</li>
                 <li>✓ Sidebar placements (top, middle, or bottom)</li>
               </ul>
+              <p className="mt-3 text-xs text-neutral-500">
+                Banner artwork: {SLOT_SPECS["home-top"].size} for the top
+                banner, {SLOT_SPECS["home-sidebar-top"].size} for the sidebar.
+                Every banner is labelled as sponsored.
+              </p>
             </div>
           </div>
 
           <div className="mt-6 rounded-xl border border-black/5 bg-white p-6 shadow-sm sm:max-w-md">
             <h3 className="font-heading text-lg font-bold text-purple-dark">
-              Reviews Package
+              Sponsored Feature Package
             </h3>
             <ul className="mt-3 space-y-1 text-sm text-neutral-600">
               <li>✓ On-site visit</li>
-              <li>✓ Writer's review</li>
-              <li>✓ Blog post with your URL</li>
+              <li>✓ A feature article about your business, written by our team</li>
+              <li>✓ A link to your website</li>
               <li>✓ Facebook pinned post</li>
             </ul>
+            <p className="mt-3 text-xs text-neutral-500">
+              Sponsored features are always labelled as sponsored. They are
+              kept separate from our directories and reviews, which are never
+              paid for.
+            </p>
           </div>
         </div>
 
