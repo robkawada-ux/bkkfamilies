@@ -49,7 +49,7 @@ Rebuild of bkkfamilies.com (site for the Bangkok Expat Families community) from 
 - To update a school's fees: edit `schoolFees.ts` only. Articles quoting fees (`what-does-international-school-actually-cost-bangkok-2026`) must be updated by hand and given a new `updated` date.
 
 ## Content published so far
-- Nanny hiring guide (`how-to-find-a-nanny-in-bangkok`, Local Life) — draws on the family's own 2011-2020 Bangkok experience, lists nanny agencies neutrally without recommending any (deliberately independent positioning).
+- Nanny hiring guide (`how-to-find-a-nanny-in-bangkok`, Local Life) — draws on the family's own 2012-2020 Bangkok experience (Rob lived in Thailand from 2003, spent 2011-2012 in the US, then returned 2012-2020; daughter born at Nonthavej 2010, son born in Cambridge MA 2012), lists nanny agencies neutrally without recommending any (deliberately independent positioning).
 - Third culture kids article (`third-culture-kids-bangkok-moving-back`, Local Life, ~2,500 words, 7 FAQ entries, 11 headings, 6 relatedSchools) — positioned as a competitor to bkkkids.com's TCK piece but focused on the "return leg" (moving back), which competitors skip. Draws on the family's 2020 move from Bangkok to Massachusetts. Still has no images.
 
 ## Tools
