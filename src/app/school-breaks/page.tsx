@@ -11,12 +11,12 @@ import {
   type BreakWindowId,
 } from "@/lib/schoolBreaks";
 
-const TITLE = "Bangkok International School Holidays 2026/27";
+const TITLE = "Bangkok International School Term Dates and Holidays 2026/27";
 const DESCRIPTION =
   "Verified term dates and break windows for Bangkok's international schools, read off each school's own published calendar. Plus why October half term is two different weeks depending on where your child goes.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: {
     canonical: "https://www.bkkfamilies.com/school-breaks",
@@ -246,7 +246,8 @@ export default function SchoolBreaksPage() {
                 {SCHOOL_CALENDARS.map((s) => (
                   <tr
                     key={s.name}
-                    className="border-b border-black/5 align-top"
+                    id={s.schoolSlug ?? undefined}
+                    className="scroll-mt-40 border-b border-black/5 align-top target:bg-orange-50"
                   >
                     <td className="py-3 pr-4 font-semibold">
                       {s.schoolSlug ? (

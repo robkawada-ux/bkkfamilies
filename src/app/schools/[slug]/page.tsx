@@ -15,6 +15,14 @@ import {
   type SchoolFees,
   type OneTimeFees,
 } from "@/lib/schoolFees";
+import {
+  calendarFor,
+  hasPublishableDates,
+  formatDay,
+  formatRange,
+  windowLabel,
+  type SchoolCalendar,
+} from "@/lib/schoolBreaks";
 
 export function generateStaticParams() {
   return SCHOOLS.map((s) => ({ slug: s.slug }));
@@ -29,21 +37,56 @@ export async function generateMetadata({
   const school = SCHOOLS.find((s) => s.slug === slug);
   if (!school) return {};
   const firstPara = school.description?.split("\n\n")[0] ?? "";
-  const description = firstPara
+  const fallback = firstPara
     ? firstPara.length <= 158
       ? firstPara
       : firstPara.slice(0, firstPara.lastIndexOf(" ", 155)) + "..."
     : `${school.name} international school in Bangkok. Curriculum: ${school.curricula.join(", ")}.`;
 
+  // Lead with the facts people search for: fees and term dates.
+  const summary = feeSummary(school.slug);
+  const cal = calendarFor(school.slug);
+  const dates = hasPublishableDates(cal);
+  const year = summary?.feeYear ?? "2026/27";
+  const topic =
+    summary && dates
+      ? `Fees and Term Dates ${year}`
+      : summary
+        ? `Fees ${year}`
+        : dates
+          ? "Term Dates 2026/27"
+          : null;
+  const pageTitle = topic ? `${school.name}: ${topic}` : school.name;
+  // Keep the whole title near 65 characters; drop the brand suffix if needed.
+  const title =
+    `${pageTitle} | BKK Families`.length > 66 ? { absolute: pageTitle } : pageTitle;
+
+  let description = fallback;
+  if (summary) {
+    const lead = summary.primary
+      ? `${summary.primary.label} ${formatThb(summary.primary.annual)} THB a year`
+      : `${formatThb(summary.from.annual)} to ${formatThb(summary.to.annual)} THB a year`;
+    const top = `up to ${formatThb(summary.to.annual)} for ${summary.to.label}`;
+    const candidates = [
+      `${school.name} fees ${summary.feeYear}, from the school's own schedule: ${lead}, ${top}.${dates ? " Plus term dates and holidays." : " Plus one-time fees and extras."}`,
+      `${school.name} fees ${summary.feeYear}: ${lead}, ${top}. Read from the school's own schedule.`,
+      `${school.name} fees ${summary.feeYear}: ${lead}, ${top}.`,
+    ];
+    description = candidates.find((c) => c.length <= 160) ?? fallback;
+  } else if (dates) {
+    const candidate = `${school.name} term dates and school holidays for 2026/27, read from the school's own calendar, plus fees and what families should know.`;
+    if (candidate.length <= 160) description = candidate;
+  }
+
   return {
-    title: school.name,
+    title,
     description,
     alternates: {
       canonical: `https://www.bkkfamilies.com/schools/${school.slug}`,
     },
     openGraph: {
       ...og({
-        title: school.name,
+        title: pageTitle,
         description,
         path: `/schools/${school.slug}`,
       }),
@@ -75,6 +118,7 @@ export default async function SchoolPage({
   const fees = schoolFees[school.slug];
   const summary = feeSummary(school.slug);
   const onEnquiry = feesOnEnquiry[school.slug];
+  const calendar = calendarFor(school.slug);
   const firstPara = school.description?.split("\n\n")[0];
 
   const jsonLd = [
@@ -274,6 +318,31 @@ export default async function SchoolPage({
 
       {fees && summary && <FeeTable fees={fees} schoolName={school.name} />}
 
+      {calendar && <TermDates calendar={calendar} schoolName={school.name} />}
+
+      <div className="mt-12 rounded-xl bg-neutral-50 p-5">
+        <p className="text-xs font-bold uppercase tracking-wide text-neutral-400">
+          Planning ahead
+        </p>
+        <ul className="mt-2 grid gap-2 text-sm sm:grid-cols-3">
+          <li>
+            <Link href={calendar?.schoolSlug ? `/school-breaks#${calendar.schoolSlug}` : "/school-breaks"} className="font-semibold text-orange">
+              School holidays 2026/27 →
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/what-does-international-school-actually-cost-bangkok-2026" className="font-semibold text-orange">
+              What school really costs →
+            </Link>
+          </li>
+          <li>
+            <Link href="/camps" className="font-semibold text-orange">
+              Holiday camps →
+            </Link>
+          </li>
+        </ul>
+      </div>
+
       <div className="mt-8 flex flex-wrap items-center gap-3">
         {school.website ? (
           <a
@@ -446,6 +515,77 @@ function FeeTable({ fees, schoolName }: { fees: SchoolFees; schoolName: string }
         . Fees change every year, so confirm with the school before you budget.{" "}
         <Link href="/blog/what-does-international-school-actually-cost-bangkok-2026" className="font-semibold text-orange">
           What international school really costs in Bangkok
+        </Link>
+      </p>
+    </section>
+  );
+}
+
+/** Term start, breaks and term end as one list in date order. */
+function termRows(c: SchoolCalendar) {
+  const rows: { key: string; sort: string; label: string; when: string; note?: string }[] = [];
+  if (c.termStart) rows.push({ key: "start", sort: c.termStart, label: "First day of the school year", when: formatDay(c.termStart) });
+  for (const b of c.breaks) {
+    rows.push({
+      key: b.window + b.start,
+      sort: b.start,
+      label: windowLabel(b.window),
+      when: formatRange(b.start, b.end) + (b.endEstimated ? " (end date estimated)" : ""),
+      note: b.note,
+    });
+  }
+  if (c.termEnd) rows.push({ key: "end", sort: c.termEnd, label: "Last day of the school year", when: formatDay(c.termEnd) });
+  return rows.sort((a, b) => a.sort.localeCompare(b.sort));
+}
+
+function TermDates({ calendar, schoolName }: { calendar: SchoolCalendar; schoolName: string }) {
+  const publishable = hasPublishableDates(calendar);
+  return (
+    <section id="term-dates" className="mt-12 scroll-mt-40">
+      <h2 className="font-heading text-2xl font-bold text-purple-dark">
+        {schoolName} term dates 2026/27
+      </h2>
+
+      {publishable ? (
+        <>
+          <p className="mt-2 text-sm text-neutral-600">
+            Read from the school&apos;s own published calendar on{" "}
+            {formatDay(calendar.lastVerified)}.
+            {calendar.confidence === "partial"
+              ? " The school has not published every break yet, so some are missing below."
+              : ""}
+          </p>
+          <ul className="mt-5 divide-y divide-black/5 overflow-hidden rounded-xl border border-black/10 text-sm">
+            {termRows(calendar).map((r) => (
+              <li key={r.key} className="px-4 py-3">
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between">
+                  <span className="text-neutral-700">{r.label}</span>
+                  <span className="font-semibold text-purple-dark">{r.when}</span>
+                </div>
+                {r.note && <p className="mt-1 text-xs text-neutral-500">{r.note}</p>}
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <p className="mt-2 text-sm text-neutral-600">
+          We have not confirmed this school&apos;s full 2026/27 calendar yet.
+          {calendar.termStart ? ` The school year starts on ${formatDay(calendar.termStart)}.` : ""}
+        </p>
+      )}
+
+      {calendar.caveat && (
+        <p className="mt-4 text-sm text-neutral-600">{calendar.caveat}</p>
+      )}
+
+      <p className="mt-4 text-xs text-neutral-500">
+        Source:{" "}
+        <a href={calendar.sourceUrl} target="_blank" rel="noreferrer" className="font-semibold text-orange">
+          {calendar.sourceLabel}
+        </a>
+        . Calendars change, so check with the school before booking travel or camps.{" "}
+        <Link href={calendar.schoolSlug ? `/school-breaks#${calendar.schoolSlug}` : "/school-breaks"} className="font-semibold text-orange">
+          Compare with other schools
         </Link>
       </p>
     </section>
