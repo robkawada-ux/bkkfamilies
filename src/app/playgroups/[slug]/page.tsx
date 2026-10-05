@@ -168,8 +168,10 @@ export default async function PlaygroupPage({
         >
           {pg.status === "confirmed" ? (
             <>
-              <strong className="font-semibold">Confirmed this term.</strong> Checked on the
-              organiser&rsquo;s own page on {formatDate(pg.lastVerified)}.
+              <strong className="font-semibold">Confirmed this term.</strong>{" "}
+              {pg.confirmedByOrganiser
+                ? `Confirmed directly with the organiser on ${formatDate(pg.lastVerified)}.`
+                : `Checked on the organiser’s own page on ${formatDate(pg.lastVerified)}.`}
             </>
           ) : (
             <>
@@ -286,6 +288,8 @@ export default async function PlaygroupPage({
             )}
           </div>
         )}
+
+        {pg.finePrint && <p className="mt-4 text-xs text-neutral-400">{pg.finePrint}</p>}
 
         {pg.schoolSlug && (
           <p className="mt-8 text-sm text-neutral-600">
