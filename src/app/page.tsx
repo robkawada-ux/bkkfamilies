@@ -6,6 +6,7 @@ import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
 import { SCHOOLS } from "@/lib/schools";
 import { TopBanner, SidebarSlot } from "@/components/ui/AdSlot";
+import { StatRoads } from "@/components/ui/Road";
 
 // Re-render hourly so booked banners start and end on their dates.
 export const revalidate = 3600;
@@ -63,11 +64,14 @@ export default function HomePage() {
 
       {/* STATS */}
       <section className="mx-auto -mt-10 max-w-6xl px-4">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="relative">
+          <StatRoads />
+        <div className="relative z-10 grid grid-cols-2 gap-4 md:grid-cols-4">
           <StatCard value="40,000+" label="Facebook Members" color="green" />
           <StatCard value="+120/wk" label="New Members" color="teal" />
           <StatCard value="5+/day" label="New Posts" color="purple" />
           <StatCard value="14 yrs" label="Community Since 2012" color="orange" />
+        </div>
         </div>
       </section>
 
@@ -129,12 +133,12 @@ export default function HomePage() {
               </p>
             </Link>
             <Link
-              href="/blog"
+              href="/camps"
               className="rounded-xl bg-orange p-6 text-white transition hover:opacity-90"
             >
-              <h3 className="font-heading text-xl font-bold">Blog</h3>
+              <h3 className="font-heading text-xl font-bold">Camps</h3>
               <p className="mt-1 text-sm text-white/90">
-                Guides and roundups from our community and writers.
+                Holiday camps with real dates, ages and prices.
               </p>
             </Link>
           </div>
