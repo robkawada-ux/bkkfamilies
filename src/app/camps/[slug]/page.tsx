@@ -151,6 +151,8 @@ export default async function CampPage({
     },
   ];
 
+  const spooky = camp.theme === "halloween";
+
   return (
     <>
       <script
@@ -158,17 +160,42 @@ export default async function CampPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="bg-purple py-10 text-white">
-        <div className="mx-auto max-w-4xl px-4">
+      <div
+        className={
+          spooky
+            ? "relative overflow-hidden bg-gradient-to-br from-[#12071d] via-purple-dark to-[#6b2a06] py-12 text-white"
+            : "bg-purple py-10 text-white"
+        }
+      >
+        {spooky && (
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 select-none">
+            <span className="absolute left-[4%] top-3 text-3xl opacity-70">🦇</span>
+            <span className="absolute right-[8%] top-6 text-4xl opacity-80">🌕</span>
+            <span className="absolute right-[22%] top-14 text-2xl opacity-60">🦇</span>
+            <span className="absolute right-0 top-0 text-6xl opacity-40">🕸️</span>
+            <span className="absolute bottom-2 right-[6%] text-5xl">🎃</span>
+            <span className="absolute bottom-3 right-[18%] text-3xl opacity-80">👻</span>
+            <span className="absolute bottom-2 left-[46%] text-2xl opacity-50">🕷️</span>
+          </div>
+        )}
+        <div className="relative mx-auto max-w-4xl px-4">
           <Link href="/camps" className="text-sm text-white/80 hover:text-white">
             &larr; All camps
           </Link>
           <h1 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
+            {spooky && <span aria-hidden="true">🎃 </span>}
             {camp.name}
+            {spooky && <span aria-hidden="true"> 👻</span>}
           </h1>
           <p className="mt-2 text-white/90">
             {camp.mainVenue ?? camp.area}
           </p>
+          {camp.tagline && (
+            <p className={`mt-3 text-lg font-semibold ${spooky ? "text-orange" : "text-white"}`}>
+              {spooky && <span aria-hidden="true">🕯️ </span>}
+              {camp.tagline}
+            </p>
+          )}
           <div className="mt-3 flex flex-wrap gap-2">
             <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">
               {camp.area}
@@ -192,9 +219,32 @@ export default async function CampPage({
           ))}
         </div>
 
+        {camp.highlights && camp.highlights.length > 0 && (
+          <div className="mt-8">
+            <h2 className="font-heading text-lg font-bold text-purple-dark">
+              {spooky ? "🧙 What's brewing" : "Highlights"}
+            </h2>
+            <ul className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {camp.highlights.map((h) => (
+                <li
+                  key={h}
+                  className={
+                    spooky
+                      ? "rounded-xl border border-orange/40 bg-[#1c0f2b] px-4 py-3 text-sm font-medium text-orange-50"
+                      : "rounded-xl border border-black/5 bg-purple-50 px-4 py-3 text-sm font-medium text-purple-dark"
+                  }
+                >
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {camp.worthKnowing && (
           <div className="mt-8 rounded-xl border border-black/5 bg-orange-50 p-5">
             <h2 className="font-heading font-bold text-purple-dark">
+              {spooky && <span aria-hidden="true">🕸️ </span>}
               Worth knowing
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-neutral-700">
@@ -220,6 +270,12 @@ export default async function CampPage({
               )}
             </figcaption>
           </figure>
+        )}
+
+        {spooky && (
+          <p aria-hidden="true" className="mt-12 text-center text-3xl tracking-[0.4em]">
+            🦇🎃👻🕷️🍬🧙
+          </p>
         )}
 
         {/* Contact */}

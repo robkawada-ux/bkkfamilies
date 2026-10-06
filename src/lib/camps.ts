@@ -120,6 +120,15 @@ export interface Camp {
   phone?: string;
   lineId?: string;
   facebook?: string;
+  /**
+   * Seasonal skin for the detail page. "halloween" swaps the purple hero for
+   * a night-sky gradient and adds pumpkins, bats and cobwebs. Purely visual.
+   */
+  theme?: "halloween";
+  /** One-line hook shown in the hero, under the venue. */
+  tagline?: string;
+  /** Short activity bullets, emoji first, shown as cards under the description. */
+  highlights?: string[];
   sessions: CampSession[];
   lastVerified: string;
 }
@@ -1008,10 +1017,28 @@ export const CAMPS: Camp[] = [
   {
     slug: "storytime-preschool-halloween-camp",
     name: "Storytime Preschool",
+    theme: "halloween",
+    tagline: "A week of magic and spooky fun for ages 2 to 7, 12 to 16 October",
+    highlights: [
+      "🎨 Halloween crafts",
+      "🧁 Baking spooky treats",
+      "🎃 Pumpkin carving",
+      "🫧 Sensory play",
+      "🧪 Magical potions",
+      "🗺️ Treasure hunts",
+      "🌳 Outdoor games",
+      "🎉 Costume party",
+      "🚐 Free shuttle from BTS Nana",
+      "📅 Book single days or the whole week",
+    ],
     area: "Khlong Toei",
     mainVenue: "Storytime Preschool, 85 Soi Samahan, Sukhumvit Soi 4",
+    photo: "/images/camps/storytime-halloween-october-2026.jpg",
+    photoAlt: "Storytime Preschool flyer for the October 2026 camp, 12 to 16 October for ages 2 to 7, with half day, full day and extended day prices, a jack-o'-lantern, bats and a witch's cauldron of sweets, plus LINE and WhatsApp QR codes for booking.",
+    photoCredit: "Storytime Preschool, used with permission",
+    photoCaption: "Storytime's flyer for the October 2026 camp, published October 2026. Scan the QR codes to book on LINE or WhatsApp.",
     description:
-      "Storytime is an English-language preschool off Sukhumvit Soi 4 that also runs playgroups for babies and toddlers. For the October break it runs a Halloween Camp for children aged 2 to 7, with Halloween crafts, sensory play, magical potions, treasure hunts, outdoor games and a costume party. Families can book single days or the whole week, and choose a half, full or extended day.",
+      "Storytime is an English-language preschool off Sukhumvit Soi 4 that also runs playgroups for babies and toddlers. For the October break it runs a Halloween Camp for children aged 2 to 7, with Halloween crafts, baking treats, pumpkin carving, sensory play, magical potions, treasure hunts, outdoor games and a costume party. Families can book single days or the whole week, and choose a half, full or extended day.",
     worthKnowing:
       "The camp is closed on 13 October for King Rama IX Memorial Day, so the week is four days. There is a free daily shuttle for drop-off and pick-up at BTS Nana, which helps because parking at the school is very limited.",
     website: "https://www.storytimepreschool.com",
