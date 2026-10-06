@@ -12,7 +12,7 @@ export default function Footer() {
               <span className="font-heading text-lg font-bold">BKK Families</span>
             </div>
             <p className="mt-3 max-w-xs text-sm text-white/70">
-              <span className="font-bold text-white">Your Bangkok Roadmap.</span> A community of 40,000+ expat and Thai
+              <span className="font-bold uppercase tracking-wide text-white">Your Bangkok Roadmap.</span> A community of 40,000+ expat and Thai
               families sharing resources on schools, activities, and
               healthcare in Bangkok since 2012.
             </p>
