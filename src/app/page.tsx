@@ -6,7 +6,7 @@ import ArticleCard from "@/components/ui/ArticleCard";
 import { ARTICLES } from "@/lib/articles";
 import { SCHOOLS } from "@/lib/schools";
 import { TopBanner, SidebarSlot } from "@/components/ui/AdSlot";
-import { StatRoads } from "@/components/ui/Road";
+import { StatRoads, Roundabout } from "@/components/ui/Road";
 
 // Re-render hourly so booked banners start and end on their dates.
 export const revalidate = 3600;
@@ -101,7 +101,9 @@ export default function HomePage() {
               city.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="relative">
+          <Roundabout />
+          <div className="relative z-10 grid grid-cols-2 gap-4 md:auto-rows-fr md:gap-10">
             <Link
               href="/schools"
               className="rounded-xl bg-teal p-6 text-white transition hover:opacity-90"
@@ -141,6 +143,7 @@ export default function HomePage() {
                 Holiday camps with real dates, ages and prices.
               </p>
             </Link>
+          </div>
           </div>
         </div>
       </section>

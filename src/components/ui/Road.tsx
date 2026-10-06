@@ -75,3 +75,30 @@ export function StatRoads() {
     </>
   );
 }
+
+const KERB = "#1f1530";
+const TARMAC = "#2b2b2b";
+
+/**
+ * A ring road joining the inner corners of a two-by-two card grid. The ring
+ * sits behind the cards, so each card's inner corner rests on the road and
+ * the visible arcs run through the gaps between them. The grid needs equal
+ * row heights (auto-rows-fr) and a 40px gap (gap-10) for the ring radius
+ * below to meet the corners. Shown from md up only.
+ */
+export function Roundabout() {
+  const r = 40;
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      className="pointer-events-none absolute inset-0 hidden h-full w-full overflow-visible md:block"
+    >
+      {/* green island in the middle */}
+      <circle cx="50%" cy="50%" r={r - 12} fill="#8DC63F" />
+      <circle cx="50%" cy="50%" r={r} fill="none" stroke={KERB} strokeWidth={18} />
+      <circle cx="50%" cy="50%" r={r} fill="none" stroke={TARMAC} strokeWidth={14} />
+      <circle cx="50%" cy="50%" r={r} fill="none" stroke="#fff" strokeWidth={2} strokeDasharray="7 7" />
+    </svg>
+  );
+}
