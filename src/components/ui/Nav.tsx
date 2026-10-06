@@ -59,7 +59,7 @@ export default function Nav() {
             BKK Families
           </span>
         </Link>
-        <p className="hidden text-sm italic text-neutral-500 lg:block">
+        <p className="hidden text-base font-bold italic text-purple-dark lg:block">
           Your Bangkok Roadmap
         </p>
         <button

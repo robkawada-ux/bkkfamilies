@@ -32,7 +32,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="bg-orange px-4 py-20 text-white md:py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-white/80">
+          <p className="mb-3 text-base font-extrabold uppercase tracking-widest text-white">
             Your Bangkok Roadmap
           </p>
           <h1 className="max-w-2xl font-heading text-4xl font-bold leading-tight md:text-6xl">
