@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     template: "%s | BKK Families",
   },
   description:
-    "The largest, longest-running community for expat and Thai families in Bangkok. Find international schools with verified fees, healthcare, camps, playgroups and activities, plus a 40,000+ member Facebook community.",
+    "The largest, longest-running community for expat and Thai families in Bangkok. Find international schools with verified fees, healthcare, camps, playgroups and activities, plus a Facebook community of nearly 40,000 members.",
   openGraph: {
     title: "BKK Families: Schools, Healthcare and Family Life in Bangkok",
     description:
-      "Schools, activities, and healthcare resources for families in Bangkok, backed by a 40,000+ member community.",
+      "Schools, activities, and healthcare resources for families in Bangkok, backed by a community of nearly 40,000 members.",
     // no url here on purpose: it would be inherited by every page
     siteName: "BKK Families",
     locale: "en_US",

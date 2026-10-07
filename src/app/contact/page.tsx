@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
   title: "Contact & Advertising",
   description:
-    "Get in touch with BKK Families, or explore advertising opportunities to reach our 40,000+ member community.",
+    "Get in touch with BKK Families, or explore advertising opportunities to reach our community of nearly 40,000 members.",
   openGraph: og({
     title: "Contact & Advertising",
     description:
-      "Get in touch with BKK Families, or explore advertising opportunities to reach our 40,000+ member community.",
+      "Get in touch with BKK Families, or explore advertising opportunities to reach our community of nearly 40,000 members.",
     path: "/contact",
   }),
 };
@@ -65,7 +65,7 @@ export default function ContactPage() {
             Advertise With Us
           </p>
           <h2 className="mt-2 font-heading text-3xl font-bold text-purple-dark md:text-4xl">
-            Get in front of 40,000+ families who are already spending on
+            Get in front of nearly 40,000 families who are already spending on
             exactly what you sell.
           </h2>
           <p className="mt-4 max-w-3xl text-lg text-neutral-600">
@@ -79,7 +79,7 @@ export default function ContactPage() {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             <div className="rounded-xl bg-purple p-6 text-white">
-              <p className="font-heading text-3xl font-bold">40,000+</p>
+              <p className="font-heading text-3xl font-bold">Nearly 40K</p>
               <p className="mt-1 text-sm text-white/80">
                 Members, growing by roughly 120 new families every week
               </p>

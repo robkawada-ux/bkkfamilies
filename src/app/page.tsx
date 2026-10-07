@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: og({
     title: "BKK Families: Schools, Healthcare and Family Life in Bangkok",
     description:
-      "Schools, activities, and healthcare resources for families in Bangkok, backed by a 40,000+ member community.",
+      "Schools, activities, and healthcare resources for families in Bangkok, backed by a community of nearly 40,000 members.",
     path: "/",
   }),
 };
@@ -39,7 +39,7 @@ export default function HomePage() {
             The community every Bangkok family finds eventually.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">
-            40,000+ expat and Thai families sharing what actually works:
+            Nearly 40,000 expat and Thai families sharing what actually works:
             schools, activities, healthcare, and everything in between.
             Community since 2012.
           </p>
@@ -67,7 +67,7 @@ export default function HomePage() {
         <div className="relative">
           <StatRoads />
         <div className="relative z-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-          <StatCard value="40,000+" label="Facebook Members" color="green" />
+          <StatCard value="Nearly 40K" label="Facebook Members" color="green" />
           <StatCard value="+120/wk" label="New Members" color="teal" />
           <StatCard value="5+/day" label="New Posts" color="purple" />
           <StatCard value="14 yrs" label="Community Since 2012" color="orange" />
@@ -186,7 +186,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-20">
         <div className="rounded-2xl bg-purple px-8 py-12 text-center text-white">
           <h2 className="font-heading text-3xl font-bold">
-            Reach 40,000+ Bangkok Families
+            Reach Nearly 40,000 Bangkok Families
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-white/85">
             Pinned posts and the cover banner in the group, plus banners on

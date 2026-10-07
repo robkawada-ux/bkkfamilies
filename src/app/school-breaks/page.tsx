@@ -404,7 +404,7 @@ export default function SchoolBreaksPage() {
               >
                 Bangkok Expat Families on Facebook
               </a>
-              , where 40,000 parents compare notes on exactly this.
+              , where nearly 40,000 parents compare notes on exactly this.
             </li>
           </ul>
         </div>
