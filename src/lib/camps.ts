@@ -1018,7 +1018,7 @@ export const CAMPS: Camp[] = [
     slug: "storytime-preschool-halloween-camp",
     name: "Storytime Preschool",
     theme: "halloween",
-    tagline: "A week of magic and spooky fun for ages 2 to 7, 12 to 16 October",
+    tagline: "A week of magic and spooky fun for ages 2 to 8, 12 to 16 October",
     highlights: [
       "🎨 Halloween crafts",
       "🧁 Baking spooky treats",
@@ -1038,14 +1038,14 @@ export const CAMPS: Camp[] = [
     photoCredit: "Storytime Preschool, used with permission",
     photoCaption: "Storytime's flyer for the October 2026 camp, published October 2026. Scan the QR codes to book on LINE or WhatsApp.",
     description:
-      "Storytime is an English-language preschool off Sukhumvit Soi 4 that also runs playgroups for babies and toddlers. For the October break it runs a Halloween Camp for children aged 2 to 7, with Halloween crafts, baking treats, pumpkin carving, sensory play, magical potions, treasure hunts, outdoor games and a costume party. Families can book single days or the whole week, and choose a half, full or extended day.",
+      "Storytime is an English-language preschool off Sukhumvit Soi 4 that also runs playgroups for babies and toddlers. For the October break it runs a Halloween Camp for children aged 2 to 8, with Halloween crafts, baking treats, pumpkin carving, sensory play, magical potions, treasure hunts, outdoor games and a costume party. Families can book single days or the whole week, and choose a half, full or extended day.",
     worthKnowing:
       "The camp is closed on 13 October for King Rama IX Memorial Day, so the week is four days. There is a free daily shuttle for drop-off and pick-up at BTS Nana, which helps because parking at the school is very limited.",
     website: "https://www.storytimepreschool.com",
     email: "info@storytimepreschool.com",
-    phone: "081 646 4535",
+    phone: "081 646 4535 or 02 656 9084",
     facebook: "https://www.facebook.com/storytimepreschool",
-    lastVerified: "2026-10-05",
+    lastVerified: "2026-10-07",
     sessions: [
       {
         id: "storytime-oct-2026-half",
@@ -1056,7 +1056,7 @@ export const CAMPS: Camp[] = [
         dateStatus: "confirmed",
         categories: ["multi-activity", "art-and-design"],
         minAge: 2,
-        maxAge: 7,
+        maxAge: 8,
         format: "half-day",
         priceFrom: 1200,
         priceUnit: "per-day",
@@ -1074,7 +1074,7 @@ export const CAMPS: Camp[] = [
         dateStatus: "confirmed",
         categories: ["multi-activity", "art-and-design"],
         minAge: 2,
-        maxAge: 7,
+        maxAge: 8,
         format: "day",
         priceFrom: 1500,
         priceTo: 1800,

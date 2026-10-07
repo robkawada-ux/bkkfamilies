@@ -1203,7 +1203,7 @@ export const PLAYGROUPS: Playgroup[] = [
         end: "11:00",
         minAgeMonths: 8,
         maxAgeMonths: 3 * Y + 6,
-        price: { amount: 350, unit: "session" },
+        price: { amount: 300, unit: "session" },
       },
       {
         label: "Monthly Saturday playgroup",
@@ -1222,6 +1222,7 @@ export const PLAYGROUPS: Playgroup[] = [
     worthKnowing:
       "The free shuttle leaves BTS Nana from about 9.15am and brings you back at 11am. Parking at the school is very limited.",
     bookingRequired: true,
+    schoolSlug: "storytime-preschool",
     bookingUrl: "https://www.storytimepreschool.com/playgroups",
     phone: "081 646 4535",
     facebook: "https://www.facebook.com/storytimepreschool",
@@ -1229,7 +1230,7 @@ export const PLAYGROUPS: Playgroup[] = [
     status: "confirmed",
     confirmedByOrganiser: true,
     sourceUrl: "https://www.storytimepreschool.com/playgroups",
-    lastVerified: "2026-10-05",
+    lastVerified: "2026-10-07",
     finePrint: "Ask about discount for BAMBI members.",
   },
   {
