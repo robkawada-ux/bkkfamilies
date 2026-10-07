@@ -159,8 +159,8 @@ export default function ContactPage() {
                 Facebook Advertising
               </h3>
               <ul className="mt-3 space-y-1 text-sm text-neutral-600">
-                <li>✓ Top banner placement (sole ownership, not a rotating carousel)</li>
-                <li>✓ Pinned post placements</li>
+                <li>✓ Pinned sponsored posts (one week each)</li>
+                <li>✓ Group cover banner (one advertiser a month)</li>
               </ul>
             </div>
             <div className="rounded-xl border border-black/5 bg-white p-6 shadow-sm">
@@ -179,22 +179,10 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border border-black/5 bg-white p-6 shadow-sm sm:max-w-md">
-            <h3 className="font-heading text-lg font-bold text-purple-dark">
-              Sponsored Feature Package
-            </h3>
-            <ul className="mt-3 space-y-1 text-sm text-neutral-600">
-              <li>✓ On-site visit</li>
-              <li>✓ A feature article about your business, written by our team</li>
-              <li>✓ A link to your website</li>
-              <li>✓ Facebook pinned post</li>
-            </ul>
-            <p className="mt-3 text-xs text-neutral-500">
-              Sponsored features are always labelled as sponsored. They are
-              kept separate from our directories and reviews, which are never
-              paid for.
-            </p>
-          </div>
+          <p className="mt-6 text-sm text-neutral-600">
+            Our directories and reviews are never for sale, and we do not
+            sell articles. Everything paid is clearly labelled as sponsored.
+          </p>
         </div>
 
         {/* CTA */}

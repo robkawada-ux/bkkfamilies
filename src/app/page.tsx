@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const latest = ARTICLES.slice()
     .sort((a, b) => (a.date < b.date ? 1 : -1))
-    .slice(0, 3);
+    .slice(0, 6);
 
   return (
     <>
@@ -159,10 +159,17 @@ export default function HomePage() {
               View all →
             </Link>
           </div>
-          <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
+          <div className="grid items-start gap-8 lg:grid-cols-[1fr_300px]">
             <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-              {latest.map((a) => (
-                <ArticleCard key={a.slug} article={a} />
+              {latest.map((a, i) => (
+                // Six articles fill the column beside the sidebar on wide
+                // screens; where the column is a single stack, show three.
+                <div
+                  key={a.slug}
+                  className={i < 3 ? "flex" : "hidden md:flex lg:hidden xl:flex"}
+                >
+                  <ArticleCard article={a} />
+                </div>
               ))}
             </div>
             {/* SIDEBAR (paid slots, see lib/ads.ts) */}
@@ -182,8 +189,8 @@ export default function HomePage() {
             Reach 40,000+ Bangkok Families
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-white/85">
-            Banner placements, sponsored features, and Facebook promotion,
-            always clearly labelled. We will help you find the right fit.
+            Pinned posts and the cover banner in the group, plus banners on
+            the site, always clearly labelled. We will help you find the right fit.
           </p>
           <Link
             href="/contact"

@@ -5,7 +5,7 @@ export default function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/blog/${article.slug}`}
-      className="group block overflow-hidden rounded-xl border border-black/5 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+      className="group block w-full overflow-hidden rounded-xl border border-black/5 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
     >
       <div className="h-2 w-full bg-orange" />
       <div className="p-5">
