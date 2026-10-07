@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { og } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { SCHOOLS } from "@/lib/schools";
+import { SCHOOLS, AREA_LABEL } from "@/lib/schools";
 import { SITE } from "@/lib/seo";
 import {
   schoolFees,
@@ -219,6 +219,12 @@ export default async function SchoolPage({
 
       <div className="px-4 py-12">
       <div className="grid gap-3 sm:grid-cols-2">
+        <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
+          <p className="text-xs uppercase tracking-wide text-neutral-400">Location</p>
+          <p className="text-sm font-semibold text-purple-dark">
+            {school.areas.map((a) => AREA_LABEL[a]).join(", ")}
+          </p>
+        </div>
         {school.ageRange && (
           <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
             <p className="text-xs uppercase tracking-wide text-neutral-400">Ages</p>
