@@ -31,7 +31,9 @@ export type Category =
   | "Football"
   | "Gymnastics"
   | "Dance"
-  | "Fitness";
+  | "Fitness"
+  | "Music"
+  | "Art and science";
 
 export const DAY_OUT_CATEGORIES: Category[] = [
   "Indoor play",
@@ -49,6 +51,8 @@ export const CLASS_CATEGORIES: Category[] = [
   "Gymnastics",
   "Dance",
   "Fitness",
+  "Music",
+  "Art and science",
 ];
 
 export type Setting = "Indoor" | "Outdoor" | "Indoor and outdoor";
@@ -1248,6 +1252,103 @@ export const ACTIVITIES: Activity[] = [
     status: "check",
     sourceUrl: HONEYKIDS_PLAY,
     lastVerified: "2026-09-29",
+  },
+  // ============================================================ Little Pea Kids Commons (organiser's own details, Oct 2026)
+  {
+    slug: "little-pea-music-together",
+    name: "Music Together, Little Pea Kids Commons",
+    type: "Weekly class",
+    category: "Music",
+    setting: "Indoor",
+    venue: "Little Pea Kids Commons, theCOMMONS Thonglor",
+    address: "theCOMMONS, Thong Lo Soi 17, Watthana",
+    district: "Watthana",
+    zone: "Sukhumvit",
+    transit: "BTS Thong Lo",
+    minAge: 0,
+    maxAge: 4,
+    hours: "Wednesday and Sunday 10am to 11am. Babies under 1: Wednesday 11.15am to 12pm",
+    price: { from: 650, unit: "session" },
+    description:
+      "Music Together is an early childhood music and movement programme for children up to four and their caregivers, built around singing, rhythm and movement to support language and emotional development. Little Pea runs the main class twice a week, plus a gentler, sensory-rich session for babies under one that focuses on bonding and first musical experiences.",
+    phone: "065 392 5658",
+    lineId: "@littlepeabkk",
+    website: "https://www.littlepeabkk.com/service-page/music-together",
+    status: "confirmed",
+    sourceUrl: "https://www.littlepeabkk.com/service-page/music-together",
+    lastVerified: "2026-10-07",
+  },
+  {
+    slug: "little-pea-ballet-and-jazz",
+    name: "Ballet and Jazz, Little Pea Kids Commons",
+    type: "Weekly class",
+    category: "Dance",
+    setting: "Indoor",
+    venue: "Little Pea Kids Commons, theCOMMONS Thonglor",
+    address: "theCOMMONS, Thong Lo Soi 17, Watthana",
+    district: "Watthana",
+    zone: "Sukhumvit",
+    transit: "BTS Thong Lo",
+    minAge: 2,
+    maxAge: 12,
+    hours: "Saturday: Baby Ballet (2 to 4) 9.30am and 10.30am, Level Up Ballet (4 to 6) 11.30am, Move & Groove Jazz (5 to 12) 1pm",
+    price: { from: 600, unit: "session" },
+    description:
+      "Three Saturday dance classes by age. Baby Ballet introduces two to fours to classical dance while building coordination, motor and social skills. Level Up Ballet, with Ms. Lynn, is for four to sixes who already have a foundation and want to develop technique and confidence. Move & Groove Jazz teaches five to twelves energetic routines in a playful setting.",
+    phone: "065 392 5658",
+    lineId: "@littlepeabkk",
+    website: "https://www.littlepeabkk.com/service-page/baby-ballet",
+    status: "confirmed",
+    sourceUrl: "https://www.littlepeabkk.com/service-page/baby-ballet",
+    lastVerified: "2026-10-07",
+  },
+  {
+    slug: "little-pea-little-scientists",
+    name: "Little Scientists, Little Pea Kids Commons",
+    type: "Weekly class",
+    category: "Art and science",
+    setting: "Indoor",
+    venue: "Little Pea Kids Commons, theCOMMONS Thonglor",
+    address: "theCOMMONS, Thong Lo Soi 17, Watthana",
+    district: "Watthana",
+    zone: "Sukhumvit",
+    transit: "BTS Thong Lo",
+    minAge: 3,
+    maxAge: 5,
+    hours: "Sunday 11.30am to 12.30pm",
+    price: { from: 600, unit: "session" },
+    description:
+      "A hands-on science class for three to fives, who mix, build, observe and run simple experiments, testing their own ideas and asking what happens if. The aim is curiosity and confidence rather than facts to memorise.",
+    phone: "065 392 5658",
+    lineId: "@littlepeabkk",
+    website: "https://www.littlepeabkk.com/service-page/little-scientists",
+    status: "confirmed",
+    sourceUrl: "https://www.littlepeabkk.com/service-page/little-scientists",
+    lastVerified: "2026-10-07",
+  },
+  {
+    slug: "little-pea-creative-painting",
+    name: "Creative Painting, Little Pea Kids Commons",
+    type: "Weekly class",
+    category: "Art and science",
+    setting: "Indoor",
+    venue: "Little Pea Kids Commons, theCOMMONS Thonglor",
+    address: "theCOMMONS, Thong Lo Soi 17, Watthana",
+    district: "Watthana",
+    zone: "Sukhumvit",
+    transit: "BTS Thong Lo",
+    minAge: 5,
+    maxAge: 12,
+    hours: "Sunday 10.30am to 11.30am",
+    price: { from: 950, unit: "session" },
+    description:
+      "A weekly studio session for five to twelves run by Pop Up Art Studio, led by a teacher and atelierista using the Reggio Emilia approach. It is more open-ended than a typical painting class: children learn to create, hesitate, retry and trust their own ideas, building creative confidence, fine motor skills and resilience along the way.",
+    phone: "065 392 5658",
+    lineId: "@littlepeabkk",
+    website: "https://www.littlepeabkk.com/service-page/creative-painting-5-12-y",
+    status: "confirmed",
+    sourceUrl: "https://www.littlepeabkk.com/service-page/creative-painting-5-12-y",
+    lastVerified: "2026-10-07",
   },
 ];
 
