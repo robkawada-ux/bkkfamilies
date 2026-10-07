@@ -180,9 +180,16 @@ export default function ContactPage() {
           </div>
 
           <p className="mt-6 text-sm text-neutral-600">
-            Our directories and reviews are never for sale, and we do not
-            sell articles. Everything paid is clearly labelled as sponsored.
+            Our reviews are never for sale. Sponsored articles are written by
+            the advertiser, edited by us, and everything paid is clearly
+            labelled as sponsored.
           </p>
+          <a
+            href="/bkk-families-media-kit.pdf"
+            className="mt-6 inline-block rounded-full bg-orange px-6 py-3 font-semibold text-white transition hover:opacity-90"
+          >
+            Download our media kit (PDF)
+          </a>
         </div>
 
         {/* CTA */}
