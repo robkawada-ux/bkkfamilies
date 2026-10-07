@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import SchoolAreaMap from "@/components/ui/SchoolAreaMap";
 import {
   SCHOOLS,
   ALL_CURRICULA,
@@ -17,6 +18,14 @@ export default function SchoolDirectory() {
   const [curriculum, setCurriculum] = useState("All");
   const [budget, setBudget] = useState<"All" | Budget>("All");
   const [area, setArea] = useState<"All" | Area>("All");
+  const [showMap, setShowMap] = useState(false);
+
+  // Main-campus counts per area, for the map labels.
+  const counts = useMemo(() => {
+    const c = Object.fromEntries(AREAS.map((a) => [a.id, 0])) as Record<Area, number>;
+    for (const s of SCHOOLS) c[s.areas[0]]++;
+    return c;
+  }, []);
 
   const filtered = useMemo(() => {
     return SCHOOLS.filter((s) => {
@@ -103,6 +112,24 @@ export default function SchoolDirectory() {
             <option value="unknown">Fees not published</option>
           </select>
         </div>
+      </div>
+
+      {/* Map, hidden until asked for */}
+      <div className="mb-8">
+        <button
+          type="button"
+          onClick={() => setShowMap((v) => !v)}
+          aria-expanded={showMap}
+          className="inline-flex items-center gap-2 rounded-full border border-purple/20 bg-purple-50 px-4 py-2 text-sm font-semibold text-purple-dark transition hover:bg-purple hover:text-white"
+        >
+          <span aria-hidden="true">🗺️</span>
+          {showMap ? "Hide the map" : "Not sure which area? View the map"}
+        </button>
+        {showMap && (
+          <div className="mt-4 rounded-xl border border-black/5 bg-white p-5 shadow-sm">
+            <SchoolAreaMap selected={area} counts={counts} onSelect={setArea} />
+          </div>
+        )}
       </div>
 
       <p className="mb-6 text-sm text-neutral-500">
