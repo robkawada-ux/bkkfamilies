@@ -711,7 +711,7 @@ export const PLAYGROUPS: Playgroup[] = [
   },
   {
     slug: "shrewsbury-city-campus-starfish",
-    name: "Starfish Playgroup, Shrewsbury City Campus",
+    name: "Starfish Playgroup, Shrewsbury Bangkok City Campus",
     organiser: "International school",
     kind: "Drop-in playgroup",
     venue: "Shrewsbury International School Bangkok, City Campus",
@@ -729,19 +729,19 @@ export const PLAYGROUPS: Playgroup[] = [
         price: { amount: 400, unit: "session", note: "Healthy snacks included." },
       },
     ],
-    languages: ["English"],
+    languages: ["English", "Thai"],
     description:
-      "Afternoon sessions twice a week in Shrewsbury City Campus's Reggio Emilia inspired Early Years setting, with a monthly theme, the gardens, a splash pool, songs and stories. A good choice if your child naps in the morning.",
+      "Shrewsbury Starfish Playgroup runs every Wednesday and Thursday, 1.45pm to 3.15pm, for children aged 1 to 3. Explore the gardens, splash around in the splash pool, sing songs, read stories and enjoy some quality time playing with your child.",
     worthKnowing:
-      "A parent must attend, and nannies cannot bring children on their own. The school's page still shows the 2025-26 timetable, so confirm when you book.",
+      "A parent must attend, and nannies cannot bring children on their own.",
     bookingRequired: true,
     bookingUrl: "https://shcplaygroupbooking.paperform.co/",
     phone: "02 203 1222",
     website: "https://www.shrewsbury.ac.th/city-campus/playgroup/",
     schoolSlug: "shrewsbury-international-school-bangkok",
-    status: "check",
+    status: "confirmed",
     sourceUrl: "https://www.shrewsbury.ac.th/city-campus/playgroup/",
-    lastVerified: "2026-09-28",
+    lastVerified: "2026-10-07",
   },
   {
     slug: "shrewsbury-riverside-playgroup",
