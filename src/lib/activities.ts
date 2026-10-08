@@ -121,6 +121,8 @@ export interface Activity {
   /** Other branches, for chains. */
   branches?: string[];
   website?: string;
+  /** Online booking page, when the operator has one. */
+  bookingUrl?: string;
   phone?: string;
   lineId?: string;
   email?: string;
@@ -1274,6 +1276,7 @@ export const ACTIVITIES: Activity[] = [
     phone: "065 392 5658",
     lineId: "@littlepeabkk",
     website: "https://www.littlepeabkk.com/service-page/music-together",
+    bookingUrl: "https://www.littlepeabkk.com/book-online",
     status: "confirmed",
     sourceUrl: "https://www.littlepeabkk.com/service-page/music-together",
     lastVerified: "2026-10-07",
@@ -1298,6 +1301,7 @@ export const ACTIVITIES: Activity[] = [
     phone: "065 392 5658",
     lineId: "@littlepeabkk",
     website: "https://www.littlepeabkk.com/service-page/baby-ballet",
+    bookingUrl: "https://www.littlepeabkk.com/book-online",
     status: "confirmed",
     sourceUrl: "https://www.littlepeabkk.com/service-page/baby-ballet",
     lastVerified: "2026-10-07",
@@ -1322,6 +1326,7 @@ export const ACTIVITIES: Activity[] = [
     phone: "065 392 5658",
     lineId: "@littlepeabkk",
     website: "https://www.littlepeabkk.com/service-page/little-scientists",
+    bookingUrl: "https://www.littlepeabkk.com/book-online",
     status: "confirmed",
     sourceUrl: "https://www.littlepeabkk.com/service-page/little-scientists",
     lastVerified: "2026-10-07",
@@ -1346,6 +1351,7 @@ export const ACTIVITIES: Activity[] = [
     phone: "065 392 5658",
     lineId: "@littlepeabkk",
     website: "https://www.littlepeabkk.com/service-page/creative-painting-5-12-y",
+    bookingUrl: "https://www.littlepeabkk.com/book-online",
     status: "confirmed",
     sourceUrl: "https://www.littlepeabkk.com/service-page/creative-painting-5-12-y",
     lastVerified: "2026-10-07",

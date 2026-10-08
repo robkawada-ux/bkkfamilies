@@ -132,6 +132,15 @@ export default async function ActivityPage({
         </a>
       ),
     });
+  if (a.bookingUrl)
+    contactRows.push({
+      label: "Book online",
+      node: (
+        <a href={a.bookingUrl} target="_blank" rel="noopener noreferrer" className="text-teal hover:underline">
+          {a.bookingUrl.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+        </a>
+      ),
+    });
   if (a.website)
     contactRows.push({
       label: "Website",
