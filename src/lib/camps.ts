@@ -559,6 +559,10 @@ export const CAMPS: Camp[] = [
     name: "Little Pea Term-Break Camps",
     area: "Watthana",
     mainVenue: "Little Pea Kids Commons, theCOMMONS Thonglor",
+    photo: "/images/camps/little-pea-october-2026.jpg",
+    photoAlt: "Little Pea's October Camp 2026 poster: School of Magic, a cooking and science camp from 12 to 16 October for ages 4 to 8, 9am to 2pm, with the theme for each day, prices of 12,000 baht a week or 2,800 baht a day, returning camper and bundle discounts, and a LINE QR code for booking.",
+    photoCredit: "Little Pea Kids Commons, used with permission",
+    photoCaption: "Little Pea's poster for the October 2026 camp. Scan the QR code to book on LINE.",
     description:
       "Little Pea Kids Commons runs day camps for four to eight year olds during the international school holidays throughout the year, at its space in theCOMMONS on Thong Lo Soi 17. The October camp is School of Magic, a Harry Potter inspired cooking and science week: each day has its own theme, from brewing fizzy potions to baking and decorating a birthday cake, and it ends with a dress-up graduation day.",
     worthKnowing:
