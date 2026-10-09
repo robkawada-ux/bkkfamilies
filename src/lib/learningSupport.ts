@@ -871,15 +871,16 @@ export const PROVIDERS: Provider[] = [
   },
   {
     slug: "english-speech-therapy-bkk",
-    name: "English Speech Therapy BKK",
+    name: "English Speech Therapy BKK, Network of Speech-Language Therapists",
     category: "Therapy clinic",
-    area: "Bangkok",
+    area: "Bangkok and across Thailand",
     ages: "Children through adults",
     languages: ["English", "Thai"],
     delivery: ["At a centre", "In school", "At home"],
     services: [
-      "Referral to English-speaking speech and language therapists",
-      "Speech and language therapy",
+      "Referrals to English-speaking speech-language therapists, matched to availability and expertise",
+      "Speech, language and communication support",
+      "Private therapy through individual members",
     ],
     tags: [
       "Speech & language",
@@ -887,8 +888,8 @@ export const PROVIDERS: Provider[] = [
     phone: "+66 81 822 2008",
     email: "englishspeechtherapybkk@gmail.com",
     description:
-      "This is a referral network rather than a clinic: a group of English-speaking speech and language therapists from various countries who live and work in Thailand, coordinated by speech pathologist Ann Gee Teo. You describe what you need and are matched to a therapist.\n\nIt solves a specific and common problem. Bangkok has capable speech therapists, but the pool who can deliver therapy in fluent English, and write reports an international school will act on, is much smaller, and it is not always obvious from the outside which is which.",
-    checked: "September 2026",
+      "English Speech Therapy BKK is a professional network of English-speaking speech-language therapists (SLTs) based in Bangkok and across Thailand. Most members work in international schools and clinics, and some also offer private therapy. The network connects families with SLTs by sharing referrals and enquiries among its members, based on their availability and areas of expertise.\n\nIt is not a single therapy provider, so there is no one clinic to visit. Instead, you describe what your child needs and the network helps you find a suitable therapist for speech, language and communication support.",
+    checked: "October 2026",
   },
   {
     slug: "samitivej-special-needs-child-center",
