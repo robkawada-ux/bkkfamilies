@@ -603,12 +603,11 @@ export const PROVIDERS: Provider[] = [
       "Play, art & music therapy",
     ],
     phone: "+66 96 774 3610",
-    email: "info@sparkcentre.net",
     facebook: "https://www.facebook.com/sparkcentrethailand",
     instagram: "https://www.instagram.com/sparkcentrethailand",
     description:
       "Spark Centre is a social enterprise founded by Premrudee Pantrat and Narawadee Bualert, both of whom came to it through their own families. The premise is that the outdoors, animals, art and play do things a clinic room cannot, and the programming is built around that rather than around a therapy timetable.\n\nAlongside the Bangkok centre they run Farm De Lek in Nakhon Nayok, roughly two hours out of the city, which opens up longer farm-based sessions and a genuine change of environment. For a child who has stalled or shut down in conventional therapy settings, this is a legitimately different approach worth considering.",
-    note: "Their sparkcentre.net web address currently redirects to an unrelated third-party site, which usually means a lapsed domain rather than anything to do with the organisation. Use their Facebook or Instagram pages to make contact instead, and do not enter any details on the redirected page.",
+    note: "Their sparkcentre.net web address and email no longer work, which usually means a lapsed domain rather than anything to do with the organisation. Contact them by phone, Facebook or Instagram instead, and do not enter any details on any page that sparkcentre.net redirects to.",
     checked: "September 2026",
   },
   {
