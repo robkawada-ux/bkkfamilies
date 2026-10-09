@@ -581,36 +581,6 @@ export const PROVIDERS: Provider[] = [
     checked: "September 2026",
   },
   {
-    slug: "spark-centre",
-    name: "Spark Centre",
-    category: "Therapy clinic",
-    area: "Bangkok and Nakhon Nayok",
-    address:
-      "Bangkok centre, plus Farm De Lek, 43 Moo 3, Tambon Khlong Yai, Amphoe Ongkharak, Nakhon Nayok 26120",
-    ages: "Children and young people",
-    languages: ["English", "Thai"],
-    delivery: ["At a centre"],
-    services: [
-      "Outdoor and nature-based programmes",
-      "Play and art-based sessions",
-      "Animal-assisted activities",
-      "Individualised programming",
-      "Farm-based residential and day activities",
-    ],
-    tags: [
-      "Autism",
-      "Social skills",
-      "Play, art & music therapy",
-    ],
-    phone: "+66 96 774 3610",
-    facebook: "https://www.facebook.com/sparkcentrethailand",
-    instagram: "https://www.instagram.com/sparkcentrethailand",
-    description:
-      "Spark Centre is a social enterprise founded by Premrudee Pantrat and Narawadee Bualert, both of whom came to it through their own families. The premise is that the outdoors, animals, art and play do things a clinic room cannot, and the programming is built around that rather than around a therapy timetable.\n\nAlongside the Bangkok centre they run Farm De Lek in Nakhon Nayok, roughly two hours out of the city, which opens up longer farm-based sessions and a genuine change of environment. For a child who has stalled or shut down in conventional therapy settings, this is a legitimately different approach worth considering.",
-    note: "Their sparkcentre.net web address and email no longer work, which usually means a lapsed domain rather than anything to do with the organisation. Contact them by phone, Facebook or Instagram instead, and do not enter any details on any page that sparkcentre.net redirects to.",
-    checked: "September 2026",
-  },
-  {
     slug: "st-andrews-sukhumvit-107",
     name: "St Andrews International School Sukhumvit 107",
     category: "Vocational & transition",

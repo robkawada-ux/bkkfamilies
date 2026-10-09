@@ -61,6 +61,7 @@ const legacyRedirects = [
   { source: "/schools/verso-international-school", destination: "/schools/wycombe-abbey-international-school-bangkok" },
   // UWC Thailand is in Phuket and was removed from the Bangkok directory
   { source: "/schools/uwc-thailand", destination: "/schools" },
+  { source: "/learning-support/spark-centre", destination: "/learning-support" },
   { source: "/schools/the-ideal-classroom-bangk", destination: "/schools" },
 
   // Structural
