@@ -26,6 +26,7 @@ export type Category =
   | "Museums and science"
   | "Parks and outdoors"
   | "Markets, culture and views"
+  | "Seasonal events"
   // Weekly classes
   | "Swimming"
   | "Football"
@@ -43,6 +44,7 @@ export const DAY_OUT_CATEGORIES: Category[] = [
   "Museums and science",
   "Parks and outdoors",
   "Markets, culture and views",
+  "Seasonal events",
 ];
 
 export const CLASS_CATEGORIES: Category[] = [
@@ -1256,6 +1258,35 @@ export const ACTIVITIES: Activity[] = [
     status: "check",
     sourceUrl: HONEYKIDS_PLAY,
     lastVerified: "2026-09-29",
+  },
+  // ============================================================ Seasonal events (remove once the dates have passed)
+  {
+    slug: "wild-spooky-rumpus-halloween-thecommons",
+    name: "Wild Spooky Rumpus, Halloween at theCOMMONS",
+    type: "Day out",
+    category: "Seasonal events",
+    venue: "Little Pea Kids Commons, theCOMMONS Thonglor",
+    address: "theCOMMONS, Thong Lo Soi 17, Watthana",
+    district: "Watthana",
+    zone: "Sukhumvit",
+    transit: "BTS Thong Lo",
+    hours: "Saturday 31 October and Sunday 1 November 2026, 10am to 5pm",
+    price: {
+      from: 150,
+      unit: "activity",
+      note: "Pay per activity: Trick-or-Treat Train ฿150 a child, Little Monster Hunt ฿200, slime, glow jars and face painting ฿300 each, pumpkin painting and tote bags ฿350 each. The Halloween Fun Pass covers one round of everything for ฿1,650. Spooky Storytime at 2pm is free.",
+    },
+    description:
+      "Little Pea's annual Halloween weekend, and one of the biggest family events at theCOMMONS. The headline is the Trick-or-Treat Train, which runs four times a day (11am, 1pm, 3pm and 4pm) and takes children around the whole building collecting treats from the vendors. Around it there are craft stations for spooky slime, glow jars, pumpkin painting and trick-or-treat tote bags, face painting, a Little Monster Hunt scavenger trail where kids build their own monster, a free Spooky Storytime at 2pm, and a family market with local vendors.",
+    worthKnowing:
+      "Tickets are sold through Little Pea's LINE MyShop, so book the train rounds ahead if you have a particular time in mind. The Fun Pass is the better deal if your child wants to do most of the activities.",
+    phone: "065 392 5658",
+    lineId: "@littlepeabkk",
+    website: "https://shop.line.me/@littlepeabkk/collection/247601",
+    bookingUrl: "https://shop.line.me/@littlepeabkk/collection/247601",
+    status: "confirmed",
+    sourceUrl: "https://www.littlepeabkk.com/",
+    lastVerified: "2026-10-09",
   },
   // ============================================================ Little Pea Kids Commons (organiser's own details, Oct 2026)
   {
