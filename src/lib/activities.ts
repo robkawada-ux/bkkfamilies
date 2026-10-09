@@ -55,7 +55,7 @@ export const CLASS_CATEGORIES: Category[] = [
   "Art and science",
 ];
 
-export type Setting = "Indoor" | "Outdoor" | "Indoor and outdoor";
+export type Setting = "Indoor" | "Outdoor" | "Indoor and outdoor" | "Undercover";
 
 export type Zone =
   | "Sukhumvit"
@@ -1107,7 +1107,7 @@ export const ACTIVITIES: Activity[] = [
     name: "EPA Bangkok Football Academy",
     type: "Weekly class",
     category: "Football",
-    setting: "Outdoor",
+    setting: "Undercover",
     venue: "EPA Football Development Centre",
     address: "Soi On Nut 67/3, Suan Luang",
     district: "Suan Luang",
@@ -1118,13 +1118,15 @@ export const ACTIVITIES: Activity[] = [
     price: { from: 8560, unit: "course", note: "10-session pass, valid four months. A three-month pass is ฿16,050. First session free." },
     description:
       "Boys and girls of all abilities. Weekday sessions are two hours, with 30 minutes of optional free play before 90 minutes of structured coaching. EPA also runs groups for younger and older players.",
+    worthKnowing:
+      "EPA trains at its own dedicated facility, with two FIFA-grade pitches fully covered by a roof, so sessions carry on through rain and midday sun. Claret & Brew, the onsite coffee shop, serves food and drinks for parents while they wait.",
     phone: "065 294 6935",
     lineId: "@epabangkok",
     email: "kevin@epa-academy.com",
     website: "https://epa-academy.com/youth-academy.html",
     status: "confirmed",
     sourceUrl: "https://epa-academy.com/youth-academy.html",
-    lastVerified: "2026-09-29",
+    lastVerified: "2026-10-09",
   },
   {
     slug: "can-u-kick-it-soccer",

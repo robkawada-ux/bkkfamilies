@@ -258,6 +258,10 @@ export default function ActivitiesDirectory() {
                   <span className="rounded-full bg-teal-50 px-2 py-0.5 text-xs font-semibold text-teal">
                     Indoors
                   </span>
+                ) : a.setting === "Undercover" ? (
+                  <span className="rounded-full bg-teal-50 px-2 py-0.5 text-xs font-semibold text-teal">
+                    Undercover
+                  </span>
                 ) : null}
               </div>
               <h3 className="mt-3 font-heading text-base font-bold text-purple-dark">
