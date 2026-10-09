@@ -215,6 +215,24 @@ export default async function ActivityPage({
 
         <p className="mt-8 leading-relaxed text-neutral-700">{a.description}</p>
 
+        {a.photo && (
+          <figure className="mt-8">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={a.photo}
+              alt={a.photoAlt ?? a.name}
+              loading="lazy"
+              decoding="async"
+              className="mx-auto h-auto w-full max-w-sm rounded-xl"
+            />
+            {a.photoCredit && (
+              <figcaption className="mx-auto mt-3 max-w-sm text-xs leading-relaxed text-neutral-500">
+                Image: {a.photoCredit}.
+              </figcaption>
+            )}
+          </figure>
+        )}
+
         {a.worthKnowing && (
           <div className="mt-8 rounded-xl border-l-4 border-orange bg-orange/5 p-5">
             <p className="text-xs font-bold uppercase tracking-wide text-orange">Worth knowing</p>

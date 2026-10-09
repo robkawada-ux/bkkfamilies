@@ -125,6 +125,10 @@ export interface Activity {
   website?: string;
   /** Online booking page, when the operator has one. */
   bookingUrl?: string;
+  /** Operator-supplied poster or photo, used with permission. Shown whole, not cropped. */
+  photo?: string;
+  photoAlt?: string;
+  photoCredit?: string;
   phone?: string;
   lineId?: string;
   email?: string;
@@ -1270,7 +1274,7 @@ export const ACTIVITIES: Activity[] = [
     district: "Watthana",
     zone: "Sukhumvit",
     transit: "BTS Thong Lo",
-    hours: "Saturday 31 October and Sunday 1 November 2026, 10am to 5pm",
+    hours: "Saturday 31 October and Sunday 1 November 2026, 10am to 5pm. Free entry",
     price: {
       from: 150,
       unit: "activity",
@@ -1279,11 +1283,14 @@ export const ACTIVITIES: Activity[] = [
     description:
       "Little Pea's annual Halloween weekend, and one of the biggest family events at theCOMMONS. The headline is the Trick-or-Treat Train, which runs four times a day (11am, 1pm, 3pm and 4pm) and takes children around the whole building collecting treats from the vendors. Around it there are craft stations for spooky slime, glow jars, pumpkin painting and trick-or-treat tote bags, face painting, a Little Monster Hunt scavenger trail where kids build their own monster, a free Spooky Storytime at 2pm, and a family market with local vendors.",
     worthKnowing:
-      "Tickets are sold through Little Pea's LINE MyShop, so book the train rounds ahead if you have a particular time in mind. The Fun Pass is the better deal if your child wants to do most of the activities.",
+      "Entry is free; you only pay for the activities you choose. Crafts and face painting are in the Play Yard on floor 2, storytime and the Little Monster Hunt are at Little Pea on floor 2, and the Family Market is on floor M-1. Tickets are sold through Little Pea's LINE MyShop, so book the train rounds ahead if you have a particular time in mind, and the Fun Pass is the better deal if your child wants to do most of the activities.",
     phone: "065 392 5658",
     lineId: "@littlepeabkk",
     website: "https://shop.line.me/@littlepeabkk/collection/247601",
     bookingUrl: "https://shop.line.me/@littlepeabkk/collection/247601",
+    photo: "/images/activities/wild-spooky-rumpus-2026.jpg",
+    photoAlt: "Wild Spooky Rumpus 2026 poster: Trick-or-Treat Trains at 11am, 1pm, 3pm and 4pm; Halloween crafts and face painting in the Play Yard on floor 2; Spooky Storytime at 2pm and the Little Monster Hunt at Little Pea on floor 2; Family Market on floor M-1; 31 October and 1 November 2026, 10am to 5pm, free entry, theCOMMONS Thonglor.",
+    photoCredit: "Little Pea Kids Commons, used with permission",
     status: "confirmed",
     sourceUrl: "https://www.littlepeabkk.com/",
     lastVerified: "2026-10-09",
