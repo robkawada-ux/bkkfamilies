@@ -62,6 +62,7 @@ const legacyRedirects = [
   // UWC Thailand is in Phuket and was removed from the Bangkok directory
   { source: "/schools/uwc-thailand", destination: "/schools" },
   { source: "/learning-support/spark-centre", destination: "/learning-support" },
+  { source: "/playgroups/precious-learners-world-playgroup", destination: "/playgroups" },
   { source: "/schools/the-ideal-classroom-bangk", destination: "/schools" },
 
   // Structural
