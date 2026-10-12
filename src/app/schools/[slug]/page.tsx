@@ -197,11 +197,11 @@ export default async function SchoolPage({
       ) : (
         <div className="bg-purple px-4 py-12 text-white">
           <div className="mx-auto max-w-3xl">
-            <Link href="/schools" className="text-sm font-semibold text-white/80 hover:text-white">
+            <Link href="/schools" className="block w-fit text-sm font-semibold text-white/80 hover:text-white">
               Back to Schools
             </Link>
             {school.logo && (
-              <div className="mt-4 inline-block rounded-xl bg-white p-3 shadow-sm">
+              <div className="mx-auto mt-6 w-fit rounded-xl bg-white p-3 shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={school.logo}
