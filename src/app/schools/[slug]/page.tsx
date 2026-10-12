@@ -200,6 +200,16 @@ export default async function SchoolPage({
             <Link href="/schools" className="text-sm font-semibold text-white/80 hover:text-white">
               Back to Schools
             </Link>
+            {school.logo && (
+              <div className="mt-4 inline-block rounded-xl bg-white p-3 shadow-sm">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={school.logo}
+                  alt={`${school.name} logo`}
+                  className="h-20 w-auto max-w-[260px] object-contain md:h-24"
+                />
+              </div>
+            )}
             <h1 className="mt-4 font-heading text-3xl font-bold md:text-4xl">
               {school.name}
             </h1>
