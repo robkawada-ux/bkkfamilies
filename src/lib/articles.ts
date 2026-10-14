@@ -70,7 +70,7 @@ export const ARTICLES: Article[] = [
     date: "2026-10-14",
     customPage: true,
     pin: { order: 2, until: "2026-11-02" },
-    heroImage: "/images/articles/halloween-in-bangkok-with-kids/halloween-bangkok-2026-kids-guide-og.jpg",
+    heroImage: "/images/articles/halloween-in-bangkok-with-kids/halloween-in-bangkok-2026-family-guide.jpg",
     excerpt:
       "28 family Halloween events in Bangkok rated by fright level, plus trick-or-treat spots, costume shops, spooky treats and survival tips for parents.",
     metaDescription:

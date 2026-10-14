@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SCHOOLS } from "@/lib/schools";
 import { CAMPS } from "@/lib/camps";
+import { HALLOWEEN_IMG_DIR, HALLOWEEN_POSTERS, HALLOWEEN_SLUG } from "@/lib/halloween";
 import { ARTICLES } from "@/lib/articles";
 import { PROVIDERS } from "@/lib/learningSupport";
 import { FACILITIES } from "@/lib/healthcare";
@@ -61,12 +62,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/contact`, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  const articlePages: MetadataRoute.Sitemap = ARTICLES.map((a) => ({
-    url: `${baseUrl}/blog/${a.slug}`,
-    lastModified: new Date(a.updated ?? a.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  const articlePages: MetadataRoute.Sitemap = ARTICLES.map((a) => {
+    // Image sitemap entries: the hero image, plus the Halloween posters.
+    const images = [
+      ...(a.heroImage ? [`${baseUrl}${a.heroImage}`] : []),
+      ...(a.slug === HALLOWEEN_SLUG
+        ? HALLOWEEN_POSTERS.map((p) => `${baseUrl}${HALLOWEEN_IMG_DIR}/${p.file}.jpg`)
+        : []),
+    ];
+    return {
+      url: `${baseUrl}/blog/${a.slug}`,
+      lastModified: new Date(a.updated ?? a.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      ...(images.length ? { images } : {}),
+    };
+  });
 
   const schoolPages: MetadataRoute.Sitemap = SCHOOLS.map((s) => ({
     url: `${baseUrl}/schools/${s.slug}`,

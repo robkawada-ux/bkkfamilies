@@ -363,3 +363,43 @@ export const FAQ: { question: string; answer: string }[] = [
     answer: "Platinum Fashion Mall in Pratunam and Sampeng Lane in Chinatown are the cheapest places for costumes and decorations. For kids' costumes try Ri-Tah-Rae Costume Shop on Sukhumvit 50 or Petit Mask, and for rentals try Alex Costume, Enjoy Suite or Dreambox.",
   },
 ];
+
+/** Folder for the guide's images under /public. */
+export const HALLOWEEN_IMG_DIR = "/images/articles/halloween-in-bangkok-with-kids";
+
+/** 1200x630 link share image (og:image). */
+export const HALLOWEEN_SHARE_IMAGE = `${HALLOWEEN_IMG_DIR}/halloween-in-bangkok-2026-family-guide.jpg`;
+
+/**
+ * Posters shown on the guide. Each has a .webp (on-page) and a .jpg
+ * (full-size download, image sitemap, structured data). File names lead
+ * with the target phrase "halloween in bangkok 2026" and describe what is
+ * on the poster. The images carry EXIF/XMP title, description, creator and
+ * copyright, matching the alt text here.
+ */
+export const HALLOWEEN_POSTERS = [
+  {
+    file: "halloween-in-bangkok-2026-kids-events-cheat-sheet",
+    w: 1080,
+    h: 1350,
+    title: "Halloween in Bangkok 2026 cheat sheet",
+    use: "Best for Facebook posts and class WhatsApp or LINE groups",
+    alt: "Halloween in Bangkok 2026 cheat sheet: six family picks for kids, from Chocolate Ville Spooky Town to trick-or-treating",
+  },
+  {
+    file: "halloween-in-bangkok-2026-family-events-fright-levels",
+    w: 1080,
+    h: 1080,
+    title: "28 family events by fright level",
+    use: "Best for Instagram and Facebook feeds",
+    alt: "Halloween in Bangkok 2026: 28 family events rated by fright level, big weekend Friday 30 October to Sunday 1 November",
+  },
+  {
+    file: "halloween-in-bangkok-2026-best-kids-events-by-age",
+    w: 1080,
+    h: 1920,
+    title: "Best Halloween events by age",
+    use: "Best for Instagram and Facebook stories",
+    alt: "Best Halloween events in Bangkok 2026 by age, from toddler story time to teen haunted houses",
+  },
+] as const;

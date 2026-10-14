@@ -6,7 +6,10 @@ import {
   CHECKED,
   EVENTS,
   FAQ,
+  HALLOWEEN_IMG_DIR,
   HALLOWEEN_PATH,
+  HALLOWEEN_POSTERS as POSTERS,
+  HALLOWEEN_SHARE_IMAGE,
   daysToHalloween,
 } from "@/lib/halloween";
 
@@ -16,8 +19,8 @@ export const revalidate = 3600;
 const TITLE = "Halloween in Bangkok 2026 with Kids: 28 Family Events";
 const DESCRIPTION =
   "Halloween 2026 in Bangkok with kids: 28 family events rated by fright level, plus trick-or-treat spots, costume shops, spooky treats and parent tips.";
-const IMG_DIR = "/images/articles/halloween-in-bangkok-with-kids";
-const OG_IMAGE = `${SITE}${IMG_DIR}/halloween-bangkok-2026-kids-guide-og.jpg`;
+const IMG_DIR = HALLOWEEN_IMG_DIR;
+const OG_IMAGE = `${SITE}${HALLOWEEN_SHARE_IMAGE}`;
 const URL = `${SITE}${HALLOWEEN_PATH}`;
 const PUBLISHED = "2026-10-14T09:00:00+07:00";
 
@@ -38,7 +41,12 @@ export const metadata: Metadata = {
     ...og({ title: TITLE, description: DESCRIPTION, path: HALLOWEEN_PATH, type: "article", image: OG_IMAGE }),
     publishedTime: PUBLISHED,
   } as Metadata["openGraph"],
-  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: [OG_IMAGE] },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: OG_IMAGE, alt: "Halloween in Bangkok 2026 family guide: 28 events rated by fright level" }],
+  },
 };
 
 const AGES = [
@@ -108,33 +116,6 @@ const GROWNUPS = [
   { name: "Beer Republic", href: "https://www.beerrepublicbkk.com/halloween", tag: "29 to 31 Oct", text: "Craft beer, bat wings and a charcoal-bun zombie burger." },
   { name: "Burning City Bangkok", href: "https://www.ticketmelon.com/burningcitybangkok/burningcitybkk-2026", tag: "30 to 31 Oct", text: "The city-wide party crawl, for parents who still remember what midnight looks like." },
   { name: "Ghost Circle at Cloud 11", href: "https://www.ticketmelon.com/thecommons-cloud11/ghost-circle", tag: "31 Oct", text: "A talk with Thai horror director Banjong Pisanthanakun about making ghost films. Great with a horror-loving teen." },
-];
-
-const POSTERS = [
-  {
-    file: "halloween-bangkok-2026-kids-what-to-do-poster",
-    w: 1080,
-    h: 1350,
-    title: "The cheat sheet",
-    use: "Best for Facebook posts and class WhatsApp or LINE groups",
-    alt: "Halloween in Bangkok 2026 cheat sheet poster listing six family picks: Chocolate Ville Spooky Town, Wild Spooky Rumpus at theCOMMONS, Sparkles and Sprinkles, EM District Haunted Carnival, Bambini Villa Little Wizards Academy and trick-or-treating",
-  },
-  {
-    file: "halloween-bangkok-2026-family-events-square-poster",
-    w: 1080,
-    h: 1080,
-    title: "The square post",
-    use: "Best for Instagram and Facebook feeds",
-    alt: "Halloween in Bangkok 2026 square poster: 28 family events rated by fright level from Giggle to Scream, big weekend Friday 30 October to Sunday 1 November",
-  },
-  {
-    file: "halloween-bangkok-2026-kids-top-picks-story-poster",
-    w: 1080,
-    h: 1920,
-    title: "The story",
-    use: "Best for Instagram and Facebook stories",
-    alt: "Halloween in Bangkok 2026 story poster with a top pick for every age: Neilson Hays Library story time for toddlers, Bambini Villa Little Wizards Academy for ages 5 to 9, PlayED sleepover for ages 10 to 12 and MEGA Bangna Haunted University for teens",
-  },
 ];
 
 const MOVIES = [
@@ -214,6 +195,26 @@ export default function HalloweenGuidePage() {
     mainEntityOfPage: { "@type": "WebPage", "@id": URL },
     about: [{ "@type": "Thing", name: "Halloween" }, { "@type": "Place", name: "Bangkok, Thailand" }],
   };
+  const imagesJsonLd = POSTERS.map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    contentUrl: `${SITE}${IMG_DIR}/${p.file}.jpg`,
+    thumbnailUrl: `${SITE}${IMG_DIR}/${p.file}.webp`,
+    name: p.title,
+    caption: p.alt,
+    description: p.alt,
+    width: p.w,
+    height: p.h,
+    encodingFormat: "image/jpeg",
+    representativeOfPage: p === POSTERS[0],
+    creator: { "@type": "Organization", name: "BKK Families", url: SITE },
+    creditText: "BKK Families",
+    copyrightNotice: "© 2026 BKK Families (bkkfamilies.com)",
+    copyrightHolder: { "@type": "Organization", name: "BKK Families", url: SITE },
+    license: `${URL}#posters`,
+    acquireLicensePage: `${URL}#posters`,
+    datePublished: PUBLISHED,
+  }));
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -256,7 +257,7 @@ export default function HalloweenGuidePage() {
 
   return (
     <>
-      {[articleJsonLd, breadcrumbJsonLd, faqJsonLd, eventsJsonLd].map((ld, i) => (
+      {[articleJsonLd, breadcrumbJsonLd, faqJsonLd, eventsJsonLd, ...imagesJsonLd].map((ld, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       ))}
 
@@ -297,8 +298,8 @@ export default function HalloweenGuidePage() {
           <figure className="mx-auto w-full max-w-sm">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${IMG_DIR}/halloween-bangkok-2026-kids-what-to-do-poster.webp`}
-              alt="What to do in Bangkok for Halloween 2026 with kids: Chocolate Ville Spooky Town, Wild Spooky Rumpus at theCOMMONS, Sparkles and Sprinkles, EM District Haunted Carnival, Bambini Villa Little Wizards Academy and trick-or-treating"
+              src={`${IMG_DIR}/${POSTERS[0].file}.webp`}
+              alt={POSTERS[0].alt}
               width={1080}
               height={1350}
               fetchPriority="high"
@@ -572,12 +573,12 @@ export default function HalloweenGuidePage() {
             id="posters-h"
             eyebrow="Save it, share it, stick it on the fridge"
             title="Halloween in Bangkok 2026 posters"
-            intro="Free to share in your class chat, condo LINE group or anywhere Bangkok parents gather. Tap a poster to open the full-size version."
+            intro="Three free Halloween in Bangkok posters for 2026: a one-page cheat sheet, a square post with all 28 family events by fright level, and a story with the best Halloween events by age. Share them in your class chat, condo LINE group or anywhere Bangkok parents gather, with a credit to BKK Families. Tap a poster for the full-size version."
           />
           <div className="grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {POSTERS.map((p) => (
               <figure key={p.file} className="rounded-xl border border-black/5 bg-white p-4 shadow-sm">
-                <a href={`${IMG_DIR}/${p.file}.jpg`} target="_blank" rel="noopener" className="block overflow-hidden rounded-lg">
+                <a href={`${IMG_DIR}/${p.file}.jpg`} target="_blank" rel="noopener" title={`${p.title} (full size)`} className="block overflow-hidden rounded-lg">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`${IMG_DIR}/${p.file}.webp`}
@@ -596,7 +597,8 @@ export default function HalloweenGuidePage() {
                   </span>
                   <a
                     href={`${IMG_DIR}/${p.file}.jpg`}
-                    download
+                    download={`${p.file}.jpg`}
+                    aria-label={`Download ${p.title} poster`}
                     className="shrink-0 rounded-full bg-orange px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
                   >
                     Download
