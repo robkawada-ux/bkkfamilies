@@ -110,6 +110,33 @@ const GROWNUPS = [
   { name: "Ghost Circle at Cloud 11", href: "https://www.ticketmelon.com/thecommons-cloud11/ghost-circle", tag: "31 Oct", text: "A talk with Thai horror director Banjong Pisanthanakun about making ghost films. Great with a horror-loving teen." },
 ];
 
+const POSTERS = [
+  {
+    file: "halloween-bangkok-2026-kids-what-to-do-poster",
+    w: 1080,
+    h: 1350,
+    title: "The cheat sheet",
+    use: "Best for Facebook posts and class WhatsApp or LINE groups",
+    alt: "Halloween in Bangkok 2026 cheat sheet poster listing six family picks: Chocolate Ville Spooky Town, Wild Spooky Rumpus at theCOMMONS, Sparkles and Sprinkles, EM District Haunted Carnival, Bambini Villa Little Wizards Academy and trick-or-treating",
+  },
+  {
+    file: "halloween-bangkok-2026-family-events-square-poster",
+    w: 1080,
+    h: 1080,
+    title: "The square post",
+    use: "Best for Instagram and Facebook feeds",
+    alt: "Halloween in Bangkok 2026 square poster: 28 family events rated by fright level from Giggle to Scream, big weekend Friday 30 October to Sunday 1 November",
+  },
+  {
+    file: "halloween-bangkok-2026-kids-top-picks-story-poster",
+    w: 1080,
+    h: 1920,
+    title: "The story",
+    use: "Best for Instagram and Facebook stories",
+    alt: "Halloween in Bangkok 2026 story poster with a top pick for every age: Neilson Hays Library story time for toddlers, Bambini Villa Little Wizards Academy for ages 5 to 9, PlayED sleepover for ages 10 to 12 and MEGA Bangna Haunted University for teens",
+  },
+];
+
 const MOVIES = [
   ["It's the Great Pumpkin, Charlie Brown", "All ages"],
   ["Room on the Broom", "2+"],
@@ -179,7 +206,7 @@ export default function HalloweenGuidePage() {
     "@type": "Article",
     headline: TITLE,
     description: DESCRIPTION,
-    image: [OG_IMAGE, `${SITE}${IMG_DIR}/halloween-bangkok-2026-kids-what-to-do-poster.webp`],
+    image: [OG_IMAGE, ...POSTERS.map((p) => `${SITE}${IMG_DIR}/${p.file}.jpg`)],
     datePublished: PUBLISHED,
     dateModified: `${CHECKED}T09:00:00+07:00`,
     author: { "@type": "Organization", name: "BKK Families", url: SITE },
@@ -278,7 +305,8 @@ export default function HalloweenGuidePage() {
               className="h-auto w-full rounded-xl shadow-2xl ring-1 ring-white/10"
             />
             <figcaption className="mt-2 text-center text-xs text-white/60">
-              Our one-page Halloween 2026 cheat sheet. Save it or share it in your class chat.
+              Our one-page Halloween 2026 cheat sheet.{" "}
+              <a href="#posters" className="underline hover:text-orange">Download it and two more posters</a>.
             </figcaption>
           </figure>
         </div>
@@ -535,6 +563,47 @@ export default function HalloweenGuidePage() {
               <h3 className="mb-3 font-heading text-xl font-bold text-purple-dark">Halloween parties for parents (grandparents, nannies, assemble)</h3>
               <RowList rows={GROWNUPS} />
             </div>
+          </div>
+        </section>
+
+        {/* POSTERS */}
+        <section id="posters" className="scroll-mt-20 py-14" aria-labelledby="posters-h">
+          <SectionHead
+            id="posters-h"
+            eyebrow="Save it, share it, stick it on the fridge"
+            title="Halloween in Bangkok 2026 posters"
+            intro="Free to share in your class chat, condo LINE group or anywhere Bangkok parents gather. Tap a poster to open the full-size version."
+          />
+          <div className="grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {POSTERS.map((p) => (
+              <figure key={p.file} className="rounded-xl border border-black/5 bg-white p-4 shadow-sm">
+                <a href={`${IMG_DIR}/${p.file}.jpg`} target="_blank" rel="noopener" className="block overflow-hidden rounded-lg">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${IMG_DIR}/${p.file}.webp`}
+                    alt={p.alt}
+                    width={p.w}
+                    height={p.h}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-auto w-full transition hover:scale-[1.02]"
+                  />
+                </a>
+                <figcaption className="mt-3 flex items-center justify-between gap-3">
+                  <span>
+                    <span className="block font-heading text-lg font-bold text-purple-dark">{p.title}</span>
+                    <span className="block text-sm text-neutral-600">{p.use}</span>
+                  </span>
+                  <a
+                    href={`${IMG_DIR}/${p.file}.jpg`}
+                    download
+                    className="shrink-0 rounded-full bg-orange px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+                  >
+                    Download
+                  </a>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </section>
 
