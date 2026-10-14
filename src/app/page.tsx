@@ -5,6 +5,14 @@ import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
 import { listedArticles, isFeatured } from "@/lib/articles";
 import { HALLOWEEN_PATH, daysToHalloween, isHalloweenSeason } from "@/lib/halloween";
+import { daysUntil, inWindow } from "@/lib/festive";
+import {
+  CHRISTMAS_PATH,
+  CHRISTMAS_YEAR,
+  PROMO_FROM as XMAS_FROM,
+  PROMO_UNTIL as XMAS_UNTIL,
+} from "@/lib/christmas";
+import { NYE_PATH, NYE_YEAR, PROMO_FROM as NYE_FROM, PROMO_UNTIL as NYE_UNTIL } from "@/lib/nye";
 import { SCHOOLS } from "@/lib/schools";
 import { TopBanner, SidebarSlot } from "@/components/ui/AdSlot";
 import { StatRoads, Roundabout } from "@/components/ui/Road";
@@ -29,6 +37,12 @@ export default function HomePage() {
   // Seasonal box in the hero; switches itself off after 1 November.
   const halloween = isHalloweenSeason();
   const sleeps = daysToHalloween();
+  // Christmas from 2 November, then New Year's Eve from 26 December.
+  const christmas = !halloween && inWindow(XMAS_FROM, XMAS_UNTIL);
+  const newYear = !halloween && !christmas && inWindow(NYE_FROM, NYE_UNTIL);
+  const seasonal = halloween || christmas || newYear;
+  const xmasSleeps = daysUntil(`${CHRISTMAS_YEAR}-12-25`);
+  const nyeSleeps = daysUntil(`${NYE_YEAR}-12-31`);
 
   return (
     <>
@@ -36,7 +50,7 @@ export default function HomePage() {
       <section className="bg-orange px-4 py-20 text-white md:py-28">
         <div
           className={`mx-auto max-w-6xl ${
-            halloween ? "grid items-center gap-10 lg:grid-cols-[1fr_340px]" : ""
+            seasonal ? "grid items-center gap-10 lg:grid-cols-[1fr_340px]" : ""
           }`}
         >
           <div>
@@ -104,6 +118,68 @@ export default function HomePage() {
                     </span>
                   )}
                   <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-purple-dark transition group-hover:bg-orange group-hover:text-white">
+                    See the guide →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {christmas && (
+            <Link
+              href={CHRISTMAS_PATH}
+              className="group relative block overflow-hidden rounded-2xl bg-[#0f3b2e] p-7 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
+            >
+              {/* Fairy lights, decorative */}
+              <svg aria-hidden="true" viewBox="0 0 340 60" className="pointer-events-none absolute inset-x-0 top-0 h-14 w-full">
+                <path d="M0 4 Q 85 30 170 4 T 340 4" fill="none" stroke="#06180f" strokeWidth="2" />
+                {[20, 55, 90, 125, 160, 195, 230, 265, 300, 330].map((x, i) => {
+                  const y = 4 + 22 * Math.sin(((x % 170) / 170) * Math.PI);
+                  return <ellipse key={x} cx={x} cy={y + 9} rx="5" ry="7" fill={["#c62f3a", "#f4b942", "#3EC1D3", "#8DC63F"][i % 4]} />;
+                })}
+              </svg>
+              <div className="relative">
+                <span className="mt-8 inline-block rounded-full bg-[#c62f3a] px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-white">
+                  Christmas 2026
+                </span>
+                <p className="mt-4 font-heading text-2xl font-bold leading-tight">Christmas in Bangkok with kids</p>
+                <p className="mt-3 text-sm text-white/80">
+                  28 family Christmas dinners with prices, where to meet Santa, the best lights and markets.
+                </p>
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  {xmasSleeps >= 0 && (
+                    <span className="font-heading text-lg font-bold text-[#f4b942]">
+                      {xmasSleeps === 0 ? "Merry Christmas!" : `${xmasSleeps} ${xmasSleeps === 1 ? "sleep" : "sleeps"} to go`}
+                    </span>
+                  )}
+                  <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0f3b2e] transition group-hover:bg-[#c62f3a] group-hover:text-white">
+                    See the guide →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {newYear && (
+            <Link
+              href={NYE_PATH}
+              className="group relative block overflow-hidden rounded-2xl bg-[#141b44] p-7 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
+            >
+              <div className="relative">
+                <span className="inline-block rounded-full bg-[#f5c451] px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-[#141b44]">
+                  New Year&rsquo;s Eve 2026
+                </span>
+                <p className="mt-4 font-heading text-2xl font-bold leading-tight">New Year&rsquo;s Eve in Bangkok with kids</p>
+                <p className="mt-3 text-sm text-white/80">
+                  Every countdown rated by crowd level, family dinners, fireworks cruises and the 8pm midnight trick.
+                </p>
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  {nyeSleeps >= 0 && (
+                    <span className="font-heading text-lg font-bold text-[#f5c451]">
+                      {nyeSleeps === 0 ? "It's tonight!" : `${nyeSleeps} ${nyeSleeps === 1 ? "sleep" : "sleeps"} to go`}
+                    </span>
+                  )}
+                  <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#141b44] transition group-hover:bg-[#f5c451]">
                     See the guide →
                   </span>
                 </div>

@@ -20,8 +20,6 @@ import RichText, { stripRichText } from "@/components/ui/RichText";
  * a round of rewrites before anyone noticed.
  */
 const OG_CARDS = new Set([
-  "christmas-in-bangkok-with-kids",
-  "new-years-eve-in-bangkok-with-kids",
   "third-culture-kids-bangkok-moving-back",
   "is-bangkok-safe-for-kids",
   "top-5-hospitals-in-bangkok",

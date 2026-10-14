@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { SCHOOLS } from "@/lib/schools";
 import { CAMPS } from "@/lib/camps";
 import { HALLOWEEN_IMG_DIR, HALLOWEEN_POSTERS, HALLOWEEN_SLUG } from "@/lib/halloween";
+import { CHRISTMAS_IMG_DIR, CHRISTMAS_POSTERS, CHRISTMAS_SLUG } from "@/lib/christmas";
+import { NYE_IMG_DIR, NYE_POSTERS, NYE_SLUG } from "@/lib/nye";
 import { ARTICLES } from "@/lib/articles";
 import { PROVIDERS } from "@/lib/learningSupport";
 import { FACILITIES } from "@/lib/healthcare";
@@ -63,12 +65,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const articlePages: MetadataRoute.Sitemap = ARTICLES.map((a) => {
-    // Image sitemap entries: the hero image, plus the Halloween posters.
+    // Image sitemap entries: the hero image, plus any seasonal guide's posters.
+    const posters: Record<string, { dir: string; files: readonly { file: string }[] }> = {
+      [HALLOWEEN_SLUG]: { dir: HALLOWEEN_IMG_DIR, files: HALLOWEEN_POSTERS },
+      [CHRISTMAS_SLUG]: { dir: CHRISTMAS_IMG_DIR, files: CHRISTMAS_POSTERS },
+      [NYE_SLUG]: { dir: NYE_IMG_DIR, files: NYE_POSTERS },
+    };
+    const set = posters[a.slug];
     const images = [
       ...(a.heroImage ? [`${baseUrl}${a.heroImage}`] : []),
-      ...(a.slug === HALLOWEEN_SLUG
-        ? HALLOWEEN_POSTERS.map((p) => `${baseUrl}${HALLOWEEN_IMG_DIR}/${p.file}.jpg`)
-        : []),
+      ...(set ? set.files.map((p) => `${baseUrl}${set.dir}/${p.file}.jpg`) : []),
     ];
     return {
       url: `${baseUrl}/blog/${a.slug}`,

@@ -76,218 +76,51 @@ export function listedArticles(now: Date = new Date()): Article[] {
 
 export const ARTICLES: Article[] = [
   {
+    // Interactive page lives at src/app/blog/christmas-in-bangkok-with-kids/page.tsx
     slug: "christmas-in-bangkok-with-kids",
-    title: "Christmas in Bangkok With Kids 2026: Santa, Lights and Dinner",
+    title: "Christmas in Bangkok 2026 with Kids: Dinners, Santa and Lights",
     category: "Activities",
     date: "2026-10-14",
     featureFrom: "2026-11-01",
-    metaDescription:
-      "Where kids can meet Santa, the best Christmas trees and lights, markets, church services and booking Christmas dinner. A Bangkok parent's 2026 family guide.",
-    keywords: ["christmas in bangkok with kids", "christmas in bangkok", "christmas in bangkok 2026", "christmas dinner bangkok", "christmas brunch bangkok", "christmas lunch bangkok", "where to see santa in bangkok", "christmas events bangkok", "christmas market bangkok", "christmas trees bangkok", "christmas church service bangkok", "christmas activities bangkok kids"],
+    customPage: true,
+    heroImage: "/images/articles/christmas-in-bangkok-with-kids/christmas-in-bangkok-2026-family-guide.jpg",
     excerpt:
-      "Santa in shorts, a mall tree the height of a small building and a turkey that will not fit in your condo oven. How families actually do Christmas in Bangkok, from meeting Santa to booking Christmas dinner before it sells out.",
-    headings: [
-      { beforeParagraph: 3, text: "What Christmas in Bangkok is actually like" },
-      { beforeParagraph: 7, text: "Where to see the best Christmas trees and lights in Bangkok" },
-      { beforeParagraph: 15, text: "Where kids can meet Santa in Bangkok" },
-      { beforeParagraph: 18, text: "Christmas markets and bazaars in Bangkok" },
-      { beforeParagraph: 23, text: "Christmas dinner, lunch and brunch in Bangkok with kids" },
-      { beforeParagraph: 29, text: "Getting a Christmas tree for home" },
-      { beforeParagraph: 31, text: "English language Christmas church services" },
-      { beforeParagraph: 33, text: "Ideas for Christmas Day itself" },
-      { beforeParagraph: 39, text: "Do not forget the people who help your family" },
-      { beforeParagraph: 41, text: "Keeping the kids busy over the winter break" },
-      { beforeParagraph: 43, text: "Your Bangkok Christmas checklist" },
+      "28 family Christmas dinners and brunches with real prices, every place to meet Santa, the best lights, Christmas markets and church services in Bangkok.",
+    metaDescription:
+      "Christmas 2026 in Bangkok with kids: 28 family Christmas dinners and brunches with prices, where to meet Santa, the best lights, markets and church services.",
+    keywords: [
+      "christmas in bangkok with kids",
+      "christmas in bangkok 2026",
+      "christmas dinner bangkok",
+      "where to see santa in bangkok",
+      "christmas market bangkok",
     ],
     body: [
-      "Christmas in Bangkok is gloriously strange. It is 30 degrees outside, Santa is very probably wearing shorts under the suit, and the shopping malls go so far over the top with trees and lights that they make most hometown high streets look like they forgot it was December.",
-      "We spent eight Christmases here with small children, from the toddler years right up to the year we moved back to the US, and it took us a couple of them to work out how to do it well. The short version: you can absolutely have a proper, magical family Christmas in Bangkok. But almost everything good gets booked, crowded or sold out earlier than you expect.",
-      "This guide covers where to see the best Christmas trees and lights, where kids can meet Santa, the Christmas markets and bazaars, how to get Christmas dinner without a meltdown at the table, English language church services, and what to actually do with the day itself. The malls and hotels usually announce their 2026 programmes in early to mid November, so we will keep updating this page as they land. Where a detail comes from last year, we say so.",
-      "Thailand is a mostly Buddhist country and **Christmas Day is not a public holiday**. Banks, offices and government services open as usual on 25 December, which catches out a lot of newly arrived parents. Plenty of expat mums and dads end up working on Christmas morning, so if your employer is Thai, ask early.",
-      "The kids, on the other hand, will be off. For 2026 the earliest international school finish we found is St Andrews, out from 14 December, and the last school back is Shrewsbury on 12 January. Our [Bangkok school holidays calendar](/school-breaks) has every school's winter break side by side.",
-      "The weather is the best of the year. December is the cool season, which in Bangkok means blue skies, lower humidity and evenings pleasant enough to wander around outside. It is also when the smog season starts to build, so on a bad air day keep the outdoor plans short and read our [smog season guide](/blog/bangkok-smog-season-kids) for what actually helps.",
-      "And the city goes all in. The big malls start decorating in early November and most keep the lights up until early January, so there is no need to cram everything into Christmas week.",
-      "Bangkok's malls compete hard at Christmas, and the result is genuinely spectacular. These are the ones that go big every year.",
-      "**CentralWorld** at Ratchaprasong puts up one of the biggest trees in the city on the plaza out front, with light shows in the evenings. It is the classic Bangkok Christmas photo. BTS Chit Lom or Siam.",
-      "**ICONSIAM** goes for scale on the river, with a huge tree and riverside illuminations. Pair it with dinner and the river views for an easy festive evening. BTS Charoen Nakhon, or arrive by boat, which kids love.",
-      "**The Em District** at Phrom Phong (EmQuartier, Emporium and EmSphere) leans elegant rather than loud, and the malls are linked, so you can see all three in one walk. BTS Phrom Phong.",
-      "**One Bangkok**, the newest of the big developments, does light installations and a full calendar of staged shows. Last year's programme had a storybook theme. MRT Lumphini.",
-      "**Siam Paragon**, **Samyan Mitrtown** and **King Power Rangnam** are worth a look too. Samyan Mitrtown in particular is relaxed and easy with small children.",
-      "The hidden gems are the hotel lobbies. The Mandarin Oriental, Siam Kempinski, St. Regis, Park Hyatt and Kimpton Maa-Lai have all put up memorable trees in recent years, and walking in for a look costs nothing. Some hotels build gingerbread displays as well, which stop small children in their tracks.",
-      "**Our tip:** go after dark, and on a weekday if you can. The lights only really work once the sun is down, the evening air is cooler, and the weekend crowds around the big trees make it hard to get a photo without fifty strangers in it.",
-      "Santa keeps a busy Bangkok schedule, and almost all of it is free. Last year the big malls ran Santa sessions on December weekends, usually mid afternoon: CentralWorld from 3 to 5pm, Siam Paragon from 2 to 4pm and ICONSIAM from 3:30 to 4:30pm, while Asiatique The Riverfront ran early evening sessions. Expect something similar in 2026. We will add the confirmed times here as soon as the malls publish them.",
-      "Several of the Christmas markets and bazaars below also bring Santa in for an appearance, usually announced on the organisers' Facebook pages a week or two ahead.",
-      "Two honest warnings. Schedules move, and some malls use a stand-in when the main Santa is booked elsewhere, so check the mall's Facebook page the morning you go. And the queue at a big mall on a December weekend can be long. If you have a toddler with a short fuse, the bazaars and smaller events are a far gentler way to do it.",
-      "This is where expat Bangkok really shines. Embassies, community associations and charities run a string of Christmas markets from late November to mid December, with mulled wine for the grown ups, crafts and cookies for the kids, and usually a good cause behind it.",
-      "Last year's calendar gives you a good idea of what is coming. The Bangkok Accueil Grand Christmas Market ran at the Mövenpick at the end of November. Goethe-Institut Thailand held its German Christmas Market over the last weekend of November, with a small entry ticket. The Danish Christmas Bazaar took over the 19th floor of Gaysorn in early December, and a charity Christmas market filled the garden of the Sukhothai hotel in mid December. The Neilson Hays Library put on a Christmas show for children too.",
-      "Most of these come back year after year on similar dates, but the exact 2026 dates are usually only confirmed in October or November. We will list them here as they are announced. If you run one, email [info@bkkfamilies.com](mailto:info@bkkfamilies.com) and we will add it.",
-      "School Christmas fairs are worth asking about as well. Many international schools hold one in the last weeks of term, and some are open to families from other schools.",
-      "Bring cash, go early, and bring a bag for the cookies you did not plan to buy.",
-      "This is the big one. More people search for Christmas dinner in Bangkok than for anything else about Christmas here, and the good tables go fast. Nearly every big hotel runs a Christmas Eve dinner and a Christmas Day lunch or brunch buffet, usually with turkey, a carving station, a ridiculous dessert table and, at the family friendly ones, a kids' corner with crafts or a visit from Santa.",
-      "**Book by the end of November.** Seriously. The well known family brunches fill up weeks ahead, and by mid December you are choosing from whatever is left.",
-      "With younger children, lunch beats dinner every time. A Christmas Day brunch starts at a civilised hour, the kids are fresh, and you are home for a nap or the pool by mid afternoon. A late Christmas Eve dinner with a three year old is one of those plans that sounds lovely in October.",
-      "When you compare hotels, ask three questions. How are children priced? Many hotels charge kids a reduced rate and let the youngest eat free, but the age cutoffs vary a lot. Is there a supervised kids' area? And does the price include drinks? That last one is where the bill quietly doubles.",
-      "If you would rather eat at home, most big hotels sell a takeaway roast turkey with all the trimmings, which is the stress free route. If you are cooking yourself, imported frozen turkeys start appearing from late November at the supermarkets that cater to expats, such as Villa Market, Gourmet Market and Foodland.",
-      "Before you buy one, measure your oven. Lots of Bangkok condo ovens are tiny, some kitchens do not have one at all, and a turkey that will not fit is a very Bangkok Christmas problem. A turkey breast or a couple of roast chickens is a perfectly respectable plan B.",
-      "Real Christmas trees are rare in Bangkok, and the few imported ones are pricey and do not love the heat. Almost every family goes artificial. IKEA, HomePro and the seasonal sections of the big department stores all sell trees and decorations from November, and the wholesale shops around Sampeng Lane in Chinatown are a good hunting ground for lights and ornaments by the bag.",
-      "If you are only here for a few years, ask in our [Bangkok Expat Families Facebook group](https://www.facebook.com/groups/395501457186828) in late November. There is a steady trade in secondhand trees from families who are moving on, and somebody always has a box of ornaments they do not want to ship home.",
-      "For families who want church at Christmas, Bangkok has several long established English language congregations. The Church of the Holy Redeemer on Soi Ruam Rudee is the main English speaking Catholic parish, Christ Church Bangkok on Convent Road is the Anglican church, and Assumption Cathedral near the river in Bang Rak is beautiful at Christmas. Many churches hold carol services and family services in the run up to Christmas, alongside the midnight services on Christmas Eve.",
-      "Christmas Eve services fill up, often well before they start, so arrive early if you want to sit together. Times change from year to year, so check each church's own website or Facebook page in December.",
-      "After the presents, the day is yours, and because 25 December is a normal working day in Thailand, a lot of the city carries on as usual. A few things families do:",
-      "**Presents and the pool.** The easiest Bangkok Christmas there is. If your building has a pool, Christmas morning is often blissfully quiet, because half your neighbours are at work.",
-      "**Snow, sort of.** Snow Town at Dream World is the closest your kids will get to a white Christmas without a flight. Check the height rules first, which we cover in our [things to do in Bangkok with kids guide](/blog/9-things-to-do-in-bangkok-with-kids).",
-      "**A river trip.** The Chao Phraya at night is lovely in December, and the dinner cruises run Christmas specials. With small kids, a shorter cruise is plenty.",
-      "**A morning in the park.** Lumpini on a cool December morning, paddle boats included, is a very good way to work off breakfast.",
-      "**Get out of town.** Plenty of families head to the beach, or up to Khao Yai where the nights are properly chilly. If you go, book early. Hotels outside Bangkok are at their fullest and priciest between Christmas and New Year.",
-      "This one is easy to miss in your first Bangkok Christmas. If you employ a nanny or a housekeeper, a year end bonus is widely expected. We paid both of ours an extra month's salary at the end of each year, which is a common arrangement among expat families, and it is the most appreciated thing you will do all year. Our [guide to finding a nanny in Bangkok](/blog/how-to-find-a-nanny-in-bangkok) goes into pay and bonuses properly.",
-      "Many families also give a small gift or an envelope to their building's security guards and the staff who help them through the year, plus a card or a small present for teachers before the break.",
-      "The winter break is long, often three weeks or more, and Christmas only fills a few days of it. Holiday camps run through December and January, and our [Bangkok holiday camps directory](/camps) lists the dates, ages and real prices wherever the organisers publish them. Christmas week itself is thin on camps, so book the week before Christmas or the first week of January early.",
-      "And when it is time to plan 31 December, our [New Year's Eve in Bangkok with kids guide](/blog/new-years-eve-in-bangkok-with-kids) covers the fireworks, the crowds and how to get everyone home afterwards.",
-      "**By the end of November:** book Christmas dinner or brunch, and order a takeaway turkey if that is the plan.",
-      "**Early December:** check the Santa schedules, put the market dates in the calendar and get the tree up.",
-      "**Mid December:** sort out gifts for teachers, year end bonuses and envelopes, and confirm church service times.",
-      "**Christmas week:** save the big malls for weekday evenings, keep one eye on the air quality, and enjoy the best weather Bangkok has all year.",
-      "Running a Christmas event for families in Bangkok, or spotted something we missed? Email [info@bkkfamilies.com](mailto:info@bkkfamilies.com) and we will add it. And tell us your family's favourite Bangkok Christmas tradition in the [Facebook group](https://www.facebook.com/groups/395501457186828). The best ones go into next year's guide. Merry Christmas!",
-    ],
-    faq: [
-      {
-        question: "Is Christmas a public holiday in Thailand?",
-        answer:
-          "No. Thailand is mostly Buddhist and 25 December is a normal working day, so banks, offices and government services stay open. International schools are on their winter break, though, which usually runs from mid December into the second week of January. Our [school holidays calendar](/school-breaks) has each school's exact dates.",
-      },
-      {
-        question: "Where is the best place to celebrate Christmas in Bangkok with kids?",
-        answer:
-          "For the lights and the big trees, CentralWorld, ICONSIAM, the Em District at Phrom Phong and One Bangkok put on the biggest displays, best seen after dark on a weekday. For a festive day out with small children, the expat Christmas markets and a family Christmas brunch at a hotel are usually the highlights.",
-      },
-      {
-        question: "Where can kids meet Santa in Bangkok?",
-        answer:
-          "The big malls run free Santa sessions on December weekends. Last year CentralWorld, Siam Paragon and ICONSIAM all held mid afternoon sessions and Asiatique The Riverfront held early evening ones. Many of the Christmas markets and bazaars also bring Santa in. Check the mall's Facebook page on the day, because times change.",
-      },
-      {
-        question: "Is there a Christmas market in Bangkok?",
-        answer:
-          "Yes, several. Community groups, embassies and charities run Christmas markets and bazaars from late November to mid December, including the Bangkok Accueil market, the German Christmas Market run with the Goethe-Institut, and the Danish Christmas Bazaar. Dates for 2026 are usually confirmed in October or November.",
-      },
-      {
-        question: "Where can I get Christmas dinner in Bangkok?",
-        answer:
-          "Most big hotels run a Christmas Eve dinner and a Christmas Day lunch or brunch buffet, and many sell takeaway roast turkey. Book by the end of November, because the family friendly ones sell out. With young children, a Christmas Day brunch is usually easier than a late dinner.",
-      },
-      {
-        question: "Can you buy a real Christmas tree in Bangkok?",
-        answer:
-          "Occasionally, but imported real trees are rare, expensive and struggle in the heat. Most families use an artificial tree from IKEA, HomePro or a department store, or pick up a secondhand one from a family leaving Bangkok.",
-      },
-      {
-        question: "What is the weather like in Bangkok at Christmas?",
-        answer:
-          "December is the cool season and the best weather of the year: dry, sunny and less humid, with comfortable evenings. It is also the start of the smog season, so check the air quality before long outdoor plans.",
-      },
-      {
-        question: "Are there English Christmas church services in Bangkok?",
-        answer:
-          "Yes. The Church of the Holy Redeemer on Soi Ruam Rudee, Christ Church Bangkok on Convent Road and Assumption Cathedral in Bang Rak all hold Christmas services, including on Christmas Eve. Arrive early, because they fill up.",
-      },
+      "Christmas 2026 in Bangkok is Thursday 24 and Friday 25 December. Our guide lists 28 family Christmas dinners and brunches with prices for adults and kids, where to meet Santa, the best Christmas lights, markets and English church services.",
     ],
   },
   {
+    // Interactive page lives at src/app/blog/new-years-eve-in-bangkok-with-kids/page.tsx
     slug: "new-years-eve-in-bangkok-with-kids",
-    title: "New Year's Eve in Bangkok With Kids: The 2026 Countdown Guide",
+    title: "New Year's Eve in Bangkok 2026 with Kids: Fireworks and Countdowns",
     category: "Activities",
     date: "2026-10-14",
     featureFrom: "2026-11-01",
-    metaDescription:
-      "Where to watch the New Year's Eve fireworks in Bangkok with kids, which countdowns suit families, getting home after midnight, and the 8pm midnight trick.",
-    keywords: ["new years eve bangkok", "new year's eve in bangkok with kids", "bangkok countdown 2027", "new year countdown bangkok", "bangkok new year fireworks", "iconsiam new year", "iconsiam countdown", "centralworld countdown", "new year dinner bangkok", "family new year's eve bangkok", "bangkok new year 2027"],
+    customPage: true,
+    heroImage: "/images/articles/new-years-eve-in-bangkok-with-kids/new-years-eve-bangkok-2026-family-guide.jpg",
     excerpt:
-      "Fireworks over the river, half of Bangkok in one place, and a four year old who was asleep by nine. How to do New Year's Eve in Bangkok with kids, from the best family countdown spots to the 8pm midnight trick.",
-    headings: [
-      { beforeParagraph: 3, text: "The basics: holidays, crowds and the great exodus" },
-      { beforeParagraph: 6, text: "Where to watch the New Year's Eve fireworks in Bangkok" },
-      { beforeParagraph: 14, text: "How to see the fireworks without the crowds" },
-      { beforeParagraph: 19, text: "The early midnight trick for little ones" },
-      { beforeParagraph: 22, text: "New Year's Eve dinner in Bangkok with kids" },
-      { beforeParagraph: 25, text: "Keeping kids safe in the New Year's Eve crowds" },
-      { beforeParagraph: 31, text: "Getting home after midnight" },
-      { beforeParagraph: 34, text: "New Year's Day: the best day to be in Bangkok" },
+      "Every Bangkok countdown rated by crowd level, family dinners and fireworks cruises with prices, getting home after midnight, and the 8pm midnight trick for little ones.",
+    metaDescription:
+      "New Year's Eve 2026 in Bangkok with kids: every countdown rated by crowd level, family dinners and fireworks cruises with prices, getting home, and the 8pm midnight trick.",
+    keywords: [
+      "new years eve bangkok",
+      "new year's eve in bangkok with kids",
+      "bangkok countdown 2027",
+      "bangkok new year fireworks",
+      "new year dinner bangkok",
     ],
     body: [
-      "Bangkok throws one of the best New Year's Eve parties in Asia. The river fills with fireworks, the malls stage countdown concerts, and the whole city stays up late. The catch, if you have kids, is that the best bits happen at midnight in a crowd the size of a small town.",
-      "So the trick is choosing your New Year's Eve on purpose. With toddlers, that might mean fireworks from a distance and bed by ten. With teenagers, it might mean the full riverside countdown. This guide walks through the main countdown venues and which ones work for families, the best ways to see the fireworks without the crush, how to get home after midnight, and a couple of tricks for little ones who will never make it to twelve.",
-      "The 2026 line ups are usually announced in November and December, as Bangkok counts down to 2027. Until then we have used what happened last year so you know what to expect, and we will update this page with confirmed details as they come in.",
-      "Both 31 December and 1 January are public holidays in Thailand, so offices, banks and many government services close. This year New Year's Eve falls on a Thursday and New Year's Day on a Friday, so a lot of people get a four day weekend.",
-      "That long weekend matters, because a huge share of Bangkok goes home to the provinces for New Year. The roads out of the city jam up in the days before, buses and trains are packed, and Bangkok itself goes noticeably quiet, apart from the countdown hotspots, which get much, much busier. If you are travelling, leave early or wait until the rush has passed.",
-      "Thai families often mark the new year at the temple, too. Chanting through midnight at a temple has become a popular way to see in the new year, and New Year gift baskets are a big part of the season, so do not be surprised if one turns up at your office or your building.",
-      "Last year Bangkok had half a dozen major countdown events. Here is how they stack up for families.",
-      "**ICONSIAM and the river.** The headline act. The Amazing Thailand Countdown at ICONSIAM is the city's biggest fireworks display, fired over the Chao Phraya, and last year the festival around it ran for five days, from 27 to 31 December. The outdoor riverside areas have been free to stand in, which is exactly why they fill up so early. For families: spectacular, but plan to arrive in the afternoon to get a spot, and expect a slow exit. Best with older kids and teens.",
-      "**CentralWorld, Ratchaprasong.** The Bangkok Countdown at CentralWorld is the big street party in the middle of the city, with concerts, giant screens and fireworks at midnight. Last year six roads around the mall closed for it. It is a brilliant night for teenagers and a hard one with a stroller. If you go with younger children, stay near the edges.",
-      "**One Bangkok.** The newest venue, with fireworks fired all around the development and laser shows. The open plazas give you a little more breathing room than Ratchaprasong. MRT Lumphini.",
-      "**Sukhumvit.** Last year a countdown ran along Sukhumvit at Asok, Phrom Phong, Benchasiri Park and Thong Lo, with drones, lasers and light projections. If you live nearby, this is one of the better family options, and Benchasiri Park gives kids grass to sit on instead of a road.",
-      "**Asiatique The Riverfront.** Fireworks on the river with a more relaxed, open air feel and plenty of places to eat. A good middle ground for families who want the river fireworks without the ICONSIAM crush.",
-      "**Smaller, more local countdowns.** Places like Samyan Mitrtown, ChangChui and Seacon Square run their own countdowns with live music and fireworks, at a fraction of the crowd. With small children, a smaller countdown close to home is often the best night of all.",
-      "Skip the ticketed EDM events and Khao San Road unless your kids are adults. They are not designed for families, and they are not pretending to be.",
-      "You do not have to be in the crowd to see the fireworks. Some of the best family New Year's Eves in Bangkok happen at a comfortable distance.",
-      "**A riverside restaurant or hotel.** Several riverside hotels sell New Year's Eve dinners with a view of the river fireworks. They are expensive and they sell out, so book in November, and ask whether your table actually faces the display. A river view is not always a fireworks view.",
-      "**A river cruise.** The dinner cruises run New Year's Eve sailings timed for the midnight fireworks. It is a memorable way to do it, but you are on the boat until well after midnight, so it suits kids who can stay up. Ask about children's life jackets when you book.",
-      "**A high floor.** If you or a friend has a condo with a rooftop or a river view, you may be able to watch several displays at once. Check your building's rules for the night, because some rooftops close or fill up fast.",
-      "**Home, with a livestream.** Honestly underrated. Put the countdown on the TV, let the kids fall asleep on the sofa, and step out onto the balcony at midnight for whatever your neighbourhood sets off.",
-      "Small children do not know what time it is. Use that.",
-      "In late December, Sydney is four hours ahead of Bangkok, so Sydney's famous midnight fireworks go off at **8pm Bangkok time**. Put the livestream on, count down together, bang some pots and pans, and have everyone in bed by half past eight, convinced they stayed up for New Year. Got slightly older kids who want to push it? Tokyo and Seoul hit midnight at 10pm Bangkok time.",
-      "Party poppers and glow sticks do the rest. Save the real thing for the year they ask for it.",
-      "Hotels across the city run New Year's Eve dinners and buffets, and just like Christmas, the family friendly ones go first. The same rules apply: book by late November, ask how children are priced, and ask what time any kids' entertainment ends.",
-      "An early seating, around six, is the sweet spot with younger children. You get the festive dinner and still have time for fireworks, or for nothing at all, before bed.",
-      "Hosting at home instead? The supermarkets are rammed on 30 and 31 December, so shop earlier in the week.",
-      "The big countdowns are heavily policed and generally good natured, and Bangkok is a safe city for families (we wrote a whole [guide to that](/blog/is-bangkok-safe-for-kids)). But a midnight crowd is a midnight crowd, and a few habits make a big difference.",
-      "**Pick a meeting point before you arrive.** Something obvious and easy to describe, and make sure every child knows it. We learned that one the hard way at Dream World, a story we tell in our [things to do in Bangkok with kids guide](/blog/9-things-to-do-in-bangkok-with-kids).",
-      "**Put your phone number on your child.** A wristband, a sticker on the back of their shirt, or pen on their arm. If you get separated, any adult or police officer can call you.",
-      "**Protect little ears.** Fireworks this close are seriously loud. Kids' ear defenders are cheap, and small children are much happier with them on.",
-      "**Leave the stroller at home.** A carrier or a pair of shoulders is far easier in a packed crowd, and you will not be wrestling a pram along a closed road at half past midnight.",
-      "**Check the air.** New Year sits inside the smog season, and a city full of fireworks does not help. If the AQI is bad, a balcony view may be the better call. Our [smog season guide](/blog/bangkok-smog-season-kids) explains what the numbers mean.",
-      "Getting home is the hardest part of New Year's Eve in Bangkok. Roads near the big venues close, taxis vanish and ride hailing prices surge, sometimes for an hour or more.",
-      "The trains are your friend. Last year the MRT ran until 2am on New Year's Eve, and the BTS has usually extended its hours too. Check both closer to the date, and expect the stations nearest the fireworks to be packed straight after midnight. Walking one or two stations away before you get on is often quicker than queuing.",
-      "If you are driving, park well away from the venue and walk in. And with small kids, the best exit plan of all is leaving at a quarter to midnight and watching the fireworks over your shoulder from somewhere quieter.",
-      "Here is a secret. With half the city out of town, New Year's Day in Bangkok is wonderfully quiet. The roads are empty, the parks are calm and the weather is usually lovely. It is the perfect day for a lazy brunch, a picnic in Lumpini or Benchakitti Park, or one of the outings in our [things to do in Bangkok with kids guide](/blog/9-things-to-do-in-bangkok-with-kids), before the crowds come back.",
-      "Winter break usually runs into the second week of January, so if you need ideas for the rest of it, our [holiday camps directory](/camps) and [school holidays calendar](/school-breaks) have you covered. Still planning December? Our [Christmas in Bangkok with kids guide](/blog/christmas-in-bangkok-with-kids) has the trees, Santa and Christmas dinner sorted.",
-      "Hosting a family friendly New Year's Eve event, or found a great spot to watch the fireworks with kids? Tell us at [info@bkkfamilies.com](mailto:info@bkkfamilies.com) or in the [Bangkok Expat Families group](https://www.facebook.com/groups/395501457186828). Happy New Year from all of us at BKK Families!",
-    ],
-    faq: [
-      {
-        question: "Where is the best place to watch the New Year's Eve fireworks in Bangkok with kids?",
-        answer:
-          "ICONSIAM has the biggest display, over the Chao Phraya, but it draws the biggest crowd and is best with older kids. With younger children, Asiatique The Riverfront, the Sukhumvit countdown around Benchasiri Park, a smaller local countdown, or a riverside restaurant with a view are all easier.",
-      },
-      {
-        question: "What time are the New Year's Eve fireworks in Bangkok?",
-        answer:
-          "The main fireworks go off at midnight. Countdown events usually start in the early evening with concerts and shows, and for the riverside areas at ICONSIAM people start claiming spots in the afternoon.",
-      },
-      {
-        question: "Is New Year's Eve a public holiday in Thailand?",
-        answer:
-          "Yes. Both 31 December and 1 January are public holidays. In 2026 they fall on a Thursday and a Friday, so many people get a four day weekend and a lot of Bangkok leaves for the provinces.",
-      },
-      {
-        question: "Do the BTS and MRT run late on New Year's Eve?",
-        answer:
-          "Usually, yes. Last year the MRT ran until 2am on New Year's Eve and the BTS has typically extended its hours too. Confirm both closer to the date, and expect stations near the fireworks to be packed straight after midnight.",
-      },
-      {
-        question: "Is the CentralWorld countdown OK for young children?",
-        answer:
-          "It is a huge, loud crowd with roads closed around it, so it works best for teenagers. If you take younger children, stay near the edges, agree a meeting point, put your phone number on them and bring ear defenders.",
-      },
-      {
-        question: "How can young kids celebrate New Year if they cannot stay up until midnight?",
-        answer:
-          "Celebrate with Sydney. It is four hours ahead of Bangkok in late December, so its midnight fireworks happen at 8pm Bangkok time. Watch the livestream, count down together and everyone is in bed by half past eight.",
-      },
-      {
-        question: "Is Bangkok busy over New Year?",
-        answer:
-          "The countdown venues are extremely busy, but much of the rest of the city goes quiet because so many people travel home for the holiday. Roads out of Bangkok are jammed in the days before New Year, and New Year's Day itself is often lovely and calm.",
-      },
+      "New Year's Eve 2026 in Bangkok is Thursday 31 December. Our guide rates every countdown by crowd level, lists family dinners and fireworks cruises with prices, and explains the 8pm midnight trick for little ones.",
     ],
   },
   {
