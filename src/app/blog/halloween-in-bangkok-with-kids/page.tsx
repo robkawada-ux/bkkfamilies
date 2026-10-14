@@ -177,6 +177,28 @@ function RoadDivider() {
   );
 }
 
+/**
+ * Event offers for structured data. Only emitted where the price is known:
+ * free events get price 0, and a listed baht price uses its first figure
+ * (the lowest ticket). Events with "Register" or "Walk-in" get no offer
+ * rather than an invented one.
+ */
+function offerFor(e: (typeof EVENTS)[number]) {
+  const baht = e.price?.match(/฿\s?([\d,]+)/);
+  const price = e.free && !baht ? 0 : baht ? Number(baht[1].replace(/,/g, "")) : null;
+  if (price === null) return {};
+  return {
+    offers: {
+      "@type": "Offer",
+      price,
+      priceCurrency: "THB",
+      availability: "https://schema.org/InStock",
+      validFrom: PUBLISHED,
+      url: e.link ?? URL,
+    },
+  };
+}
+
 export default function HalloweenGuidePage() {
   const days = daysToHalloween();
   const countdown =
@@ -249,8 +271,12 @@ export default function HalloweenGuidePage() {
           name: e.venue.split(",")[0],
           address: { "@type": "PostalAddress", streetAddress: e.venue, addressLocality: "Bangkok", addressCountry: "TH" },
         },
+        image: [OG_IMAGE, `${SITE}${IMG_DIR}/${POSTERS[1].file}.jpg`],
+        organizer: { "@type": "Organization", name: e.venue.split(",")[0], ...(e.link ? { url: e.link } : {}) },
+        performer: { "@type": "PerformingGroup", name: e.venue.split(",")[0] },
         ...(e.link ? { url: e.link } : {}),
         ...(e.free ? { isAccessibleForFree: true } : {}),
+        ...offerFor(e),
       },
     })),
   };
