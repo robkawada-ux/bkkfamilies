@@ -3,7 +3,8 @@ import { og } from "@/lib/seo";
 import Link from "next/link";
 import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
-import { ARTICLES } from "@/lib/articles";
+import { listedArticles } from "@/lib/articles";
+import { HALLOWEEN_PATH, daysToHalloween, isHalloweenSeason } from "@/lib/halloween";
 import { SCHOOLS } from "@/lib/schools";
 import { TopBanner, SidebarSlot } from "@/components/ui/AdSlot";
 import { StatRoads, Roundabout } from "@/components/ui/Road";
@@ -23,15 +24,21 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const latest = ARTICLES.slice()
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
-    .slice(0, 6);
+  const latest = listedArticles().slice(0, 6);
+  // Seasonal box in the hero; switches itself off after 1 November.
+  const halloween = isHalloweenSeason();
+  const sleeps = daysToHalloween();
 
   return (
     <>
       {/* HERO */}
       <section className="bg-orange px-4 py-20 text-white md:py-28">
-        <div className="mx-auto max-w-6xl">
+        <div
+          className={`mx-auto max-w-6xl ${
+            halloween ? "grid items-center gap-10 lg:grid-cols-[1fr_340px]" : ""
+          }`}
+        >
+          <div>
           <p className="mb-3 text-base font-extrabold uppercase tracking-widest text-white">
             Your Bangkok Roadmap
           </p>
@@ -59,6 +66,49 @@ export default function HomePage() {
               Join the Facebook Group
             </a>
           </div>
+          </div>
+
+          {halloween && (
+            <Link
+              href={HALLOWEEN_PATH}
+              className="group relative block overflow-hidden rounded-2xl bg-purple-dark p-7 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
+            >
+              {/* Bats and moon, decorative */}
+              <svg aria-hidden="true" viewBox="0 0 340 120" className="pointer-events-none absolute inset-x-0 top-0 h-28 w-full opacity-90">
+                <circle cx="290" cy="38" r="22" fill="#FEF3E8" />
+                <circle cx="281" cy="32" r="22" fill="#3D1E5C" />
+                <path fill="#120a1c" d="M190 58c5-5 8-5 11 0 2-3 4-3 6 0 3-5 6-5 11 0-5 1-7 3-9 6-1-2-3-2-5 0-2-2-4-2-5 0-2-3-4-5-9-6Z" />
+                <path fill="#120a1c" d="M120 18c4-4 6-4 8 0 1-2 3-2 4 0 2-4 4-4 8 0-4 1-5 2-6 5-1-2-2-2-4 0-1-2-3-2-4 0-1-3-3-4-6-5Z" />
+              </svg>
+              <div className="relative">
+                <span className="inline-block rounded-full bg-orange px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-purple-dark">
+                  Halloween 2026
+                </span>
+                <div className="mt-12 flex items-end gap-3">
+                  <svg aria-hidden="true" viewBox="0 0 20 20" className="h-14 w-14 shrink-0 transition group-hover:rotate-6">
+                    <path fill="#F4831F" d="M10 4.2c-.4-1.4.2-2.6 1.6-3l.5 1c-.8.3-1.1.9-.9 1.8 2.9-.9 6.8 1.3 6.8 6.6 0 4.4-3 7.4-8 7.4s-8-3-8-7.4c0-5.3 3.9-7.5 6.8-6.6Z" />
+                    <path fill="#3D1E5C" d="M6.2 9.2 8 10.4H5.6ZM13.8 9.2l.6 1.2H12ZM6 13c1.2 1 2.6 1.4 4 1.4s2.8-.4 4-1.4l-1 .2-.6.6-.8-.6-.8.6-.8-.6-.8.6-.6-.6Z" />
+                  </svg>
+                  <p className="font-heading text-2xl font-bold leading-tight">
+                    What to do in Bangkok for Halloween with kids
+                  </p>
+                </div>
+                <p className="mt-3 text-sm text-white/80">
+                  28 family events rated by fright level, plus trick-or-treat spots, costumes and spooky treats.
+                </p>
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  {sleeps >= 0 && (
+                    <span className="font-heading text-lg font-bold text-orange">
+                      {sleeps === 0 ? "It's tonight!" : `${sleeps} ${sleeps === 1 ? "sleep" : "sleeps"} to go`}
+                    </span>
+                  )}
+                  <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-purple-dark transition group-hover:bg-orange group-hover:text-white">
+                    See the guide →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          )}
         </div>
       </section>
 

@@ -40,7 +40,7 @@ function shareImage(slug: string, heroImage?: string) {
 }
 
 export function generateStaticParams() {
-  return ARTICLES.map((a) => ({ slug: a.slug }));
+  return ARTICLES.filter((a) => !a.customPage).map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({

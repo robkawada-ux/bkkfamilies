@@ -29,14 +29,69 @@ export interface Article {
    * set this on a review or a directory listing: those are not for sale.
    */
   sponsored?: { sponsor: string; url?: string };
+  /**
+   * Holds the article at the front of blog listings (homepage "From the
+   * Blog" and /blog) until the `until` date, Bangkok time, exclusive.
+   * Lower `order` comes first. After `until` it falls back into date order
+   * by itself; both pages revalidate hourly.
+   */
+  pin?: { order: number; until?: string };
+  /**
+   * The article has its own hand-built route under src/app/blog/<slug>/,
+   * so the generic [slug] template must not generate it. The entry here
+   * still feeds listings, the sitemap and related links.
+   */
+  customPage?: boolean;
+}
+
+function bangkokDate(now: Date): string {
+  return new Date(now.getTime() + 7 * 3600 * 1000).toISOString().slice(0, 10);
+}
+
+/** Articles in listing order: live pins first (by order), then newest first. */
+export function listedArticles(now: Date = new Date()): Article[] {
+  const today = bangkokDate(now);
+  const pinRank = (a: Article) =>
+    a.pin && (!a.pin.until || today < a.pin.until) ? a.pin.order : Infinity;
+  return ARTICLES.slice().sort((a, b) => {
+    const pa = pinRank(a);
+    const pb = pinRank(b);
+    if (pa !== pb) return pa - pb;
+    return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
+  });
 }
 
 export const ARTICLES: Article[] = [
+  {
+    // Interactive page lives at src/app/blog/halloween-in-bangkok-with-kids/page.tsx
+    slug: "halloween-in-bangkok-with-kids",
+    title: "Halloween in Bangkok 2026 with Kids: 28 Family Events",
+    category: "Local Life",
+    date: "2026-10-14",
+    customPage: true,
+    pin: { order: 2, until: "2026-11-02" },
+    heroImage: "/images/articles/halloween-in-bangkok-with-kids/halloween-bangkok-2026-kids-guide-og.jpg",
+    excerpt:
+      "28 family Halloween events in Bangkok rated by fright level, plus trick-or-treat spots, costume shops, spooky treats and survival tips for parents.",
+    metaDescription:
+      "Halloween 2026 in Bangkok with kids: 28 family events rated by fright level, plus trick-or-treat spots, costume shops, spooky treats and parent tips.",
+    keywords: [
+      "halloween bangkok",
+      "halloween in bangkok 2026",
+      "halloween events bangkok kids",
+      "trick or treat bangkok",
+      "halloween costumes bangkok",
+    ],
+    body: [
+      "Halloween 2026 falls on Saturday 31 October. Our guide lists 28 family events across Bangkok, each rated by fright level, with trick-or-treat options, costume and decoration shops, treats to pre-order and tips for parents.",
+    ],
+  },
   {
     slug: "foreign-property-ownership-thailand-2026",
     title: "Foreign Property Ownership in Thailand: What Changed in 2026 and What It Means for Expat Buyers",
     category: "Local Life",
     date: "2026-10-14",
+    pin: { order: 1, until: "2026-11-02" },
     sponsored: { sponsor: "LAFS Legal", url: "https://www.lafs-legal.com" },
     metaDescription:
       "Thailand's property rules for foreigners shifted in 2025 and 2026. What the nominee crackdown, the 30-year lease ruling, condo quota enforcement and new off-plan buyer protections mean for expat buyers, from LAFS Legal.",
