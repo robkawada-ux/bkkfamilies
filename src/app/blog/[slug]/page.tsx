@@ -101,11 +101,17 @@ export default async function ArticlePage({
     image:
       "https://www.bkkfamilies.com" +
       shareImage(article.slug, article.heroImage),
-    author: {
-      "@type": "Organization",
-      name: "BKK Families",
-      url: "https://www.bkkfamilies.com",
-    },
+    author: article.sponsored
+      ? {
+          "@type": "Organization",
+          name: article.sponsored.sponsor,
+          ...(article.sponsored.url ? { url: article.sponsored.url } : {}),
+        }
+      : {
+          "@type": "Organization",
+          name: "BKK Families",
+          url: "https://www.bkkfamilies.com",
+        },
     publisher: {
       "@type": "Organization",
       name: "BKK Families",
@@ -177,6 +183,7 @@ export default async function ArticlePage({
           month: "long",
           day: "numeric",
           year: "numeric",
+          timeZone: "UTC",
         })}
         {article.updated && article.updated !== article.date && (
           <>
@@ -189,7 +196,7 @@ export default async function ArticlePage({
             })}
           </>
         )}{" "}
-        · by BKK Families
+        · by {article.sponsored ? article.sponsored.sponsor : "BKK Families"}
       </p>
 
       {article.sponsored && (

@@ -11,6 +11,11 @@ export default function ArticleCard({ article }: { article: Article }) {
       <div className="p-5">
         <p className="text-xs font-bold uppercase tracking-wide text-teal">
           {article.category}
+          {article.sponsored && (
+            <span className="ml-2 rounded bg-neutral-100 px-1.5 py-0.5 text-[10px] text-neutral-500">
+              Sponsored
+            </span>
+          )}
         </p>
         <h3 className="mt-2 font-heading text-lg font-bold text-purple-dark group-hover:text-orange">
           {article.title}
@@ -20,6 +25,7 @@ export default function ArticleCard({ article }: { article: Article }) {
           {new Date(article.date).toLocaleDateString("en-US", {
             month: "long",
             year: "numeric",
+            timeZone: "UTC",
           })}
         </p>
       </div>

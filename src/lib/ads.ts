@@ -53,7 +53,16 @@ export const SLOT_SPECS: Record<AdSlotId, SlotSpec> = {
 
 export const ADS: Record<AdSlotId, AdCreative | null> = {
   "home-top": null,
-  "home-sidebar-top": null,
+  // LAFS Legal, Legal Partner (invoice BEF-2026-008). Paid monthly with a
+  // 3-month minimum; extend the end date when they renew.
+  "home-sidebar-top": {
+    sponsor: "LAFS Legal",
+    href: "https://www.lafs-legal.com",
+    image: "/images/ads/lafs-legal-sidebar.jpg",
+    alt: "LAFS Legal: property, wills and visas for expat families in Bangkok. Free first consultation. lafs-legal.com",
+    start: "2026-10-14",
+    end: "2027-01-13",
+  },
   "home-sidebar-middle": null,
   "home-sidebar-bottom": null,
 };
