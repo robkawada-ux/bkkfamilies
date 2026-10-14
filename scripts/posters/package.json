@@ -1,0 +1,10 @@
+{
+  "name": "bkkfamilies-posters",
+  "private": true,
+  "description": "Fonts for scripts/posters/festive_posters.py. Not part of the site build.",
+  "dependencies": {
+    "@fontsource/dm-mono": "^5.0.0",
+    "@fontsource/figtree": "^5.0.0",
+    "@fontsource/fraunces": "^5.0.0"
+  }
+}
