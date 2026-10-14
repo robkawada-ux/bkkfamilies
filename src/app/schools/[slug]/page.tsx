@@ -201,12 +201,12 @@ export default async function SchoolPage({
               Back to Schools
             </Link>
             {school.logo && (
-              <div className="mx-auto mt-6 w-fit rounded-xl bg-white p-3 shadow-sm">
+              <div className={`mx-auto mt-6 w-fit ${school.logoPlain ? "" : "rounded-xl bg-white p-3 shadow-sm"}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={school.logo}
                   alt={`${school.name} logo`}
-                  className="h-20 w-auto max-w-[260px] object-contain md:h-24"
+                  className={school.logoPlain ? "h-28 w-auto max-w-[320px] object-contain md:h-36 md:max-w-[420px]" : "h-20 w-auto max-w-[260px] object-contain md:h-24"}
                 />
               </div>
             )}
@@ -234,6 +234,24 @@ export default async function SchoolPage({
           <p className="text-sm font-semibold text-purple-dark">
             {school.areas.map((a) => AREA_LABEL[a]).join(", ")}
           </p>
+          {school.address && (
+            <p className="mt-0.5 text-xs text-neutral-500">
+              {school.address}
+              {school.mapUrl && (
+                <>
+                  {" "}
+                  <a
+                    href={school.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-orange"
+                  >
+                    Directions
+                  </a>
+                </>
+              )}
+            </p>
+          )}
         </div>
         {school.ageRange && (
           <div className="rounded-xl border border-black/5 bg-neutral-50 px-4 py-3">
@@ -279,6 +297,17 @@ export default async function SchoolPage({
               <p className="mt-0.5 text-xs text-neutral-500">
                 The school does not publish a fee schedule. Checked{" "}
                 {formatVerifiedDate(onEnquiry.checked)}.
+              </p>
+            </>
+          ) : school.schoolStatedFee ? (
+            <>
+              <p className="text-sm font-semibold text-purple-dark">
+                {school.schoolStatedFee}
+              </p>
+              <p className="mt-0.5 text-xs text-neutral-500">
+                As stated by the school
+                {school.schoolStatedFeeDate ? `, ${school.schoolStatedFeeDate}` : ""}.
+                Depends on age and programme, so confirm with the school.
               </p>
             </>
           ) : school.feeRange ? (
