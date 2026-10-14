@@ -319,7 +319,7 @@ export default function HalloweenGuidePage() {
           <SectionHead
             id="when"
             eyebrow="The quick version"
-            title="When is Halloween 2026 in Bangkok? Saturday 31 October"
+            title="When is Halloween 2026 in Bangkok? It’s more than just Saturday 31 October."
             intro="Translation: the whole weekend is Halloween, and so is the one before it. Most of the city's big family events cluster on Friday 30 October to Sunday 1 November, with the mall displays running all month."
           />
           <div className="grid gap-4 md:grid-cols-3">
