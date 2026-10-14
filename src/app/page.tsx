@@ -3,7 +3,7 @@ import { og } from "@/lib/seo";
 import Link from "next/link";
 import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
-import { listedArticles } from "@/lib/articles";
+import { listedArticles, isFeatured } from "@/lib/articles";
 import { HALLOWEEN_PATH, daysToHalloween, isHalloweenSeason } from "@/lib/halloween";
 import { SCHOOLS } from "@/lib/schools";
 import { TopBanner, SidebarSlot } from "@/components/ui/AdSlot";
@@ -24,7 +24,8 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const latest = listedArticles().slice(0, 6);
+  // Seasonal pieces published early stay off the homepage until featureFrom.
+  const latest = listedArticles().filter((a) => isFeatured(a)).slice(0, 6);
   // Seasonal box in the hero; switches itself off after 1 November.
   const halloween = isHalloweenSeason();
   const sleeps = daysToHalloween();
