@@ -661,6 +661,34 @@ export default function HalloweenGuidePage() {
           </div>
           <p className="mt-10 text-sm font-extrabold uppercase tracking-widest text-purple-dark">Your Bangkok Roadmap</p>
           <p className="mt-1 text-sm text-neutral-500">Next up on the family calendar: Loy Krathong on Tuesday 24 November 2026.</p>
+          <div className="mt-8">
+            <p className="font-heading text-xl font-bold text-purple-dark">Coming up next: the festive season</p>
+            <div className="mt-4 grid gap-5 sm:grid-cols-2">
+              {[
+                {
+                  href: "/blog/christmas-in-bangkok-with-kids",
+                  img: "/images/articles/christmas-in-bangkok-with-kids/christmas-in-bangkok-2026-family-guide.jpg",
+                  title: "Christmas in Bangkok 2026 with kids",
+                  text: "Family Christmas dinners, where to meet Santa, the best trees and lights, and Christmas markets.",
+                },
+                {
+                  href: "/blog/new-years-eve-in-bangkok-with-kids",
+                  img: "/images/articles/new-years-eve-in-bangkok-with-kids/new-years-eve-bangkok-2026-family-guide.jpg",
+                  title: "New Year's Eve in Bangkok 2026 with kids",
+                  text: "Family countdowns, fireworks without the crush, and the 8pm midnight trick for little ones.",
+                },
+              ].map((g) => (
+                <Link key={g.href} href={g.href} className="group overflow-hidden rounded-xl border border-black/5 bg-white shadow-sm transition hover:shadow-md">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={g.img} alt="" width={1200} height={630} loading="lazy" decoding="async" className="h-auto w-full" />
+                  <span className="block p-4">
+                    <span className="block font-heading text-lg font-bold text-purple-dark group-hover:text-orange">{g.title}</span>
+                    <span className="mt-1 block text-sm text-neutral-600">{g.text}</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
           <div className="mt-8 border-t border-black/10 pt-6">
             <Link href="/blog" className="text-sm font-semibold text-orange">← Back to Blog</Link>
           </div>

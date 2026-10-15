@@ -200,6 +200,19 @@ export default function SchoolBreaksPage() {
                 <p className="mt-2 text-sm leading-relaxed text-neutral-600">
                   {w.summary}
                 </p>
+                {w.id === "winter-2026" && (
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                    Staying in Bangkok over the break? See our guides to{" "}
+                    <Link href="/blog/christmas-in-bangkok-with-kids" className="font-semibold text-orange">
+                      Christmas in Bangkok with kids
+                    </Link>{" "}
+                    and{" "}
+                    <Link href="/blog/new-years-eve-in-bangkok-with-kids" className="font-semibold text-orange">
+                      New Year&rsquo;s Eve in Bangkok with kids
+                    </Link>
+                    .
+                  </p>
+                )}
               </div>
             ))}
           </div>
