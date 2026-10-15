@@ -19,3 +19,7 @@ Poster text lives in the functions in festive_posters.py (xmas_cheat,
 xmas_dinners, xmas_santa, nye_cheat, nye_trick, nye_ages and the two share
 cards). The script prints an OVERLAP warning if a card grid runs into the box
 below it.
+
+Thanksgiving (poster, share image and the venue photos as WebP):
+
+    python3 thanksgiving_posters.py ~/Projects/bkkfamilies [folder with the venue photos]

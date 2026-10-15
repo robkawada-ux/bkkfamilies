@@ -242,10 +242,20 @@ export default async function ArticlePage({
                 <RichText text={p} sponsored={!!article.sponsored} />
               </p>
               {inlineImages?.map((img, j) => (
-                <div key={j} className="my-6 w-full overflow-hidden rounded-xl">
+                <figure key={j} className="my-6 w-full">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={img.src} alt={img.alt} className="h-auto w-full" />
-                </div>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="mx-auto h-auto max-h-[560px] w-auto max-w-full rounded-xl"
+                  />
+                  {img.caption && (
+                    <figcaption className="mt-2 text-center text-xs italic text-neutral-500">
+                      {img.caption}
+                    </figcaption>
+                  )}
+                </figure>
               ))}
             </div>
           );
