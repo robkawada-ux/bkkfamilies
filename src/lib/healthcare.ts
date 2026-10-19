@@ -1038,6 +1038,28 @@ export const FACILITIES: Facility[] = [
     phone: "+66 2718 0777",
     lastVerified: "2026-09-15",
   },
+  {
+    slug: "medconsult-clinic",
+    name: "MedConsult Clinic",
+    type: "clinic",
+    area: "Watthana",
+    address:
+      "The Racquet Club, Building 2, 3rd floor, Sukhumvit Soi 49/9, Khlong Tan Nuea, Watthana, Bangkok 10110",
+    nearestTransit: "BTS Phrom Phong or Thong Lo, then a short taxi",
+    description:
+      "A walk-in-style GP clinic with two branches, one in the Racquet Club off Sukhumvit 49 in Thonglor and one in the 64 Building on Silom Road. It covers the everyday things a family GP handles: consultations, health check-ups and screening, vaccinations, women's and men's health, and home visits, with a psychiatry service alongside. Consultations run in English and Thai.\n\nThe hours are the practical draw. Both branches open every day, Thonglor from 7am and Silom from 8am, through to 7pm, so a check-up or a jab can happen before the school run or the working day rather than eating into it.",
+    worthKnowing:
+      "Children are not mentioned anywhere on the clinic's website, so call ahead to confirm a GP will see your child before you take them. A good share of the menu is aesthetics and weight-loss treatments, which is worth knowing so you are not surprised by the waiting room. Insurance direct billing is not published either, so ask before your visit if you want to avoid paying up front. The Silom branch is at 64 Building, 3rd floor, Silom Road, Bang Rak (phone +66 61 172 8594). Booking is online, by email, or on LINE at @medconsultclinic.",
+    services: ["family-medicine", "vaccinations", "mental-health"],
+    languages: ["English"],
+    directBilling: "unknown",
+    website: "https://www.medconsultasia.com",
+    email: "customer@medconsultasia.com",
+    phone: "+66 61 171 1000 (Thonglor) or +66 61 172 8594 (Silom)",
+    lineId: "@medconsultclinic",
+    facebook: "https://www.facebook.com/MedConsultClinicAsia",
+    lastVerified: "2026-10-19",
+  },
 ];
 
 export const ALL_AREAS: string[] = Array.from(
