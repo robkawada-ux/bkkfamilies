@@ -744,13 +744,13 @@ export const PROVIDERS: Provider[] = [
     slug: "the-dyslexia-hub",
     name: "The Dyslexia Hub",
     category: "Assessment & diagnosis",
-    area: "Watthana (Asok)",
+    area: "Online",
     ages: "8 to 16",
     languages: ["English"],
-    delivery: ["At a centre", "Online"],
+    delivery: ["Online"],
     services: [
-      "Full diagnostic dyslexia assessment, in person or online",
-      "Remote assessments for families elsewhere in Thailand or overseas",
+      "Full diagnostic dyslexia assessment, fully online",
+      "15-minute online dyslexia screening (not a formal diagnosis)",
       "Background information gathered from parents and school",
       "Detailed diagnostic report with recommendations for home and school",
       "Classroom strategies and next steps",
@@ -764,9 +764,9 @@ export const PROVIDERS: Provider[] = [
     ],
     website: "https://thedyslexiahub.org",
     email: "admin@thedyslexiahub.com",
-    // Description supplied by the provider (Shirali, 19 Oct 2026), in her own first-person voice.
+    // Description supplied by the provider (Shirali, 20 Oct 2026), used verbatim. Online-only from this date.
     description:
-      "I am a qualified Dyslexia Assessor and Specialist Dyslexia Teacher based in Bangkok, providing comprehensive diagnostic dyslexia assessments for children aged 8–16 in accordance with British Dyslexia Association guidance and professional standards.\n\nFor families based in Bangkok, I offer both in-person and fully online assessments. Remote assessments are also available for families living elsewhere in Thailand or internationally, or for those who prefer an online assessment.\n\nMy aim is to determine whether a child has dyslexia through a comprehensive diagnostic assessment and to identify their individual learning strengths and areas of difficulty. I understand that pursuing a formal diagnosis is an important decision, and I want families to feel informed and supported throughout the process.\n\nThe process begins with gathering background information from parents and the child's school to understand their learning history and current difficulties. Following the assessment, I provide a detailed diagnostic report with practical, tailored recommendations for home and school, including classroom strategies, next steps and, where appropriate, guidance on exam access arrangements.\n\nIf you are concerned about your child's reading, spelling or literacy development, or are unsure whether a dyslexia assessment would be appropriate, I would be happy to have an initial conversation to discuss your concerns and help you consider the next steps.",
+      "The Dyslexia Hub provides comprehensive online diagnostic dyslexia assessments for children aged 8–16, delivered by a qualified Dyslexia Assessor in accordance with British Dyslexia Association guidance and professional standards.\n\nAssessments are conducted fully online, allowing children to be assessed from the comfort of their own homes.\n\nA diagnostic dyslexia assessment goes beyond identifying dyslexia. It provides a detailed understanding of a child's individual learning profile, including their cognitive and literacy strengths and areas of difficulty. Even when dyslexia is not identified, the findings can offer valuable insights to help parents and teachers understand a child's learning needs and plan appropriate support.\n\nThe assessment process begins with gathering background information from parents and the child's school to understand their learning history and current difficulties. Following the assessment, families receive a detailed diagnostic report with practical, tailored recommendations for home and school, including classroom strategies, next steps and, where appropriate, guidance on exam access arrangements.\n\nThe Dyslexia Hub also offers a 15-minute online dyslexia screening for families who are unsure whether a full diagnostic assessment is necessary. This shorter screening helps identify potential indicators of dyslexia and inform whether further assessment may be appropriate. Screening does not provide a formal diagnosis.\n\nFamilies concerned about their child's reading, spelling or literacy development, or unsure whether screening or a full diagnostic assessment would be appropriate, are welcome to get in touch for an initial conversation to discuss their concerns and possible next steps.",
     checked: "October 2026",
   },
   {
