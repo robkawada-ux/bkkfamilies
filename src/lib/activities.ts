@@ -1414,7 +1414,8 @@ export const ACTIVITIES: Activity[] = [
     setting: "Indoor",
     district: "Several branches",
     zone: "Several locations",
-    minAge: 3,
+    minAge: 1,
+    maxAge: 12,
     price: {
       from: 7800,
       to: 9500,
@@ -1422,9 +1423,9 @@ export const ACTIVITIES: Activity[] = [
       note: "Sold as 12-class packages: 7,800 baht for Junior Inventor and Advance Inventor, 9,000 baht for Junior Robotics, 9,500 baht for Advance Robotics.",
     },
     description:
-      "LEGO-based building and robotics classes in four levels by age. Junior Inventor, for three and four year olds, works through the alphabet with a theme a week, D for Dinosaur and so on, building models while practising counting, colours, shapes and patterns. Advance Inventor, for four to sixes, brings in science, engineering and maths ideas through themed builds that children then test and modify. Junior Robotics, for six to eights, adds motors, sensors and drag-and-drop coding so children program their own LEGO robots. Advance Robotics, for nines and up, moves on to LEGO Mindstorms EV3 and more complex programming challenges.",
+      "LEGO-based building and robotics classes in four levels by age. Junior Inventor, for one to four year olds, works through the alphabet with a theme a week, D for Dinosaur and so on, building models while practising counting, colours, shapes and patterns. Advance Inventor, for five to sevens, brings in science, engineering and maths ideas through themed builds that children then test and modify. Junior Robotics, for seven to nines, adds motors, sensors and drag-and-drop coding so children program their own LEGO robots. Advance Robotics, for nine to twelves, moves on to LEGO Mindstorms EV3 and more complex programming challenges.",
     worthKnowing:
-      "Each branch sets its own timetable and runs its own free trial class, so book with the one nearest you, by phone or LINE below. The ages above are the ones Bricks 4 Kidz gave us for each programme. Their learning pathway poster groups them slightly differently, and also shows a parent and child class for under-threes, so check the right level for your child when you book. All four branches also run holiday camps, listed in our camps directory.",
+      "Each branch sets its own timetable and runs its own free trial class, so book with the one nearest you, by phone or LINE below. The youngest level also includes a parent and child class, shown on the learning pathway poster below. All four branches also run holiday camps, listed in our camps directory.",
     photo: "/images/activities/bricks-4-kidz-learning-pathway.jpg",
     photoAlt: "Bricks 4 Kidz learning pathway poster showing four stages, from Early Builders for the youngest children through Young Engineers and Coding and Robotics to Future Innovators with LEGO Mindstorms EV3, with the four Bangkok branches and LINE QR code.",
     photoCredit: "Bricks 4 Kidz Thailand, used with permission",

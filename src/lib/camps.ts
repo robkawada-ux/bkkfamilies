@@ -140,10 +140,10 @@ export interface Camp {
 // December weeks, so its 12 sessions (4 programmes x 3 weeks) are generated
 // here rather than written out by hand.
 const B4K_PROGRAMMES = [
-  { key: "junior-inventor", name: "Junior Inventor Camp", minAge: 3, maxAge: 4, price: 6750, cats: ["stem", "art-and-design"] },
-  { key: "advance-inventor", name: "Advance Inventor Camp", minAge: 4, maxAge: 6, price: 6750, cats: ["stem"] },
-  { key: "junior-robotics", name: "Junior Robotics Camp", minAge: 6, maxAge: 8, price: 7750, cats: ["stem"] },
-  { key: "advance-robotics", name: "Advance Robotics Camp", minAge: 9, maxAge: undefined, price: 8750, cats: ["stem"] },
+  { key: "junior-inventor", name: "Junior Inventor Camp", minAge: 1, maxAge: 4, price: 6750, cats: ["stem", "art-and-design"] },
+  { key: "advance-inventor", name: "Advance Inventor Camp", minAge: 5, maxAge: 7, price: 6750, cats: ["stem"] },
+  { key: "junior-robotics", name: "Junior Robotics Camp", minAge: 7, maxAge: 9, price: 7750, cats: ["stem"] },
+  { key: "advance-robotics", name: "Advance Robotics Camp", minAge: 9, maxAge: 12, price: 8750, cats: ["stem"] },
 ] as const;
 const B4K_WEEKS = [
   { start: "2026-12-07", end: "2026-12-11" },
@@ -1178,17 +1178,17 @@ export const CAMPS: Camp[] = [
     name: "Bricks 4 Kidz",
     area: "Several branches",
     mainVenue: "K Village (Sukhumvit 26), Central Ladprao, The Crystal Ratchaphruek and Mega Bangna",
-    tagline: "LEGO building and robotics camps for ages 3 and up, at four Bangkok branches",
+    tagline: "LEGO building and robotics camps for ages 1 to 12, at four Bangkok branches",
     highlights: [
       "🧱 LEGO building every day",
       "🤖 Robotics with motors and sensors",
-      "💻 Coding for 6 and up",
-      "🔤 Theme-a-day builds for 3 and 4 year olds",
+      "💻 Coding for 7 and up",
+      "🔤 Theme-a-day builds for 1 to 4 year olds",
       "🕥 Half day or full day with lunch",
       "📍 Four branches across Bangkok",
     ],
     description:
-      "Bricks 4 Kidz runs LEGO-based building and robotics classes from four mall branches, and for the December break it runs week-long camps at all four. There are four camps by age: Junior Inventor for three and four year olds, Advance Inventor for four to sixes, Junior Robotics for six to eights, where children build and program LEGO robots with motors and sensors, and Advance Robotics for nines and up, using LEGO Mindstorms EV3. Each camp runs Monday to Friday, as a half day or a full day with lunch.",
+      "Bricks 4 Kidz runs LEGO-based building and robotics classes from four mall branches, and for the December break it runs week-long camps at all four. There are four camps by age: Junior Inventor for one to four year olds, Advance Inventor for five to sevens, Junior Robotics for seven to nines, where children build and program LEGO robots with motors and sensors, and Advance Robotics for nine to twelves, using LEGO Mindstorms EV3. Each camp runs Monday to Friday, as a half day or a full day with lunch.",
     worthKnowing:
       "The first week, 7 to 11 December, is before most international schools break up, so it suits families at schools that finish early. The last week runs to 25 December, Christmas Day, so check that day with your branch. Each branch takes its own camp bookings, by phone or LINE, listed under Contact.",
     photo: "/images/camps/bricks-4-kidz-logo.jpg",
