@@ -1435,6 +1435,7 @@ export const ACTIVITIES: Activity[] = [
       { name: "The Crystal Ratchaphruek", location: "3rd floor", phone: "095 519 8961", lineUrl: "https://line.me/ti/p/z8IeDvqOF0" },
       { name: "Mega Bangna", location: "2nd floor, near HomePro", phone: "086 394 1462", lineUrl: "https://line.me/ti/p/HoSwmHvTnq" },
     ],
+    website: "http://www.bricks4kidz.co.th",
     email: "info-th@bricks4kidz.com",
     status: "confirmed",
     confirmedByOperator: true,

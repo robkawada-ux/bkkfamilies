@@ -1195,6 +1195,7 @@ export const CAMPS: Camp[] = [
     photoAlt: "Bricks 4 Kidz logo: the name in white on red, green and blue LEGO-style bricks, with the line we learn, we build, we play with LEGO Bricks.",
     photoCredit: "Bricks 4 Kidz Thailand, used with permission",
     photoCaption: "Bricks 4 Kidz runs its December camps at all four Bangkok branches.",
+    website: "http://www.bricks4kidz.co.th",
     email: "info-th@bricks4kidz.com",
     branchContacts: [
       { name: "K Village", location: "Sukhumvit 26, 2nd floor", phone: "096 394 6353", lineUrl: "https://line.me/ti/p/gUbyvQKfhQ" },
