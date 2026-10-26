@@ -15,6 +15,8 @@
 // Attraction prices online are often reseller discounts: record the
 // walk-in or official price, not a booking-site deal.
 
+import type { BranchContact } from "./branches";
+
 export type ActivityType = "Day out" | "Weekly class";
 
 export type Category =
@@ -122,6 +124,8 @@ export interface Activity {
   closedNote?: string;
   /** Other branches, for chains. */
   branches?: string[];
+  /** Per-branch phone and LINE, for chains where each branch books its own. Replaces the Locations row. */
+  branchContacts?: BranchContact[];
   website?: string;
   /** Online booking page, when the operator has one. */
   bookingUrl?: string;
@@ -1420,8 +1424,17 @@ export const ACTIVITIES: Activity[] = [
     description:
       "LEGO-based building and robotics classes in four levels by age. Junior Inventor, for three and four year olds, works through the alphabet with a theme a week, D for Dinosaur and so on, building models while practising counting, colours, shapes and patterns. Advance Inventor, for four to sixes, brings in science, engineering and maths ideas through themed builds that children then test and modify. Junior Robotics, for six to eights, adds motors, sensors and drag-and-drop coding so children program their own LEGO robots. Advance Robotics, for nines and up, moves on to LEGO Mindstorms EV3 and more complex programming challenges.",
     worthKnowing:
-      "Each branch sets its own timetable and runs its own free trial class, so call the one nearest you: K Village, Sukhumvit 26, 2nd floor, 096 394 6353. Central Ladprao, 10th floor, 090 991 4922. The Crystal Ratchaphruek, 3rd floor, 095 519 8961. Mega Bangna, 2nd floor near HomePro, 086 394 1462. All four branches also run holiday camps, listed in our camps directory.",
+      "Each branch sets its own timetable and runs its own free trial class, so book with the one nearest you, by phone or LINE below. The ages above are the ones Bricks 4 Kidz gave us for each programme. Their learning pathway poster groups them slightly differently, and also shows a parent and child class for under-threes, so check the right level for your child when you book. All four branches also run holiday camps, listed in our camps directory.",
+    photo: "/images/activities/bricks-4-kidz-learning-pathway.jpg",
+    photoAlt: "Bricks 4 Kidz learning pathway poster showing four stages, from Early Builders for the youngest children through Young Engineers and Coding and Robotics to Future Innovators with LEGO Mindstorms EV3, with the four Bangkok branches and LINE QR code.",
+    photoCredit: "Bricks 4 Kidz Thailand, used with permission",
     branches: ["K Village (Sukhumvit 26)", "Central Ladprao", "The Crystal Ratchaphruek", "Mega Bangna"],
+    branchContacts: [
+      { name: "K Village", location: "Sukhumvit 26, 2nd floor", phone: "096 394 6353", lineUrl: "https://line.me/ti/p/gUbyvQKfhQ" },
+      { name: "Central Ladprao", location: "10th floor", phone: "090 991 4922", lineUrl: "https://line.me/ti/p/t9pMszEnNT" },
+      { name: "The Crystal Ratchaphruek", location: "3rd floor", phone: "095 519 8961", lineUrl: "https://line.me/ti/p/z8IeDvqOF0" },
+      { name: "Mega Bangna", location: "2nd floor, near HomePro", phone: "086 394 1462", lineUrl: "https://line.me/ti/p/HoSwmHvTnq" },
+    ],
     email: "info-th@bricks4kidz.com",
     status: "confirmed",
     confirmedByOperator: true,

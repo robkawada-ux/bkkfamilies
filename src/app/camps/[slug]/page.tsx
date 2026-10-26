@@ -11,6 +11,7 @@ import {
   type CampSession,
 } from "@/lib/camps";
 import { BREAK_WINDOWS } from "@/lib/schoolBreaks";
+import BranchList from "@/components/ui/BranchList";
 
 const SITE = "https://www.bkkfamilies.com";
 
@@ -319,6 +320,12 @@ export default async function CampPage({
               </li>
             )}
           </ul>
+          {camp.branchContacts?.length ? (
+            <div className="mt-4">
+              <p className="text-sm font-semibold text-neutral-700">Book with your nearest branch</p>
+              <BranchList branches={camp.branchContacts} />
+            </div>
+          ) : null}
           <p className="mt-4 text-xs text-neutral-500">
             Details verified {longDate(camp.lastVerified)}.
             {stale

@@ -14,6 +14,7 @@
 // dateStatus. See the quarterly verification pass in the project notes.
 
 import type { BreakWindowId } from "./schoolBreaks";
+import type { BranchContact } from "./branches";
 
 export type CampFormat = "day" | "half-day" | "residential";
 
@@ -120,6 +121,8 @@ export interface Camp {
   phone?: string;
   lineId?: string;
   facebook?: string;
+  /** Per-branch phone and LINE, for operators whose branches each take bookings. */
+  branchContacts?: BranchContact[];
   /**
    * Seasonal skin for the detail page. "halloween" swaps the purple hero for
    * a night-sky gradient and adds pumpkins, bats and cobwebs. Purely visual.
@@ -1187,9 +1190,18 @@ export const CAMPS: Camp[] = [
     description:
       "Bricks 4 Kidz runs LEGO-based building and robotics classes from four mall branches, and for the December break it runs week-long camps at all four. There are four camps by age: Junior Inventor for three and four year olds, Advance Inventor for four to sixes, Junior Robotics for six to eights, where children build and program LEGO robots with motors and sensors, and Advance Robotics for nines and up, using LEGO Mindstorms EV3. Each camp runs Monday to Friday, as a half day or a full day with lunch.",
     worthKnowing:
-      "The first week, 7 to 11 December, is before most international schools break up, so it suits families at schools that finish early. The last week runs to 25 December, Christmas Day, so check that day with your branch. Book with the branch you want: K Village, Sukhumvit 26, 2nd floor, 096 394 6353. Central Ladprao, 10th floor, 090 991 4922. The Crystal Ratchaphruek, 3rd floor, 095 519 8961. Mega Bangna, 2nd floor near HomePro, 086 394 1462.",
+      "The first week, 7 to 11 December, is before most international schools break up, so it suits families at schools that finish early. The last week runs to 25 December, Christmas Day, so check that day with your branch. Each branch takes its own camp bookings, by phone or LINE, listed under Contact.",
+    photo: "/images/camps/bricks-4-kidz-logo.jpg",
+    photoAlt: "Bricks 4 Kidz logo: the name in white on red, green and blue LEGO-style bricks, with the line we learn, we build, we play with LEGO Bricks.",
+    photoCredit: "Bricks 4 Kidz Thailand, used with permission",
+    photoCaption: "Bricks 4 Kidz runs its December camps at all four Bangkok branches.",
     email: "info-th@bricks4kidz.com",
-    phone: "096 394 6353 (K Village), 090 991 4922 (Central Ladprao), 095 519 8961 (The Crystal), 086 394 1462 (Mega Bangna)",
+    branchContacts: [
+      { name: "K Village", location: "Sukhumvit 26, 2nd floor", phone: "096 394 6353", lineUrl: "https://line.me/ti/p/gUbyvQKfhQ" },
+      { name: "Central Ladprao", location: "10th floor", phone: "090 991 4922", lineUrl: "https://line.me/ti/p/t9pMszEnNT" },
+      { name: "The Crystal Ratchaphruek", location: "3rd floor", phone: "095 519 8961", lineUrl: "https://line.me/ti/p/z8IeDvqOF0" },
+      { name: "Mega Bangna", location: "2nd floor, near HomePro", phone: "086 394 1462", lineUrl: "https://line.me/ti/p/HoSwmHvTnq" },
+    ],
     lastVerified: "2026-10-26",
     sessions: B4K_SESSIONS,
   },

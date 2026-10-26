@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ACTIVITIES, ageLabel, priceLabel } from "@/lib/activities";
 import { ARTICLES } from "@/lib/articles";
+import BranchList from "@/components/ui/BranchList";
 
 const SITE = "https://www.bkkfamilies.com";
 
@@ -113,7 +114,9 @@ export default async function ActivityPage({
   if (a.venue) contactRows.push({ label: "Venue", node: a.venue });
   if (a.address) contactRows.push({ label: "Address", node: a.address });
   if (a.transit) contactRows.push({ label: "Getting there", node: a.transit });
-  if (a.branches?.length)
+  if (a.branchContacts?.length)
+    contactRows.push({ label: "Branches", node: <BranchList branches={a.branchContacts} /> });
+  else if (a.branches?.length)
     contactRows.push({ label: "Locations", node: a.branches.join(", ") });
   if (a.phone)
     contactRows.push({
