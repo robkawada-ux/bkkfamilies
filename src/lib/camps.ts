@@ -133,6 +133,42 @@ export interface Camp {
   lastVerified: string;
 }
 
+// Bricks 4 Kidz sends one price list for all four branches and all three
+// December weeks, so its 12 sessions (4 programmes x 3 weeks) are generated
+// here rather than written out by hand.
+const B4K_PROGRAMMES = [
+  { key: "junior-inventor", name: "Junior Inventor Camp", minAge: 3, maxAge: 4, price: 6750, cats: ["stem", "art-and-design"] },
+  { key: "advance-inventor", name: "Advance Inventor Camp", minAge: 4, maxAge: 6, price: 6750, cats: ["stem"] },
+  { key: "junior-robotics", name: "Junior Robotics Camp", minAge: 6, maxAge: 8, price: 7750, cats: ["stem"] },
+  { key: "advance-robotics", name: "Advance Robotics Camp", minAge: 9, maxAge: undefined, price: 8750, cats: ["stem"] },
+] as const;
+const B4K_WEEKS = [
+  { start: "2026-12-07", end: "2026-12-11" },
+  { start: "2026-12-14", end: "2026-12-18" },
+  { start: "2026-12-21", end: "2026-12-25" },
+];
+const B4K_SESSIONS: CampSession[] = B4K_WEEKS.flatMap((w) =>
+  B4K_PROGRAMMES.map((p) => ({
+    id: `b4k-${p.key}-${w.start}`,
+    programme: p.name,
+    window: "winter-2026" as const,
+    startDate: w.start,
+    endDate: w.end,
+    dateStatus: "confirmed" as const,
+    categories: [...p.cats] as CampCategory[],
+    minAge: p.minAge,
+    maxAge: p.maxAge,
+    format: "day" as const,
+    priceFrom: p.price,
+    priceTo: p.price + 1000,
+    priceUnit: "per-week" as const,
+    hours: "9.30am to 12.30pm, or 9.30am to 3pm with lunch",
+    minimumBooking: "1 week",
+    note: `${p.price.toLocaleString("en-US")} baht for the half day to 12.30pm, ${(p.price + 1000).toLocaleString("en-US")} baht to stay until 3pm with lunch. Runs at all four branches.`,
+    lastVerified: "2026-10-26",
+  }))
+);
+
 export const CAMPS: Camp[] = [
   {
     slug: "bangkok-prep-holiday-camps",
@@ -1134,6 +1170,28 @@ export const CAMPS: Camp[] = [
         lastVerified: "2026-10-05",
       },
     ],
+  },  {
+    slug: "bricks-4-kidz",
+    name: "Bricks 4 Kidz",
+    area: "Several branches",
+    mainVenue: "K Village (Sukhumvit 26), Central Ladprao, The Crystal Ratchaphruek and Mega Bangna",
+    tagline: "LEGO building and robotics camps for ages 3 and up, at four Bangkok branches",
+    highlights: [
+      "🧱 LEGO building every day",
+      "🤖 Robotics with motors and sensors",
+      "💻 Coding for 6 and up",
+      "🔤 Theme-a-day builds for 3 and 4 year olds",
+      "🕥 Half day or full day with lunch",
+      "📍 Four branches across Bangkok",
+    ],
+    description:
+      "Bricks 4 Kidz runs LEGO-based building and robotics classes from four mall branches, and for the December break it runs week-long camps at all four. There are four camps by age: Junior Inventor for three and four year olds, Advance Inventor for four to sixes, Junior Robotics for six to eights, where children build and program LEGO robots with motors and sensors, and Advance Robotics for nines and up, using LEGO Mindstorms EV3. Each camp runs Monday to Friday, as a half day or a full day with lunch.",
+    worthKnowing:
+      "The first week, 7 to 11 December, is before most international schools break up, so it suits families at schools that finish early. The last week runs to 25 December, Christmas Day, so check that day with your branch. Book with the branch you want: K Village, Sukhumvit 26, 2nd floor, 096 394 6353. Central Ladprao, 10th floor, 090 991 4922. The Crystal Ratchaphruek, 3rd floor, 095 519 8961. Mega Bangna, 2nd floor near HomePro, 086 394 1462.",
+    email: "info-th@bricks4kidz.com",
+    phone: "096 394 6353 (K Village), 090 991 4922 (Central Ladprao), 095 519 8961 (The Crystal), 086 394 1462 (Mega Bangna)",
+    lastVerified: "2026-10-26",
+    sessions: B4K_SESSIONS,
   },
 ];
 

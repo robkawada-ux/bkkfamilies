@@ -186,7 +186,12 @@ export default async function ActivityPage({
               : "border border-orange/30 bg-orange/5"
           }`}
         >
-          {a.status === "confirmed" ? (
+          {a.status === "confirmed" && a.confirmedByOperator ? (
+            <>
+              <strong className="font-semibold">Checked with the operator.</strong> Confirmed directly
+              with the operator on {formatDate(a.lastVerified)}.
+            </>
+          ) : a.status === "confirmed" ? (
             <>
               <strong className="font-semibold">Checked with the operator.</strong> Details read on
               their own page on {formatDate(a.lastVerified)}.
@@ -198,9 +203,11 @@ export default async function ActivityPage({
               checked {formatDate(a.lastVerified)}.
             </>
           )}{" "}
-          <a href={a.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-teal hover:underline">
-            Source
-          </a>
+          {a.sourceUrl && (
+            <a href={a.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-teal hover:underline">
+              Source
+            </a>
+          )}
         </div>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-2">

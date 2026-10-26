@@ -136,6 +136,13 @@ export interface Activity {
   /** Slug of one of our own articles that covers this place. */
   relatedArticle?: string;
   status: "confirmed" | "check";
+  /**
+   * True when the operator sent us the details directly (an email reply)
+   * rather than us reading them on their website. The page then says
+   * "Confirmed directly with the operator" and hides the Source link when
+   * sourceUrl is empty.
+   */
+  confirmedByOperator?: boolean;
   sourceUrl: string;
   lastVerified: string;
 }
@@ -1395,6 +1402,31 @@ export const ACTIVITIES: Activity[] = [
     status: "confirmed",
     sourceUrl: "https://www.littlepeabkk.com/service-page/creative-painting-5-12-y",
     lastVerified: "2026-10-07",
+  },  {
+    slug: "bricks-4-kidz",
+    name: "Bricks 4 Kidz",
+    type: "Weekly class",
+    category: "Art and science",
+    setting: "Indoor",
+    district: "Several branches",
+    zone: "Several locations",
+    minAge: 3,
+    price: {
+      from: 7800,
+      to: 9500,
+      unit: "course",
+      note: "Sold as 12-class packages: 7,800 baht for Junior Inventor and Advance Inventor, 9,000 baht for Junior Robotics, 9,500 baht for Advance Robotics.",
+    },
+    description:
+      "LEGO-based building and robotics classes in four levels by age. Junior Inventor, for three and four year olds, works through the alphabet with a theme a week, D for Dinosaur and so on, building models while practising counting, colours, shapes and patterns. Advance Inventor, for four to sixes, brings in science, engineering and maths ideas through themed builds that children then test and modify. Junior Robotics, for six to eights, adds motors, sensors and drag-and-drop coding so children program their own LEGO robots. Advance Robotics, for nines and up, moves on to LEGO Mindstorms EV3 and more complex programming challenges.",
+    worthKnowing:
+      "Each branch sets its own timetable and runs its own free trial class, so call the one nearest you: K Village, Sukhumvit 26, 2nd floor, 096 394 6353. Central Ladprao, 10th floor, 090 991 4922. The Crystal Ratchaphruek, 3rd floor, 095 519 8961. Mega Bangna, 2nd floor near HomePro, 086 394 1462. All four branches also run holiday camps, listed in our camps directory.",
+    branches: ["K Village (Sukhumvit 26)", "Central Ladprao", "The Crystal Ratchaphruek", "Mega Bangna"],
+    email: "info-th@bricks4kidz.com",
+    status: "confirmed",
+    confirmedByOperator: true,
+    sourceUrl: "",
+    lastVerified: "2026-10-26",
   },
 ];
 

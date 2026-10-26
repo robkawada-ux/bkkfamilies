@@ -89,8 +89,9 @@ export default function CampsDirectory() {
       const matchesAge =
         ageNum === null ||
         s.minAge === undefined ||
-        s.maxAge === undefined ||
-        (Number.isFinite(ageNum) && ageNum >= s.minAge && ageNum <= s.maxAge);
+        (s.maxAge === undefined
+          ? Number.isFinite(ageNum) && ageNum >= s.minAge
+          : Number.isFinite(ageNum) && ageNum >= s.minAge && ageNum <= s.maxAge);
       return (
         matchesQuery &&
         matchesWindow &&
@@ -292,7 +293,9 @@ export default function CampsDirectory() {
               <p className="mt-3 text-xs text-neutral-500">
                 {s.minAge !== undefined && s.maxAge !== undefined
                   ? `Ages ${s.minAge} to ${s.maxAge}`
-                  : "Age range not published"}{" "}
+                  : s.minAge !== undefined
+                    ? `Ages ${s.minAge} and up`
+                    : "Age range not published"}{" "}
                 &middot; {s.camp.area}
               </p>
               <p className="mt-1 text-sm font-semibold text-neutral-700">

@@ -375,6 +375,8 @@ export default async function CampPage({
                         <dd className="inline">
                           {s.minAge !== undefined && s.maxAge !== undefined ? (
                             `${s.minAge} to ${s.maxAge}`
+                          ) : s.minAge !== undefined ? (
+                            `${s.minAge} and up`
                           ) : (
                             <span className="text-neutral-400">
                               Not published, ask the operator
