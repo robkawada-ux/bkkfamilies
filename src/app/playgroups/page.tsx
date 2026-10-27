@@ -146,6 +146,27 @@ export default function PlaygroupsPage() {
           </Link>
         </div>
 
+        <div className="mx-auto mt-16 max-w-3xl rounded-xl border border-black/5 bg-purple-50 p-6">
+          <h2 className="font-heading text-lg font-bold text-purple-dark">
+            Looking for other moms, not just playgroups?
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+            Playgroups are for the little ones, but parents need a village too,
+            especially in the first year in a new city. The Village is a
+            WhatsApp community where moms in Thailand share recommendations,
+            ask questions and make friends, and it runs moms-only meetups in
+            Bangkok.
+          </p>
+          <a
+            href="https://thevillage.mom"
+            target="_blank"
+            rel="noopener"
+            className="mt-4 inline-block rounded-full bg-purple px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+          >
+            Visit The Village
+          </a>
+        </div>
+
         <div className="mx-auto mt-16 max-w-3xl">
           <h2 className="font-heading text-2xl font-bold text-purple-dark">
             Questions parents ask
