@@ -635,6 +635,35 @@ export const ACTIVITIES: Activity[] = [
     sourceUrl: "https://au.trip.com/travel-guide/attraction/bangkok/siam-serpentarium-55986880/",
     lastVerified: "2026-09-29",
   },
+  {
+    slug: "siamese-cat-cafe-bang-kaeo",
+    name: "Siamese Cat Café",
+    type: "Day out",
+    category: "Animals and aquariums",
+    setting: "Indoor",
+    address: "46/26 Moo 8, Bangna-Trat Road, Bang Kaeo, Bang Phli, Samut Prakan 10540",
+    district: "Bang Kaeo, Bang Phli",
+    zone: "Bang Na and south",
+    transit: "Near Mega Bangna",
+    minAge: 0,
+    hours: "Monday to Friday 9am to 8pm, Saturday and Sunday 8am to 9pm",
+    price: {
+      free: true,
+      unit: "entry",
+      note: "The cat room is free, with no minimum spend. Drink combos run from ฿129 (one drink plus a cat treat set or a pair of cat socks) to ฿399 for the family combo (three drinks plus three treat sets or three pairs of socks).",
+    },
+    description:
+      "A café near Mega Bangna that cares for 16 rescued cats, with a cat room children are welcome in. The kitchen serves Vietnamese specialities alongside Thai and international dishes, so it works as a lunch stop as much as an animal outing. Kids can also make their own fresh spring rolls: ฿299 a set makes 10 pieces, enough for one or two people, and it is self-guided with a picture instruction sheet.",
+    worthKnowing:
+      "Children aged five and under need a parent with them in the cat room, and socks are recommended. Next door, the café's Siamese Cat Creative Club runs a Kids Playroom where a parent stays with the child, ฿149 for one hour or ฿249 for two hours per child, including one adult and a colouring sheet, with crayon and soft clay activities from ฿45 to ฿99. The playroom must be booked in advance. The club also teaches Coding with AI lessons in English, where children design and build a game or mini app: ฿2,000 for a 90-minute lesson or ฿18,000 for 12, with a free 30-minute trial.",
+    phone: "095 241 3028",
+    email: "cafe@siamesecat.cafe",
+    website: "https://siamesecat.cafe/",
+    status: "confirmed",
+    confirmedByOperator: true,
+    sourceUrl: "",
+    lastVerified: "2026-10-28",
+  },
 
   // ======================================================= Museums and science
   {
