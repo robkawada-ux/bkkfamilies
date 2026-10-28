@@ -655,8 +655,12 @@ export const ACTIVITIES: Activity[] = [
     description:
       "A café near Mega Bangna that cares for 16 rescued cats, with a cat room children are welcome in. The kitchen serves Vietnamese specialities alongside Thai and international dishes, so it works as a lunch stop as much as an animal outing. Kids can also make their own fresh spring rolls: ฿299 a set makes 10 pieces, enough for one or two people, and it is self-guided with a picture instruction sheet.",
     worthKnowing:
-      "Children aged five and under need a parent with them in the cat room, and socks are recommended. Next door, the café's Siamese Cat Creative Club runs a Kids Playroom where a parent stays with the child, ฿149 for one hour or ฿249 for two hours per child, including one adult and a colouring sheet, with crayon and soft clay activities from ฿45 to ฿99. The playroom must be booked in advance. The club also teaches Coding with AI lessons in English, where children design and build a game or mini app: ฿2,000 for a 90-minute lesson or ฿18,000 for 12, with a free 30-minute trial.",
+      "Children aged five and under need a parent with them in the cat room, and socks are recommended. The cats rest from 12pm to 1pm and 5pm to 6pm, and they come to you when they feel like it, so time your visit around the rest breaks. Next door, the café's Siamese Cat Creative Club runs a Kids Playroom where a parent stays with the child, ฿149 for one hour or ฿249 for two hours per child, including one adult and a colouring sheet, with crayon and soft clay activities from ฿45 to ฿99. The playroom must be booked in advance. The club also teaches Coding with AI lessons in English, where children design and build a game or mini app: ฿2,000 for a 90-minute lesson or ฿18,000 for 12, with a free 30-minute trial.",
+    photo: "/images/activities/siamese-cat-cafe-cats.jpg",
+    photoAlt: "Resident cats, several of them Siamese, sitting at the glass window of the cat room at Siamese Cat Café, with cat trees, beds and a wall display on the story of Siamese cats behind them.",
+    photoCredit: "Siamese Cat Café, used with permission",
     phone: "095 241 3028",
+    lineId: "@369ujsxm",
     email: "cafe@siamesecat.cafe",
     website: "https://siamesecat.cafe/",
     status: "confirmed",
