@@ -256,7 +256,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "28 family Halloween events in Bangkok rated by fright level, plus trick-or-treat spots, costume shops, spooky treats and survival tips for parents.",
     metaDescription:
-      "Halloween 2026 in Bangkok with kids: 28 family events rated by fright level, plus trick-or-treat spots, costume shops, spooky treats and parent tips.",
+      "Halloween 2026 in Bangkok with kids: 27 family events rated by fright level, plus trick-or-treat spots, costume shops, spooky treats and parent tips.",
     keywords: [
       "halloween bangkok",
       "halloween in bangkok 2026",
@@ -265,7 +265,7 @@ export const ARTICLES: Article[] = [
       "halloween costumes bangkok",
     ],
     body: [
-      "Halloween 2026 falls on Saturday 31 October. Our guide lists 28 family events across Bangkok, each rated by fright level, with trick-or-treat options, costume and decoration shops, treats to pre-order and tips for parents.",
+      "Halloween 2026 falls on Saturday 31 October. Our guide lists 27 family events across Bangkok, each rated by fright level, with trick-or-treat options, costume and decoration shops, treats to pre-order and tips for parents.",
     ],
   },
   {

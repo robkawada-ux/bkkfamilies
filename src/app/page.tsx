@@ -109,7 +109,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <p className="mt-3 text-sm text-white/80">
-                  28 family events rated by fright level, plus trick-or-treat spots, costumes and spooky treats.
+                  27 family events rated by fright level, plus trick-or-treat spots, costumes and spooky treats.
                 </p>
                 <div className="mt-5 flex items-center justify-between gap-3">
                   {sleeps >= 0 && (

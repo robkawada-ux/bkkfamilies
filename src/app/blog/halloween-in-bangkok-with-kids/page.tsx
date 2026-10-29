@@ -18,7 +18,7 @@ export const revalidate = 3600;
 
 const TITLE = "Halloween in Bangkok 2026 with Kids: 28 Family Events";
 const DESCRIPTION =
-  "Halloween 2026 in Bangkok with kids: 28 family events rated by fright level, plus trick-or-treat spots, costume shops, spooky treats and parent tips.";
+  "Halloween 2026 in Bangkok with kids: 27 family events rated by fright level, plus trick-or-treat spots, costume shops, spooky treats and parent tips.";
 const IMG_DIR = HALLOWEEN_IMG_DIR;
 const OG_IMAGE = `${SITE}${HALLOWEEN_SHARE_IMAGE}`;
 const URL = `${SITE}${HALLOWEEN_PATH}`;
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: [{ url: OG_IMAGE, alt: "Halloween in Bangkok 2026 family guide: 28 events rated by fright level" }],
+    images: [{ url: OG_IMAGE, alt: "Halloween in Bangkok 2026 family guide: 27 events rated by fright level" }],
   },
 };
 
@@ -436,7 +436,7 @@ export default function HalloweenGuidePage() {
                 { name: "Your condo building", tag: "Ask juristic", text: "Many expat-heavy condos run a floor-by-floor trail. Ask the juristic office or check the building LINE group. Participating doors usually get a pumpkin sign." },
                 { name: "Moo baan housing estates", tag: "Gate light on", text: "Gated villages with lots of international families often organise a route and a meeting time. Neighbours with sweets leave the gate light on." },
                 { name: "Organised trails", tag: "2026", text: "Carroll Prep's party trick-or-treats around Bon Marché market, Little Pea runs trick-or-treat trains at theCOMMONS, and Bambini Villa has a trail on site." },
-                { name: "School events", tag: "PTA fairs", text: "Most international schools hold a Halloween day or PTA fair. Bangkok Prep's FOBP Spooktacular is on Friday 30 October." },
+                { name: "School events", tag: "PTA fairs", text: "Most international schools hold a Halloween day or PTA fair for their own families, so check your school newsletter." },
               ]}
             />
             <p className="mt-4 rounded-lg bg-orange-50 px-4 py-3 text-sm text-neutral-700">
@@ -599,7 +599,7 @@ export default function HalloweenGuidePage() {
             id="posters-h"
             eyebrow="Save it, share it, stick it on the fridge"
             title="Halloween in Bangkok 2026 posters"
-            intro="Three free Halloween in Bangkok posters for 2026: a one-page cheat sheet, a square post with all 28 family events by fright level, and a story with the best Halloween events by age. Share them in your class chat, condo LINE group or anywhere Bangkok parents gather, with a credit to BKK Families. Tap a poster for the full-size version."
+            intro="Three free Halloween in Bangkok posters for 2026: a one-page cheat sheet, a square post with all 27 family events by fright level, and a story with the best Halloween events by age. Share them in your class chat, condo LINE group or anywhere Bangkok parents gather, with a credit to BKK Families. Tap a poster for the full-size version."
           />
           <div className="grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {POSTERS.map((p) => (

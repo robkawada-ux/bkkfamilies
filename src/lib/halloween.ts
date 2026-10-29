@@ -264,15 +264,6 @@ export const EVENTS: HalloweenEvent[] = [
     start: "2026-10-30T17:00:00+07:00", end: "2026-10-30T19:30:00+07:00",
   },
   {
-    name: "FOBP Halloween Spooktacular",
-    venue: "Bangkok Prep, Sukhumvit 77",
-    when: "Fri 30 Oct · 12pm to 5pm",
-    days: ["fri30"], ages: ["kids"], fright: 2,
-    blurb: "The Friends of Bangkok Prep's annual Halloween fair. This year's theme turns everything upside down. Check with the school about public entry.",
-    link: "https://www.bangkokprep.ac.th", contact: "02 700 5858",
-    start: "2026-10-30T12:00:00+07:00", end: "2026-10-30T17:00:00+07:00",
-  },
-  {
     name: "Little Wizards Halloween Academy",
     venue: "Bambini Villa, Sukhumvit 26",
     when: "Sat 31 Oct to Sun 1 Nov · 10am to 6pm",
@@ -390,9 +381,9 @@ export const HALLOWEEN_POSTERS = [
     file: "halloween-in-bangkok-2026-family-events-fright-levels",
     w: 1080,
     h: 1080,
-    title: "28 family events by fright level",
+    title: "27 family events by fright level",
     use: "Best for Instagram and Facebook feeds",
-    alt: "Halloween in Bangkok 2026: 28 family events rated by fright level, big weekend Friday 30 October to Sunday 1 November",
+    alt: "Halloween in Bangkok 2026: 27 family events rated by fright level, big weekend Friday 30 October to Sunday 1 November",
   },
   {
     file: "halloween-in-bangkok-2026-best-kids-events-by-age",
