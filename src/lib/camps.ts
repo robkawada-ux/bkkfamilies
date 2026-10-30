@@ -1173,7 +1173,44 @@ export const CAMPS: Camp[] = [
         lastVerified: "2026-10-05",
       },
     ],
-  },  {
+  },
+  {
+    slug: "storytime-preschool-winter-camp",
+    name: "Storytime Preschool Winter Camp",
+    tagline: "Christmas activities, new friends and a visit from Santa, December 2026",
+    highlights: [
+      "🎄 Christmas crafts and festive activities",
+      "🎅 Gifts from Santa",
+      "🗣️ English practice through play",
+      "👫 Small, age-based groups",
+      "📅 Book single days or every day",
+    ],
+    area: "Khlong Toei",
+    mainVenue: "Storytime Preschool, 85 Soi Samahan, Sukhumvit Soi 4",
+    description:
+      "Storytime is an English-language preschool off Sukhumvit Soi 4 that also runs playgroups for babies and toddlers. Over the December holidays it runs a Winter Camp open to all children, not just Storytime pupils, with fun Christmas activities, educational sessions about the festive season and gifts from Santa. Children are split into age-appropriate groups so each child gets individual attention, and it is a good way to make friends and build English skills.",
+    worthKnowing:
+      "Booking is flexible: pick individual days or come every day. Storytime has not yet published the exact dates, hours or prices, so contact the school on LINE, WhatsApp or by phone to book. Parking at the school is very limited; for the October camp Storytime ran a free shuttle from BTS Nana.",
+    website: "https://www.storytimepreschool.com",
+    email: "info@storytimepreschool.com",
+    phone: "081 646 4535 or 02 656 9084",
+    facebook: "https://www.facebook.com/storytimepreschool",
+    lastVerified: "2026-10-30",
+    sessions: [
+      {
+        id: "storytime-winter-2026",
+        programme: "Winter Camp",
+        window: "winter-2026",
+        dateStatus: "tba",
+        categories: ["multi-activity", "art-and-design", "language-learning"],
+        format: "day",
+        minimumBooking: "1 day",
+        note: "Runs in December 2026. Open to all children, book single days or every day. Dates, hours and prices to be announced; contact Storytime to book.",
+        lastVerified: "2026-10-30",
+      },
+    ],
+  },
+  {
     slug: "bricks-4-kidz",
     name: "Bricks 4 Kidz",
     area: "Several branches",
