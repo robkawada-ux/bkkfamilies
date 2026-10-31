@@ -129,7 +129,7 @@ export const ARTICLES: Article[] = [
     title: "Thanksgiving Dinner in Bangkok 2026: The 5 Best Places for Turkey",
     category: "Activities",
     date: "2026-10-15",
-    featureFrom: "2026-11-01",
+    featureFrom: "2026-10-30",
     heroImage: "/images/articles/thanksgiving-dinner-bangkok/thanksgiving-dinner-bangkok-2026-family-guide.jpg",
     excerpt:
       "The five best Thanksgiving dinners in Bangkok, from The Landmark to Bourbon Street, plus where to buy a turkey and the fixings to cook the feast at home.",

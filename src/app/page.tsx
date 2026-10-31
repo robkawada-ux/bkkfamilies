@@ -4,7 +4,6 @@ import Link from "next/link";
 import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
 import { listedArticles, isFeatured } from "@/lib/articles";
-import { HALLOWEEN_PATH, daysToHalloween, isHalloweenSeason } from "@/lib/halloween";
 import { daysUntil, inWindow } from "@/lib/festive";
 import {
   CHRISTMAS_PATH,
@@ -31,16 +30,21 @@ export const metadata: Metadata = {
   }),
 };
 
+const THANKS_PATH = "/blog/thanksgiving-dinner-bangkok";
+const THANKS_FROM = "2026-10-30";
+const THANKS_UNTIL = "2026-11-26";
+const THANKS_DAY = "2026-11-26";
+
 export default function HomePage() {
   // Seasonal pieces published early stay off the homepage until featureFrom.
   const latest = listedArticles().filter((a) => isFeatured(a)).slice(0, 6);
-  // Seasonal box in the hero; switches itself off after 1 November.
-  const halloween = isHalloweenSeason();
-  const sleeps = daysToHalloween();
-  // Christmas from 2 November, then New Year's Eve from 26 December.
-  const christmas = !halloween && inWindow(XMAS_FROM, XMAS_UNTIL);
-  const newYear = !halloween && !christmas && inWindow(NYE_FROM, NYE_UNTIL);
-  const seasonal = halloween || christmas || newYear;
+  // Seasonal box in the hero: Thanksgiving until 26 November (Rob, 30 Oct),
+  // then Christmas, then New Year's Eve from 26 December.
+  const thanksgiving = inWindow(THANKS_FROM, THANKS_UNTIL);
+  const thanksSleeps = daysUntil(THANKS_DAY);
+  const christmas = !thanksgiving && inWindow(XMAS_FROM, XMAS_UNTIL);
+  const newYear = !thanksgiving && !christmas && inWindow(NYE_FROM, NYE_UNTIL);
+  const seasonal = thanksgiving || christmas || newYear;
   const xmasSleeps = daysUntil(`${CHRISTMAS_YEAR}-12-25`);
   const nyeSleeps = daysUntil(`${NYE_YEAR}-12-31`);
 
@@ -83,41 +87,43 @@ export default function HomePage() {
           </div>
           </div>
 
-          {halloween && (
+          {thanksgiving && (
             <Link
-              href={HALLOWEEN_PATH}
-              className="group relative block overflow-hidden rounded-2xl bg-purple-dark p-7 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
+              href={THANKS_PATH}
+              className="group relative block overflow-hidden rounded-2xl bg-[#5a2e14] p-7 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
             >
-              {/* Bats and moon, decorative */}
-              <svg aria-hidden="true" viewBox="0 0 340 120" className="pointer-events-none absolute inset-x-0 top-0 h-28 w-full opacity-90">
-                <circle cx="290" cy="38" r="22" fill="#FEF3E8" />
-                <circle cx="281" cy="32" r="22" fill="#3D1E5C" />
-                <path fill="#120a1c" d="M190 58c5-5 8-5 11 0 2-3 4-3 6 0 3-5 6-5 11 0-5 1-7 3-9 6-1-2-3-2-5 0-2-2-4-2-5 0-2-3-4-5-9-6Z" />
-                <path fill="#120a1c" d="M120 18c4-4 6-4 8 0 1-2 3-2 4 0 2-4 4-4 8 0-4 1-5 2-6 5-1-2-2-2-4 0-1-2-3-2-4 0-1-3-3-4-6-5Z" />
+              {/* Falling leaves, decorative */}
+              <svg aria-hidden="true" viewBox="0 0 340 70" className="pointer-events-none absolute inset-x-0 top-0 h-16 w-full opacity-90">
+                {[
+                  [40, 18, "#d9822b", 20],
+                  [110, 38, "#b5452a", -25],
+                  [190, 14, "#e8b04a", 35],
+                  [260, 40, "#d9822b", -10],
+                  [310, 16, "#b5452a", 15],
+                ].map(([x, y, c, r]) => (
+                  <path
+                    key={`${x}`}
+                    d="M0 -9 C 6 -5 7 3 0 9 C -7 3 -6 -5 0 -9 Z"
+                    fill={c as string}
+                    transform={`translate(${x} ${y}) rotate(${r})`}
+                  />
+                ))}
               </svg>
               <div className="relative">
-                <span className="inline-block rounded-full bg-orange px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-purple-dark">
-                  Halloween 2026
+                <span className="mt-8 inline-block rounded-full bg-[#e8b04a] px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-[#5a2e14]">
+                  Thanksgiving 2026
                 </span>
-                <div className="mt-12 flex items-end gap-3">
-                  <svg aria-hidden="true" viewBox="0 0 20 20" className="h-14 w-14 shrink-0 transition group-hover:rotate-6">
-                    <path fill="#F4831F" d="M10 4.2c-.4-1.4.2-2.6 1.6-3l.5 1c-.8.3-1.1.9-.9 1.8 2.9-.9 6.8 1.3 6.8 6.6 0 4.4-3 7.4-8 7.4s-8-3-8-7.4c0-5.3 3.9-7.5 6.8-6.6Z" />
-                    <path fill="#3D1E5C" d="M6.2 9.2 8 10.4H5.6ZM13.8 9.2l.6 1.2H12ZM6 13c1.2 1 2.6 1.4 4 1.4s2.8-.4 4-1.4l-1 .2-.6.6-.8-.6-.8.6-.8-.6-.8.6-.6-.6Z" />
-                  </svg>
-                  <p className="font-heading text-2xl font-bold leading-tight">
-                    What to do in Bangkok for Halloween with kids
-                  </p>
-                </div>
+                <p className="mt-4 font-heading text-2xl font-bold leading-tight">Thanksgiving dinner in Bangkok</p>
                 <p className="mt-3 text-sm text-white/80">
-                  27 family events rated by fright level, plus trick-or-treat spots, costumes and spooky treats.
+                  The five best places for turkey with the family, plus where to buy a turkey and the fixings to cook it at home.
                 </p>
                 <div className="mt-5 flex items-center justify-between gap-3">
-                  {sleeps >= 0 && (
-                    <span className="font-heading text-lg font-bold text-orange">
-                      {sleeps === 0 ? "It's tonight!" : `${sleeps} ${sleeps === 1 ? "sleep" : "sleeps"} to go`}
+                  {thanksSleeps >= 0 && (
+                    <span className="font-heading text-lg font-bold text-[#e8b04a]">
+                      {thanksSleeps === 0 ? "Happy Thanksgiving!" : `${thanksSleeps} ${thanksSleeps === 1 ? "sleep" : "sleeps"} to go`}
                     </span>
                   )}
-                  <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-purple-dark transition group-hover:bg-orange group-hover:text-white">
+                  <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#5a2e14] transition group-hover:bg-[#e8b04a]">
                     See the guide →
                   </span>
                 </div>
