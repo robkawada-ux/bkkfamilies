@@ -86,7 +86,17 @@ const nextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
   async redirects() {
-    return legacyRedirects.map((r) => ({ ...r, permanent: true }));
+    return [
+      ...legacyRedirects.map((r) => ({ ...r, permanent: true })),
+      // Advertiser short links, used in Facebook posts. Not permanent, so the
+      // destination can change and browsers don't cache it.
+      {
+        source: "/go/evergreen",
+        destination:
+          "https://www.evergreen-hakuba.com/winter-kids-camps/?utm_source=bkkfamilies&utm_medium=sponsored_social&utm_campaign=wintercamp_2627&utm_content=pinned_post",
+        permanent: false,
+      },
+    ];
   },
 };
 
