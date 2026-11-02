@@ -53,7 +53,7 @@ export const DINNER_TOGGLES: FinderToggle[] = [
 ];
 
 export const DINNER_METER: FinderMeter = {
-  icon: "bauble",
+  icon: "baht",
   label: "Price per adult",
   names: ["Under ฿2,000", "฿2,000 to ฿3,500", "฿3,500 and up"],
 };

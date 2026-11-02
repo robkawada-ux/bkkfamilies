@@ -321,9 +321,9 @@ export default function NyeGuidePage() {
             intro="Last year Bangkok had ten big public countdowns. Filter by area and how much crowd you can handle. The mega ones are spectacular and best with teens; the cosy ones are where small children have the best night."
           />
           <div className="mb-6 flex flex-wrap gap-5 text-sm text-neutral-600">
-            <span className="flex items-center gap-2"><Meter meter={CROWD_METER} level={1} theme="nye" /> Cosy: fine with little ones</span>
-            <span className="flex items-center gap-2"><Meter meter={CROWD_METER} level={2} theme="nye" /> Busy: go early, leave early</span>
-            <span className="flex items-center gap-2"><Meter meter={CROWD_METER} level={3} theme="nye" /> Mega: teens and brave parents</span>
+            <span className="flex items-center gap-2"><Meter meter={CROWD_METER} level={1} theme="nye" caption={false} /> Cosy: fine with little ones</span>
+            <span className="flex items-center gap-2"><Meter meter={CROWD_METER} level={2} theme="nye" caption={false} /> Busy: go early, leave early</span>
+            <span className="flex items-center gap-2"><Meter meter={CROWD_METER} level={3} theme="nye" caption={false} /> Mega: teens and brave parents</span>
           </div>
           <FestiveFinder
             items={COUNTDOWNS}
@@ -374,6 +374,11 @@ export default function NyeGuidePage() {
             title="New Year's Eve dinners and fireworks cruises in Bangkok"
             intro="From an early buffet that's over by nine to a front-row fireworks cruise. Family-friendly tables go fast, so book in November."
           />
+          <div className="mb-6 flex flex-wrap gap-5 text-sm text-neutral-600">
+            <span className="flex items-center gap-2"><Meter meter={PRICE_METER} level={1} theme="nye" caption={false} /> Under ฿3,000</span>
+            <span className="flex items-center gap-2"><Meter meter={PRICE_METER} level={2} theme="nye" caption={false} /> ฿3,000 to ฿6,000</span>
+            <span className="flex items-center gap-2"><Meter meter={PRICE_METER} level={3} theme="nye" caption={false} /> ฿6,000 and up, per adult</span>
+          </div>
           <FestiveFinder
             items={DINNERS}
             groups={DINNER_GROUPS}

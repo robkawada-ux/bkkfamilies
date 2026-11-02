@@ -39,7 +39,7 @@ export interface FinderToggle {
   label: string;
 }
 
-export type MeterIcon = "bauble" | "person" | "star";
+export type MeterIcon = "bauble" | "person" | "star" | "baht";
 
 export interface FinderMeter {
   icon: MeterIcon;

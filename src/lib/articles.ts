@@ -86,9 +86,9 @@ export const ARTICLES: Article[] = [
     customPage: true,
     heroImage: "/images/articles/christmas-in-bangkok-with-kids/christmas-in-bangkok-2026-family-guide.jpg",
     excerpt:
-      "28 family Christmas dinners and brunches with real prices, every place to meet Santa, the best lights, Christmas markets and church services in Bangkok.",
+      "29 family Christmas dinners and brunches with real prices, every place to meet Santa, the best lights, Christmas markets and church services in Bangkok.",
     metaDescription:
-      "Christmas 2026 in Bangkok with kids: 28 family Christmas dinners and brunches with prices, where to meet Santa, the best lights, markets and church services.",
+      "Christmas 2026 in Bangkok with kids: 29 family Christmas dinners and brunches with prices, where to meet Santa, the best lights, markets and church services.",
     keywords: [
       "christmas in bangkok with kids",
       "christmas in bangkok 2026",
@@ -97,7 +97,7 @@ export const ARTICLES: Article[] = [
       "christmas market bangkok",
     ],
     body: [
-      "Christmas 2026 in Bangkok is Thursday 24 and Friday 25 December. Our guide lists 28 family Christmas dinners and brunches with prices for adults and kids, where to meet Santa, the best Christmas lights, markets and English church services.",
+      "Christmas 2026 in Bangkok is Thursday 24 and Friday 25 December. Our guide lists 29 family Christmas dinners and brunches with prices for adults and kids, where to meet Santa, the best Christmas lights, markets and English church services.",
     ],
   },
   {

@@ -212,7 +212,7 @@ export const DINNER_TOGGLES: FinderToggle[] = [
 ];
 
 export const PRICE_METER: FinderMeter = {
-  icon: "star",
+  icon: "baht",
   label: "Price per adult",
   names: ["Under ฿3,000", "฿3,000 to ฿6,000", "฿6,000 and up"],
 };
@@ -222,9 +222,9 @@ export const DINNERS: FinderItem[] = [
     name: "Early-seating New Year's Eve buffet",
     venue: "InterContinental Bangkok, Espresso, Ploenchit",
     when: "Thu 31 Dec · 6pm, or 9pm second seating",
-    facets: { type: ["early"], budget: ["2"] },
+    facets: { type: ["early"], budget: ["1"] },
     flags: ["kids"],
-    level: 2,
+    level: 1,
     confirmed: true,
     badges: [{ text: "฿2,900++ from 6pm", tone: "price" }, { text: "Kids 6 to 12 ฿1,175++", tone: "kids" }, { text: "5 and under free", tone: "kids" }],
     blurb: "A big buffet with a live band from 6pm to 9pm, so families can eat early and be home before the countdown. The 9pm second seating is ฿2,350++. Right at Chit Lom BTS.",

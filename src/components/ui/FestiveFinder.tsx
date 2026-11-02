@@ -43,6 +43,13 @@ const BADGE: Record<string, string> = {
 };
 
 function Icon({ icon, fill }: { icon: MeterIcon; fill: string }) {
+  if (icon === "baht") {
+    return (
+      <span aria-hidden="true" className="font-heading text-lg font-extrabold leading-none" style={{ color: fill }}>
+        ฿
+      </span>
+    );
+  }
   if (icon === "person") {
     return (
       <svg viewBox="0 0 20 20" aria-hidden="true" className="h-[18px] w-[18px]">
@@ -72,21 +79,31 @@ export function Meter({
   meter,
   level,
   theme,
+  caption = true,
 }: {
   meter: FinderMeter;
   level: 1 | 2 | 3;
   theme: Theme;
+  /** Small label under the icons. Off in legends, which name each level already. */
+  caption?: boolean;
 }) {
   const t = THEMES[theme];
   const name = meter.names[level - 1];
   return (
-    <span className="flex shrink-0 gap-0.5" title={`${meter.label}: ${name}`}>
+    <span className="flex shrink-0 flex-col items-end gap-1" title={`${meter.label}: ${name}`}>
       <span className="sr-only">
         {meter.label} {level} of 3, {name}
       </span>
-      {[1, 2, 3].map((n) => (
-        <Icon key={n} icon={meter.icon} fill={n <= level ? (level === 3 ? t.hi : t.on) : t.off} />
-      ))}
+      <span aria-hidden="true" className="flex gap-0.5">
+        {[1, 2, 3].map((n) => (
+          <Icon key={n} icon={meter.icon} fill={n <= level ? (level === 3 ? t.hi : t.on) : t.off} />
+        ))}
+      </span>
+      {caption && (
+        <span aria-hidden="true" className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-wide text-neutral-500">
+          {meter.icon === "baht" ? "Price" : name}
+        </span>
+      )}
     </span>
   );
 }

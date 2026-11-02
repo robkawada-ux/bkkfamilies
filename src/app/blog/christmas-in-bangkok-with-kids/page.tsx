@@ -31,7 +31,7 @@ export const revalidate = 3600;
 
 const TITLE = "Christmas in Bangkok 2026 with Kids: Dinners, Santa and Lights";
 const DESCRIPTION =
-  "Christmas 2026 in Bangkok with kids: 28 family Christmas dinners and brunches with prices, where to meet Santa, the best lights, markets and church services.";
+  "Christmas 2026 in Bangkok with kids: 29 family Christmas dinners and brunches with prices, where to meet Santa, the best lights, markets and church services.";
 const OG_IMAGE = `${SITE}${CHRISTMAS_SHARE_IMAGE}`;
 const URL = `${SITE}${CHRISTMAS_PATH}`;
 const PUBLISHED = "2026-10-14T09:00:00+07:00";
@@ -311,7 +311,7 @@ export default function ChristmasGuidePage() {
           <SectionHead
             id="dinners-h"
             eyebrow="Book it before November ends"
-            title="Christmas dinner in Bangkok: 28 family dinners and brunches"
+            title="Christmas dinner in Bangkok: 29 family dinners and brunches"
             intro="Every big hotel does a Christmas Eve dinner and a Christmas Day lunch or brunch, and the family-friendly ones sell out weeks ahead. Here's last year's line-up with real prices for grown-ups and kids, so you can shortlist now and book the moment 2026 menus go live."
           />
 
@@ -327,9 +327,9 @@ export default function ChristmasGuidePage() {
           </div>
 
           <div className="mb-6 flex flex-wrap gap-5 text-sm text-neutral-600">
-            <span className="flex items-center gap-2"><Meter meter={DINNER_METER} level={1} theme="christmas" /> Under ฿2,000</span>
-            <span className="flex items-center gap-2"><Meter meter={DINNER_METER} level={2} theme="christmas" /> ฿2,000 to ฿3,500</span>
-            <span className="flex items-center gap-2"><Meter meter={DINNER_METER} level={3} theme="christmas" /> ฿3,500 and up, per adult</span>
+            <span className="flex items-center gap-2"><Meter meter={DINNER_METER} level={1} theme="christmas" caption={false} /> Under ฿2,000</span>
+            <span className="flex items-center gap-2"><Meter meter={DINNER_METER} level={2} theme="christmas" caption={false} /> ฿2,000 to ฿3,500</span>
+            <span className="flex items-center gap-2"><Meter meter={DINNER_METER} level={3} theme="christmas" caption={false} /> ฿3,500 and up, per adult</span>
           </div>
 
           <FestiveFinder

@@ -150,7 +150,7 @@ export default function HomePage() {
                 </span>
                 <p className="mt-4 font-heading text-2xl font-bold leading-tight">Christmas in Bangkok with kids</p>
                 <p className="mt-3 text-sm text-white/80">
-                  28 family Christmas dinners with prices, where to meet Santa, the best lights and markets.
+                  29 family Christmas dinners with prices, where to meet Santa, the best lights and markets.
                 </p>
                 <div className="mt-5 flex items-center justify-between gap-3">
                   {xmasSleeps >= 0 && (
