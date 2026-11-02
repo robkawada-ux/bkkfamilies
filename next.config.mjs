@@ -63,6 +63,7 @@ const legacyRedirects = [
   { source: "/schools/uwc-thailand", destination: "/schools" },
   { source: "/learning-support/spark-centre", destination: "/learning-support" },
   { source: "/playgroups/precious-learners-world-playgroup", destination: "/playgroups" },
+  { source: "/activities/wild-spooky-rumpus-halloween-thecommons", destination: "/activities" },
   { source: "/schools/the-ideal-classroom-bangk", destination: "/schools" },
 
   // Structural

@@ -35,12 +35,14 @@ export default function ActivitiesDirectory() {
   const [indoorOnly, setIndoorOnly] = useState(false);
   const [hideClosed, setHideClosed] = useState(false);
 
-  const categories =
+  // Only show categories that currently have listings (e.g. "Seasonal events" between events)
+  const categories = (
     type === "Day out"
       ? DAY_OUT_CATEGORIES
       : type === "Weekly class"
         ? CLASS_CATEGORIES
-        : [...DAY_OUT_CATEGORIES, ...CLASS_CATEGORIES];
+        : [...DAY_OUT_CATEGORIES, ...CLASS_CATEGORIES]
+  ).filter((c) => ACTIVITIES.some((a) => a.category === c));
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
