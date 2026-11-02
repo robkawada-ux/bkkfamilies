@@ -13,3 +13,21 @@ body {
 h1, h2, h3, h4 {
   font-family: "Georgia", "Cambria", serif;
 }
+
+/* Simplified Chinese pages. Georgia and Arial have no Chinese glyphs, so name
+   CJK-capable fonts first. Higher specificity than the Tailwind font-* utilities. */
+:lang(zh-Hans) body,
+:lang(zh-Hans) .font-body,
+:lang(zh-Hans) .font-heading,
+:lang(zh-Hans) h1,
+:lang(zh-Hans) h2,
+:lang(zh-Hans) h3,
+:lang(zh-Hans) h4 {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC",
+    "Noto Sans CJK SC", "Source Han Sans SC", Arial, sans-serif;
+}
+/* Chinese has no word spaces, so uppercase tracking just spreads the characters out. */
+:lang(zh-Hans) .uppercase { text-transform: none; }
+:lang(zh-Hans) .tracking-wide,
+:lang(zh-Hans) .tracking-widest,
+:lang(zh-Hans) .tracking-tight { letter-spacing: 0; }

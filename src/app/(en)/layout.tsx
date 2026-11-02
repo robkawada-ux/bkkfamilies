@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.css";
+import "../globals.css";
 import Nav from "@/components/ui/Nav";
+import { ZH_LAUNCHED } from "@/lib/i18n";
+import { zhTwinPaths } from "@/lib/zh/twins";
 import Footer from "@/components/ui/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -47,7 +49,7 @@ export default function RootLayout({
             gtag('config', 'G-QMXV649DCH');
           `}
         </Script>
-        <Nav />
+        <Nav zhTwins={ZH_LAUNCHED ? zhTwinPaths() : undefined} />
         <main className="flex-1">{children}</main>
         <Footer />
         <Analytics />

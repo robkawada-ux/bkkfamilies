@@ -83,6 +83,12 @@ const legacyRedirects = [
 ];
 
 const nextConfig = {
+  // The site has two root layouts, the English (en) group and /zh, so each can
+  // set its own <html lang>. Next then has no single layout to wrap a 404 for
+  // unmatched URLs; src/app/global-not-found.tsx supplies it.
+  experimental: {
+    globalNotFound: true,
+  },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },

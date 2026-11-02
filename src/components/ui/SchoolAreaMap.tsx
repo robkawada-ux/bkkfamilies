@@ -2,6 +2,28 @@
 
 import { useState } from "react";
 import { AREAS, type Area } from "@/lib/schools";
+import { AREA_ZH } from "@/lib/zh/schools";
+
+// Chinese strings for the /zh map. Station, mall and landmark names stay in
+// English because that is what the BTS and MRT signs show.
+const REGION_SHORT_ZH: Record<Area, string> = {
+  nonthaburi: "暖武里",
+  north: "北部",
+  rama9: "Rama 9",
+  east: "东部",
+  central: "市中心",
+  sukhumvit: "素坤逸",
+  onnut: "On Nut",
+  bangna: "Bang Na",
+  thonburi: "吞武里",
+};
+const LINE_ZH: Record<string, string> = {
+  purple: "MRT 紫线",
+  arl: "机场快线",
+  mrt: "MRT 蓝线",
+  silom: "BTS 是隆线",
+  sukhumvit: "BTS 素坤逸线",
+};
 
 // A simplified, not-to-scale map of Bangkok split into the nine directory
 // locations. The shapes only need to put each area on the right side of the
@@ -115,14 +137,20 @@ export default function SchoolAreaMap({
   selected,
   counts,
   onSelect,
+  zh = false,
 }: {
   selected: "All" | Area;
   counts: Record<Area, number>;
   onSelect: (area: "All" | Area) => void;
+  /** Simplified Chinese labels for the /zh pages. */
+  zh?: boolean;
 }) {
   const [hover, setHover] = useState<Area | null>(null);
   const focus = hover ?? (selected === "All" ? null : selected);
-  const info = focus ? AREAS.find((a) => a.id === focus) : null;
+  const baseInfo = focus ? AREAS.find((a) => a.id === focus) : null;
+  const info = baseInfo && zh ? { ...baseInfo, ...AREA_ZH[baseInfo.id] } : baseInfo;
+  const areaLabel = (id: Area) =>
+    zh ? AREA_ZH[id].label : AREAS.find((a) => a.id === id)?.label;
   const region = focus ? REGIONS.find((r) => r.id === focus) : null;
 
   return (
@@ -132,7 +160,7 @@ export default function SchoolAreaMap({
           viewBox="0 0 600 520"
           className="h-auto w-full select-none"
           role="group"
-          aria-label="Map of Bangkok divided into nine school locations"
+          aria-label={zh ? "曼谷地图，分为九个学校区域" : "Map of Bangkok divided into nine school locations"}
         >
           {REGIONS.map((r) => {
             const isSelected = selected === r.id;
@@ -144,7 +172,7 @@ export default function SchoolAreaMap({
                 role="button"
                 tabIndex={0}
                 aria-pressed={isSelected}
-                aria-label={`${AREAS.find((a) => a.id === r.id)?.label}, ${counts[r.id]} schools`}
+                aria-label={zh ? `${areaLabel(r.id)}，${counts[r.id]}所学校` : `${areaLabel(r.id)}, ${counts[r.id]} schools`}
                 onClick={() => onSelect(isSelected ? "All" : r.id)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -176,7 +204,7 @@ export default function SchoolAreaMap({
             pointerEvents="none"
           />
           <text x={120} y={238} fontSize={11} fill="#2a8f9c" transform="rotate(62 120 238)" pointerEvents="none">
-            Chao Phraya
+            {zh ? "昭披耶河" : "Chao Phraya"}
           </text>
           <g pointerEvents="none">
             {LINES.map((l) => (
@@ -221,7 +249,7 @@ export default function SchoolAreaMap({
                   fontWeight={700}
                   fill={isSelected ? "#FFFFFF" : "#3D1E5C"}
                 >
-                  {r.short}
+                  {zh ? REGION_SHORT_ZH[r.id] : r.short}
                 </text>
               </g>
             );
@@ -231,11 +259,11 @@ export default function SchoolAreaMap({
           {LINES.slice().reverse().map((l) => (
             <span key={l.id} className="inline-flex items-center gap-1.5">
               <span className="inline-block h-1 w-5 rounded-full" style={{ background: l.color }} />
-              {l.name}
+              {zh ? LINE_ZH[l.id] ?? l.name : l.name}
             </span>
           ))}
         </div>
-        <p className="mt-1 text-xs text-neutral-400">Simplified map, not to scale. Only major stations are shown.</p>
+        <p className="mt-1 text-xs text-neutral-400">{zh ? "简化地图，比例不准确，仅标出主要车站。" : "Simplified map, not to scale. Only major stations are shown."}</p>
       </div>
 
       <div className="rounded-xl border border-black/5 bg-neutral-50 p-5 text-sm">
@@ -244,7 +272,7 @@ export default function SchoolAreaMap({
             <h3 className="font-heading text-lg font-bold text-purple-dark">{info.label}</h3>
             <p className="mt-1 text-neutral-600">{info.covers}</p>
             <p className="mt-4 text-xs font-bold uppercase tracking-wide text-neutral-500">
-              Landmarks
+              {zh ? "地标" : "Landmarks"}
             </p>
             <ul className="mt-1.5 space-y-1 text-neutral-700">
               {region.landmarks.map((l) => (
@@ -252,7 +280,9 @@ export default function SchoolAreaMap({
               ))}
             </ul>
             <p className="mt-4 font-semibold text-purple-dark">
-              {counts[info.id]} {counts[info.id] === 1 ? "school" : "schools"}
+              {zh
+                ? `${counts[info.id]} 所学校`
+                : `${counts[info.id]} ${counts[info.id] === 1 ? "school" : "schools"}`}
             </p>
             {selected === info.id ? (
               <button
@@ -260,7 +290,7 @@ export default function SchoolAreaMap({
                 onClick={() => onSelect("All")}
                 className="mt-3 text-sm font-semibold text-teal hover:underline"
               >
-                Show all locations
+                {zh ? "显示全部区域" : "Show all locations"}
               </button>
             ) : (
               <button
@@ -268,18 +298,23 @@ export default function SchoolAreaMap({
                 onClick={() => onSelect(info.id)}
                 className="mt-3 rounded-full bg-orange px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
               >
-                Show schools here
+                {zh ? "查看这里的学校" : "Show schools here"}
               </button>
             )}
           </>
         ) : (
           <>
-            <h3 className="font-heading text-lg font-bold text-purple-dark">Pick your side of town</h3>
+            <h3 className="font-heading text-lg font-bold text-purple-dark">
+              {zh ? "选择您所在的片区" : "Pick your side of town"}
+            </h3>
             <p className="mt-2 text-neutral-600">
-              Tap a region on the map to see the schools there. Hover over or tap a region to see its
-              BTS and MRT stations and landmarks, so you can tell which one you live in.
+              {zh
+                ? "点击地图上的区域查看那里的学校。把鼠标移到区域上或点按区域，可以看到它的 BTS、MRT 车站和地标，帮您判断自己住在哪一区。"
+                : "Tap a region on the map to see the schools there. Hover over or tap a region to see its BTS and MRT stations and landmarks, so you can tell which one you live in."}
             </p>
-            <p className="mt-3 text-neutral-600">Tap the selected region again to clear it.</p>
+            <p className="mt-3 text-neutral-600">
+              {zh ? "再次点击已选中的区域即可取消选择。" : "Tap the selected region again to clear it."}
+            </p>
           </>
         )}
       </div>

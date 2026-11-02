@@ -10,6 +10,8 @@ import { FACILITIES } from "@/lib/healthcare";
 import { INSURERS } from "@/lib/insurance";
 import { PLAYGROUPS } from "@/lib/playgroups";
 import { ACTIVITIES } from "@/lib/activities";
+import { zhTwinPaths } from "@/lib/zh/twins";
+import { ZH_LAUNCHED, hreflangLanguages, zhPath } from "@/lib/i18n";
 
 export const baseUrl = "https://www.bkkfamilies.com";
 
@@ -131,7 +133,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [
+  const english: MetadataRoute.Sitemap = [
     ...staticPages,
     ...articlePages,
     ...schoolPages,
@@ -142,4 +144,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...playgroupPages,
     ...activityPages,
   ];
+
+  // Chinese pages stay out of the sitemap, and the English pages get no
+  // hreflang, until ZH_LAUNCHED is true (see src/lib/i18n.ts).
+  if (!ZH_LAUNCHED) return english;
+
+  // English paths that have a Chinese twin. Every page here must list the
+  // full set of versions, itself included, or Google ignores the pairing.
+  const zhTwins = new Set<string>(zhTwinPaths());
+
+  const out: MetadataRoute.Sitemap = [];
+  for (const entry of english) {
+    const path = entry.url === baseUrl ? "/" : entry.url.slice(baseUrl.length);
+    if (!zhTwins.has(path)) {
+      out.push(entry);
+      continue;
+    }
+    const alternates = { languages: hreflangLanguages(path) };
+    out.push({ ...entry, alternates });
+    out.push({
+      ...entry,
+      url: `${baseUrl}${zhPath(path)}`,
+      // Images belong to the English entry; do not repeat them.
+      images: undefined,
+      alternates,
+    });
+  }
+  return out;
 }
