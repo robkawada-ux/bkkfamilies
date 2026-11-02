@@ -66,10 +66,10 @@ export default function Nav({ zhTwins }: { zhTwins?: string[] }) {
             BKK Families
           </span>
         </Link>
-        <p className="hidden text-sm font-extrabold uppercase tracking-widest text-purple-dark lg:block">
-          Your Bangkok Roadmap
-        </p>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
+          <p className="hidden text-sm font-extrabold uppercase tracking-widest text-purple-dark lg:block">
+            Your Bangkok Roadmap
+          </p>
         {zhHref && (
           <Link
             href={zhHref}
