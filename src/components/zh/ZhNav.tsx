@@ -5,15 +5,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "../ui/Logo";
 
-// Only sections that have a Chinese version are listed. Add Schools and
-// Healthcare here when they are translated.
+// Only sections that have a Chinese version are listed. Add Healthcare here
+// when it is translated.
 // Full literal class strings so Tailwind's scanner picks them up.
 const LINKS = [
   { href: "/zh", label: "首页", cls: "bg-orange text-purple-dark", hover: "hover:brightness-105" },
+  { href: "/zh/schools", label: "国际学校", cls: "bg-purple text-white", hover: "hover:brightness-110" },
   { href: "/zh/playgroups", label: "亲子游戏小组", cls: "bg-teal text-purple-dark", hover: "hover:brightness-105" },
   { href: "/zh/camps", label: "假期营", cls: "bg-green text-purple-dark", hover: "hover:brightness-105" },
   { href: "/zh/activities", label: "亲子活动", cls: "bg-orange text-purple-dark", hover: "hover:brightness-105" },
-  { href: "/zh/learning-support", label: "学习支持", cls: "bg-purple text-white", hover: "hover:brightness-110" },
+  { href: "/zh/learning-support", label: "学习支持", cls: "bg-teal text-purple-dark", hover: "hover:brightness-105" },
 ] as const;
 
 export default function ZhNav() {
@@ -71,7 +72,7 @@ export default function ZhNav() {
       <nav
         id="zh-main-nav"
         aria-label="主导航"
-        className={`${open ? "grid" : "hidden"} grid-cols-2 border-b-[3px] border-white lg:grid lg:grid-cols-5`}
+        className={`${open ? "grid" : "hidden"} grid-cols-2 border-b-[3px] border-white lg:grid lg:grid-cols-6`}
       >
         {LINKS.map((l) => {
           const active = isActive(l.href);

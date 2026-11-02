@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PLAYGROUPS } from "@/lib/playgroups";
+import { SCHOOLS_ZH } from "@/lib/zh/schools";
 import { zhMetadata } from "@/lib/i18n";
 import { COMMON_ZH, dateZh, daysZh, timeZh } from "@/lib/zh/common";
 import {
@@ -301,12 +302,11 @@ export default async function ZhPlaygroupPage({
           <p className="mt-8 text-sm text-neutral-600">
             想了解学校本身？{" "}
             <Link
-              href={`/schools/${pg.schoolSlug}`}
-              lang="en"
-              hrefLang="en"
+              href={SCHOOLS_ZH[pg.schoolSlug]?.description ? `/zh/schools/${pg.schoolSlug}` : `/schools/${pg.schoolSlug}`}
+              {...(SCHOOLS_ZH[pg.schoolSlug]?.description ? {} : { lang: "en", hrefLang: "en" })}
               className="font-semibold text-teal hover:underline"
             >
-              阅读学校介绍（英文）
+              {SCHOOLS_ZH[pg.schoolSlug]?.description ? "阅读学校介绍" : "阅读学校介绍（英文）"}
             </Link>
             。
           </p>

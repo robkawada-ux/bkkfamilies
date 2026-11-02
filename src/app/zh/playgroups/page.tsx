@@ -117,15 +117,13 @@ export default function ZhPlaygroupsPage() {
             想通过游戏小组来选学校？
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-            学校的游戏小组是从内部了解早期教育部门、结识老师、和在读家长聊聊的最便宜、压力最小的方式。我们的学校目录涵盖一百多所曼谷国际学校的学费、课程体系和年龄范围（目前仅有英文版）。
+            学校的游戏小组是从内部了解早期教育部门、结识老师、和在读家长聊聊的最便宜、压力最小的方式。我们的学校目录涵盖一百多所曼谷国际学校的学费、课程体系和年龄范围。
           </p>
           <Link
-            href="/schools"
-            lang="en"
-            hrefLang="en"
+            href="/zh/schools"
             className="mt-4 inline-block rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
           >
-            浏览学校目录（英文）
+            浏览学校目录
           </Link>
         </div>
 

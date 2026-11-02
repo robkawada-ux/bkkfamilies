@@ -15,6 +15,7 @@ import { PLAYGROUPS_ZH } from "@/lib/zh/playgroups";
 import { CAMPS_ZH } from "@/lib/zh/camps";
 import { ACTIVITIES_ZH } from "@/lib/zh/activities";
 import { PROVIDERS_ZH } from "@/lib/zh/learningSupport";
+import { SCHOOLS_ZH } from "@/lib/zh/schools";
 
 export const baseUrl = "https://www.bkkfamilies.com";
 
@@ -160,6 +161,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/camps",
     "/activities",
     "/learning-support",
+    "/schools",
+    ...Object.keys(SCHOOLS_ZH).map((s) => `/schools/${s}`),
     ...Object.keys(PLAYGROUPS_ZH).map((s) => `/playgroups/${s}`),
     ...Object.keys(CAMPS_ZH).map((s) => `/camps/${s}`),
     ...Object.keys(ACTIVITIES_ZH).map((s) => `/activities/${s}`),

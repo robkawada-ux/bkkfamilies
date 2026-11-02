@@ -5,7 +5,7 @@ import { zhMetadata } from "@/lib/i18n";
 
 const TITLE = "BKK Families 曼谷家庭指南";
 const DESCRIPTION =
-  "为在曼谷生活的家庭整理的亲子游戏小组、假期营、亲子活动和学习支持信息，价格、时间和年龄都对照机构自己的页面核实过。";
+  "为在曼谷生活的家庭整理的国际学校、亲子游戏小组、假期营、亲子活动和学习支持信息，价格、时间和年龄都对照机构自己的页面核实过。";
 
 export const metadata: Metadata = zhMetadata({
   title: TITLE,
@@ -14,6 +14,12 @@ export const metadata: Metadata = zhMetadata({
 });
 
 const SECTIONS = [
+  {
+    href: "/zh/schools",
+    title: "国际学校",
+    text: "按区域、课程体系和预算浏览曼谷的国际学校，附学校自己公布的学费和学期日期。",
+    cls: "border-teal bg-teal-50",
+  },
   {
     href: "/zh/playgroups",
     title: "亲子游戏小组",
@@ -47,7 +53,7 @@ export default function ZhHome() {
         color="purple"
         eyebrow="曼谷家庭指南"
         title="在曼谷带孩子，信息一站查全"
-        subtitle="BKK Families 自2012年起为曼谷的外籍家庭和泰国家庭整理本地信息。这里是中文版，目前涵盖游戏小组、假期营、亲子活动和学习支持。"
+        subtitle="BKK Families 自2012年起为曼谷的外籍家庭和泰国家庭整理本地信息。这里是中文版，目前涵盖国际学校、游戏小组、假期营、亲子活动和学习支持。"
       />
       <section className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-5 sm:grid-cols-2">
@@ -64,7 +70,7 @@ export default function ZhHome() {
           ))}
         </div>
         <p className="mt-10 max-w-2xl text-sm text-neutral-600">
-          中文版由英文原版翻译而成，信息以英文版为准。学校、医疗保健和文章目前仅有英文版，
+          中文版由英文原版翻译而成，信息以英文版为准。医疗保健和文章目前仅有英文版，
           <Link href="/" lang="en" hrefLang="en" className="font-semibold text-purple underline">
             点击查看英文网站
           </Link>

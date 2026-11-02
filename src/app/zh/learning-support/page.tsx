@@ -231,10 +231,10 @@ export default function ZhLearningSupportPage() {
               ，由 International School Bangkok 维护的免费公开目录，涵盖心理咨询、精神科、相关专业健康服务和学习需求，对所有人开放，不限于 ISB 的家庭（英文）。
             </li>
             <li>
-              <Link href="/schools" lang="en" hrefLang="en" className="font-semibold text-orange">
+              <Link href="/zh/schools" className="font-semibold text-orange">
                 我们的学校目录
               </Link>
-              （目前仅有英文版），适合答案是换一所学校而不是换一位治疗师的情况。
+              ，适合答案是换一所学校而不是换一位治疗师的情况。
             </li>
             <li>
               <a

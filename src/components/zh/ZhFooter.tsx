@@ -19,6 +19,7 @@ export default function ZhFooter() {
           <div>
             <h3 className="font-heading text-sm font-bold text-orange">浏览</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
+              <li><Link href="/zh/schools" className="hover:text-white">国际学校</Link></li>
               <li><Link href="/zh/playgroups" className="hover:text-white">亲子游戏小组</Link></li>
               <li><Link href="/zh/camps" className="hover:text-white">假期营</Link></li>
               <li><Link href="/zh/activities" className="hover:text-white">亲子活动</Link></li>
