@@ -219,6 +219,19 @@ export const PRICE_METER: FinderMeter = {
 
 export const DINNERS: FinderItem[] = [
   {
+    name: "Early-seating New Year's Eve buffet",
+    venue: "InterContinental Bangkok, Espresso, Ploenchit",
+    when: "Thu 31 Dec · 6pm, or 9pm second seating",
+    facets: { type: ["early"], budget: ["2"] },
+    flags: ["kids"],
+    level: 2,
+    confirmed: true,
+    badges: [{ text: "฿2,900++ from 6pm", tone: "price" }, { text: "Kids 6 to 12 ฿1,175++", tone: "kids" }, { text: "5 and under free", tone: "kids" }],
+    blurb: "A big buffet with a live band from 6pm to 9pm, so families can eat early and be home before the countdown. The 9pm second seating is ฿2,350++. Right at Chit Lom BTS.",
+    link: "https://bangkok.intercontinental.com/special-offers-and-experiences/new-year-celebration",
+    start: `${NYE_YEAR}-12-31`, end: `${NYE_YEAR}-12-31`,
+  },
+  {
     name: "Carnival of Joy buffet",
     venue: "Crowne Plaza Bangkok Lumpini Park, Panorama",
     when: "31 Dec · 6:30pm to 10pm",
