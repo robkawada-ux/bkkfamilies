@@ -14,7 +14,7 @@ import { SITE, SITE_NAME, shareImage } from "@/lib/seo";
  * native reader has checked the pages, then re-submit the sitemap in Search
  * Console.
  */
-export const ZH_LAUNCHED = false;
+export const ZH_LAUNCHED = true;
 
 export const ZH_PREFIX = "/zh";
 

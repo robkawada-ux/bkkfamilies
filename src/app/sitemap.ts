@@ -10,12 +10,8 @@ import { FACILITIES } from "@/lib/healthcare";
 import { INSURERS } from "@/lib/insurance";
 import { PLAYGROUPS } from "@/lib/playgroups";
 import { ACTIVITIES } from "@/lib/activities";
+import { zhTwinPaths } from "@/lib/zh/twins";
 import { ZH_LAUNCHED, hreflangLanguages, zhPath } from "@/lib/i18n";
-import { PLAYGROUPS_ZH } from "@/lib/zh/playgroups";
-import { CAMPS_ZH } from "@/lib/zh/camps";
-import { ACTIVITIES_ZH } from "@/lib/zh/activities";
-import { PROVIDERS_ZH } from "@/lib/zh/learningSupport";
-import { SCHOOLS_ZH } from "@/lib/zh/schools";
 
 export const baseUrl = "https://www.bkkfamilies.com";
 
@@ -155,19 +151,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // English paths that have a Chinese twin. Every page here must list the
   // full set of versions, itself included, or Google ignores the pairing.
-  const zhTwins = new Set<string>([
-    "/",
-    "/playgroups",
-    "/camps",
-    "/activities",
-    "/learning-support",
-    "/schools",
-    ...Object.keys(SCHOOLS_ZH).map((s) => `/schools/${s}`),
-    ...Object.keys(PLAYGROUPS_ZH).map((s) => `/playgroups/${s}`),
-    ...Object.keys(CAMPS_ZH).map((s) => `/camps/${s}`),
-    ...Object.keys(ACTIVITIES_ZH).map((s) => `/activities/${s}`),
-    ...Object.keys(PROVIDERS_ZH).map((s) => `/learning-support/${s}`),
-  ]);
+  const zhTwins = new Set<string>(zhTwinPaths());
 
   const out: MetadataRoute.Sitemap = [];
   for (const entry of english) {

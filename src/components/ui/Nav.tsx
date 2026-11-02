@@ -34,7 +34,7 @@ const LINKS: NavLink[] = [
   { href: "/contact#advertise", label: "Advertise With Us", mobile: "bg-purple-dark text-white", desktop: "lg:bg-purple-dark lg:text-white", hover: "hover:brightness-150", bar: "bg-white" },
 ];
 
-export default function Nav() {
+export default function Nav({ zhTwins }: { zhTwins?: string[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -50,6 +50,13 @@ export default function Nav() {
     return pathname.startsWith(path);
   };
 
+  // Link to the Chinese twin of this page, only when one exists (and /zh is live).
+  const normalized = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
+  const zhHref =
+    zhTwins && zhTwins.includes(normalized)
+      ? normalized === "/" ? "/zh" : `/zh${normalized}`
+      : null;
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -62,6 +69,17 @@ export default function Nav() {
         <p className="hidden text-sm font-extrabold uppercase tracking-widest text-purple-dark lg:block">
           Your Bangkok Roadmap
         </p>
+        <div className="flex items-center gap-2">
+        {zhHref && (
+          <Link
+            href={zhHref}
+            lang="zh-Hans"
+            hrefLang="zh-Hans"
+            className="rounded-full border-2 border-purple-dark px-3 py-1.5 text-sm font-bold text-purple-dark hover:bg-purple-dark hover:text-white"
+          >
+            中文
+          </Link>
+        )}
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
@@ -76,6 +94,7 @@ export default function Nav() {
           </span>
           {open ? "Close" : "Menu"}
         </button>
+        </div>
       </div>
 
       <nav
