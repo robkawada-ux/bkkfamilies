@@ -29,7 +29,7 @@ Rebuild of bkkfamilies.com (site for the Bangkok Expat Families community) from 
 - Every page must emit an og:image. Rob wants a photo preview whenever any page is shared on Facebook.
 - `og()` in `src/lib/seo.ts` attaches the nearest section card automatically (`SECTION_CARDS` list), falling back to the homepage card. A page-specific image can be passed as `og({ ..., image })`.
 - A page that sets openGraph does NOT inherit a parent folder's `opengraph-image.png`, which is why detail pages used to share with no picture.
-- New section: add a 1200x630 `opengraph-image.png` plus `opengraph-image.alt.txt` to its folder (same purple card style as /camps and /playgroups) and add the path to `SECTION_CARDS`.
+- New section: add a 1200x630 `opengraph-image.png` plus `opengraph-image.alt.txt` to `src/app/<section>/`, NOT inside `(en)` (see Chinese version below; same purple card style as /camps and /playgroups) and add the path to `SECTION_CARDS`.
 - After deploying, re-scrape the URL in Facebook's Sharing Debugger (developers.facebook.com/tools/debug) because Facebook caches previews.
 
 ## Schools directory
@@ -51,6 +51,14 @@ Rebuild of bkkfamilies.com (site for the Bangkok Expat Families community) from 
 ## Content published so far
 - Nanny hiring guide (`how-to-find-a-nanny-in-bangkok`, Local Life) — draws on the family's own 2012-2020 Bangkok experience (Rob lived in Thailand from 2003, spent 2011-2012 in the US, then returned 2012-2020; daughter born at Nonthavej 2010, son born in Cambridge MA 2012), lists nanny agencies neutrally without recommending any (deliberately independent positioning).
 - Third culture kids article (`third-culture-kids-bangkok-moving-back`, Local Life, ~2,500 words, 7 FAQ entries, 11 headings, 6 relatedSchools) — positioned as a competitor to bkkkids.com's TCK piece but focused on the "return leg" (moving back), which competitors skip. Draws on the family's 2020 move from Bangkok to Massachusetts. Still has no images.
+
+## Chinese version (/zh), added 2026-11-02 on branch `feature/zh-chinese-version`
+- Simplified Chinese lives under `/zh`: homepage, playgroups, camps, activities, learning support (153 listings). Schools, healthcare, blog and contact are English only.
+- **Two root layouts.** The English site is the `src/app/(en)` route group (URLs unchanged); `src/app/zh/layout.tsx` is the second root so the server-rendered HTML says `lang="zh-Hans"`. Because of that, `experimental.globalNotFound` is on in `next.config.mjs` and `src/app/global-not-found.tsx` renders the 404 for unmatched URLs. New English pages go inside `(en)`.
+- **OG image files stay OUTSIDE `(en)`.** `src/app/<section>/opengraph-image.png` must not sit in the route group, or Next adds a hash suffix to the URL and `shareImage()` 404s. Pages live in `(en)/<section>/`, the PNG in `<section>/`. A "metadataBase not set" build warning is expected and harmless (no localhost URLs in built HTML).
+- **ONE SWITCH: `ZH_LAUNCHED` in `src/lib/i18n.ts`.** While false: /zh pages are `noindex`, left out of sitemap.xml, no hreflang anywhere, and the English site does not link to /zh. When true: indexable, hreflang in zh page heads plus sitemap alternates for every English/Chinese pair, `x-default` is English. Flip only after a native reader has reviewed, then resubmit the sitemap in Search Console. Still to add at launch: a visible 中文 link on English pages that have a twin.
+- Translations live in `src/lib/zh/<directory>.ts` (`*_ZH` maps keyed by English slug). Facts (prices, ages, times, dates, phones, URLs) are read from the English data; only free text is translated. A listing with no entry is absent from /zh (no mixed-language pages). Glossary and style rules are at the top of `src/lib/zh/common.ts`. Zh directory components in `src/components/zh/` are copies of the English ones, so a change to English filter logic must be mirrored by hand.
+- When English listing text changes, update the Chinese entry too. Reviewer notes (terms to double-check) are in `data/zh-review-notes/`.
 
 ## Tools
 - Link-checker script at `scripts/linkcheck.sh` for external school website URLs. Run with `bash ~/Projects/bkkfamilies/scripts/linkcheck.sh`. Default parallelism of 12 causes timeout false positives — use 4 instead.

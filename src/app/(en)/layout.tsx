@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.css";
+import "../globals.css";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import { Analytics } from "@vercel/analytics/react";
