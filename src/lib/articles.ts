@@ -101,6 +101,32 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    // Interactive page lives at src/app/(en)/blog/loy-krathong-in-bangkok-with-kids/page.tsx
+    slug: "loy-krathong-in-bangkok-with-kids",
+    title: "Loy Krathong 2026 in Bangkok with Kids: Where to Float",
+    category: "Activities",
+    date: "2026-11-03",
+    customPage: true,
+    pin: { order: 1, until: "2026-11-25" },
+    heroImage: "/images/articles/loy-krathong-in-bangkok-with-kids/loy-krathong-in-bangkok-2026-family-guide.jpg",
+    excerpt:
+      "Where to float a krathong in Bangkok with kids, rated by crowd level, this year's city venues and dates, the traditions explained for children, and how to make your own.",
+    metaDescription:
+      "Loy Krathong 2026 in Bangkok with kids: 17 places to float a krathong rated by crowd, city venues and dates, the traditions explained and how to make one.",
+    keywords: [
+      "loy krathong bangkok",
+      "loy krathong 2026",
+      "loy krathong 2026 bangkok",
+      "loy krathong festival",
+      "where to float krathong bangkok",
+      "loy krathong with kids",
+      "loy krathong meaning",
+    ],
+    body: [
+      "Loy Krathong 2026 in Bangkok is Tuesday 24 November. Our guide rates every good place to float a krathong by crowd level, lists this year's city venues and dates, explains the traditions for children, and shows how to make a krathong at home.",
+    ],
+  },
+  {
     // Interactive page lives at src/app/blog/new-years-eve-in-bangkok-with-kids/page.tsx
     slug: "new-years-eve-in-bangkok-with-kids",
     title: "New Year's Eve in Bangkok 2026 with Kids: Fireworks and Countdowns",

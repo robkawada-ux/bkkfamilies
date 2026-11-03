@@ -4,6 +4,7 @@ import { CAMPS } from "@/lib/camps";
 import { HALLOWEEN_IMG_DIR, HALLOWEEN_POSTERS, HALLOWEEN_SLUG } from "@/lib/halloween";
 import { CHRISTMAS_IMG_DIR, CHRISTMAS_POSTERS, CHRISTMAS_SLUG } from "@/lib/christmas";
 import { NYE_IMG_DIR, NYE_POSTERS, NYE_SLUG } from "@/lib/nye";
+import { LOY_IMG_DIR, LOY_POSTERS, LOY_SLUG } from "@/lib/loykrathong";
 import { ARTICLES } from "@/lib/articles";
 import { PROVIDERS } from "@/lib/learningSupport";
 import { FACILITIES } from "@/lib/healthcare";
@@ -72,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       [HALLOWEEN_SLUG]: { dir: HALLOWEEN_IMG_DIR, files: HALLOWEEN_POSTERS },
       [CHRISTMAS_SLUG]: { dir: CHRISTMAS_IMG_DIR, files: CHRISTMAS_POSTERS },
       [NYE_SLUG]: { dir: NYE_IMG_DIR, files: NYE_POSTERS },
+      [LOY_SLUG]: { dir: LOY_IMG_DIR, files: LOY_POSTERS },
     };
     const set = posters[a.slug];
     const images = [

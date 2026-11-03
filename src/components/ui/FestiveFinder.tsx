@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { FinderGroup, FinderItem, FinderMeter, FinderToggle, MeterIcon } from "@/lib/festive";
 
-type Theme = "christmas" | "nye";
+type Theme = "christmas" | "nye" | "loy";
 
 // Full class strings so Tailwind keeps them.
 const THEMES = {
@@ -30,6 +30,18 @@ const THEMES = {
     on: "#e0a526",
     hi: "#d6336c",
     off: "#e3e5f2",
+  },
+  loy: {
+    panel: "border-[#0d2a3f]/15 bg-[#edf5f4]",
+    groupLabel: "text-[#0d2a3f]",
+    chipOn: "border-[#0d2a3f] bg-[#0d2a3f] text-white",
+    chipOff: "border-[#0d2a3f]/20 bg-white text-[#0d2a3f] hover:border-[#e86a92]",
+    title: "text-[#0d2a3f]",
+    whenPill: "bg-[#edf5f4] text-[#0d2a3f]",
+    link: "text-[#b5487a]",
+    on: "#f2b632",
+    hi: "#e86a92",
+    off: "#dfe8e7",
   },
 } as const;
 
