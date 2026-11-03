@@ -8,6 +8,7 @@ import {
   ALL_AREAS,
   type CampCategory,
   type CampFormat,
+  type SessionWithCamp,
 } from "@/lib/camps";
 import { BREAK_WINDOWS, type BreakWindowId } from "@/lib/schoolBreaks";
 import { COMMON_ZH, showingZh } from "@/lib/zh/common";
@@ -25,10 +26,14 @@ import {
 
 // Mirrors src/components/ui/CampsDirectory.tsx. The filter logic is identical;
 // only camps that have a Chinese translation are listed.
-const SESSIONS = ALL_SESSIONS.filter((s) => CAMPS_ZH[s.camp.slug]);
-const AREAS = ALL_AREAS.filter((a) => SESSIONS.some((s) => s.camp.area === a));
-
-export default function CampsDirectoryZh() {
+export default function CampsDirectoryZh({
+  sessions = ALL_SESSIONS,
+}: {
+  /** Upcoming sessions, worked out on the server so finished camps drop off. */
+  sessions?: SessionWithCamp[];
+}) {
+  const SESSIONS = useMemo(() => sessions.filter((s) => CAMPS_ZH[s.camp.slug]), [sessions]);
+  const AREAS = useMemo(() => ALL_AREAS.filter((a) => SESSIONS.some((s) => s.camp.area === a)), [SESSIONS]);
   const [query, setQuery] = useState("");
   const [window, setWindow] = useState<"All" | BreakWindowId>("All");
   const [category, setCategory] = useState<"All" | CampCategory>("All");
@@ -92,7 +97,7 @@ export default function CampsDirectoryZh() {
       if (b.startDate) return 1;
       return a.camp.name.localeCompare(b.camp.name);
     });
-  }, [query, window, category, area, format, age]);
+  }, [SESSIONS, query, window, category, area, format, age]);
 
   const filtersActive =
     query !== "" ||
@@ -136,7 +141,7 @@ export default function CampsDirectoryZh() {
             className={inputClass}
           >
             <option value="All">任何假期</option>
-            {BREAK_WINDOWS.map((w) => (
+            {BREAK_WINDOWS.filter((w) => SESSIONS.some((s) => s.window === w.id)).map((w) => (
               <option key={w.id} value={w.id}>
                 {WINDOW_ZH[w.id].shortLabel}
               </option>

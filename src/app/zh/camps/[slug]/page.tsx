@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { CAMPS, campBySlug, isStale } from "@/lib/camps";
+import { CAMPS, campBySlug, isFinished, isStale } from "@/lib/camps";
 import { BREAK_WINDOWS } from "@/lib/schoolBreaks";
 import { COMMON_ZH, verifiedZh } from "@/lib/zh/common";
 import {
@@ -16,6 +16,9 @@ import {
 } from "@/lib/zh/camps";
 import { zhMetadata } from "@/lib/i18n";
 
+
+// Re-render hourly so camps drop off the day after they finish.
+export const revalidate = 3600;
 const SITE = "https://www.bkkfamilies.com";
 
 export function generateStaticParams() {
@@ -53,10 +56,11 @@ export default async function CampPageZh({
   const z = CAMPS_ZH[slug];
   if (!camp || !z) notFound();
 
-  // Group sessions by break window, in calendar order.
+  // Upcoming sessions only, grouped by break window in calendar order.
+  const upcoming = camp.sessions.filter((s) => !isFinished(s));
   const grouped = BREAK_WINDOWS.map((w) => ({
     window: w,
-    sessions: camp.sessions.filter((s) => s.window === w.id),
+    sessions: upcoming.filter((s) => s.window === w.id),
   })).filter((g) => g.sessions.length > 0);
 
   // Cross-links only to camps that have a Chinese page.
@@ -153,7 +157,7 @@ export default async function CampPageZh({
               </span>
             )}
             <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">
-              共 {camp.sessions.length} 个营期
+              {upcoming.length === 0 ? "暂无即将开始的营期" : `共 ${upcoming.length} 个即将开始的营期`}
             </span>
           </div>
         </div>
@@ -307,6 +311,11 @@ export default async function CampPageZh({
         <h2 className="mt-12 font-heading text-2xl font-bold text-purple-dark">
           营期
         </h2>
+        {grouped.length === 0 && (
+          <p className="mt-4 rounded-xl border-2 border-dashed border-black/10 p-6 text-neutral-600">
+            最近一期营已经结束。主办方公布新日期后，我们会第一时间更新。
+          </p>
+        )}
         {grouped.map((g) => (
           <div key={g.window.id} className="mt-6">
             <h3 className="font-heading text-lg font-bold text-teal">

@@ -13,7 +13,8 @@
 // MAINTENANCE: sessions expire. Every session carries lastVerified and
 // dateStatus. See the quarterly verification pass in the project notes.
 
-import type { BreakWindowId } from "./schoolBreaks";
+import { BREAK_WINDOWS, type BreakWindowId } from "./schoolBreaks";
+import { bangkokToday } from "./festive";
 import type { BranchContact } from "./branches";
 
 export type CampFormat = "day" | "half-day" | "residential";
@@ -1304,6 +1305,24 @@ export const STALE_AFTER_DAYS = 90;
 
 export function isStale(iso: string, now: Date = new Date()): boolean {
   return daysSinceVerified(iso, now) > STALE_AFTER_DAYS;
+}
+
+/**
+ * True once a session can no longer be booked: its confirmed last day has
+ * passed, or (for tba and ran-previously sessions) its whole break window
+ * is over. Finished sessions stay in the data, so the operator keeps its
+ * history and next year's run can be added beside them, but the directory
+ * and the camp pages stop showing them. Dates are Bangkok time.
+ */
+export function isFinished(s: CampSession, today: string = bangkokToday()): boolean {
+  if (s.dateStatus === "confirmed" && s.endDate) return s.endDate < today;
+  const w = BREAK_WINDOWS.find((x) => x.id === s.window);
+  return !!w && w.end < today;
+}
+
+/** Sessions still to come, for the directory. Call at request time. */
+export function upcomingSessions(today: string = bangkokToday()): SessionWithCamp[] {
+  return ALL_SESSIONS.filter((s) => !isFinished(s, today));
 }
 
 export function campBySlug(slug: string): Camp | undefined {

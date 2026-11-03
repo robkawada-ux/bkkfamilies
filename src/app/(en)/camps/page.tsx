@@ -3,7 +3,10 @@ import { og } from "@/lib/seo";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import CampsDirectory from "@/components/ui/CampsDirectory";
-import { CAMPS, ALL_SESSIONS } from "@/lib/camps";
+import { CAMPS, upcomingSessions } from "@/lib/camps";
+
+// Re-render hourly so camps drop off the day after they finish.
+export const revalidate = 3600;
 
 const TITLE = "Holiday Camps in Bangkok";
 const DESCRIPTION =
@@ -79,6 +82,8 @@ const jsonLd = [
 ];
 
 export default function CampsPage() {
+  const sessions = upcomingSessions();
+  const operators = new Set(sessions.map((s) => s.camp.slug)).size;
   return (
     <>
       <script
@@ -88,7 +93,7 @@ export default function CampsPage() {
       <PageHero
         eyebrow="School holidays, sorted"
         title="Holiday Camps in Bangkok"
-        subtitle={`Real dates, real ages, real prices. ${ALL_SESSIONS.length} camp weeks from ${CAMPS.length} operators, checked and described honestly.`}
+        subtitle={`Real dates, real ages, real prices. ${sessions.length} upcoming camp weeks from ${operators} operators, checked and described honestly.`}
         color="purple"
       />
 
@@ -116,7 +121,7 @@ export default function CampsPage() {
         </div>
 
         <div id="directory" className="mt-12 scroll-mt-28">
-          <CampsDirectory />
+          <CampsDirectory sessions={sessions} />
         </div>
 
         <div className="mx-auto mt-16 max-w-3xl rounded-xl border border-black/5 bg-teal-50 p-6">

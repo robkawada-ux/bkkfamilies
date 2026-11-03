@@ -8,6 +8,7 @@ import {
   ALL_AREAS,
   type CampCategory,
   type CampFormat,
+  type SessionWithCamp,
 } from "@/lib/camps";
 import { BREAK_WINDOWS, type BreakWindowId } from "@/lib/schoolBreaks";
 
@@ -55,7 +56,12 @@ const FORMAT_LABEL: Record<CampFormat, string> = {
   residential: "Residential",
 };
 
-export default function CampsDirectory() {
+export default function CampsDirectory({
+  sessions = ALL_SESSIONS,
+}: {
+  /** Upcoming sessions, worked out on the server so finished camps drop off. */
+  sessions?: SessionWithCamp[];
+}) {
   const [query, setQuery] = useState("");
   const [window, setWindow] = useState<"All" | BreakWindowId>("All");
   const [category, setCategory] = useState<"All" | CampCategory>("All");
@@ -66,7 +72,7 @@ export default function CampsDirectory() {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     const ageNum = age === "" ? null : Number(age);
-    return ALL_SESSIONS.filter((s) => {
+    return sessions.filter((s) => {
       const haystack = [
         s.camp.name,
         s.programme,
@@ -113,7 +119,7 @@ export default function CampsDirectory() {
       if (b.startDate) return 1;
       return a.camp.name.localeCompare(b.camp.name);
     });
-  }, [query, window, category, area, format, age]);
+  }, [sessions, query, window, category, area, format, age]);
 
   const filtersActive =
     query !== "" ||
@@ -158,7 +164,7 @@ export default function CampsDirectory() {
             className={inputClass}
           >
             <option value="All">Any break</option>
-            {BREAK_WINDOWS.map((w) => (
+            {BREAK_WINDOWS.filter((w) => sessions.some((s) => s.window === w.id)).map((w) => (
               <option key={w.id} value={w.id}>
                 {w.shortLabel}
               </option>
@@ -224,7 +230,7 @@ export default function CampsDirectory() {
 
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-neutral-500">
-          Showing {filtered.length} of {ALL_SESSIONS.length} camp weeks
+          Showing {filtered.length} of {sessions.length} camp weeks
         </p>
         <button
           type="button"

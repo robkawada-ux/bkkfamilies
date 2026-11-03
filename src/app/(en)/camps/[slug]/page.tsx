@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   CAMPS,
   campBySlug,
+  isFinished,
   isStale,
   type CampCategory,
   type CampFormat,
@@ -13,6 +14,9 @@ import {
 import { BREAK_WINDOWS } from "@/lib/schoolBreaks";
 import BranchList from "@/components/ui/BranchList";
 
+
+// Re-render hourly so camps drop off the day after they finish.
+export const revalidate = 3600;
 const SITE = "https://www.bkkfamilies.com";
 
 const MONTHS = [
@@ -107,10 +111,11 @@ export default async function CampPage({
   const camp = campBySlug(slug);
   if (!camp) notFound();
 
-  // Group sessions by break window, in calendar order.
+  // Upcoming sessions only, grouped by break window in calendar order.
+  const upcoming = camp.sessions.filter((s) => !isFinished(s));
   const grouped = BREAK_WINDOWS.map((w) => ({
     window: w,
-    sessions: camp.sessions.filter((s) => s.window === w.id),
+    sessions: upcoming.filter((s) => s.window === w.id),
   })).filter((g) => g.sessions.length > 0);
 
   const hosts = (camp.hosts ?? [])
@@ -207,7 +212,9 @@ export default async function CampPage({
               </span>
             )}
             <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">
-              {camp.sessions.length} camp{camp.sessions.length === 1 ? "" : " weeks"}
+              {upcoming.length === 0
+                ? "No upcoming camps listed"
+                : `${upcoming.length} upcoming camp${upcoming.length === 1 ? "" : " weeks"}`}
             </span>
           </div>
         </div>
@@ -338,6 +345,11 @@ export default async function CampPage({
         <h2 className="mt-12 font-heading text-2xl font-bold text-purple-dark">
           Camp weeks
         </h2>
+        {grouped.length === 0 && (
+          <p className="mt-4 rounded-xl border-2 border-dashed border-black/10 p-6 text-neutral-600">
+            Their most recent camps have finished. We&rsquo;ll add the next dates as soon as {camp.name} announces them.
+          </p>
+        )}
         {grouped.map((g) => (
           <div key={g.window.id} className="mt-6">
             <h3 className="font-heading text-lg font-bold text-teal">

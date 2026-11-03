@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import CampsDirectoryZh from "@/components/zh/CampsDirectoryZh";
-import { CAMPS, ALL_SESSIONS } from "@/lib/camps";
+import { CAMPS, upcomingSessions } from "@/lib/camps";
 import { CAMPS_ZH } from "@/lib/zh/camps";
 import { COMMON_ZH } from "@/lib/zh/common";
 import { zhMetadata } from "@/lib/i18n";
@@ -16,6 +16,9 @@ export const metadata: Metadata = zhMetadata({
   description: DESCRIPTION,
   enPath: "/camps",
 });
+
+// Re-render hourly so camps drop off the day after they finish.
+export const revalidate = 3600;
 
 const SITE = "https://www.bkkfamilies.com";
 
@@ -82,8 +85,9 @@ const jsonLd = [
 ];
 
 export default function CampsPageZh() {
-  const camps = CAMPS.filter((c) => CAMPS_ZH[c.slug]);
-  const weeks = ALL_SESSIONS.filter((s) => CAMPS_ZH[s.camp.slug]);
+  const sessions = upcomingSessions();
+  const weeks = sessions.filter((s) => CAMPS_ZH[s.camp.slug]);
+  const camps = new Set(weeks.map((s) => s.camp.slug));
   return (
     <>
       <script
@@ -93,7 +97,7 @@ export default function CampsPageZh() {
       <PageHero
         eyebrow="学校假期，一次理清"
         title="曼谷假期营"
-        subtitle={`日期、年龄和价格都是真实的。共 ${camps.length} 家机构的 ${weeks.length} 个营期，逐一核对并如实描述。`}
+        subtitle={`日期、年龄和价格都是真实的。共 ${camps.size} 家机构的 ${weeks.length} 个营期，逐一核对并如实描述。`}
         color="purple"
       />
 
@@ -111,7 +115,7 @@ export default function CampsPageZh() {
         </div>
 
         <div id="directory" className="mt-12 scroll-mt-28">
-          <CampsDirectoryZh />
+          <CampsDirectoryZh sessions={sessions} />
         </div>
 
         <div className="mx-auto mt-16 max-w-3xl rounded-xl border border-black/5 bg-teal-50 p-6">
