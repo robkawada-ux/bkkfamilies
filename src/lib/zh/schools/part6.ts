@@ -84,4 +84,34 @@ export const SCHOOLS_ZH_PART6: Record<string, SchoolZh> = {
     languageOfInstruction: "英语",
     schoolStatedFee: "每年约200,000泰铢",
   },
+  "ruamrudee-international-school-ratchapruek-campus": {
+    description: "RIS Ratchapruek 是 Ruamrudee International School 的姐妹校区，让住在曼谷西边的家庭不必长途往返位于 Min Buri 的主校区，也能接受 RIS 的教育。校区位于暖武里（Nonthaburi）的 Bang Kruai-Sai Noi 路，于2019年8月开学，最初只开设 Pre-K 至5年级，沿用主校区的课程。\n\n此后校区已扩展到 Pre-K 至12年级，提供美式高中课程、AP 课程和 IB Diploma。它的规模仍比主校区小得多，高年级只有几十名学生，适合想要紧密社群的家庭，但也意味着高中阶段可选的课程和运动队较少。",
+    ageRange: "Pre-K至12年级",
+    languageOfInstruction: "英语",
+  },
+  "chindamanee-school": {
+    description: "Chindamanee 是一所位于 Chom Thong 的双语学校，在湄南河的吞武里（Thonburi）一侧，把从 Early Years 到 A Level 的剑桥课程与泰国国家课程结合起来。学生也参加泰国国家考试，剑桥课程以数学和科学为强项。\n\n学校招收从 Nursery（18个月）到 Year 13 的学生，全部在同一校区，学生人数上限约750人，从4年级起教授中文。学校公布的学费远低于曼谷大多数国际学校，是进入剑桥课程较为实惠的途径之一。它的姐妹学校是清迈的 Wichai Wittaya。",
+    ageRange: "Nursery（18个月）至Year 13",
+    languageOfInstruction: "英语、泰语",
+  },
+  "bangkok-bilingual-school": {
+    description: "Bangkok Bilingual School 又名 Bangkok Tawiwit Bilingual School，在泰国国家课程之外同时教授剑桥课程，自2021年起是注册的剑桥学校。英语授课的比例随年级上升，从幼儿园约一半到中学最高七成，中学生以 IGCSE 和 A Level 为目标。\n\n学校招收从 Pre-K（2岁）到12年级的学生，在 Huai Khwang 的 Pracha Uthit 路上有两个校区，一个是幼儿园，一个是小学。学校不公布学费，请直接向招生处询问。",
+    ageRange: "Pre-K（2岁）至12年级",
+    languageOfInstruction: "英语、泰语",
+  },
+  "interkids-bilingual-school": {
+    description: "Interkids Bilingual School 的泰文名称就是 Inter Kids，创办于1995年，自称是泰国最早从学前到中学全程提供双语教育的学校之一。教学使用英语、泰语和中文。\n\n主校区 Nimitmai 位于 Min Buri 的 Pracharuamchai 路，占地8英亩，招收从学前到12年级的学生。第二个校区位于 Seri Thai 路，招收 Pre-K 至9年级，提供结合泰国与英国课程的 IBIP 路径。",
+    ageRange: "学前至12年级",
+    languageOfInstruction: "英语、泰语、中文",
+  },
+  "satit-prasarnmit-international-programme": {
+    description: "SPIP 是 Prasarnmit Demonstration School（中学部）的英语授课国际课程，隶属于 Srinakharinwirot University，位于 Sukhumvit 23。它于2010年开办，作为剑桥国际考试中心，按英格兰国家课程教授到 IGCSE 和 A Level，除教育部规定的泰语课程外，全部用英语教学。\n\n课程覆盖 Year 7 至 Year 13，教育部承认其文凭等同于泰国高中毕业证书。学校称自己是泰国第一所开设此类课程的公立学校。另有一个独立的小学课程 PPiP，就在隔壁，招收3至10岁的孩子。SPIP 不公布学费。",
+    ageRange: "Year 7至Year 13",
+    languageOfInstruction: "英语",
+  },
+  "kids-kingdom-international-kindergarten": {
+    description: "Kids Kingdom 是一所国际幼儿园，招收18个月至6岁的孩子，主要用英语教学，采用以游戏和探究为基础的教学方式。它于2011年在 Sukhumvit Soi 47 开办，2017年在 Ploenchit 附近的 Soi Ruamrudee 3 开设了第二个分校。\n\n两个分校都采用 IPC 幼儿课程，并各自为更小的孩子开办亲子游戏小组，可在我们的游戏小组目录中找到。学校不公布学费。",
+    ageRange: "18个月至6岁",
+    languageOfInstruction: "英语",
+  },
 };
