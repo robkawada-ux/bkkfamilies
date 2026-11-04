@@ -43,6 +43,7 @@ export const ON_ENQUIRY_ZH: Record<string, string> = {
   "dulwich-college-international-school-bangkok": "招生栏目只提供咨询、申请和参观，没有收费页面。",
   "anglo-singapore-international-school": "收费页面列出了学费所涵盖的项目，然后请家长向招生部门索取具体数字。",
   "sarasas-ektra-school": "英文网站上没有收费数字。",
+  "regents-international-school-bangkok-langsuan-campus": "Regent's 只公布 Rama 9 校区的收费。2026/27学年的招生手册不包括 Langsuan 校区，家长需要向招生处 (admissions_ls@regents.ac.th) 询问目前的收费。",
   "bromsgrove-international-school-thailand": "公布了押金、EAL 收费、兄弟姐妹折扣、考试费和住宿式外出活动费，但没有公布学费表本身。",
 };
 

@@ -88,6 +88,12 @@ export const SCHOOLS_ZH_PART3: Record<string, SchoolZh> = {
     ageRange: "2至18岁",
     languageOfInstruction: "英语",
   },
+  "regents-international-school-bangkok-langsuan-campus": {
+    description:
+      "Regent's Langsuan 校区是 Regent's International School Bangkok 的早期教育校区，2022年8月在 Lumphini 的 Soi Langsuan 开办，步行即可到达 Chidlom 和 Ratchadamri 一带。校区招收约18个月至6岁的孩子，涵盖 Pre-Nursery、Nursery、Reception 和 Year 1，是少数设在市中心的一贯制英式学校校区之一。\n\n教学遵循英格兰国家课程的早期基础阶段 (EYFS)，以游戏为基础学习，班级老师均为英语母语者，每个班还配有一名助教。校区也把 Regent's 全校采用的 Round Square 理念带入早期教育，让孩子从小接触服务、领导力和环保意识。\n\n最大的优势是位置。住在 Ploenchit、Chidlom、Lumphini 和 Sathorn 一带的家庭，不必开车去 Wang Thonglang 的 Rama 9 校区，就能让孩子在 Regent's 起步；Rama 9 校区从 Year 2 一直开设到 IB 文凭课程。Regent's 现已加入 Nord Anglia Education 集团。\n\n入学要求孩子已经会自己上厕所，并且不再使用奶瓶或母乳喂养。Regent's 没有单独公布 Langsuan 校区的收费，请向招生处询问目前的收费。校区还开设幼儿游戏小组，可在我们的游戏小组目录中找到。",
+    ageRange: "18个月至6岁（Pre-Nursery 至 Year 1）",
+    languageOfInstruction: "英语",
+  },
   "amnuay-silpa-school": {
     description: "Amnuay Silpa 实行真正的双语课程，而不是在英语授课的学校里硬加上泰语。在低年级，学生在同一间教室里同时用泰语和英语学习，由两种语言的母语教师并肩授课。升入中学后，数学、科学和历史等科目分成并行的泰语班和英语班，有意互相协调、互相强化，让学生既能备考泰国全国考试，也能走 IGCSE 和 A Level 路径。\n\n学校还以 Thinking School 框架作为品牌特色，该框架是与 Exeter University 合作开发的，目的是把批判性和反思性思维融入日常课堂，而不是纯粹为考试而教。这一做法使学校获得了 ANS Advanced Thinking School 认证、FOBISIA 会员资格，以及完整的 CIS 认证，使其成为泰国第一所获得 CIS 地位的双语学校。\n\n位于曼谷市中心的校区，距离 Phaya Thai BTS 站步行很近，Foundation、Primary 和 Secondary 三个阶段各有专门建造的独立楼宇，还有25米长的游泳池、专用的芭蕾舞室、科学实验室，以及位于校园中心的大型足球场。在常规课表之外，学校开设的课后项目是这座城市里较丰富的之一，有超过100个社团，涵盖体育、机器人、表演艺术，以及包括中文和日语在内的语言选择。\n\n最小年级的入学大体上是先到先得，而从 Year 1 起的学位则通过测试、面谈以及学生原学校的报告来评估。鉴于学校的声誉，热门年级常常有候补名单，创办于1926年的 Amnuay Silpa，其校友中有六位泰国前总理。",
     ageRange: "2至18岁",
