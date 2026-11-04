@@ -74,7 +74,7 @@ export const SCHOOLS_ZH_PART3: Record<string, SchoolZh> = {
     languageOfInstruction: "英语",
   },
   "st-andrews-international-school-bangkok": {
-    description: "这是 St Andrews 在曼谷最初的校区，位于 Vadhana 区，由 Nord Anglia Education 拥有，后者是一个大型国际学校集团，旗下学校遍布亚洲、欧洲和美洲。它与 Cognita 旗下位于 Sathorn、Sukhumvit 107 和 Dusit 的 St Andrews 校区是各自独立的运营，两者并无关系，尽管名称相同。\n\n学校创办于1997年，提供英式教育，从2岁的 Foundation Stage 一直到18岁，作为 Nord Anglia 体系的一员，它可以使用该集团在全球其他学校之间共享的课程资源和合作关系，包括 Nord Anglia 统一安排的与 MIT 和 Juilliard 等机构的合作。\n\n学校在过去几年中获得过 IB 和国际学校方面的奖项认可，并且通常以缩写 STA71 为人所知，这个缩写指的是它位于 Sukhumvit Soi 71，这有助于在本地把它与这座城市里其他使用 St Andrews 品牌、但归属完全不同所有者的校区区分开来。\n\n家长要小心，不要把这所学校与曼谷其他地方由 Cognita 经营的 St Andrews 校区混淆。尽管品牌名称相同，它们是互不相关的学校，分属不同的集团，各有自己的课程和招生办法。",
+    description: "这是 St Andrews 在曼谷最初的校区，位于 Vadhana 区，由 Nord Anglia Education 拥有，后者是一个大型国际学校集团，旗下学校遍布亚洲、欧洲和美洲。它与位于 Sathorn、Sukhumvit 107 和 Dusit 的 St Andrews 集团校区是各自独立的运营，两者并无关系，尽管名称相同。\n\n学校创办于1997年，提供英式教育，从2岁的 Foundation Stage 一直到18岁，作为 Nord Anglia 体系的一员，它可以使用该集团在全球其他学校之间共享的课程资源和合作关系，包括 Nord Anglia 统一安排的与 MIT 和 Juilliard 等机构的合作。\n\n学校在过去几年中获得过 IB 和国际学校方面的奖项认可，并且通常以缩写 STA71 为人所知，这个缩写指的是它位于 Sukhumvit Soi 71，这有助于在本地把它与这座城市里其他使用 St Andrews 品牌、但归属完全不同所有者的校区区分开来。\n\n家长要小心，不要把这所学校与曼谷其他地方St Andrews 集团的校区（Sathorn、Dusit 和 Sukhumvit 107）混淆。尽管品牌名称相同，它们是互不相关的学校，分属不同的集团，各有自己的课程和招生办法。",
     ageRange: "2至18岁",
     languageOfInstruction: "英语",
   },

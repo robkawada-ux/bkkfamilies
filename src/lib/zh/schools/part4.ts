@@ -88,7 +88,7 @@ export const SCHOOLS_ZH_PART4: Record<string, SchoolZh> = {
   },
   "bsb-british-international-primary-school": {
     description:
-      "BSB 于1992年3月创办于素坤逸 Soi 4 (Sukhumvit Soi 4)，是一所仅有小学的学校，涵盖 EYFS 至 Year 6，社群刻意保持紧密，约有180名学生，来自40多个国籍。对于地处素坤逸中心地段的学校来说，这是相当小的规模。\n\n学校尤其在 Nursery 阶段保持较低的师生比，体现出刻意把对最年幼学生的个别关注放在班级规模效率之前。\n\n作为仅有小学的学校，使用 BSB 的家庭需要为孩子读完 Year 6 后转入另一所中学做好规划。这与 Cognita 旗下的 St Andrews Sathorn 和 Dusit 校区情况类似，不过 BSB 是独立于该网络运营的。\n\n被 BSB 吸引的家庭，通常看重这样的组合：小型、真正国际化的小学社群，加上素坤逸的中心位置，并接受需要提前规划转入中学的安排。",
+      "BSB 于1992年3月创办于素坤逸 Soi 4 (Sukhumvit Soi 4)，是一所仅有小学的学校，涵盖 EYFS 至 Year 6，社群刻意保持紧密，约有180名学生，来自40多个国籍。对于地处素坤逸中心地段的学校来说，这是相当小的规模。\n\n学校尤其在 Nursery 阶段保持较低的师生比，体现出刻意把对最年幼学生的个别关注放在班级规模效率之前。\n\n作为仅有小学的学校，使用 BSB 的家庭需要为孩子读完 Year 6 后转入另一所中学做好规划。这与 St Andrews Sathorn 和 Dusit 校区情况类似，不过 BSB 是独立于该网络运营的。\n\n被 BSB 吸引的家庭，通常看重这样的组合：小型、真正国际化的小学社群，加上素坤逸的中心位置，并接受需要提前规划转入中学的安排。",
     ageRange: "2至11岁",
     languageOfInstruction: "英语",
   },
