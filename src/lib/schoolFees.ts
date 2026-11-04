@@ -342,6 +342,27 @@ export const schoolFees: Record<string, SchoolFees> = {
     excludes: ['uniform', 'transport', 'exam-fees'],
     note: "Terms are billed unevenly at roughly 41/33/26 rather than equal thirds, so the first invoice is the largest. The 220,000 admission fee is waived under the Before One and Sixth Form promotions.",
   },
+  "dlts-international-school": {
+    status: 'published',
+    feeYear: "2026/27",
+    sourceUrl: "https://www.dltsschool.com/tuition-fees",
+    verified: '2026-11-03',
+    rows: [
+      { label: "Toddlers to EY3", stage: 'early-years', annual: 430000 },
+      { label: "PYP 1-2 (Grades 1-2)", stage: 'primary', annual: 418200 },
+      { label: "PYP 3-4 (Grades 3-4)", stage: 'primary', annual: 432600 },
+      { label: "PYP 5 and MYP 1 (Grades 5-6)", stage: 'primary', annual: 457300 },
+      { label: "MYP 2-4 (Grades 7-9)", stage: 'lower-secondary', annual: 483000 },
+    ],
+    oneTime: { application: 12000, registration: 150000, refundableDeposit: 60000 },
+    includes: ['lunch', 'snacks', 'textbooks'],
+    excludes: ['uniform', 'transport', 'after-school'],
+    extras: [
+      { label: "ESL support", annualFrom: 90000, compulsory: false },
+      { label: "Special needs support", annualFrom: 80000, compulsory: false },
+    ],
+    note: "No fee is published for the Pre-College stage (Grades 10-12). Tuition includes accident insurance. 2% off for paying the full year at once and a 5% sibling discount. ESL starts at 30,000 a term and both support fees are set case by case. The page heading says 2026-2027 but its summary still says 2025-2026, so confirm the year with the school.",
+  },
   "wellington-international-school-bangkok": {
     status: 'published',
     feeYear: "2026/27",

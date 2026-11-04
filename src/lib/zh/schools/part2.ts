@@ -13,6 +13,12 @@ export const SCHOOLS_ZH_PART2: Record<string, SchoolZh> = {
     ageRange: "2至18岁",
     languageOfInstruction: "英语",
   },
+  "dlts-international-school": {
+    description:
+      "DLTS International School 隶属 Denla Group，也就是创办 Denla British School 的泰国教育集团，但它走的是与姐妹学校不同的路线：采用探究式的国际文凭 (International Baccalaureate) 课程，而不是英式课程。DLTS 目前是 IB 候选学校 (IB Candidate School)，在 Grades 1至5 开设小学项目 (PYP)，在 Grades 6至9 开设中学项目 (MYP)。候选身份并不等同于正式授权，家长应向学校了解目前的认证进度。\n\n语言是这所学校最鲜明的特点。DLTS 的目标是让学生掌握英语、泰语和中文三种语言，因此很适合希望孩子在国际课程之外打好中文基础的泰国家庭和泰籍华人家庭，也适合希望孩子保持真正泰语能力的外籍家庭。\n\n校园位于暖武里 (Nonthaburi) 西侧 Bang Kruai 的 Nakhon In 路，主要适合已经住在暖武里的家庭，而不太适合从曼谷市中心通勤的家庭。学校从18个月大的幼儿班 (Toddler) 和早期教育班级开始，之后是 PYP、MYP，以及面向 Grades 10至12 的 Pre-College 阶段。\n\n教学侧重 STEM、批判性思维和项目式学习。学费包含午餐、点心、学习材料和意外保险；ESL 支持和特殊教育需求支持另行收费，并按个案评估。",
+    ageRange: "18个月至18岁（Toddler 至 Grade 12）",
+    languageOfInstruction: "英语、泰语、中文",
+  },
   "dprep-bangkok": {
     description:
       "D-PREP 原名 Didyasarin Preparatory International School，由 Lady Didyasarin Tavedikul 于2018年创办。她所在的家族也是 American School of Bangkok 素坤逸 (Sukhumvit) 校区和 Green Valley 校区背后的家族，因此这所位于邦那 (Bang Na) 一带的较新学校，与曼谷较成熟的美式学校运营方之一有直接的家族联系。\n\n学校把美式课程元素与 IB 框架结合，为家庭提供混合的学习路径，而不是单一课程体系，这与 ASB 把美国标准与 IB Diploma 选项相结合的做法相呼应。\n\n作为一所相对较新的学校，D-PREP 于2018年开办，还没有 ASB 或 ISB 那样数十年的办学经历，但其创办家族在曼谷经营美式学校的背景，为它在幕后提供了完全独立的新学校所缺乏的办学经验。\n\n考虑 D-PREP 的家庭，往往是在权衡它与成熟的 ASB 体系之间的家族联系，以及邦那 (Bang Na) 一带规模较小的较新校园的吸引力。",

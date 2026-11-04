@@ -14,6 +14,7 @@ export const FEE_NOTE_ZH: Record<string, string> = {
   "st-andrews-international-school-bangkok": "Foundation Stage 2、Foundation Stage 3 和 Year 1 的入学费全免。Years 7至13需缴纳90,000。也可改为每学期缴纳35,000。Years 11 和 13 的考试费已包含在内。",
   "regents-international-school-bangkok": "三项独立的一次性费用：申请费5,500，注册费75,000，入学费95,000，合计175,500。学校已搬到 Wang Thonglang。IGCSE 和 IB 的考试报名费不包含在内，与姐妹学校 St Andrews 不同。",
   "wells-international-school": "学校宣传费用为全包、没有隐藏费用，但收费表中列有140,000的校园发展费、35,000的损坏押金、每学期15,000的强制午餐费，以及每学期最高80,000的 ESL 费用。适用于 On Nut、Thong Lo 和 Bang Na 校区；Chonburi 校区有自己的收费表。",
+  "dlts-international-school": "Pre-College 阶段（Grades 10至12）没有公布学费。学费包含意外保险。一次付清全年费用可享2%折扣，兄弟姐妹同时就读可享5%折扣。ESL 每学期30,000起，两项支持费用均按个案评估。收费页面标题写的是2026-2027，但摘要仍写2025-2026，请向学校确认适用学年。",
   "denla-british-school": "各学期的收费并不均等，大约按41/33/26分配，而不是平均三等分，因此第一张账单金额最高。在 Before One 和 Sixth Form 优惠下，220,000的入学费可以免除。",
   "wellington-international-school-bangkok": "Year 12 的费用是曼谷已核实的最高学费。餐费另行收取，与包含餐费的 Shrewsbury 和 Harrow 不同。",
   "brighton-college-bangkok": "这些数字适用于 Krungthep Kreetha 校区。Brighton 另有一个 Vibhavadi 校区，2025年8月开办，有自己的收费和招生团队。",
@@ -46,6 +47,8 @@ export const ON_ENQUIRY_ZH: Record<string, string> = {
 };
 
 export const EXTRA_LABEL_ZH: Record<string, string> = {
+  "ESL support": "ESL 支持",
+  "Special needs support": "特殊教育需求支持",
   "Capital assessment fee": "资本评估费",
   "EAL support Years 1-9": "EAL 支持 Years 1至9",
   "School bus": "校车",
@@ -104,6 +107,11 @@ export const EXTRA_LABEL_ZH: Record<string, string> = {
 };
 
 export const ROW_LABEL_ZH: Record<string, string> = {
+  "Toddlers to EY3": "幼儿班 (Toddlers) 至 EY3",
+  "PYP 1-2 (Grades 1-2)": "PYP 1至2（Grades 1至2）",
+  "PYP 3-4 (Grades 3-4)": "PYP 3至4（Grades 3至4）",
+  "PYP 5 and MYP 1 (Grades 5-6)": "PYP 5 和 MYP 1（Grades 5至6）",
+  "MYP 2-4 (Grades 7-9)": "MYP 2至4（Grades 7至9）",
   "Nursery": "托儿班 (Nursery)",
   "Year 1-2": "Year 1至2",
   "Year 4-5": "Year 4至5",
