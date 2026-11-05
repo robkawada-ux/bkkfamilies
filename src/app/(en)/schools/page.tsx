@@ -55,6 +55,14 @@ export default function SchoolsPage() {
         color="teal"
       />
       <div className="mx-auto max-w-6xl px-4 py-12">
+        <p className="mb-8 max-w-3xl text-sm leading-relaxed text-neutral-600">
+          We list a school as international if it is licensed by OPEC (Thailand&apos;s Office
+          of the Private Education Commission) as an international school, or if it is
+          accredited by an OPEC-recognised body such as CIS, WASC, NEASC or COBIS. Bilingual
+          and English Program schools that teach the Thai national curriculum are not
+          included. The few schools we list that don&apos;t fully meet this standard say so
+          on their page.
+        </p>
         <SchoolDirectory />
       </div>
     </>

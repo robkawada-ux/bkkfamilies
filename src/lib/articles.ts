@@ -973,7 +973,6 @@ export const ARTICLES: Article[] = [
       { name: "The American School of Bangkok (ASB)", slug: "the-american-school-of-bangkok-asb" },
       { name: "International Community School", slug: "international-community-school" },
       { name: "Bangkok Christian International School", slug: "bangkok-christian-international-school" },
-      { name: "Sarasas Ektra School", slug: "sarasas-ektra-school" },
     ],
     faq: [
       {

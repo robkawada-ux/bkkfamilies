@@ -10,7 +10,7 @@ export const SCHOOLS_ZH_PART3: Record<string, SchoolZh> = {
     languageOfInstruction: "英语",
   },
   "the-country-school-by-elc": {
-    description: "The Country School 属于曼谷的 ELC（Early Learning Centre）学校体系，提供英式课程、以自然为导向的早期教育环境，有别于更传统的课堂式幼儿园。\n\n从校名就能看出这种以自然为导向的做法，这表明学校在标准的幼儿阶段学习之外，也注重户外和动手的学习体验，这是 ELC 体系中一种有特色的教学选择。\n\n作为 ELC 体系的一员，它的姐妹学校还有 The Purple Elephant 55 和 The Tiny Seeds，家长在选定最合适的校区和教学方式之前，有机会比较同一体系下几个相关的幼儿教育选择。\n\n被 The Country School 吸引的家长，通常看重的是这种以自然为导向、注重户外的幼儿教育方式，并且是在 ELC 这个曼谷幼儿教育体系之内做选择。",
+    description: "The Country School 属于曼谷的 ELC（Early Learning Centre）学校体系，提供英式课程、以自然为导向的早期教育环境，有别于更传统的课堂式幼儿园。\n\n从校名就能看出这种以自然为导向的做法，这表明学校在标准的幼儿阶段学习之外，也注重户外和动手的学习体验，这是 ELC 体系中一种有特色的教学选择。\n\n作为 ELC 体系的一员，它的姐妹学校还有 The Purple Elephant 55，家长在选定最合适的校区和教学方式之前，有机会比较同一体系下几个相关的幼儿教育选择。\n\n被 The Country School 吸引的家长，通常看重的是这种以自然为导向、注重户外的幼儿教育方式，并且是在 ELC 这个曼谷幼儿教育体系之内做选择。",
     languageOfInstruction: "英语",
   },
   "the-first-steps-international-school": {
@@ -18,11 +18,12 @@ export const SCHOOLS_ZH_PART3: Record<string, SchoolZh> = {
     languageOfInstruction: "英语",
   },
   "the-purple-elephant-55": {
-    description: "The Purple Elephant 属于曼谷的 ELC 学校体系，为低龄孩子提供 English Program 的学习环境，与 The Country School 和 The Tiny Seeds 同为这个幼儿教育体系中的姐妹校区。\n\n作为多校区体系的一员，The Purple Elephant 与 ELC 的姐妹学校共享机构资源，课程也保持一致，同时每个校区仍有自己的场地和社群。\n\nThe Purple Elephant 是专门的幼儿教育学校，而不是从幼儿园到 K-12 的完整学校，只是一个起点，所以孩子完成幼儿阶段后，家长需要规划升入小学的事宜。\n\n了解 The Purple Elephant 的家长，不妨也与 ELC 的姐妹学校 The Country School 和 The Tiny Seeds 比较一下，因为体系内每个校区的具体做法或地点可能略有不同。",
+    description: "The Purple Elephant 55 是 ELC International Schools 在 Phrom Phong 和通罗一带开设的三个小型幼儿中心之一，招收约18个月至3岁的孩子。ELC 自1984年起服务曼谷家庭，采用加拿大安大略省课程，用英语教学，并获得 CIS 和 WASC 认证。\n\n作为幼儿中心，它只是起点，而不是完整的学校。ELC 位于 Sukhumvit 49 的 City School 从幼儿园一直开设到 Year 6，位于 Nichada Thani 的 Purple Elephant 校区则招收5岁以下的孩子。",
+    ageRange: "18个月至3岁",
     languageOfInstruction: "英语",
   },
   "the-tiny-seeds-international-pre-school-bangkok": {
-    description: "The Tiny Seeds 属于曼谷的 ELC 学校体系，为这座城市最年幼的学习者提供 English Program 的学前环境，与 The Country School 和 The Purple Elephant 同为这个幼儿教育体系中的姐妹校区。\n\n与 ELC 的姐妹学校一样，The Tiny Seeds 在整个体系内共享机构资源，课程也保持一致，同时保有自己的校区社群和地点。\n\nThe Tiny Seeds 是专门的学前学校，服务的是孩子教育中最早的阶段，家长要提前规划孩子结束学前项目后升入小学的事宜。\n\n了解 The Tiny Seeds 的家长，可以与 ELC 的姐妹学校 The Country School 和 The Purple Elephant 比较一下，找到最适合自己家庭的地点和教学方式。",
+    description: "The Tiny Seeds International Pre-School 于2010年7月在 Sukhumvit 36 附近开办，创办人是两位被家长称为 Ms. Top 和 Ms. Tip 的老师。这是一所独立的学前学校，不属于 ELC 集团，在小而温馨的环境中为最年幼的孩子采用英国国家课程。\n\n作为学前学校，它只覆盖幼儿阶段，家长需要提前规划升入小学的事宜。我们尚未核实其办学许可或现行网站，请直接向学校确认详情。",
     languageOfInstruction: "英语",
   },
   "the-village-international-education-centre-vie": {

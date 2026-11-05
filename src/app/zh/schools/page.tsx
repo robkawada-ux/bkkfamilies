@@ -59,6 +59,10 @@ export default function SchoolsPageZh() {
         <p className="mb-8 max-w-3xl text-sm leading-relaxed text-neutral-600">
           {COMMON_ZH.translationNote}
         </p>
+        <p className="mb-8 max-w-3xl text-sm leading-relaxed text-neutral-600">
+          我们收录的国际学校，须经 OPEC（泰国私立教育委员会办公室）许可为国际学校，或获得 CIS、WASC、NEASC
+          或 COBIS 等 OPEC 认可机构的认证。采用泰国国家课程的双语学校和 English Program 学校不在收录范围内。少数未完全符合这一标准的学校，会在其页面上注明。
+        </p>
         <SchoolDirectoryZh />
       </div>
     </>
