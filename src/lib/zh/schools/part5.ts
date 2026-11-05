@@ -53,7 +53,7 @@ export const SCHOOLS_ZH_PART5: Record<string, SchoolZh> = {
   },
   "st-andrews-international-school-sathorn": {
     description:
-      "St Andrews Sathorn 于2003年1月开办，校舍由一栋翻新的旧医院大楼改建而成，位于 Silom 附近，是 St Andrews 集团在曼谷的三个校区之一，与城里另一所由 Nord Anglia 所有、毫无关联的 St Andrews International School Bangkok 完全是两回事。该集团在罗勇（Rayong）还有 Green Valley 校区，多年来隶属 Cognita，2026年马来西亚的 Taylor's Education Group 与其达成协议，接手这四所泰国学校。\n\nSathorn 校区只设小学，涵盖 Nursery 至 Year 6，学生通常会升入同属 St Andrews 集团的 Sukhumvit 107 校区读中学，为从 Sathorn 起步的家庭形成一条结构清晰的两校区升学路径。\n\n对于住在 Sathorn 和 Silom 一带的家庭，这个位于市中心的校区十分方便，不过将来需要转到 Sukhumvit 107 读中学，这一点在一开始规划住处时就值得考虑。\n\n家长应当注意，不要把这个校区，与另一所毫无关联的 Nord Anglia 旗下 St Andrews International School Bangkok 混淆，尽管两者的品牌名称完全相同。",
+      "St Andrews Sathorn 于2003年1月开办，校舍由一栋翻新的旧医院大楼改建而成，位于 Silom 附近，是 St Andrews 集团在曼谷的三个校区之一，与城里另一所由 Nord Anglia 所有、毫无关联的 St Andrews International School Bangkok 完全是两回事。该集团在罗勇（Rayong）还有 Green Valley 校区，多年来隶属 Cognita，2026年这四所泰国学校已并入马来西亚的 Taylor's Education Group。\n\nSathorn 校区只设小学，涵盖 Nursery 至 Year 6，学生通常会升入同属 St Andrews 集团的 Sukhumvit 107 校区读中学，为从 Sathorn 起步的家庭形成一条结构清晰的两校区升学路径。\n\n对于住在 Sathorn 和 Silom 一带的家庭，这个位于市中心的校区十分方便，不过将来需要转到 Sukhumvit 107 读中学，这一点在一开始规划住处时就值得考虑。\n\n家长应当注意，不要把这个校区，与另一所毫无关联的 Nord Anglia 旗下 St Andrews International School Bangkok 混淆，尽管两者的品牌名称完全相同。",
     ageRange: "2至11岁（托儿班（Nursery）至 Year 6）",
     languageOfInstruction: "英语",
   },
@@ -98,7 +98,7 @@ export const SCHOOLS_ZH_PART5: Record<string, SchoolZh> = {
   },
   "st-andrews-international-school-dusit": {
     description:
-      "St Andrews Dusit 是位于 Dusit 一带、只设小学的校区，是 St Andrews 集团在曼谷的三个校区之一，为2至11岁的孩子提供英国国家课程，之后学生通常会升入该集团的 Sukhumvit 107 校区读中学。该集团在罗勇（Rayong）还有 Green Valley 校区，多年来隶属 Cognita，2026年马来西亚的 Taylor's Education Group 与其达成协议，接手这四所泰国学校。\n\nDusit 的位置与 Sathorn 或 Sukhumvit 107 处于城里不同的区域，让 St Andrews 集团在曼谷有较好的地理覆盖，方便家庭在升入中学之前，先在离家近的地方让孩子入读小学。\n\n作为只设小学的校区，就读 St Andrews Dusit 的家庭需要为孩子读完 Year 6 之后做好打算，要么转到 Sukhumvit 107，要么另选一所中学，这与 Sathorn 校区的结构相似。\n\n家长应当注意，不要把这个校区，与另一所毫无关联的 Nord Anglia 旗下 St Andrews International School Bangkok 混淆，尽管两个体系的品牌名称完全相同。",
+      "St Andrews Dusit 是位于 Dusit 一带、只设小学的校区，是 St Andrews 集团在曼谷的三个校区之一，为2至11岁的孩子提供英国国家课程，之后学生通常会升入该集团的 Sukhumvit 107 校区读中学。该集团在罗勇（Rayong）还有 Green Valley 校区，多年来隶属 Cognita，2026年这四所泰国学校已并入马来西亚的 Taylor's Education Group。\n\nDusit 的位置与 Sathorn 或 Sukhumvit 107 处于城里不同的区域，让 St Andrews 集团在曼谷有较好的地理覆盖，方便家庭在升入中学之前，先在离家近的地方让孩子入读小学。\n\n作为只设小学的校区，就读 St Andrews Dusit 的家庭需要为孩子读完 Year 6 之后做好打算，要么转到 Sukhumvit 107，要么另选一所中学，这与 Sathorn 校区的结构相似。\n\n家长应当注意，不要把这个校区，与另一所毫无关联的 Nord Anglia 旗下 St Andrews International School Bangkok 混淆，尽管两个体系的品牌名称完全相同。",
     ageRange: "2至11岁（托儿班（Nursery）至 Year 6）",
     languageOfInstruction: "英语",
   },

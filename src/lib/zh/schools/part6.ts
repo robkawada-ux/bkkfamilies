@@ -32,7 +32,7 @@ export const SCHOOLS_ZH_PART6: Record<string, SchoolZh> = {
     languageOfInstruction: "英语",
   },
   "st-andrews-international-school-sukhumvit-107": {
-    description: "学校于1996年在邦那（Bang Na）的 Bearing BTS 站附近创办，是曼谷三个 St Andrews 集团校区中，唯一在同一校园内同时提供小学和中学教育的校区，在高年级阶段将英国国家课程与 IB Diploma Programme 结合在一起。该集团在罗勇（Rayong）还有 Green Valley 校区，多年来隶属 Cognita，2026年马来西亚的 Taylor's Education Group 与其达成协议，接手这四所泰国学校。\n\n由于它是同属该集团的 Sathorn 和 Dusit 两个仅设小学的校区的学生升读中学的去处，Sukhumvit 107 往往比姐妹校区规模更大、办学更久，在中学阶段有更长的办学记录。\n\n小学和 IGCSE 阶段采用英式课程，随后提供 IB Diploma 而不是 A-Level，这种结构上的选择，与曼谷少数几所学校（如 Regent's 和 Bangkok Patana）相同。\n\n与 St Andrews 集团其他校区一样，家长应注意把这所学校与另一所无关的、由 Nord Anglia 拥有的 St Andrews International School Bangkok 区分开，尽管二者名称相同。",
+    description: "学校于1996年在邦那（Bang Na）的 Bearing BTS 站附近创办，是曼谷三个 St Andrews 集团校区中，唯一在同一校园内同时提供小学和中学教育的校区，在高年级阶段将英国国家课程与 IB Diploma Programme 结合在一起。该集团在罗勇（Rayong）还有 Green Valley 校区，多年来隶属 Cognita，2026年这四所泰国学校已并入马来西亚的 Taylor's Education Group。\n\n由于它是同属该集团的 Sathorn 和 Dusit 两个仅设小学的校区的学生升读中学的去处，Sukhumvit 107 往往比姐妹校区规模更大、办学更久，在中学阶段有更长的办学记录。\n\n小学和 IGCSE 阶段采用英式课程，随后提供 IB Diploma 而不是 A-Level，这种结构上的选择，与曼谷少数几所学校（如 Regent's 和 Bangkok Patana）相同。\n\n与 St Andrews 集团其他校区一样，家长应注意把这所学校与另一所无关的、由 Nord Anglia 拥有的 St Andrews International School Bangkok 区分开，尽管二者名称相同。",
     ageRange: "2至18岁",
     languageOfInstruction: "英语",
     feeRange: "每年278,500至736,500泰铢",
