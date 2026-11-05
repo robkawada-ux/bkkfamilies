@@ -46,11 +46,6 @@ export const SCHOOLS_ZH_PART5: Record<string, SchoolZh> = {
     languageOfInstruction: "英语、中文",
     feeRange: "每年380,000至751,000泰铢",
   },
-  "lertlah-school": {
-    description:
-      "Lertlah School 采用加拿大课程，为曼谷的家庭提供了一个有别于英式和美式课程的选择，而后两者在曼谷的国际学校市场中最为常见。\n\n在曼谷，提供加拿大课程的学校数量很少，除 Lertlah 之外还有 British Columbia International School 和 Canadian International School of Thailand。Lertlah 让家庭能在加拿大各省课程框架中真正有所选择，不过这几所学校各自采用的是不同的加拿大体系。\n\nLertlah 的核心人群是明确想要加拿大课程的家庭，尤其是熟悉加拿大学校体系，或计划将来回加拿大读大学的家庭，而不是只在一般的国际学校之间比较的家庭。\n\nLertlah 在设施和学费方面的具体信息，最好直接向学校确认，因为公开的资料比曼谷规模较大、历史较久的国际学校集团要少。",
-    languageOfInstruction: "英语",
-  },
   "st-andrews-international-school-sathorn": {
     description:
       "St Andrews Sathorn 于2003年1月开办，校舍由一栋翻新的旧医院大楼改建而成，位于 Silom 附近，是 St Andrews 集团在曼谷的三个校区之一，与城里另一所由 Nord Anglia 所有、毫无关联的 St Andrews International School Bangkok 完全是两回事。该集团在罗勇（Rayong）还有 Green Valley 校区，多年来隶属 Cognita，2026年这四所泰国学校已并入马来西亚的 Taylor's Education Group。\n\nSathorn 校区只设小学，涵盖 Nursery 至 Year 6，学生通常会升入同属 St Andrews 集团的 Sukhumvit 107 校区读中学，为从 Sathorn 起步的家庭形成一条结构清晰的两校区升学路径。\n\n对于住在 Sathorn 和 Silom 一带的家庭，这个位于市中心的校区十分方便，不过将来需要转到 Sukhumvit 107 读中学，这一点在一开始规划住处时就值得考虑。\n\n家长应当注意，不要把这个校区，与另一所毫无关联的 Nord Anglia 旗下 St Andrews International School Bangkok 混淆，尽管两者的品牌名称完全相同。",
@@ -73,11 +68,6 @@ export const SCHOOLS_ZH_PART5: Record<string, SchoolZh> = {
     description:
       "Thai International School 是一所通过 WASC 认证的美式课程学校，校园位于 Pathum Thani，占地30莱（rai），临河而建，目前招收 Nursery 至 Grade 6，因此现阶段是一所以小学为主的学校，而不是完整的 K-12 学校。\n\n学校在美式学术框架之外，特别强调保留泰国的礼仪和习俗，这种有意识的文化根基，使它有别于那些以纯美式方式运作、较少明确融入本地文化的美式学校。\n\n由于目前只办到 Nursery 至 Grade 6，就读 Thai International School 的家庭，等孩子读完小学之后需要另行安排中学，这与 Centurion 或 Tiny Tots 在更早阶段的情况类似。\n\n被 Thai International School 吸引的家庭，通常是看中了经 WASC 认证的美式学术与明确的泰国文化根基这一组合，以及 Pathum Thani 宽敞的临河校园。",
     ageRange: "托儿班（Nursery）至 Grade 6",
-    languageOfInstruction: "英语",
-  },
-  "satit-pattana-secondary-school": {
-    description:
-      "Satit Pattana 是曼谷一所英式课程中学，属于该市与泰国大学合办的 Satit（实验学校）体系，这是泰国教育中常见的结构，大学开办附属学校，用于实际的教师培训和教育研究。\n\n与这所大学的关联，使 Satit Pattana 有别于曼谷大多数其他英式课程学校，后者通常是独立机构，或属于国际学校集团，而不是与泰国大学的教育学院挂钩。\n\nSatit Pattana 是专注于中学的学校，负责学生教育的后期阶段，所以家庭通常需要为较早的年级另找一所小学，之后再转入 Satit Pattana 读中学。\n\n对 Satit Pattana 的大学背景和英式中学课程感兴趣的家庭，应当确认目前的入学要求，以及与其实验学校结构相关的任何先决条件。",
     languageOfInstruction: "英语",
   },
   "kincaid-international-school-of-bangkok": {

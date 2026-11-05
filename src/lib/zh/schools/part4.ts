@@ -63,7 +63,7 @@ export const SCHOOLS_ZH_PART4: Record<string, SchoolZh> = {
   },
   "welearn-academy": {
     description:
-      "WeLearn Academy 由教育工作者 David Doran 创办，是传统学校教育之外的一种项目式选择，侧重创业精神、现实世界的技能和以学习者为主导的教育，而不是围绕固定科目和年级搭建的常规课程结构。\n\n这种项目式、创业导向的理念，与曼谷几乎所有其他学校都截然不同，其他学校大多遵循英式、美式或 IB 等公认的国家课程，并设有标准的考试路径。\n\nWeLearn 也是较新的 Sequoia Nova International Primary School 的共同创办方，该校于2025年开学，通过这一合办项目，把它以学习者为主导的理念延伸到更有结构的 Common Core 和法语双语小学框架中。\n\n被 WeLearn Academy 吸引的家庭，通常特别想要这种另类的、项目式的教育理念，而不是把它与曼谷主流的课程体系国际学校直接比较。",
+      "WeLearn Academy 由教育工作者 David Doran 创办，是传统学校教育之外的一种项目式选择，侧重创业精神、现实世界的技能和以学习者为主导的教育，而不是围绕固定科目和年级搭建的常规课程结构。\n\n这种项目式、创业导向的理念，与曼谷几乎所有其他学校都截然不同，其他学校大多遵循英式、美式或 IB 等公认的国家课程，并设有标准的考试路径。\n\nWeLearn 也是较新的 Sequoia Nova International Primary School 的共同创办方，该校于2025年开学，通过这一合办项目，把它以学习者为主导的理念延伸到更有结构的 Common Core 和法语双语小学框架中。\n\n被 WeLearn Academy 吸引的家庭，通常特别想要这种另类的、项目式的教育理念，而不是把它与曼谷主流的课程体系国际学校直接比较。\n\nWeLearn 并不完全符合我们的收录标准。我们无法确认它是经 OPEC 许可的国际学校，或获得了 CIS、WASC、NEASC 或 COBIS 等 OPEC 认可机构的认证。它的学业课程主要通过美国在线课程 Acellus 提供，并在曼谷的学习中心配有面对面辅导。",
     languageOfInstruction: "英语、泰语",
   },
   "st-marks-international-school": {
@@ -82,9 +82,9 @@ export const SCHOOLS_ZH_PART4: Record<string, SchoolZh> = {
     languageOfInstruction: "英语",
   },
   "beaconhouse-yamsaard-international-school": {
-    description:
-      "Beaconhouse Yamsaard 隶属 Beaconhouse School System，这是一个起源于巴基斯坦、拥有1,000多所学校的全球网络，是在曼谷设有机构的较大型国际教育集团之一，与 Nord Anglia 和 Cognita 等网络并列。\n\n学校在泰国设有多个校区，包括 Ladprao、Rangsit、Hua Hin 和 Pattanakarn，所有校区合计在读学生超过3,800人。与曼谷大多数单校区国际学校相比，这个合计招生规模确实很大。\n\n作为如此庞大的全球网络的一员，Beaconhouse Yamsaard 可以使用共享的课程资源和机构规模。不过，家庭应确认自己研究的是泰国的哪个具体校区，因为 Ladprao、Rangsit、Hua Hin 和 Pattanakarn 各校区之间的设施和课程可能有明显差异。\n\n被 Beaconhouse Yamsaard 吸引的家庭，通常看重全球网络的背景，以及在大曼谷地区及更远处有多个校区可选。",
-    languageOfInstruction: "英语、泰语",
+    description: "Beaconhouse Yamsaard International School（BYIS）是 Beaconhouse Yamsaard 集团的国际校区，位于 Prawet 的 Pattanakarn 78巷。学校于2014年开办，当时 Yamsaard 家族的学校与 Beaconhouse School System 合并。学校是剑桥注册学校，用英语教授英式课程，招收约2至11岁的孩子。\n\n集团在 Ladprao、Rangsit 和 Hua Hin 的其他校区是采用泰国课程的双语学校，因此不在本条目之内。比较学费和课程时，请确认看的是 Pattanakarn 校区。",
+    ageRange: "2至11岁",
+    languageOfInstruction: "英语",
   },
   "bsb-british-international-primary-school": {
     description:

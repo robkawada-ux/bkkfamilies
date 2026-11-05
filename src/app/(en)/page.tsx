@@ -62,7 +62,8 @@ export default function HomePage() {
             Your Bangkok Roadmap
           </p>
           <h1 className="max-w-2xl font-heading text-4xl font-bold leading-tight md:text-6xl">
-            The community every Bangkok family finds eventually.
+            The community every Bangkok family{" "}
+            <span className="mr-[0.06em]">f</span>inds eventually.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">
             Nearly 40,000 expat and Thai families sharing what actually works:

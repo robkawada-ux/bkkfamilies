@@ -19,10 +19,6 @@ export const SCHOOLS_ZH_PART6: Record<string, SchoolZh> = {
     description: "The Jataka School 把英式课程的学术内容与以佛教价值观为基础的教育方式结合起来，与 Roong Aroon 一样，属于曼谷那些将主流国际课程与明确的佛教原则相融合的学校，而不是纯粹的世俗学校。\n\n英式课程的结构加上佛教价值观的根基，是一种很有特色的定位，特别吸引那些希望孩子在学习标准 IGCSE 或 A-Level 学术课程的同时，也获得这种精神和伦理层面教育的家庭。\n\n作为一所有这种价值观特色的较小规模学校，The Jataka School 很可能比曼谷规模较大的世俗英式课程学校更有亲近的社区氛围，这与 Roong Aroon 在 IB 领域中凸显自身特色的方式相似。\n\n被 The Jataka School 吸引的家庭，通常正是想要这种英式学术结构与佛教价值观的结合，而不是把它与曼谷规模更大、纯世俗的国际学校直接比较。",
     languageOfInstruction: "英语",
   },
-  "sarasas-ektra-school": {
-    description: "Sarasas Ektra 隶属于泰国历史悠久的 Sarasas 学校网络，将天主教教育价值观与国际化的泰英双语课程结合在一起，因此有泰国一个成熟学校集团作为后盾，而不是一所完全独立的国际学校。\n\n隶属于 Sarasas 网络，意味着 Ektra 可以共享资源，并在泰国更广泛的私立教育领域中拥有悠久的办学传统，尽管它的国际双语课程所面向的人群，与该网络中更偏重纯泰国课程的学校有所不同。\n\n天主教价值观与泰英双语教学的结合，在曼谷国际学校市场中是一种有特色的定位，因为该市场上的学校大多是世俗学校，或与基督教新教的各个教派有关，而不是特指天主教。\n\n明确想要天主教、泰英双语教育，并希望有成熟本地学校网络作支撑的家庭，会把 Sarasas Ektra 与曼谷为数不多的其他教会双语选择放在一起考虑。",
-    languageOfInstruction: "英语、泰语",
-  },
   "ait-international-school": {
     description: "AIT International School 是曼谷一所采用美式课程的学校，属于该市众多获美国认证的学校之一，独立运营，不隶属于 ASB 之类规模较大的美国学校网络，也不属于该市的各类国际集团。\n\n作为独立品牌的美式课程学校，AIT 很可能自行制定具体的课程和校园文化，但没有大型网络所带来的共享机构资源，这一点与 Berkeley 或 NIVA 相似。\n\n在了解 AIT 时，家长应直接向学校确认目前的课程细节、AP 课程的开设情况和学费，因为与 ISB 之类曼谷最大的美国学校相比，这所学校的公开资料较为有限。\n\n把 AIT 与曼谷其他独立运营的美国学校相比较的家庭，通常是在权衡地点和具体课程细节，而不是网络的品牌知名度。",
     languageOfInstruction: "英语",
@@ -55,12 +51,6 @@ export const SCHOOLS_ZH_PART6: Record<string, SchoolZh> = {
     description: "Roong Aroon 是一所非营利学校，校园占地20英亩，绿意盎然，位于 Bang Khun Thian 区，明确以佛教价值观以及体验式、整体性的学习为根基，而不是单纯以考试为重点的学术模式，这使它与曼谷大多数其他 IB 学校有所不同。\n\n学校创办于1997年，是一所 IB World School，提供 Middle Years Programme（以澳大利亚课程为基础），并为 Grade 11 和 Grade 12 的学生提供 Career-related Programme，供想选择比标准 IB Diploma 更偏职业导向的路径的学生选读。\n\n大面积的绿色校园、非营利的架构，以及明确的佛教价值观框架，使 Roong Aroon 成为一个与曼谷较为传统的英式、美式或纯世俗 IB 学校真正不同的选择，特别吸引那些想要这种以价值观为本、重体验式学习的家庭。\n\n被 Roong Aroon 吸引的家庭，通常看重的是它把整体性、价值观导向的教育与校园空间结合在一起的特色，而不是该市其他大多数国际学校更传统的学术优先定位。",
     languageOfInstruction: "英语、泰语",
   },
-  "satit-bilingual-school-of-rangsit-university": {
-    description: "SBS Rangsit 位于巴吞他尼府（Pathum Thani），把 IB Primary Years Programme 与中学阶段的 Cambridge IGCSE 和 A-Level 结合在一起，让学生先有 IB 式的基础，然后走英式考试路径，而不是继续读 IB Diploma。\n\n学校以泰语和英语双语教学，并把中文作为附加语言开设，让学生处在真正的三语学术环境中，与 SISB 的做法相近，只是围绕不同的核心课程组合而建。\n\n由于隶属于 Rangsit University，SBS 的学生有机会获得大学预修学分，这些学分可以计入 Rangsit 以及可能其他泰国和国际大学的录取，这是与大学隶属关系相连的一项具体的实际好处，是独立的 K-12 学校所不能提供的。\n\n被 SBS Rangsit 吸引的家庭，通常对以下这种组合感兴趣：IB 的小学教学、英式的中学考试路径、真正的泰语、英语、中文三语教学，以及通过 Rangsit 获得大学学分的途径。",
-    ageRange: "2至18岁",
-    languageOfInstruction: "英语、泰语",
-    feeRange: "每年242,900至377,800泰铢",
-  },
   "montessori-academy-bangkok-international-school": {
     description: "Montessori Academy Bangkok 是一所采用美式课程、以蒙特梭利教学原则为基础的学校，把以孩子为主导、自主学习的方法与结构化的美式学术框架融合在一起，而不是沿用纯粹传统的课堂模式。\n\n这种蒙特梭利方式特别强调动手操作的学习材料，以及让孩子按自己的节奏学习的混龄班级，在教学理念上与曼谷大多数国际学校采用的、更为传统的按年级授课明显不同。\n\n明确想要在美式课程框架内采用蒙特梭利方法，而不是标准美式学校结构的家庭，自然是 Montessori Academy Bangkok 所面向的人群。\n\n有意了解的家庭应确认学校目前招收的年龄范围，以及学校是把蒙特梭利方式延续到小学和中学阶段，还是主要集中在早期阶段，因为各个蒙特梭利课程把这种方法延续到孩子教育的哪个阶段并不相同。",
     languageOfInstruction: "英语",
@@ -89,23 +79,8 @@ export const SCHOOLS_ZH_PART6: Record<string, SchoolZh> = {
     ageRange: "Pre-K至12年级",
     languageOfInstruction: "英语",
   },
-  "chindamanee-school": {
-    description: "Chindamanee 是一所位于 Chom Thong 的双语学校，在湄南河的吞武里（Thonburi）一侧，把从 Early Years 到 A Level 的剑桥课程与泰国国家课程结合起来。学生也参加泰国国家考试，剑桥课程以数学和科学为强项。\n\n学校招收从 Nursery（18个月）到 Year 13 的学生，全部在同一校区，学生人数上限约750人，从4年级起教授中文。学校公布的学费远低于曼谷大多数国际学校，是进入剑桥课程较为实惠的途径之一。它的姐妹学校是清迈的 Wichai Wittaya。",
-    ageRange: "Nursery（18个月）至Year 13",
-    languageOfInstruction: "英语、泰语",
-  },
-  "bangkok-bilingual-school": {
-    description: "Bangkok Bilingual School 又名 Bangkok Tawiwit Bilingual School，在泰国国家课程之外同时教授剑桥课程，自2021年起是注册的剑桥学校。英语授课的比例随年级上升，从幼儿园约一半到中学最高七成，中学生以 IGCSE 和 A Level 为目标。\n\n学校招收从 Pre-K（2岁）到12年级的学生，在 Huai Khwang 的 Pracha Uthit 路上有两个校区，一个是幼儿园，一个是小学。学校不公布学费，请直接向招生处询问。",
-    ageRange: "Pre-K（2岁）至12年级",
-    languageOfInstruction: "英语、泰语",
-  },
-  "interkids-bilingual-school": {
-    description: "Interkids Bilingual School 的泰文名称就是 Inter Kids，创办于1995年，自称是泰国最早从学前到中学全程提供双语教育的学校之一。教学使用英语、泰语和中文。\n\n主校区 Nimitmai 位于 Min Buri 的 Pracharuamchai 路，占地8英亩，招收从学前到12年级的学生。第二个校区位于 Seri Thai 路，招收 Pre-K 至9年级，提供结合泰国与英国课程的 IBIP 路径。",
-    ageRange: "学前至12年级",
-    languageOfInstruction: "英语、泰语、中文",
-  },
   "satit-prasarnmit-international-programme": {
-    description: "SPIP 是 Prasarnmit Demonstration School（中学部）的英语授课国际课程，隶属于 Srinakharinwirot University，位于 Sukhumvit 23。它于2010年开办，作为剑桥国际考试中心，按英格兰国家课程教授到 IGCSE 和 A Level，除教育部规定的泰语课程外，全部用英语教学。\n\n课程覆盖 Year 7 至 Year 13，教育部承认其文凭等同于泰国高中毕业证书。学校称自己是泰国第一所开设此类课程的公立学校。另有一个独立的小学课程 PPiP，就在隔壁，招收3至10岁的孩子。SPIP 不公布学费。",
+    description: "SPIP 是 Prasarnmit Demonstration School（中学部）的英语授课国际课程，隶属于 Srinakharinwirot University，位于 Sukhumvit 23。它于2010年开办，作为剑桥国际考试中心，按英格兰国家课程教授到 IGCSE 和 A Level，除教育部规定的泰语课程外，全部用英语教学。\n\n课程覆盖 Year 7 至 Year 13，教育部承认其文凭等同于泰国高中毕业证书。学校称自己是泰国第一所开设此类课程的公立学校。另有一个独立的小学课程 PPiP，就在隔壁，招收3至10岁的孩子。SPIP 不公布学费。\n\nSPIP 并不完全符合我们的收录标准。它是泰国一所公立大学附属示范学校开设的课程，而不是经 OPEC 许可的国际学校，我们也无法确认它获得了 CIS、WASC、NEASC 或 COBIS 等 OPEC 认可机构的认证。我们收录它，是因为它用英语教授外国课程。",
     ageRange: "Year 7至Year 13",
     languageOfInstruction: "英语",
   },

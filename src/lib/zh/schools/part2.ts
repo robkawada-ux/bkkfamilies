@@ -36,11 +36,6 @@ export const SCHOOLS_ZH_PART2: Record<string, SchoolZh> = {
     ageRange: "Early Years 至 Year 13",
     languageOfInstruction: "英语",
   },
-  "global-english-school": {
-    description:
-      "Global English School 又名 Satit Christian Wittaya，自1980年起由 Ektrakul 家族经营，除了学术课程和课后社团之外，还维持着关系紧密、以信仰为基础的社群，拥有四十多年的家族经营历史。\n\n长期的家族所有权加上明确的基督教根基，使 Global English School 的身份有别于创办较晚或由企业所有的学校，同一家族一以贯之的机构延续性，在曼谷的学校里很少有能比得上的。\n\n作为一所自1980年起由同一家族持续领导的较小的信仰类学校，Global English School 很可能提供真正个人化、重视社群的体验，不同于曼谷规模较大、更偏企业化架构的国际学校。\n\n被 Global English School 吸引的家庭，通常是看重长期的家族所有权与基督教社群价值观的结合，以及它的学术课程。",
-    languageOfInstruction: "英语",
-  },
   "global-indian-international-school": {
     description:
       "这个曼谷校区隶属更大的 Global Indian International School 网络，位于 Pathum Thani 而不是曼谷市中心，除了本地和其他国际家庭之外，也特别服务于曼谷的印度社群，这些家庭对学校的特定课程取向感兴趣。\n\n作为更大国际网络的一部分，这个校区可以使用共享的课程资源，并与其他国家的 GIIS 校区保持机构上的一致性，这对可能在 GIIS 各地校区之间搬迁的家庭很重要。\n\nPathum Thani 的位置不在曼谷市中心的国际学校集中区，适合已经住在那一带的家庭，或不论通勤距离、特别想选这所学校课程的家庭。\n\n选择 GIIS Bangkok 的家庭，通常是因为它与以印度为重点的课程元素和更广泛的 GIIS 网络有联系，而不是把它直接与曼谷主流的英式或美式国际学校作比较。",

@@ -816,7 +816,6 @@ export const feesOnEnquiry: Record<string, { checked: string; detail: string }> 
   "concordian-bangkok-concordian-international-school-bangkok": { checked: '2026-09-18', detail: "The admissions section covers the application form, tours, schedule and scholarships. There is no fees page." },
   "dulwich-college-international-school-bangkok": { checked: '2026-09-18', detail: "The admissions section offers enquire, apply and visit only. No fees page exists." },
   "anglo-singapore-international-school": { checked: '2026-09-18', detail: "The fees page lists what tuition covers, then directs families to the admissions department for figures." },
-  "sarasas-ektra-school": { checked: '2026-09-18', detail: "No fee figures on the English site." },
   "regents-international-school-bangkok-langsuan-campus": { checked: '2026-11-03', detail: "Regent's publishes fees for the Rama 9 campus only. The 2026/27 admissions handbook does not cover Langsuan, so families need to ask admissions (admissions_ls@regents.ac.th) for current figures." },
   "bromsgrove-international-school-thailand": { checked: '2026-09-18', detail: "Publishes deposits, EAL rates, sibling discounts, exam and residential trip fees, but not the tuition table itself." },
 };
