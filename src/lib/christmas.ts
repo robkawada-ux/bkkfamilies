@@ -13,7 +13,7 @@ export const CHRISTMAS_SLUG = "christmas-in-bangkok-with-kids";
 export const CHRISTMAS_PATH = `/blog/${CHRISTMAS_SLUG}`;
 export const CHRISTMAS_YEAR = 2026;
 export const LAST_YEAR = 2025;
-export const CHECKED = "2026-10-14";
+export const CHECKED = "2026-11-06";
 
 /** Homepage hero box window, Bangkok time, inclusive. */
 export const PROMO_FROM = "2026-11-02";
@@ -461,15 +461,17 @@ export const EVENTS: FinderItem[] = [
     start: `${Y}-11-11`, end: `${Y + 1}-01-11`,
   },
   {
-    name: "ICONSIAM Christmas lights",
+    name: "ICONSIAM Bangkok Illumination",
     venue: "ICONSIAM, Charoen Nakhon",
-    when: "19 Nov to 25 Dec · Santa on December weekends",
-    facets: { type: ["lights", "santa"], when: ["nov", "early", "mid", "xmas"] },
+    when: "1 Nov to 25 Dec · light shows 6:30pm, 7:30pm, 8:30pm, 9:30pm",
+    facets: { type: ["lights", "show"], when: ["nov", "early", "mid", "xmas"] },
     flags: ["free"],
     free: true,
-    badges: [{ text: "Santa 3:30pm to 4:30pm weekends", tone: "santa" }, { text: "Free boat from BTS Saphan Taksin", tone: "plain" }],
-    blurb: "A huge tree and riverside illuminations. Take the free shuttle boat from Sathorn Pier, which the kids will rate higher than the tree.",
-    start: `${Y}-11-19`, end: `${Y}-12-25`,
+    confirmed: true,
+    badges: [{ text: "Shows 4 times nightly", tone: "plain" }, { text: "Free boat from BTS Saphan Taksin", tone: "plain" }],
+    blurb: "A 21-metre Blessing Tree on the riverside, inspired by the beadwork of southern Thailand's Manorah dance, that changes colour through the evening, with a light, music and bubble show four times a night. Multimedia water features join from 13 November. It's at River Park on the G floor and ICONSIAM Park on the 2nd floor. Take the free shuttle boat from Sathorn Pier, which the kids will rate higher than the tree.",
+    link: "https://www.iconsiam.com/en",
+    start: `${Y}-11-01`, end: `${Y}-12-25`,
   },
   {
     name: "The Wonder of Joy",
