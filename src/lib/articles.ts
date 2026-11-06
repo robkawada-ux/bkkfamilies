@@ -1275,8 +1275,9 @@ export const ARTICLES: Article[] = [
     title: "Top Museums for Kids in Bangkok",
     category: "Activities",
     date: "2026-08-20",
+    updated: "2026-11-05",
     metaDescription:
-      "The Bangkok museums that actually work with kids, what they cost, and what is closed right now, including the October 2026 closure of both free children's museums and the planetarium renovation.",
+      "The Bangkok museums that actually work with kids, what they cost, and what is closed right now, including the closure of both free children's museums since October 2026 and the planetarium renovation.",
     keywords: ["museums for kids Bangkok", "Bangkok museums with children", "Children's Discovery Museum Bangkok", "Bangkok children's museum closed", "Bangkok Planetarium", "Museum Siam kids", "National Science Museum Thailand", "Royal Thai Air Force Museum", "Ancient City Muang Boran kids", "free museums Bangkok", "rainy day Bangkok kids"],
     excerpt:
       "Free, air conditioned and built for children, Bangkok's best museums are an underrated family outing. Here is what is open, what it costs, and what is closed right now.",
@@ -1291,7 +1292,7 @@ export const ARTICLES: Article[] = [
     faq: [
       {
         question: "Is the Children's Discovery Museum in Bangkok open?",
-        answer: "Both Bangkok children's museums, in Chatuchak and Thung Khru, close from 1 October 2026 while the city appoints a new operator. The city has said the closure is temporary but has not given a reopening date, so check before you go.",
+        answer: "Not at the moment. Both Bangkok children's museums, in Chatuchak and Thung Khru, have been closed since 1 October 2026 while the city appoints a new operator. The city has said the closure is temporary and will announce a reopening once the new contract is in place, but no date has been given, so check the museum's Facebook page before you go.",
       },
       {
         question: "Which Bangkok museums are free for kids?",
@@ -1299,7 +1300,7 @@ export const ARTICLES: Article[] = [
       },
       {
         question: "Is the Bangkok Planetarium open?",
-        answer: "The planetarium dome closed on 30 March 2026 for a renovation of about eight months, with reopening expected late in 2026. The rest of the Science Centre for Education, including its dinosaur, marine life and insect exhibitions, stays open.",
+        answer: "Not yet. The planetarium dome closed on 30 March 2026 for a renovation of about eight months, and reopening is expected late in 2026, but no date has been announced. Updates go out on the Bangkok Planetarium Facebook page. The rest of the Science Centre for Education, including its dinosaur, marine life and insect exhibitions, stays open.",
       },
       {
         question: "Are Bangkok museums open on Mondays?",
@@ -1308,7 +1309,7 @@ export const ARTICLES: Article[] = [
     ],
     body: [
       "Bangkok is better for museums with kids than its reputation suggests. Several of the best options are free, most are air conditioned, and a few are built from the ground up for children rather than adapted for them. The catch is that the city's museum scene changes more than guidebooks admit, so this list covers what is actually open, what it costs, and what is closed right now.",
-      "**Update, September 2026:** both of Bangkok's free children's museums, the Chatuchak and Thung Khru branches, close from 1 October 2026 while the city appoints a new operator. The deputy governor has said this is a gap between contracts, not a permanent closure, but no reopening date has been given. Separately, the Bangkok Planetarium's dome theatre closed at the end of March 2026 for a renovation of roughly eight months, with reopening expected late in the year. The rest of that science centre stays open. Check both before you go.",
+      "**Update, November 2026:** both of Bangkok's free children's museums, the Chatuchak and Thung Khru branches, have been closed since 1 October 2026 while the city finds a new operator. The deputy governor has said this is a gap between contracts, not a permanent closure, and the city will announce a reopening once the new contract is signed, but no date has been given yet. Separately, the Bangkok Planetarium's dome theatre has been closed since the end of March 2026 for a renovation of roughly eight months. Reopening is expected late in 2026, but no date has been announced. The rest of that science centre stays open. Check both before you go.",
       "**Children's Discovery Museum, Chatuchak.** When it is open, this is the best value museum in the city for children up to about 12. Entry is free, you just register with a passport or ID at the door. There are four buildings and a large courtyard, with activities split by age (under 3, 3 to 6, and 7 to 12), a dinosaur dig, a climbing area, and an outdoor water play zone with fountains and jets. My kids ran through that water area for a solid hour, so pack swimsuits and a towel. It is a five minute walk from MRT Chatuchak Park or BTS Mo Chit, which makes it easy to pair with the weekend market. Two honest caveats from recent visitors: a lot of the signage is in Thai only, and a few exhibits are usually out of order. Normally open Tuesday to Sunday, 10am to 4pm.",
       "**Children's Discovery Museum II, Thung Khru.** The second branch, on Pracha Uthit Road on the Thonburi side, runs the same model: free entry with registration, hands on science, nature, art and technology zones, giant block building, and water play that is busiest at weekends. It is not worth crossing the city for if you live in Sukhumvit, but for families on the Rama 2 or Thonburi side it is the closest good indoor option by some distance. Normally open Tuesday to Sunday, 10am to 4pm, and affected by the same October closure.",
       "**Science Centre for Education, Ekkamai.** Home of the Bangkok Planetarium, open since 1964 and a short walk from BTS Ekkamai (Exit 2). The exhibition halls cover marine life, dinosaurs, insects and hands on science, and they cost almost nothing: around 30 baht for adults and 20 baht for children. The planetarium show, when it reopens, has been 50 baht for adults and 30 for children, with an English narrated session that has historically run on Tuesday mornings. While the dome is closed, the exhibitions alone are still a cheap, air conditioned couple of hours. Tuesday to Sunday, 9am to 4pm.",
