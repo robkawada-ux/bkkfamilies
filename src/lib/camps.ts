@@ -1276,6 +1276,47 @@ export const CAMPS: Camp[] = [
     lastVerified: "2026-10-26",
     sessions: B4K_SESSIONS,
   },
+  {
+    slug: "ninja-academy-christmas-ninja-camp",
+    name: "Ninja Academy Christmas Ninja Camp",
+    area: "Sathorn and Ekkamai",
+    tagline: "Gymnastics, parkour and Brazilian jiu-jitsu, booked day by day",
+    description:
+      "Ninja Academy runs a Christmas holiday Ninja Camp for children aged 4 to 11 at its Sathorn and Ekkamai locations, from 5 December to 3 January. Days mix gymnastics, parkour and obstacle courses with Brazilian jiu-jitsu and martial arts, plus ninja games with missions and team challenges. It is built for active kids who would otherwise spend the holidays in front of a screen, with the focus on strength, confidence and discipline.",
+    worthKnowing:
+      "Booking is unusually flexible: the camp is open every day, including weekends and holidays, you book day by day with no weekly commitment, and there is no advance payment and no cancellation fee. Regular, extended and short sessions are available, from 600 baht a session, and freshly prepared lunch comes with the full-camp options. Places are limited, so book through the form or message them on WhatsApp or LINE.",
+    email: "info@ninjaacademythailand.com",
+    phone: "081 701 6365 (WhatsApp and LINE)",
+    highlights: [
+      "🤸 Gymnastics, parkour and obstacle courses",
+      "🥋 Brazilian jiu-jitsu and martial arts",
+      "🎯 Ninja games, missions and team challenges",
+      "📅 Open every day, book day by day",
+    ],
+    lastVerified: "2026-11-07",
+    sessions: [
+      {
+        id: "ninja-academy-christmas-2026",
+        programme: "Christmas Ninja Camp",
+        window: "winter-2026",
+        startDate: "2026-12-05",
+        endDate: "2027-01-03",
+        dateStatus: "confirmed",
+        categories: ["sport-and-fitness", "multi-activity"],
+        minAge: 4,
+        maxAge: 11,
+        format: "day",
+        priceFrom: 600,
+        priceUnit: "per-session",
+        venue: "Sathorn and Ekkamai",
+        hours: "9am to 2.30pm, with regular, extended and short sessions",
+        minimumBooking: "1 day",
+        bookingUrl: "https://forms.gle/T4is8aSTPkeiJgb18",
+        note: "From 600 baht a session. Open every day including weekends and holidays. No advance payment and no cancellation fee. Lunch with full-camp options.",
+        lastVerified: "2026-11-07",
+      },
+    ],
+  },
 ];
 
 /** Flattened view for the directory filter. */
