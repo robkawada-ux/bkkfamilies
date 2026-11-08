@@ -28,6 +28,8 @@ export interface AdCreative {
   /** Optional narrower artwork for phones (top banner only). */
   mobileImage?: string;
   alt: string;
+  /** Corner label. Defaults to "Sponsored"; use "Partner" for unpaid partner placements. */
+  label?: string;
   /** ISO dates, inclusive. Omit for an open-ended booking. */
   start?: string;
   end?: string;
@@ -52,7 +54,16 @@ export const SLOT_SPECS: Record<AdSlotId, SlotSpec> = {
 };
 
 export const ADS: Record<AdSlotId, AdCreative | null> = {
-  "home-top": null,
+  // Distaclass, official partner (Rob's own site, unpaid). Fills the top
+  // banner until a paid booking. When one comes in, replace this entry.
+  "home-top": {
+    sponsor: "Distaclass",
+    href: "https://www.distaclass.com",
+    image: "/images/ads/distaclass-home-top.jpg",
+    mobileImage: "/images/ads/distaclass-home-top-mobile.jpg",
+    alt: "Distaclass, official partner of BKK Families: homeschooling or online school abroad? An honest guide for expat families, kindergarten to grade 12. distaclass.com",
+    label: "Partner",
+  },
   // LAFS Legal, Legal Partner (invoice BEF-2026-008). Paid monthly with a
   // 3-month minimum; extend the end date when they renew.
   "home-sidebar-top": {

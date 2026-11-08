@@ -7,10 +7,10 @@ const PROMO_COLORS = {
   orange: "border-orange bg-orange-50",
 } as const;
 
-function SponsoredLabel() {
+function SponsoredLabel({ text = "Sponsored" }: { text?: string }) {
   return (
     <span className="absolute right-2 top-2 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
-      Sponsored
+      {text}
     </span>
   );
 }
@@ -31,7 +31,7 @@ export function TopBanner() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={ad.image} alt={ad.alt} className="h-auto w-full" />
         </picture>
-        <SponsoredLabel />
+        <SponsoredLabel text={ad.label} />
       </a>
     );
   }
@@ -71,7 +71,7 @@ export function SidebarSlot({ slot }: { slot: Exclude<AdSlotId, "home-top"> }) {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={ad.image} alt={ad.alt} width={300} height={250} className="h-auto w-full" />
-        <SponsoredLabel />
+        <SponsoredLabel text={ad.label} />
       </a>
     );
   }
