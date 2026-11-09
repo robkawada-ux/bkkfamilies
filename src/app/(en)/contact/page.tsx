@@ -87,8 +87,7 @@ export default function ContactPage() {
             <div className="rounded-xl bg-teal p-6 text-white">
               <p className="font-heading text-3xl font-bold">80%</p>
               <p className="mt-1 text-sm text-white/80">
-                Have children under 10, the exact window when school,
-                healthcare, and family spending decisions are made
+                Of members have children
                 <span className="mt-2 block text-xs text-white/70">
                   Source: BKK Families member survey
                 </span>
