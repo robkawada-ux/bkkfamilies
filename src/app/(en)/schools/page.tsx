@@ -70,7 +70,11 @@ export default function SchoolsPage() {
           <Link href={EARLY_YEARS_PATH} className="font-semibold text-teal hover:underline">
             international kindergartens and nurseries in Bangkok
           </Link>
-          , with early years fees side by side.
+          , with early years fees side by side. Want a British education? Our{" "}
+          <Link href="/schools/british-curriculum-schools-bangkok" className="font-semibold text-teal hover:underline">
+            British curriculum schools in Bangkok
+          </Link>{" "}
+          guide compares Year 1 fees.
         </p>
         <SchoolDirectory />
       </div>

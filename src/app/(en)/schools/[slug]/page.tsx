@@ -429,6 +429,11 @@ export default async function SchoolPage({
             International kindergartens and nurseries in Bangkok
           </Link>
         )}
+        {school.curricula.includes("British") && (
+          <Link href="/schools/british-curriculum-schools-bangkok" className="text-sm font-semibold text-orange">
+            British curriculum schools in Bangkok
+          </Link>
+        )}
       </div>
       </div>
     </article>
