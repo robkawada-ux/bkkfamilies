@@ -437,6 +437,20 @@ export default async function FacilityPage({
           )}
         </div>
 
+        {facility.type.endsWith("hospital") && (
+          <p className="mt-8 rounded-xl border border-teal/30 bg-teal-50 p-4 text-sm leading-relaxed text-neutral-700">
+            Comparing hospitals? See our guide to the{" "}
+            <Link
+              href="/blog/top-5-hospitals-in-bangkok"
+              className="font-semibold text-teal hover:underline"
+            >
+              best hospitals in Bangkok for foreigners
+            </Link>
+            , with English-speaking staff, direct billing, children&rsquo;s
+            emergency care and costs compared.
+          </p>
+        )}
+
         <p className="mt-8 rounded-xl border border-orange/30 bg-orange-50 p-4 text-sm leading-relaxed text-neutral-700">
           In an emergency, Thailand&rsquo;s national ambulance number is{" "}
           <strong className="font-bold">{EMERGENCY_NUMBER}</strong>.

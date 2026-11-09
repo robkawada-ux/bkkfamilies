@@ -230,7 +230,7 @@ export default function PaediatricsPage() {
             href="/blog/top-5-hospitals-in-bangkok"
             className="mt-4 inline-block rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
           >
-            How to choose a hospital in Bangkok
+            Best hospitals in Bangkok for foreigners
           </Link>
         </div>
 

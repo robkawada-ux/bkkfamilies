@@ -139,6 +139,18 @@ export default function HospitalsPage() {
           </p>
         </div>
 
+        <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-neutral-700">
+          Not sure where to start? Our guide to the{" "}
+          <Link
+            href="/blog/top-5-hospitals-in-bangkok"
+            className="font-semibold text-teal hover:underline"
+          >
+            best hospitals in Bangkok for foreigners
+          </Link>{" "}
+          compares English-speaking staff, direct billing, children&rsquo;s
+          emergency care and costs.
+        </p>
+
         <div id="directory" className="mt-12 scroll-mt-28">
           <HealthcareDirectory />
         </div>
