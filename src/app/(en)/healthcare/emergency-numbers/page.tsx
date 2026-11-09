@@ -11,7 +11,7 @@ const CHECKED_ISO = "2026-11-09";
 
 const TITLE = "Thailand & Bangkok Emergency Numbers (2026)";
 const DESCRIPTION =
-  "Every emergency number in Thailand on one page: 1669 ambulance, 191 police, 199 fire, 1155 English-speaking tourist police, plus Bangkok private hospital ambulance lines. Free printable card for your fridge and wallet.";
+  "Thailand emergency numbers: 1669 ambulance, 191 police, 199 fire, 1155 tourist police (English), plus Bangkok hospital ambulance lines. Free printable card.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -41,7 +41,7 @@ const HOSPITALS = [
 const OTHER = [
   { k: "Bangkok ambulance (city)", n: "1646", note: "Erawan Medical Centre, run by the Bangkok Metropolitan Administration" },
   { k: "Bangkok ambulance (Vajira)", n: "1554", note: "Vajira Hospital medical rescue unit" },
-  { k: "Poisoning or snake bite", n: "1367", note: "Ramathibodi Poison Center, 24 hours. LINE @rpc1367" },
+  { k: "Poison control or snake bite", n: "1367", note: "Thailand's poison control number: Ramathibodi Poison Center, 24 hours. LINE @rpc1367" },
   { k: "Mental health crisis", n: "1323", note: "Department of Mental Health hotline" },
   { k: "Child abuse or family violence", n: "1300", note: "Social assistance centre, free, 24 hours, Thai and English" },
   { k: "Children and young people", n: "1387", note: "Childline Thailand, 24 hours" },
@@ -55,7 +55,7 @@ const WHICH = [
   { s: "Your child stops breathing, has a seizure or is badly hurt at home in Bangkok", a: "Call your own hospital's ambulance line. If you cannot get through within a minute, call 1669." },
   { s: "A road accident, or you are outside Bangkok", a: "Call 1669. For accidents on a highway, 1193 reaches the Highway Police." },
   { s: "You cannot make yourself understood", a: "Call 1155. The Tourist Police speak English and will pass your call on." },
-  { s: "Your child has swallowed something poisonous or been bitten by a snake", a: "Call 1367 for advice, and 1669 or your hospital for an ambulance." },
+  { s: "Your child has swallowed something poisonous or been bitten by a snake", a: "Call 1367, Thailand's poison control number, for advice, and 1669 or your hospital for an ambulance." },
   { s: "A crime, a break-in or someone threatening you", a: "Call 191." },
   { s: "Fire or smoke", a: "Get out first, then call 199." },
 ];
@@ -76,7 +76,7 @@ const FAQ = [
   { q: "Is calling an ambulance free in Thailand?", a: "Calling 1669 is free. A private hospital ambulance is normally charged to your bill or your insurance, so check what your policy covers before you need it." },
   { q: "Which hospital will the ambulance take me to?", a: "A private hospital ambulance takes you to that hospital. A 1669 crew or a volunteer rescue team usually takes patients to the nearest suitable hospital, which may be a public hospital. Say clearly which hospital you want, and call your own hospital as well." },
   { q: "Who are the volunteer rescue teams?", a: "Much of Bangkok's roadside rescue is done by volunteer foundations such as Poh Teck Tung and Ruamkatanyu. They often arrive first and do vital work, but they are not your hospital's ambulance, and teams have been reported competing over territory. If you have a choice, call your own hospital." },
-  { q: "What number do I call for poisoning or a snake bite?", a: "Call the Ramathibodi Poison Center on 1367, open 24 hours, for advice on poisons, snake bites and antidotes. For an ambulance, call 1669 or your hospital." },
+  { q: "What is the poison control number in Thailand?", a: "Thailand's poison control number is 1367, the Ramathibodi Poison Center, open 24 hours, for advice on poisons, snake bites and antidotes. For an ambulance, call 1669 or your hospital." },
   { q: "Do four-digit hotlines work from a foreign phone?", a: "Short hotlines are designed for Thai phone numbers and may not connect from a foreign SIM on roaming. Save the full +66 number for your hospital, and get a Thai SIM as soon as you arrive." },
 ];
 
@@ -171,7 +171,7 @@ export default function EmergencyNumbersPage() {
           <div className="mt-5 space-y-3">
             {WHICH.map((w) => (
               <div key={w.s} className="rounded-xl border border-black/5 bg-white p-4 shadow-sm">
-                <p className="font-semibold text-purple-dark">{w.s}</p>
+                <h3 className="font-semibold text-purple-dark">{w.s}</h3>
                 <p className="mt-1 text-sm text-neutral-600">{w.a}</p>
               </div>
             ))}
