@@ -55,7 +55,7 @@ const WHICH = [
   { s: "Your child stops breathing, has a seizure or is badly hurt at home in Bangkok", a: "Call your own hospital's ambulance line. If you cannot get through within a minute, call 1669." },
   { s: "A road accident, or you are outside Bangkok", a: "Call 1669. For accidents on a highway, 1193 reaches the Highway Police." },
   { s: "You cannot make yourself understood", a: "Call 1155. The Tourist Police speak English and will pass your call on." },
-  { s: "Your child has swallowed something or been bitten by a snake", a: "Call 1367 for advice, and 1669 or your hospital for an ambulance." },
+  { s: "Your child has swallowed something poisonous or been bitten by a snake", a: "Call 1367 for advice, and 1669 or your hospital for an ambulance." },
   { s: "A crime, a break-in or someone threatening you", a: "Call 191." },
   { s: "Fire or smoke", a: "Get out first, then call 199." },
 ];
@@ -241,7 +241,7 @@ export default function EmergencyNumbersPage() {
             the hospital your family already uses.
           </p>
           <p>
-            So the practical rule for expat families in Bangkok: save your own hospital&rsquo;s ambulance
+            So the practical recommendation for expat families in Bangkok: save your own hospital&rsquo;s ambulance
             line, call it first, and keep 1669 and 1155 as your backups.
           </p>
         </div>
