@@ -28,6 +28,7 @@ export const SITE_NAME = "BKK Families";
  * folder and list it here, or its pages will share with the homepage card.
  */
 const SECTION_CARDS = [
+  "/healthcare/emergency-numbers",
   "/healthcare/hospitals",
   "/healthcare/insurance",
   "/healthcare/maternity",

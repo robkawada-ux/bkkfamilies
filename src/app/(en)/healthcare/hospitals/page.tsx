@@ -132,10 +132,13 @@ export default function HospitalsPage() {
           <p className="mt-1 text-sm leading-relaxed text-neutral-700">
             Thailand&rsquo;s national emergency medical number is{" "}
             <strong className="font-bold">{EMERGENCY_NUMBER}</strong>. It is
-            free, it works from any phone, and English-speaking dispatch is
-            usually available. If your family already uses one hospital, save
+            free and it works from any phone, though English is not guaranteed,
+            so keep 1155 (Tourist Police, English-speaking) as a fallback. If your family already uses one hospital, save
             its own ambulance line in your phone as well, since a private
-            ambulance from your own hospital will take you to that hospital.
+            ambulance from your own hospital will take you to that hospital.{" "}
+            <Link href="/healthcare/emergency-numbers" className="font-semibold text-teal hover:underline">
+              Every emergency number, plus a free printable card
+            </Link>
           </p>
         </div>
 

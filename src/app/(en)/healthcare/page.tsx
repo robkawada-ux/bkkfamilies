@@ -94,8 +94,11 @@ export default function HealthcarePage() {
           <p className="mt-1 text-sm leading-relaxed text-neutral-700">
             Thailand&rsquo;s national emergency medical number is{" "}
             <strong className="font-bold">{EMERGENCY_NUMBER}</strong>. Free,
-            works from any phone, and English-speaking dispatch is usually
-            available.
+            works from any phone, though English is not guaranteed: 1155, the
+            Tourist Police, is the English-speaking fallback.{" "}
+            <Link href="/healthcare/emergency-numbers" className="font-semibold text-teal hover:underline">
+              Every emergency number, plus a free printable card
+            </Link>
           </p>
         </div>
 

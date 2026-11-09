@@ -121,9 +121,12 @@ export default function PaediatricsPage() {
           <p className="mt-1 text-sm leading-relaxed text-neutral-700">
             Thailand&rsquo;s national emergency medical number is{" "}
             <strong className="font-bold">{EMERGENCY_NUMBER}</strong>. Free, any
-            phone, English-speaking dispatch usually available. If your family
+            phone, English not guaranteed (1155 is the English-speaking fallback). If your family
             already uses one hospital, save its own ambulance line too, since a
-            private ambulance takes you to that hospital rather than the nearest.
+            private ambulance takes you to that hospital rather than the nearest.{" "}
+            <Link href="/healthcare/emergency-numbers" className="font-semibold text-teal hover:underline">
+              Every emergency number, plus a free printable card
+            </Link>
           </p>
         </div>
 
