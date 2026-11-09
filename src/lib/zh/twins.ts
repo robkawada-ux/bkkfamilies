@@ -18,6 +18,7 @@ export function zhTwinPaths(): string[] {
     "/learning-support",
     "/schools",
     "/contact",
+    "/healthcare/emergency-numbers",
     ...Object.keys(SCHOOLS_ZH).map((s) => `/schools/${s}`),
     ...Object.keys(PLAYGROUPS_ZH).map((s) => `/playgroups/${s}`),
     ...Object.keys(CAMPS_ZH).map((s) => `/camps/${s}`),

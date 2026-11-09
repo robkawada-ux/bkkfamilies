@@ -24,6 +24,7 @@ export default function ZhFooter() {
               <li><Link href="/zh/camps" className="hover:text-white">假期营</Link></li>
               <li><Link href="/zh/activities" className="hover:text-white">亲子活动</Link></li>
               <li><Link href="/zh/learning-support" className="hover:text-white">学习支持</Link></li>
+              <li><Link href="/zh/healthcare/emergency-numbers" className="hover:text-white">紧急电话</Link></li>
               <li>
                 <Link href="/" lang="en" hrefLang="en" className="hover:text-white">
                   English version

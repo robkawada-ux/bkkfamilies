@@ -290,7 +290,7 @@ export default function EmergencyNumbersPage() {
             family member, with space to write in your hospital, your address in Thai and allergies.
           </p>
           <Download className="mt-6" />
-          <p className="mt-3 text-xs text-white/60">PDF, 2 pages, A4. Numbers checked {CHECKED}.</p>
+          <p className="mt-3 text-xs text-white/60">PDF, 2 pages, A4. Numbers checked {CHECKED}.{" "}<Link href="/zh/healthcare/emergency-numbers" hrefLang="zh-Hans" lang="zh-Hans" className="underline">中文版</Link></p>
         </div>
 
         <div className="mx-auto mt-14 max-w-3xl">
