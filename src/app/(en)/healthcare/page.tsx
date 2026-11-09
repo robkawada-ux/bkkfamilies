@@ -27,11 +27,7 @@ export const metadata: Metadata = {
 const SITE = "https://www.bkkfamilies.com";
 
 /** Two pieces carry this section. Everything else is supporting. */
-const PILLARS = [
-  "top-5-hospitals-in-bangkok",
-  "having-a-baby-in-bangkok",
-  "bangkok-smog-season-kids",
-];
+const PILLARS = ["having-a-baby-in-bangkok", "bangkok-smog-season-kids"];
 
 const jsonLd = [
   {
@@ -208,13 +204,11 @@ export default function HealthcarePage() {
               Start here
             </h2>
             <div className="mt-6 grid gap-6 md:grid-cols-2">
-              {pillars.map((a, i) => (
+              {pillars.map((a) => (
                 <Link
                   key={a.slug}
                   href={`/blog/${a.slug}`}
-                  className={`block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md${
-                    i === 0 && pillars.length % 2 === 1 ? " md:col-span-2" : ""
-                  }`}
+                  className="block rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <h3 className="font-heading text-xl font-bold text-purple-dark">
                     {a.title}
