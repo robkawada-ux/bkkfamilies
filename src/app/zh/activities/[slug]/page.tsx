@@ -375,8 +375,8 @@ export default async function ZhActivityPage({
 
         <p className="mt-4 text-xs text-neutral-400">
           发现信息过时了？
-          <Link href="/contact" lang="en" hrefLang="en" className="underline">
-            请告诉我们（联系页为英文）
+          <Link href="/zh/contact" className="underline">
+            请告诉我们
           </Link>
           ，我们会改正。
         </p>

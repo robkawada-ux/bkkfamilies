@@ -256,12 +256,10 @@ export default function ZhLearningSupportPage() {
             信息会变，机构会搬家，人员也会调动。如果你发现了错误，知道我们漏掉的机构，或者你本人经营其中一项服务，希望更新你的条目，请告诉我们，我们会改正。这个页面只有准确才有用。
           </p>
           <Link
-            href="/contact"
-            lang="en"
-            hrefLang="en"
+            href="/zh/contact"
             className="mt-4 inline-block rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
           >
-            提交更正（联系页为英文）
+            提交更正
           </Link>
         </div>
       </div>

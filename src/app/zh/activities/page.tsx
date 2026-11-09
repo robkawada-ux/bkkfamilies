@@ -168,12 +168,10 @@ export default function ZhActivitiesPage() {
             如果您的时间或价格有变动、您的场地或课程没有被收录，或者这里有任何错误，请告诉我们，我们会改正。收录永远免费。
           </p>
           <Link
-            href="/contact"
-            lang="en"
-            hrefLang="en"
+            href="/zh/contact"
             className="mt-4 inline-block rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
           >
-            发送更正（联系页为英文）
+            发送更正
           </Link>
         </div>
 

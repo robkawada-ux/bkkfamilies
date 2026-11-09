@@ -336,8 +336,8 @@ export default async function ZhPlaygroupPage({
 
         <p className="mt-12 text-xs text-neutral-400">
           信息有误或已过时？{" "}
-          <Link href="/contact" lang="en" hrefLang="en" className="underline">
-            请告诉我们（联系页为英文）
+          <Link href="/zh/contact" className="underline">
+            请告诉我们
           </Link>
           ，我们会更正。
         </p>

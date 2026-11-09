@@ -167,12 +167,10 @@ export default function ZhPlaygroupsPage() {
             游戏小组每个学期都会变化。如果您的时间或价格有变，您的游戏小组没有列出，或这里有任何错误，请告诉我们，我们会更正。上榜永远免费。
           </p>
           <Link
-            href="/contact"
-            lang="en"
-            hrefLang="en"
+            href="/zh/contact"
             className="mt-4 inline-block rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
           >
-            提交更正（联系页为英文）
+            提交更正
           </Link>
         </div>
 

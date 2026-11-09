@@ -163,11 +163,10 @@ export default function CampsPageZh() {
             这个目录只有保持最新才有用。如果您的日期有变、您的营没有列出，或者这里有错误，请告诉我们，我们会更正。收录永远免费。
           </p>
           <Link
-            href="/contact"
-            hrefLang="en"
+            href="/zh/contact"
             className="mt-4 inline-block rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
           >
-            发送更正（英文页面）
+            发送更正
           </Link>
         </div>
 

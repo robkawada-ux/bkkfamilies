@@ -15,6 +15,7 @@ const LINKS = [
   { href: "/zh/camps", label: "假期营", cls: "bg-green text-purple-dark", hover: "hover:brightness-105" },
   { href: "/zh/activities", label: "亲子活动", cls: "bg-orange text-purple-dark", hover: "hover:brightness-105" },
   { href: "/zh/learning-support", label: "学习支持", cls: "bg-teal text-purple-dark", hover: "hover:brightness-105" },
+  { href: "/zh/contact", label: "联系我们", cls: "bg-purple-dark text-white", hover: "hover:brightness-150" },
 ] as const;
 
 export default function ZhNav() {
@@ -72,7 +73,7 @@ export default function ZhNav() {
       <nav
         id="zh-main-nav"
         aria-label="主导航"
-        className={`${open ? "grid" : "hidden"} grid-cols-2 border-b-[3px] border-white lg:grid lg:grid-cols-6`}
+        className={`${open ? "grid" : "hidden"} grid-cols-2 border-b-[3px] border-white lg:grid lg:grid-cols-7`}
       >
         {LINKS.map((l) => {
           const active = isActive(l.href);

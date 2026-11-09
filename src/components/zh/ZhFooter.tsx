@@ -34,6 +34,7 @@ export default function ZhFooter() {
           <div>
             <h3 className="font-heading text-sm font-bold text-orange">联系我们</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
+              <li><Link href="/zh/contact" className="font-semibold text-teal hover:text-white">联系页面</Link></li>
               <li>info@bkkfamilies.com</li>
               <li>
                 <a
