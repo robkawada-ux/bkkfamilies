@@ -606,7 +606,7 @@ export const CAMPS: Camp[] = [
     description:
       "Little Pea Kids Commons runs day camps during the international school holidays throughout the year, at its space in theCOMMONS on Thong Lo Soi 17. Winter Camp 2026 is three separate weeks, each with its own theme: Christmas Eve Dance Camp with Ms. Lynn from 21 to 24 December, which ends with a Christmas Eve showcase; Winter STEAM Camp with Teacher Connie from 28 to 30 December, with winter science experiments and building challenges; and New Year Art Studio with Pop Up Art Studio Bangkok from 4 to 8 January, trying new techniques and materials with a keepsake to take home each day. All three run from 9am to 2pm.",
     worthKnowing:
-      "Each week is booked on its own. The dance camp is full week only (10,000 baht for the four days), while the STEAM camp and the art studio can also be booked by the day at 2,800 baht. Lunch and a snack are included. Book through LINE (@littlepeabkk) or Little Pea's camp registration form. Little Pea has not yet published the age range for the winter weeks; its October camp was for 4 to 8 year olds, so check with them before booking.",
+      "Each week is booked on its own. The dance camp is full week only (10,000 baht for the four days), while the STEAM camp and the art studio can also be booked by the day at 2,800 baht. Lunch and a snack are included. Book through LINE (@littlepeabkk) or Little Pea's camp registration form. All three winter weeks are for ages 4 to 8.",
     tagline: "Winter Camp 2026: three themed weeks of dance, STEAM and art",
     highlights: [
       "🩰 21 to 24 Dec: Christmas Eve Dance Camp with Ms. Lynn, ending in a showcase",
@@ -649,6 +649,8 @@ export const CAMPS: Camp[] = [
         endDate: "2026-12-24",
         dateStatus: "confirmed",
         categories: ["music-and-drama"],
+        minAge: 4,
+        maxAge: 8,
         format: "day",
         priceFrom: 10000,
         priceUnit: "per-week",
@@ -667,6 +669,8 @@ export const CAMPS: Camp[] = [
         endDate: "2026-12-30",
         dateStatus: "confirmed",
         categories: ["stem", "art-and-design"],
+        minAge: 4,
+        maxAge: 8,
         format: "day",
         priceFrom: 7500,
         priceUnit: "per-week",
@@ -684,6 +688,8 @@ export const CAMPS: Camp[] = [
         endDate: "2027-01-08",
         dateStatus: "confirmed",
         categories: ["art-and-design"],
+        minAge: 4,
+        maxAge: 8,
         format: "day",
         priceFrom: 12000,
         priceUnit: "per-week",

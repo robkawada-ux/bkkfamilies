@@ -196,7 +196,7 @@ export const CAMPS_ZH: Record<string, CampZh> = {
     photoCaption: "Little Pea 2026年10月营的海报。扫描二维码即可通过 LINE 预订。",
     photoCredit: "Little Pea Kids Commons，经许可使用",
     description: "Little Pea Kids Commons 全年在国际学校放假期间开办日营，地点在 Thong Lo Soi 17 的 theCOMMONS。2026年冬季营分为三个独立的主题周：12月21日至24日的 Christmas Eve Dance Camp，由 Ms. Lynn 带领，最后以平安夜汇演收尾；12月28日至30日的 Winter STEAM Camp，由 Teacher Connie 带领，内容包括冬季科学实验和搭建挑战；以及1月4日至8日与 Pop Up Art Studio Bangkok 合作的 New Year Art Studio，尝试新的技法和材料，每天都能带回一件作品。三周均为上午9点至下午2点。",
-    worthKnowing: "每周需单独预订。舞蹈营只能订整周（4天共10,000泰铢），STEAM 营和美术工作室也可按天预订，每天2,800泰铢。含午餐和点心。可通过 LINE（@littlepeabkk）或 Little Pea 的营地报名表预订。Little Pea 尚未公布冬季营的年龄范围；十月营面向4至8岁的孩子，预订前请先向他们确认。",
+    worthKnowing: "每周需单独预订。舞蹈营只能订整周（4天共10,000泰铢），STEAM 营和美术工作室也可按天预订，每天2,800泰铢。含午餐和点心。可通过 LINE（@littlepeabkk）或 Little Pea 的营地报名表预订。三周冬季营均面向4至8岁的孩子。",
     tagline: "2026年冬季营：舞蹈、STEAM 和美术三个主题周",
     highlights: ["🩰 12月21日至24日：Christmas Eve Dance Camp，由 Ms. Lynn 带领，以汇演收尾", "🧪 12月28日至30日：Winter STEAM Camp，冬季实验和搭建挑战", "🎨 1月4日至8日：New Year Art Studio，与 Pop Up Art Studio Bangkok 合作", "🍱 上午9点至下午2点，含午餐和点心", "📅 STEAM 和美术周可按天预订"],
     sessions: {
