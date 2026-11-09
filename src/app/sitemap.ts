@@ -20,6 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, changeFrequency: "weekly", priority: 1 },
     { url: `${baseUrl}/schools`, changeFrequency: "weekly", priority: 0.9 },
+    {
+      url: `${baseUrl}/schools/international-kindergartens-bangkok`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     { url: `${baseUrl}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/activities`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/healthcare`, changeFrequency: "monthly", priority: 0.8 },

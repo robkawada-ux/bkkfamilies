@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SCHOOLS, AREA_LABEL } from "@/lib/schools";
 import { SITE } from "@/lib/seo";
+import { EARLY_YEARS_PATH, takesEarlyYears } from "@/lib/earlyYears";
 import {
   schoolFees,
   feesOnEnquiry,
@@ -419,10 +420,15 @@ export default async function SchoolPage({
         )}
       </div>
 
-      <div className="mt-12 border-t border-black/10 pt-8">
+      <div className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-black/10 pt-8">
         <Link href="/schools" className="text-sm font-semibold text-orange">
           Back to all schools
         </Link>
+        {takesEarlyYears(school.slug) && (
+          <Link href={EARLY_YEARS_PATH} className="text-sm font-semibold text-orange">
+            International kindergartens and nurseries in Bangkok
+          </Link>
+        )}
       </div>
       </div>
     </article>

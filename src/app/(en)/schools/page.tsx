@@ -4,6 +4,8 @@ import PageHero from "@/components/ui/PageHero";
 import SchoolDirectory from "@/components/ui/SchoolDirectory";
 import { SCHOOLS } from "@/lib/schools";
 import { SITE } from "@/lib/seo";
+import Link from "next/link";
+import { EARLY_YEARS_PATH } from "@/lib/earlyYears";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/schools" },
@@ -62,6 +64,13 @@ export default function SchoolsPage() {
           and English Program schools that teach the Thai national curriculum are not
           included. The few schools we list that don&apos;t fully meet this standard say so
           on their page.
+        </p>
+        <p className="mb-8 max-w-3xl text-sm leading-relaxed text-neutral-700">
+          Looking for a younger child? See our guide to{" "}
+          <Link href={EARLY_YEARS_PATH} className="font-semibold text-teal hover:underline">
+            international kindergartens and nurseries in Bangkok
+          </Link>
+          , with early years fees side by side.
         </p>
         <SchoolDirectory />
       </div>
