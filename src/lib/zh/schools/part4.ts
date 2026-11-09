@@ -13,9 +13,30 @@ export const SCHOOLS_ZH_PART4: Record<string, SchoolZh> = {
   },
   "singapore-international-school-of-bangkok": {
     description:
-      "SISB Pracha Uthit 是 SISB 的旗舰校区。SISB 是唯一在泰国证券交易所上市的教育集团，这使该网络拥有曼谷大多数私人持有的国际学校集团所不具备的公开财务透明度和规模。\n\n该校区创办于2001年，教授新加坡与英国相结合的课程，以英语、中文和泰语三语授课。这是真正的三语学术架构，超出了曼谷其他多数学校采用的双语或“英语授课加语言课”的做法。\n\n作为拥有六个校区的全国性网络的旗舰，Pracha Uthit 受益于 SISB 在泰国其他校区之间共享的课程资源和机构规模，同时仍有自己的本地招生和校园文化。\n\nSISB 的核心受众，是特别想要真正三语的新加坡课程教育、而不是英式或美式框架的家庭，这也让它与曼谷更广泛的国际学校市场明显区别开来。",
-    ageRange: "托儿班至 Year 13",
-    languageOfInstruction: "英语、中文、泰语",
+      "SISB Pracha Uthit 位于王通郎区 (Wang Thonglang) 兰坎亨 (Ramkhamhaeng) 39巷附近，是 SISB Schools 的旗舰校区，也是其在曼谷地区四个校区中历史最久的一个，2001年开办，招收 Nursery 1 至 Grade 12、2至18岁的学生。\n\n课程按阶段变化：Nursery 和 Kindergarten 采用英国 Early Years Foundation Stage，小学采用以数学和科学见长的新加坡课程。Grade 7 和 8 结合新加坡与英国课程，Grade 9 和 10 修读 Cambridge IGCSE。\n\nPracha Uthit 与其他 SISB 校区最大的不同在于高中阶段的选择：Grade 11 和 12 的学生可以选读 Cambridge AS/A Level 或 IB Diploma Programme。它是 SISB 在曼谷唯一开设 IBDP 的校区。课外活动和专项学院与课程同步进行。\n\n招生联系：enrol.pu@sisb.ac.th，+66 2158 9191 转 2。",
+    ageRange: "2至18岁（Nursery 1 至 Grade 12）",
+    languageOfInstruction: "英语，另教中文和泰语",
+  },
+  "singapore-international-school-suvarnabhumi": {
+    description:
+      "SISB Suvarnabhumi 位于北榄府 (Samut Prakan) 挽披 (Bang Phli) 的 Namdaeng 至 Bangplee 路上，是 SISB 的幼儿园和小学校区，2013年开办，招收 Nursery 1 至 Primary 6、2至12岁的孩子，因此家庭需要为中学另做安排。\n\nNursery 和 Kindergarten 采用英国 Early Years Foundation Stage，从 Primary 1 起学习新加坡课程，该课程以数学和科学的严谨著称。\n\n学校在课堂之外还提供丰富的课外活动和实践学习。学费低于 SISB 三个一贯制校区，地点适合住在邦纳 (Bang Na)、挽披和素万那普机场一带的家庭。\n\n招生联系：enrol.sv@sisb.ac.th，+66 2710 2211 转 1。",
+    ageRange: "2至12岁（Nursery 1 至 Primary 6）",
+    schoolStatedFee: "每年308,100至440,400泰铢（2026/27学年）",
+    languageOfInstruction: "英语，另教中文和泰语",
+  },
+  "singapore-international-school-thonburi": {
+    description:
+      "SISB Thonburi 位于帕西乍能区 (Phasi Charoen) 的 Ratchamontri 路，2018年开办，招收 Nursery 1 至 Grade 12、2至18岁的学生，是住在湄南河吞武里 (Thonburi) 一侧家庭的 SISB 校区。\n\nNursery 和 Kindergarten 采用英国 Early Years Foundation Stage，小学采用以数学和科学见长的新加坡课程。Grade 7 和 8 结合新加坡与英国课程，Grade 9 和 10 修读 Cambridge IGCSE，高中（Grade 11 和 12）修读 Cambridge AS/A Level。\n\n学校同样重视课堂外的发展，设有课外活动和实践学习项目。希望高中读 IB Diploma 的家庭可考虑 SISB 的 Pracha Uthit 校区。\n\n招生联系：enrol.tr@sisb.ac.th，+66 2153 9393 转 1。",
+    ageRange: "2至18岁（Nursery 1 至 Grade 12）",
+    schoolStatedFee: "每年401,700至789,300泰铢（2026/27学年）",
+    languageOfInstruction: "英语，另教中文和泰语",
+  },
+  "singapore-international-school-nonthaburi": {
+    description:
+      "SISB Nonthaburi 位于暖武里 (Nonthaburi) 北革县 (Pak Kret) 的 Khlong Phra Udom，是最新的 SISB 校区，2023年开办，招收 Nursery 1 至 Grade 12、2至18岁的学生，服务暖武里和曼谷西北部的家庭。\n\nNursery 和 Kindergarten 采用英国 Early Years Foundation Stage，小学采用以数学和科学严谨著称的新加坡课程。Grade 7 和 8 融合新加坡与英国课程，衔接 Grade 9 和 10 的 Cambridge IGCSE，高中修读 Cambridge AS/A Level。\n\n课堂之外，学校设有课外活动、教育旅行和实践学习。希望高中读 IB Diploma 的家庭可考虑 SISB 的 Pracha Uthit 校区。\n\n招生联系：enrol.nr@sisb.ac.th，+66 2502 9898 转 1。",
+    ageRange: "2至18岁（Nursery 1 至 Grade 12）",
+    schoolStatedFee: "每年401,700至789,300泰铢（2026/27学年）",
+    languageOfInstruction: "英语，另教中文和泰语",
   },
   "norwich-international-school": {
     description:
