@@ -23,7 +23,7 @@ export const SCHOOLS_ZH_PART3: Record<string, SchoolZh> = {
     languageOfInstruction: "英语",
   },
   "the-tiny-seeds-international-pre-school-bangkok": {
-    description: "The Tiny Seeds International Pre-School 于2010年7月在 Sukhumvit 36 附近开办，创办人是两位被家长称为 Ms. Top 和 Ms. Tip 的老师。这是一所独立的学前学校，不属于 ELC 集团，在小而温馨的环境中为最年幼的孩子采用英国国家课程。\n\n作为学前学校，它只覆盖幼儿阶段，家长需要提前规划升入小学的事宜。我们尚未核实其办学许可或现行网站，请直接向学校确认详情。",
+    description: "The Tiny Seeds International Pre-School 于2010年7月在 Sukhumvit 36 附近开办，创办人是两位被家长称为 Ms. Top 和 Ms. Tip 的老师。这是一所独立的学前学校，不属于 ELC 集团，在小而温馨的环境中为最年幼的孩子采用英国国家课程。\n\n作为学前学校，它只覆盖幼儿阶段，家长需要提前规划升入小学的事宜。",
     languageOfInstruction: "英语",
   },
   "the-village-international-education-centre-vie": {
