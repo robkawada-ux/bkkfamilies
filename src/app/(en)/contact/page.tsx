@@ -85,7 +85,7 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="rounded-xl bg-teal p-6 text-white">
-              <p className="font-heading text-3xl font-bold">80%</p>
+              <p className="font-heading text-3xl font-bold">81%</p>
               <p className="mt-1 text-sm text-white/80">
                 Of members have children
                 <span className="mt-2 block text-xs text-white/70">
