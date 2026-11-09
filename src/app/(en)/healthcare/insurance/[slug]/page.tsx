@@ -31,6 +31,7 @@ function shortName(i: Insurer): string {
 
 function reviewTitle(i: Insurer): string {
   const year = i.lastVerified.slice(0, 4);
+  if (i.seoTitle) return i.seoTitle.replace("{year}", year);
   if (i.type === "government") {
     return `Thai Social Security for Foreigners: ${year} Review`;
   }
@@ -41,6 +42,7 @@ function reviewTitle(i: Insurer): string {
 }
 
 function metaDescription(i: Insurer): string {
+  if (i.seoDescription) return i.seoDescription;
   const text = `${shortName(i)} reviewed for expat families in Thailand: ${i.tagline}`;
   return text.length <= 158 ? text : `${text.slice(0, 155).trimEnd()}...`;
 }

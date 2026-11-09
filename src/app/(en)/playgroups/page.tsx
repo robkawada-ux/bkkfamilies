@@ -5,9 +5,9 @@ import PageHero from "@/components/ui/PageHero";
 import PlaygroupsDirectory from "@/components/ui/PlaygroupsDirectory";
 import { PLAYGROUPS } from "@/lib/playgroups";
 
-const TITLE = "Playgroups in Bangkok";
+const TITLE = `Playgroups in Bangkok: ${PLAYGROUPS.length} Baby and Toddler Groups`;
 const DESCRIPTION =
-  "Every baby and toddler playgroup we can find in Bangkok, with days, times, ages and prices checked against the organisers' own pages. Filter by day, age, area and language.";
+  "Every baby and toddler playgroup we can find in Bangkok, with days, times, ages and prices from the organisers' own pages. Filter by day, age and area.";
 
 export const metadata: Metadata = {
   title: TITLE,

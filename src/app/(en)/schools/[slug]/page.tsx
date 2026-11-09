@@ -56,7 +56,8 @@ export async function generateMetadata({
         : dates
           ? "Term Dates 2026/27"
           : null;
-  const pageTitle = topic ? `${school.name}: ${topic}` : school.name;
+  const pageTitle =
+    school.seoTitle ?? (topic ? `${school.name}: ${topic}` : school.name);
   // Keep the whole title near 65 characters; drop the brand suffix if needed.
   const title =
     `${pageTitle} | BKK Families`.length > 66 ? { absolute: pageTitle } : pageTitle;
@@ -77,6 +78,8 @@ export async function generateMetadata({
     const candidate = `${school.name} term dates and school holidays for 2026/27, read from the school's own calendar, plus fees and what families should know.`;
     if (candidate.length <= 160) description = candidate;
   }
+
+  if (school.seoDescription) description = school.seoDescription;
 
   return {
     title,

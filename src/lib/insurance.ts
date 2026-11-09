@@ -125,6 +125,13 @@ export interface Insurer {
   name: string;
   /** Brand as people search it, for titles. Defaults to `name`. */
   shortName?: string;
+  /**
+   * Hand-written search title, used instead of the generated review title.
+   * {year} is replaced with the year of lastVerified.
+   */
+  seoTitle?: string;
+  /** Hand-written meta description, under 160 characters. */
+  seoDescription?: string;
   type: InsurerType;
   /** One line for the directory card. */
   tagline: string;
@@ -403,6 +410,9 @@ export const INSURERS: Insurer[] = [
   },
   {
     slug: "april-international",
+    seoTitle: "APRIL Insurance Thailand: APRIL International Review {year}",
+    seoDescription:
+      "APRIL International health insurance in Thailand, reviewed for expat families: who it suits, family, outpatient and maternity options, and how to get a quote.",
     name: "APRIL International",
     type: "international",
     tagline:
@@ -470,6 +480,9 @@ export const INSURERS: Insurer[] = [
   },
   {
     slug: "cigna-global",
+    seoTitle: "Cigna Thailand Health Insurance: Cigna Global Review {year}",
+    seoDescription:
+      "Cigna health insurance in Thailand reviewed for expat families: Silver, Gold and Platinum tiers, add-on outpatient and dental, and the catch in cheap quotes.",
     name: "Cigna Healthcare (Cigna Global)",
     shortName: "Cigna Global",
     type: "international",

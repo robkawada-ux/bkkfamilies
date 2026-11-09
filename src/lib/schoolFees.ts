@@ -80,6 +80,23 @@ export interface SchoolFees {
 }
 
 export const schoolFees: Record<string, SchoolFees> = {
+  // Confirmed with the school by phone on 9 Nov 2026 (Rob), matching the
+  // 2026/27 schedule as relayed by thailandinternationalschools.com. Meal fees
+  // are left out: that page shows conflicting figures for them.
+  "global-indian-international-school": {
+    status: 'published',
+    feeYear: "2026/27",
+    sourceUrl: "fee schedule confirmed with the school by phone",
+    verified: '2026-11-09',
+    rows: [
+      { label: "Nursery", stage: 'early-years', annual: 94500 },
+      { label: "Kindergarten 1-3", stage: 'early-years', annual: 157500 },
+      { label: "Standard 1-5", stage: 'primary', annual: 175140 },
+      { label: "Standard 6-10", stage: 'lower-secondary', annual: 204750 },
+    ],
+    oneTime: { application: 500, registration: 20000 },
+    note: "Billed in three terms (Standard 1-5 is 58,380 a term). Registration of 20,000 is non-refundable. The refundable deposit is 20,000 for Nursery and Kindergarten and 65,000 for Standard 1-10, waived for second and third children. A 45,000 deposit applies when a child moves from kindergarten to Standard 1. There is no application fee for Nursery.",
+  },
   "bangkok-patana-school": {
     status: 'published',
     feeYear: "2026/27",
