@@ -9,7 +9,7 @@ const PDF = "/downloads/bkk-families-emergency-card.pdf";
 const CHECKED = "9 November 2026";
 const CHECKED_ISO = "2026-11-09";
 
-const TITLE = "Thailand Emergency Numbers: Ambulance, Police and Bangkok Hospitals (2026)";
+const TITLE = "Thailand & Bangkok Emergency Numbers (2026)";
 const DESCRIPTION =
   "Every emergency number in Thailand on one page: 1669 ambulance, 191 police, 199 fire, 1155 English-speaking tourist police, plus Bangkok private hospital ambulance lines. Free printable card for your fridge and wallet.";
 
