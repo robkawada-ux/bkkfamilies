@@ -544,8 +544,9 @@ export default function ChristmasGuidePage() {
             </div>
           </div>
           <p className="mt-8 rounded-xl bg-[#eef6f0] px-5 py-4 text-[15px] text-neutral-700">
-            <b className="text-[#0f3b2e]">Three weeks of winter break to fill?</b> Our <Link href="/camps" className="font-semibold text-[#c62f3a] hover:underline">holiday camps directory</Link> lists
-            December and January camps with real prices. And for 31 December, see our{" "}
+            <b className="text-[#0f3b2e]">Three weeks of winter break to fill?</b> Our <Link href="/camps" className="font-semibold text-[#c62f3a] hover:underline">Christmas and winter holiday camps in Bangkok</Link> list
+            December and January camps with real prices, our <Link href="/activities" className="font-semibold text-[#c62f3a] hover:underline">things to do with kids in Bangkok</Link> directory
+            has more ideas, and our <Link href="/playgroups" className="font-semibold text-[#c62f3a] hover:underline">playgroups directory</Link> covers babies and toddlers. And for 31 December, see our{" "}
             <Link href="/blog/new-years-eve-in-bangkok-with-kids" className="font-semibold text-[#c62f3a] hover:underline">New Year&rsquo;s Eve with kids guide</Link>.
           </p>
         </section>

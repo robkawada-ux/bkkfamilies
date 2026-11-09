@@ -541,7 +541,9 @@ export default function NyeGuidePage() {
               <h3 className="font-bold text-[#141b44]">Fill the rest of the break</h3>
               <p className="mt-1 text-[15px] text-neutral-600">
                 School goes back in the second week of January. See our{" "}
-                <Link href="/camps" className="font-semibold text-[#b7791f] hover:underline">holiday camps</Link> and{" "}
+                <Link href="/camps" className="font-semibold text-[#b7791f] hover:underline">holiday camps in Bangkok</Link>,{" "}
+                <Link href="/activities" className="font-semibold text-[#b7791f] hover:underline">things to do with kids</Link>,{" "}
+                <Link href="/playgroups" className="font-semibold text-[#b7791f] hover:underline">playgroups</Link> for babies and toddlers, and our{" "}
                 <Link href="/school-breaks" className="font-semibold text-[#b7791f] hover:underline">school holidays calendar</Link>.
               </p>
             </div>

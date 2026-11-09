@@ -386,7 +386,9 @@ export default function HalloweenGuidePage() {
           />
           <p className="-mt-3 mb-6 max-w-2xl leading-relaxed text-neutral-700">
             Our top three for each age group. Full details are in the event finder below, and if the kids are off school that week, our{" "}
-            <Link href="/camps" className="font-semibold text-orange hover:underline">October break camps</Link> list has more to fill the days.
+            <Link href="/camps" className="font-semibold text-orange hover:underline">October break camps</Link> list has more to fill the days, along with our{" "}
+            <Link href="/activities" className="font-semibold text-orange hover:underline">things to do with kids in Bangkok</Link> and, for babies and toddlers, our{" "}
+            <Link href="/playgroups" className="font-semibold text-orange hover:underline">playgroups directory</Link>.
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {AGES.map((a) => (
