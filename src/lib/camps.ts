@@ -599,10 +599,6 @@ export const CAMPS: Camp[] = [
     name: "Little Pea Term-Break Camps",
     area: "Watthana",
     mainVenue: "Little Pea Kids Commons, theCOMMONS Thonglor",
-    photo: "/images/camps/little-pea-october-2026.jpg",
-    photoAlt: "Little Pea's October Camp 2026 poster: School of Magic, a cooking and science camp from 12 to 16 October for ages 4 to 8, 9am to 2pm, with the theme for each day, prices of 12,000 baht a week or 2,800 baht a day, returning camper and bundle discounts, and a LINE QR code for booking.",
-    photoCredit: "Little Pea Kids Commons, used with permission",
-    photoCaption: "Little Pea's poster for the October 2026 camp. Scan the QR code to book on LINE.",
     description:
       "Little Pea Kids Commons runs day camps during the international school holidays throughout the year, at its space in theCOMMONS on Thong Lo Soi 17. Winter Camp 2026 is three separate weeks, each with its own theme: Christmas Eve Dance Camp with Ms. Lynn from 21 to 24 December, which ends with a Christmas Eve showcase; Winter STEAM Camp with Teacher Connie from 28 to 30 December, with winter science experiments and building challenges; and New Year Art Studio with Pop Up Art Studio Bangkok from 4 to 8 January, trying new techniques and materials with a keepsake to take home each day. All three run from 9am to 2pm.",
     worthKnowing:
