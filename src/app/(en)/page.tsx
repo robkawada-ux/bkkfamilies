@@ -39,15 +39,15 @@ const THANKS_DAY = "2026-11-26";
 export default function HomePage() {
   // Seasonal pieces published early stay off the homepage until featureFrom.
   const latest = listedArticles().filter((a) => isFeatured(a)).slice(0, 6);
-  // Seasonal box in the hero: Loy Krathong until the night itself (Rob, 10 Nov),
-  // then Thanksgiving until 26 November, then Christmas, then New Year's Eve
-  // from 26 December.
+  // Seasonal box in the hero: Loy Krathong until the night itself, then
+  // Christmas from the day after, then New Year's Eve from 26 December.
+  // No Thanksgiving box (Rob, 10 Nov 2026).
   const loy = inWindow("2026-11-10", LOY_DAY);
   const loySleeps = daysUntil(LOY_DAY);
-  const thanksgiving = !loy && inWindow(THANKS_FROM, THANKS_UNTIL);
+  const thanksgiving = false && inWindow(THANKS_FROM, THANKS_UNTIL);
   const thanksSleeps = daysUntil(THANKS_DAY);
-  const christmas = !thanksgiving && inWindow(XMAS_FROM, XMAS_UNTIL);
-  const newYear = !thanksgiving && !christmas && inWindow(NYE_FROM, NYE_UNTIL);
+  const christmas = !loy && !thanksgiving && inWindow(XMAS_FROM, XMAS_UNTIL);
+  const newYear = !loy && !thanksgiving && !christmas && inWindow(NYE_FROM, NYE_UNTIL);
   const seasonal = loy || thanksgiving || christmas || newYear;
   const xmasSleeps = daysUntil(`${CHRISTMAS_YEAR}-12-25`);
   const nyeSleeps = daysUntil(`${NYE_YEAR}-12-31`);
