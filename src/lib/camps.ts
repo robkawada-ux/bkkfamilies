@@ -599,6 +599,10 @@ export const CAMPS: Camp[] = [
     name: "Little Pea Term-Break Camps",
     area: "Watthana",
     mainVenue: "Little Pea Kids Commons, theCOMMONS Thonglor",
+    photo: "/images/camps/little-pea-winter-2026.jpg",
+    photoAlt: "Little Pea's Winter Camp poster: Week 1, Christmas Eve Dance Camp with Ms. Lynn, 21 to 24 December, 10,000 baht for 4 days; Week 2, Winter STEAM Camp with Teacher Connie, 28 to 30 December, 7,500 baht for 3 days; Week 3, New Year Art Studio with Pop Up Art Studio, 4 to 8 January, 12,000 baht a week. Ages 4 to 8, 9am to 2pm, lunch and snack included. Book via LINE @littlepeabkk.",
+    photoCredit: "Little Pea Kids Commons, used with permission",
+    photoCaption: "Little Pea's Winter Camp 2026 poster. Book on LINE at @littlepeabkk.",
     description:
       "Little Pea Kids Commons runs day camps during the international school holidays throughout the year, at its space in theCOMMONS on Thong Lo Soi 17. Winter Camp 2026 is three separate weeks, each with its own theme: Christmas Eve Dance Camp with Ms. Lynn from 21 to 24 December, which ends with a Christmas Eve showcase; Winter STEAM Camp with Teacher Connie from 28 to 30 December, with winter science experiments and building challenges; and New Year Art Studio with Pop Up Art Studio Bangkok from 4 to 8 January, trying new techniques and materials with a keepsake to take home each day. All three run from 9am to 2pm.",
     worthKnowing:
