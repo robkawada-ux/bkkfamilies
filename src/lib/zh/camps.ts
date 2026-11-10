@@ -178,18 +178,6 @@ export const CAMPS_ZH: Record<string, CampZh> = {
       "bkkprep-robotics-w7": { programme: "Minecraft 与机器人营", previousRun: "2026年8月10日至14日", hours: "9:00至15:00" },
     },
   },
-  "carroll-prep-october-camp": {
-    area: "暖武里 (Nonthaburi)",
-    description: "Carroll Prep 面向较小的孩子举办为期五周的十月营，内容以生活技能和语言为主，而不是按周设主题。英语是日常使用的工作语言，而不是单独的课程，营地同时设有中文环节。每天安排动手项目、美术、手工和烹饪。招收年龄从2岁起，在曼谷的假期营中相当少见，也是为数不多真正适合学龄前孩子的选择。",
-    worthKnowing: "营地长达五周，是因为泰国学校的十月假期比国际学校长得多。只有第三周和第四周与国际学校的半学期假重合，其余三周可供在前后需要托管时参考。Carroll Prep 在10月13日和23日这两个公共假日也照常开放，而大多数营地这两天会休息。",
-    sessions: {
-      "carroll-oct-w1": { programme: "十月生活技能与语言营", minimumBooking: "1周", note: "在国际学校半学期假之前，适合需要提前托管的家庭。" },
-      "carroll-oct-w2": { programme: "十月生活技能与语言营", minimumBooking: "1周" },
-      "carroll-oct-w3": { programme: "十月生活技能与语言营", minimumBooking: "1周", note: "与 Patana 和 St Andrews 的半学期假相同。10月13日开营。" },
-      "carroll-oct-w4": { programme: "十月生活技能与语言营", minimumBooking: "1周", note: "与 King's College 的半学期假相同。10月23日开营。" },
-      "carroll-oct-w5": { programme: "十月生活技能与语言营", minimumBooking: "1周", note: "在国际学校半学期假之后。" },
-    },
-  },
   "little-pea-term-break-camps": {
     area: "Watthana",
     photoAlt: "Little Pea 冬季营海报：第一周，Christmas Eve Dance Camp 圣诞舞蹈营，由 Ms. Lynn 带领，12月21日至24日，4天10,000泰铢；第二周，Winter STEAM Camp 冬季 STEAM 营，由 Teacher Connie 带领，12月28日至30日，3天7,500泰铢；第三周，New Year Art Studio 新年美术工作室，与 Pop Up Art Studio 合作，1月4日至8日，每周12,000泰铢。适合4至8岁，上午9点至下午2点，含午餐和点心。可通过 LINE @littlepeabkk 预订。",
@@ -200,7 +188,6 @@ export const CAMPS_ZH: Record<string, CampZh> = {
     tagline: "2026年冬季营：舞蹈、STEAM 和美术三个主题周",
     highlights: ["🩰 12月21日至24日：Christmas Eve Dance Camp，由 Ms. Lynn 带领，以汇演收尾", "🧪 12月28日至30日：Winter STEAM Camp，冬季实验和搭建挑战", "🎨 1月4日至8日：New Year Art Studio，与 Pop Up Art Studio Bangkok 合作", "🍱 上午9点至下午2点，含午餐和点心", "📅 STEAM 和美术周可按天预订"],
     sessions: {
-      "little-pea-oct-2026": { programme: "School of Magic：烹饪与科学营", hours: "9:00至14:00", note: "也可订单日，每天฿2,800。老学员订整周减฿500，与朋友一起订整周享5%折扣。" },
       "little-pea-winter-2026-dance": { programme: "Christmas Eve Dance Camp 圣诞舞蹈营", hours: "9:00至14:00", minimumBooking: "整周（周一至周四）", note: "由 Ms. Lynn 带领，以平安夜汇演收尾。含午餐和点心。也可通过 LINE @littlepeabkk 预订。" },
       "little-pea-winter-2026-steam": { programme: "Winter STEAM Camp 冬季 STEAM 营", hours: "9:00至14:00", note: "共三天，由 Teacher Connie 带领。也可订单日，每天฿2,800。含午餐和点心。也可通过 LINE @littlepeabkk 预订。" },
       "little-pea-winter-2026-art": { programme: "New Year Art Studio 新年美术工作室", hours: "9:00至14:00", note: "与 Pop Up Art Studio Bangkok 合作。也可订单日，每天฿2,800。含午餐和点心。也可通过 LINE @littlepeabkk 预订。" },
@@ -211,7 +198,6 @@ export const CAMPS_ZH: Record<string, CampZh> = {
     description: "Regent's 在 Pracha Uthit Road 的寄宿校区开办英语营，面向3至12岁的孩子，非 Regent's 学生也可参加。课程由以英语为母语的教师授课，并配有助教，上午内容包括听、说、读、写、语法和角色扮演，以及英语授课的科学、数学和思维技能。下午以活动为主，有游泳、烹饪、手工和水上滑梯。孩子按3至5岁、6至8岁、9至12岁分组。",
     worthKnowing: "Regent's 属于价格偏高的一档。公布的常规价每周28,350泰铢，约为 Bangkok Prep 的两倍半、Carroll Prep 的近三倍，而且一直附带大幅折扣宣传：2026年9月，促销力度在一天之内从50%降到40%。请把常规价当作标价，而不是实际支付的价格。另外，冬季营在学期中举办，退款政策还涵盖签证被拒的情况，这说明它面向的是专程来曼谷的学生，而不是本地家庭。",
     sessions: {
-      "regents-oct-2026": { programme: "Regent's 英语十月营", hours: "周一至周五 9:00至14:30", minimumBooking: "1周", note: "共三周可选。优惠价：1周17,010，2周34,136，3周全选40,967。常规价标注为28,350、56,894和68,279。" },
       "regents-winter-2027": { programme: "Regent's 英语冬季营", minimumBooking: "1周", note: "在学期中举办，面向专程来曼谷的学生。对本地家庭来说，唯一可用的是2月15日至19日这一周，与 St Andrews 的半学期假相同。班级最多25人。价格未公布；2026年9月30日前付款可享20%折扣，三人及以上团体可再减10%。" },
     },
   },
@@ -231,7 +217,6 @@ export const CAMPS_ZH: Record<string, CampZh> = {
     worthKnowing: "Bang Kachao 虽然在地图上离市区很近，但需要过河，从曼谷大部分地区过去其实要花些功夫。订一周之前，请先确认从您所在的区域过去要多久。营地时间为上午9点至下午4点，比大多数校内营地晚一个小时结束。",
     sessions: {
       "grow-summer": { programme: "Grow 自然营", previousRun: "2026年6月29日至8月21日，每期五天", hours: "9:00至16:00" },
-      "grow-oct": { programme: "Grow 自然营", previousRun: "2025年10月13日至17日及20日至24日", hours: "9:00至16:00", note: "2025年两个半学期假周都有开办。2026年的日期尚未公布。" },
     },
   },
   "ap-race": {
@@ -243,14 +228,6 @@ export const CAMPS_ZH: Record<string, CampZh> = {
       "aprace-w2": { programme: "AP Race 游泳营", previousRun: "2026年8月10日至14日", note: "面向竞技游泳运动员。显示的年龄是我们的估计；请向主办方确认。" },
     },
   },
-  "bangkok-dolphins": {
-    area: "Watthana",
-    description: "Bangkok Dolphins 自1998年起开办体育和活动营，是曼谷历史最悠久的营地机构之一。每周有各自的主题，活动涵盖运动、游泳和手工，并按年龄段调整。",
-    worthKnowing: "Dolphins 在曼谷另一个主要的竞争对手亲子目录上投放了大量广告，所以您搜索时会到处看到它。这是营销投入，而不是质量信号，无论好坏。我们未能从其官网核实目前的日期、价格或年龄段，所以请把这一条当作需要自行核实的线索，而不是一份确切的信息。",
-    sessions: {
-      "dolphins-oct": { programme: "Bangkok Dolphins 十月营", previousRun: "2025年10月", note: "年龄是我们根据其一般营地宣传做出的估计，需要确认。价格未公布。" },
-    },
-  },
   "british-club-bangkok": {
     area: "是隆 (Silom)",
     description: "British Club 在学校假期期间开办有人看管的运动营，分为面向4至7岁的 Mini Sports 和面向7至13岁的 Sports Camp。多数活动在俱乐部内进行，包括网球、壁球、足球、篮球、游泳和烹饪，偶尔也会外出，比如去 Central World 或 Paragon 溜冰或打保龄球。最多55名孩子参加，会员和工作人员也会帮忙。",
@@ -260,59 +237,13 @@ export const CAMPS_ZH: Record<string, CampZh> = {
       "britishclub-sports": { programme: "运动营", previousRun: "学校假期，多数假期都会开办", note: "网球、壁球、足球、篮球、游泳和烹饪，偶尔外出。日期和价格没有公开发布。" },
     },
   },
-  "alliance-francaise-bangkok": {
-    area: "沙吞 (Sathorn)",
-    description: "Alliance Francaise 为大约3至11岁的孩子开办假期营，根据当期的项目，或提高法语，或探索艺术活动。除 Lycee 之外，它是曼谷提供法语学习的老牌渠道，多数学校假期都会开营。",
-    worthKnowing: "各个假期的项目差别很大，有的是语言营，有的是以艺术为主、顺带法语的营。在默认孩子会多说法语之前，请先确认当期开的是哪一种。日期和价格是按营地单独公布的，没有固定页面，所以每个假期都需要重新核实。",
-    sessions: {
-      "af-oct": { programme: "Alliance Francaise 十月营", previousRun: "2025年10月", note: "法语语言和艺术活动。2026年的日期和价格尚未公布。" },
-    },
-  },
-  "mandarin-house-bangkok": {
-    area: "曼谷",
-    description: "Mandarin House 为曼谷的孩子开办中文假期营，是学校假期里为数不多专门的普通话选择，而不是在普通营地里附带一个语言环节。",
-    worthKnowing: "曼谷学校假期里面向孩子的普通话项目其实很少，选择不多，名额也很快满。我们未能从原始来源核实目前的日期、价格或年龄段，所以请把这一条当作可跟进的线索，而不是一份确切的信息。如果您用过他们，请告诉我们，我们会补充完整。",
-    sessions: {
-      "mandarinhouse-oct": { programme: "Mandarin House 十月营", previousRun: "2025年10月", note: "年龄是我们的估计，需要确认。日期和价格未公布。" },
-    },
-  },
   "icamp-thailand": {
     area: "北碧府 (Kanchanaburi)",
-    photoAlt: "iCamp Thailand 2026年10月英语活力探索营的宣传单，画面是几位青少年在北碧府的湖边一起看地图。",
-    photoCaption: "iCamp 2026年10月英语活力探索营的宣传单，2026年9月发布。",
-    photoCredit: "iCamp Thailand，经许可使用",
     description: "iCamp 是位于北碧府 (Kanchanaburi) 的住宿式英语营，距曼谷约160公里，在桂河谷地，已经办了十年。上午是英语任务和项目，难度对应剑桥 A1 至 B2 级别；下午是游泳、水上游戏、运动、探险和团队挑战，晚饭后还有晚间活动。住宿是竹子搭建的小屋，男生小屋八间、女生小屋八间，每间住十二名营员和两名工作人员，全部有空调，围绕餐厅呈圆形排布。工作人员配比约为1比10，视年龄而定。厨房提供西餐、亚洲餐、清真和素食，每餐都有纯素、无麸质和无乳制品的选择。",
     worthKnowing: "iCamp 严格禁止使用屏幕：入营登记时手机会被收走，离营当天归还，家长不能直接打电话给孩子，不过办公室会转达留言，并每天把照片发布到 Facebook。探访需提前两天通知。对很多家庭来说这正是吸引之处，但如果孩子从未离开过家，订之前值得考虑。按周预订，到了营地后可以续订。营地距曼谷两到三个小时车程，是真正的住宿旅行，而不是日营。营期内有全职护士，北碧府的 Synphaet 医院和 Dan Makham Tia 医院是他们的紧急合作医院。iCamp 在公开页面上不公布价格，需要发邮件询问具体金额。",
     sessions: {
-      "icamp-oct-2026": { programme: "英语活力探索营", minimumBooking: "1周", venue: "iCamp Thailand，北碧府 (Kanchanaburi)", supervisionRatio: "约1比10，按年龄而异", note: "今年十月举办两周，也是 iCamp 首次开办英语活力探索项目。2026年9月11日开放报名。确切日期和价格没有在任何公开渠道公布，请直接联系 iCamp。英语活动对应剑桥 A1、A2、B1 和 B2 级别，第三天包括一场运动比赛、北碧府 Skywalk 空中步道，以及在河边用餐。" },
       "icamp-summer-2027": { programme: "iCamp 夏令营", previousRun: "2026年夏季，十周年纪念季", minimumBooking: "1周，到营地后可续订", venue: "iCamp Thailand，北碧府 (Kanchanaburi)", supervisionRatio: "约1比10，按年龄而异", note: "每周名额设有上限，以保证师生配比。2026年曾推出周年优惠：买一个名额，带一位朋友免费。" },
       "icamp-songkran-2027": { programme: "iCamp 泼水节营", previousRun: "2026年3月22日至28日、3月29日至4月4日及4月5日至11日", minimumBooking: "1周", venue: "iCamp Thailand，北碧府 (Kanchanaburi)", supervisionRatio: "约1比10，按年龄而异", note: "每期七天，包括泼水节当天有人看管的泼水庆祝活动。" },
-    },
-  },
-  "hoyhon-park-silom": {
-    area: "Bang Rak",
-    photoAlt: "HoyHon 2026年10月特技体操与空中舞蹈营的宣传单，画面是幼小的孩子在舞台灯光下跳舞，以及在 Park Silom 工作室里做手工。",
-    photoCaption: "HoyHon 2026年10月特技体操与空中舞蹈营的宣传单，2026年9月发布。",
-    photoCredit: "HoyHon 和 Kids Mindfulness Co., Ltd，经许可使用",
-    description: "HoyHon 是一家空中艺术、钢管和舞蹈工作室，在 Park Silom 和 RCA 设有分店。十月假期，其 Silom 分店与 Kids Mindfulness Co., Ltd 合作，举办以万圣节为主题的特技体操与空中舞蹈营。一天里运动与手作交替进行：上午一节空中或特技课，午饭后一小时美术，四点前再上最后一节课。一周下来，运动方面有空中绸缎和吊环、舞蹈、拉伸和软功、特技体操馆，艺术方面有扎染、黏土、绘画、制作面具和饰品以及史莱姆，周五以一场表演收尾。含午餐、点心和饮料，工作室离 Saladaeng BTS 步行两分钟。",
-    worthKnowing: "我们没有在任何地方找到 HoyHon 公布的这个营的年龄范围，而且它自己的预订系统里只有成人课程，所以这个营不在该系统内。运营方自己照片里的孩子看起来是学龄前到小学低年级，但这是我们对宣传单的判断，而不是官方说明的规定，所以预订前请先询问。公布的课程表涵盖两周，而不是每周各一份，这说明两周很可能是同一套五天流程；如果您打算两周都订，值得确认。好的一面是，这是为数不多设有按天计费的营地之一，每天1,700泰铢，也是为数不多在10月13日和23日这两个公共假日仍然开放的营地，而大多数营地这两天休息。",
-    sessions: {
-      "hoyhon-oct-2026-w1": { programme: "十月特技体操与空中舞蹈营", hours: "10:00至16:00", minimumBooking: "1天，每天฿1,700", note: "与 Patana 和 St Andrews 的半学期假相同。10月13日（拉玛九世逝世纪念日）照常开营，而许多营地这天休息。" },
-      "hoyhon-oct-2026-w2": { programme: "十月特技体操与空中舞蹈营", hours: "10:00至16:00", minimumBooking: "1天，每天฿1,700", note: "与 King's College 的半学期假相同。10月23日（朱拉隆功纪念日）照常开营。" },
-    },
-  },
-  "storytime-preschool-halloween-camp": {
-    area: "Khlong Toei",
-    photoAlt: "Storytime Preschool 2026年10月营的宣传单，10月12日至16日，适合2至7岁，列有半日、全日和延长日的价格，画面有南瓜灯、蝙蝠和装满糖果的女巫大锅，另有用于预订的 LINE 和 WhatsApp 二维码。",
-    photoCaption: "Storytime 2026年10月营的宣传单，2026年10月发布。扫描二维码即可通过 LINE 或 WhatsApp 预订。",
-    photoCredit: "Storytime Preschool，经许可使用",
-    description: "Storytime 是位于 Sukhumvit Soi 4 附近的英语幼儿园，同时也为婴幼儿开办亲子游戏小组。十月假期，它为2至8岁的孩子开办万圣节营，内容有万圣节手工、烘焙点心、雕南瓜灯、感官游戏、魔法药水、寻宝、户外游戏和化装派对。家庭可以订单日或整周，并选择半日、全日或延长日。",
-    worthKnowing: "10月13日因拉玛九世逝世纪念日休营，所以这一周实际是四天。学校提供免费的每日接驳车，往返 BTS Nana 接送，因为学校的停车位非常有限，这点很有帮助。",
-    tagline: "为2至8岁孩子准备的一周魔法与惊悚欢乐，10月12日至16日",
-    highlights: ["🎨 万圣节手工", "🧁 烘焙惊悚点心", "🎃 雕南瓜灯", "🫧 感官游戏", "🧪 魔法药水", "🗺️ 寻宝", "🌳 户外游戏", "🎉 化装派对", "🚐 BTS Nana 免费接驳车", "📅 可订单日或整周"],
-    sessions: {
-      "storytime-oct-2026-half": { programme: "万圣节营，半日", hours: "9:00至12:00", minimumBooking: "1天", note: "10月13日因公共假日休营。BTS Nana 有免费接驳车。" },
-      "storytime-oct-2026-day": { programme: "万圣节营，全日或延长日", hours: "9:00至14:00，或延长至16:00", minimumBooking: "1天", note: "฿1,500含至14:00，฿1,800含至16:00。10月13日因公共假日休营。BTS Nana 有免费接驳车。" },
     },
   },
   "storytime-preschool-winter-camp": {

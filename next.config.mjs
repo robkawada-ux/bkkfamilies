@@ -33,6 +33,19 @@ const legacyRedirects = [
   { source: "/winter-holiday-camp-guide", destination: "/camps" },
   { source: "/category/camps", destination: "/camps" },
   { source: "/category/camps/page/:num", destination: "/camps" },
+  // October 2026 camps that have finished, and operators whose only listed week was October (taken down 10 Nov 2026)
+  { source: "/camps/bangkok-dolphins", destination: "/camps" },
+  { source: "/zh/camps/bangkok-dolphins", destination: "/zh/camps" },
+  { source: "/camps/alliance-francaise-bangkok", destination: "/camps" },
+  { source: "/zh/camps/alliance-francaise-bangkok", destination: "/zh/camps" },
+  { source: "/camps/mandarin-house-bangkok", destination: "/camps" },
+  { source: "/zh/camps/mandarin-house-bangkok", destination: "/zh/camps" },
+  { source: "/camps/carroll-prep-october-camp", destination: "/camps" },
+  { source: "/zh/camps/carroll-prep-october-camp", destination: "/zh/camps" },
+  { source: "/camps/hoyhon-park-silom", destination: "/camps" },
+  { source: "/zh/camps/hoyhon-park-silom", destination: "/zh/camps" },
+  { source: "/camps/storytime-preschool-halloween-camp", destination: "/camps" },
+  { source: "/zh/camps/storytime-preschool-halloween-camp", destination: "/zh/camps" },
 
   // Activities cluster
   { source: "/category/activities", destination: "/activities" },
