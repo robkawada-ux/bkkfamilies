@@ -13,6 +13,7 @@ import {
 } from "@/lib/christmas";
 import { NYE_PATH, NYE_YEAR, PROMO_FROM as NYE_FROM, PROMO_UNTIL as NYE_UNTIL } from "@/lib/nye";
 import { SCHOOLS } from "@/lib/schools";
+import { LOY_PATH, LOY_DAY, PLACES as LOY_PLACES } from "@/lib/loykrathong";
 import { TopBanner, SidebarSlot } from "@/components/ui/AdSlot";
 import { StatRoads, Roundabout } from "@/components/ui/Road";
 
@@ -38,13 +39,16 @@ const THANKS_DAY = "2026-11-26";
 export default function HomePage() {
   // Seasonal pieces published early stay off the homepage until featureFrom.
   const latest = listedArticles().filter((a) => isFeatured(a)).slice(0, 6);
-  // Seasonal box in the hero: Thanksgiving until 26 November (Rob, 30 Oct),
-  // then Christmas, then New Year's Eve from 26 December.
-  const thanksgiving = inWindow(THANKS_FROM, THANKS_UNTIL);
+  // Seasonal box in the hero: Loy Krathong until the night itself (Rob, 10 Nov),
+  // then Thanksgiving until 26 November, then Christmas, then New Year's Eve
+  // from 26 December.
+  const loy = inWindow("2026-11-10", LOY_DAY);
+  const loySleeps = daysUntil(LOY_DAY);
+  const thanksgiving = !loy && inWindow(THANKS_FROM, THANKS_UNTIL);
   const thanksSleeps = daysUntil(THANKS_DAY);
   const christmas = !thanksgiving && inWindow(XMAS_FROM, XMAS_UNTIL);
   const newYear = !thanksgiving && !christmas && inWindow(NYE_FROM, NYE_UNTIL);
-  const seasonal = thanksgiving || christmas || newYear;
+  const seasonal = loy || thanksgiving || christmas || newYear;
   const xmasSleeps = daysUntil(`${CHRISTMAS_YEAR}-12-25`);
   const nyeSleeps = daysUntil(`${NYE_YEAR}-12-31`);
 
@@ -87,6 +91,46 @@ export default function HomePage() {
             </a>
           </div>
           </div>
+
+          {loy && (
+            <Link
+              href={LOY_PATH}
+              className="group relative block overflow-hidden rounded-2xl bg-[#14234a] p-7 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
+            >
+              {/* Full moon and floating krathongs, decorative */}
+              <svg aria-hidden="true" viewBox="0 0 340 70" className="pointer-events-none absolute inset-x-0 top-0 h-16 w-full">
+                <circle cx="290" cy="26" r="16" fill="#f6e7b0" />
+                <circle cx="290" cy="26" r="24" fill="#f6e7b0" opacity="0.15" />
+                {[40, 110, 180].map((x, i) => (
+                  <g key={x} transform={`translate(${x} ${44 + (i % 2) * 8})`}>
+                    <path d="M-12 0 Q 0 8 12 0 Z" fill="#8DC63F" />
+                    <path d="M-7 0 Q -4 -10 0 -12 Q 4 -10 7 0 Z" fill="#e8869b" />
+                    <rect x="-0.8" y="-18" width="1.6" height="6" fill="#f6e7b0" />
+                    <circle cx="0" cy="-19" r="2" fill="#f4b942" />
+                  </g>
+                ))}
+              </svg>
+              <div className="relative">
+                <span className="mt-8 inline-block rounded-full bg-[#f4b942] px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-[#14234a]">
+                  Loy Krathong 2026
+                </span>
+                <p className="mt-4 font-heading text-2xl font-bold leading-tight">Loy Krathong in Bangkok with kids</p>
+                <p className="mt-3 text-sm text-white/80">
+                  {LOY_PLACES.length} places to float a krathong, rated by crowd, plus the traditions explained and how to make one.
+                </p>
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  {loySleeps >= 0 && (
+                    <span className="font-heading text-lg font-bold text-[#f4b942]">
+                      {loySleeps === 0 ? "Tonight!" : `${loySleeps} ${loySleeps === 1 ? "sleep" : "sleeps"} to go`}
+                    </span>
+                  )}
+                  <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#14234a] transition group-hover:bg-[#f4b942]">
+                    See the guide →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          )}
 
           {thanksgiving && (
             <Link
