@@ -155,9 +155,13 @@ function b4kSessionsZh(): Record<string, SessionZh> {
 export const CAMPS_ZH: Record<string, CampZh> = {
   "bangkok-prep-holiday-camps": {
     area: "Watthana",
-    description: "Bangkok Prep 的假期营是曼谷规模最大、资料也最完整的项目之一，覆盖暑假中的七周，每周的项目组合各不相同。营地向所有学校的孩子开放，不限于 Bangkok Prep 的学生。所有项目都在 Sukhumvit 77 的中学校区进行，时间为上午9点至下午3点，每项费用均含午餐和点心。项目范围很广，从泰语读写和 EAL 英语，到 Minecraft 编程、机器人、设计、综合运动，再到精英游泳项目。",
+    description: "Bangkok Prep 的假期营是曼谷规模最大、资料也最完整的项目之一，覆盖暑假中的七周，每周的项目组合各不相同。营地向所有学校的孩子开放，不限于 Bangkok Prep 的学生。暑期营都在 Sukhumvit 77 的中学校区进行，时间为上午9点至下午3点，每项费用均含午餐和点心。另有一周冬季营，2027年1月4日至8日，上午9点至下午2点，含点心和午餐，面向任何学校学前班至十三年级的孩子。项目范围很广，从泰语读写和 EAL 英语，到 Minecraft 编程、机器人、设计、综合运动，再到精英游泳项目。",
     worthKnowing: "Bangkok Prep 页面上宣传的营地中，有三个是由使用该校区的独立机构举办的：Ivy Camps USA、Grow Learning Gardens 和 AP Race。它们有各自的价格和预订系统，其中 Ivy 另设早鸟截止日期，因此学校自己的折扣不适用于这三个营地。本目录将它们单独列出。",
     sessions: {
+      "bkkprep-winter-sports": { programme: "运动营", hours: "9:00至14:00", note: "每天可选一项运动：篮球、足球、游泳、体操或网球。由 Bangkok Prep 教练带领。按天预订，没有早鸟优惠。" },
+      "bkkprep-winter-puppy-play": { programme: "Puppy Play 营：冬日奇妙之旅", hours: "9:00至14:00", note: "面向学前班至二年级的寓教于乐营，由 Bangkok Prep 老师带领。早鸟优惠：12月15日前预订每周减1,000泰铢。" },
+      "bkkprep-winter-young-designer": { programme: "小小设计师：迷你创客", hours: "9:00至14:00", note: "由 Creative Giants 团队带领的艺术、手工与设计：捏捏乐、节日灯笼、水彩画、迷你花瓶冰箱贴和纸艺笔记本。早鸟优惠：12月15日前预订每周减1,000泰铢。" },
+      "bkkprep-winter-minecraft-robotics": { programme: "Minecraft 与机器人营", hours: "9:00至14:00", note: "在 Minecraft 里编程，并动手搭建机器人，由 Me-iZone 团队带领。早鸟优惠：12月15日前预订每周减1,000泰铢。" },
       "bkkprep-eal-w1": { programme: "英语（EAL）营", previousRun: "2026年6月29日至7月3日", hours: "9:00至15:00" },
       "bkkprep-eal-w6": { programme: "英语（EAL）营", previousRun: "2026年8月3日至7日", hours: "9:00至15:00" },
       "bkkprep-eal-w7": { programme: "英语（EAL）营", previousRun: "2026年8月10日至14日", hours: "9:00至15:00" },
@@ -216,6 +220,8 @@ export const CAMPS_ZH: Record<string, CampZh> = {
     description: "Grow 在 Bang Kachao（曼谷南面河湾中的那片绿色半岛）开办森林学校式自然营。营地刻意不使用屏幕，以户外探索、玩耍和发现为主，而不是排满课程表，由户外教育工作者带领。费用含点心、午餐和营地摄影。",
     worthKnowing: "Bang Kachao 虽然在地图上离市区很近，但需要过河，从曼谷大部分地区过去其实要花些功夫。订一周之前，请先确认从您所在的区域过去要多久。营地时间为上午9点至下午4点，比大多数校内营地晚一个小时结束。",
     sessions: {
+      "grow-winter-dec-2026": { programme: "Grow 自然营", hours: "9:00至16:00", note: "五天营，在 Wat Khlong Toei Nok 接送。冬季海报未注明年龄和价格；2026年暑期营面向5至12岁，每周12,750至15,000泰铢。请通过 Grow 报名（growbangkok@gmail.com）。" },
+      "grow-winter-jan-2027": { programme: "Grow 自然营", hours: "9:00至16:00", note: "五天营，在 Wat Khlong Toei Nok 接送。冬季海报未注明年龄和价格；2026年暑期营面向5至12岁，每周12,750至15,000泰铢。请通过 Grow 报名（growbangkok@gmail.com）。" },
       "grow-summer": { programme: "Grow 自然营", previousRun: "2026年6月29日至8月21日，每期五天", hours: "9:00至16:00" },
     },
   },
