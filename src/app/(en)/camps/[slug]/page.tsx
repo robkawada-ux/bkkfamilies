@@ -5,9 +5,8 @@ import Link from "next/link";
 import {
   CAMPS,
   campBySlug,
-  isShown,
+  isFinished,
   isStale,
-  nextWindowId,
   type CampCategory,
   type CampFormat,
   type CampSession,
@@ -74,39 +73,6 @@ function priceLabel(s: CampSession): string | null {
   return base + suffix + (s.priceEstimated ? " (estimated)" : "");
 }
 
-const MONTH_INDEX: Record<string, number> = Object.fromEntries(
-  MONTHS.map((m, i) => [m.toLowerCase(), i]),
-);
-
-// Spread of last year's weeks, from previousRun strings like "29 June to 3 July 2026".
-function lastYearSpread(sessions: CampSession[]): string | null {
-  let first: { t: number; label: string } | null = null;
-  let last: { t: number; label: string } | null = null;
-  for (const s of sessions) {
-    const m = s.previousRun?.match(/^(\d{1,2})\s*([A-Za-z]+)?\s+to\s+(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/);
-    if (!m) continue;
-    const endMonth = MONTH_INDEX[m[4].toLowerCase()];
-    const startMonth = m[2] ? MONTH_INDEX[m[2].toLowerCase()] : endMonth;
-    if (startMonth === undefined || endMonth === undefined) continue;
-    const y = Number(m[5]);
-    const st = Date.UTC(y, startMonth, Number(m[1]));
-    const en = Date.UTC(y, endMonth, Number(m[3]));
-    if (!first || st < first.t) first = { t: st, label: `${m[1]} ${MONTHS[startMonth]}` };
-    if (!last || en > last.t) last = { t: en, label: `${m[3]} ${MONTHS[endMonth]} ${y}` };
-  }
-  return first && last ? `${first.label} to ${last.label}` : null;
-}
-
-function priceSpread(sessions: CampSession[]): string | null {
-  const weekly = sessions.filter((s) => s.priceFrom && s.priceUnit === "per-week");
-  if (weekly.length === 0) return null;
-  const lo = Math.min(...weekly.map((s) => s.priceFrom!));
-  const hi = Math.max(...weekly.map((s) => s.priceTo ?? s.priceFrom!));
-  return lo === hi
-    ? `฿${lo.toLocaleString()} a week`
-    : `฿${lo.toLocaleString()} to ฿${hi.toLocaleString()} a week`;
-}
-
 export function generateStaticParams() {
   return CAMPS.map((c) => ({ slug: c.slug }));
 }
@@ -145,16 +111,21 @@ export default async function CampPage({
   const camp = campBySlug(slug);
   if (!camp) notFound();
 
-  // Upcoming sessions only, grouped by break window in calendar order.
-  // Confirmed weeks plus anything in the next break; later unconfirmed weeks stay hidden.
-  const upcoming = camp.sessions.filter((s) => isShown(s));
-  const nextWindow = BREAK_WINDOWS.find((w) => w.id === nextWindowId());
+  // Sessions still to come, grouped by break window in calendar order.
+  // The first group is this camp's upcoming break; the rest are later breaks.
+  const upcoming = camp.sessions.filter((s) => !isFinished(s));
   const grouped = BREAK_WINDOWS.map((w) => ({
     window: w,
     sessions: upcoming.filter((s) => s.window === w.id),
   })).filter((g) => g.sessions.length > 0);
 
-  const confirmedCount = upcoming.filter((s) => s.dateStatus === "confirmed").length;
+  const statusOf = (list: CampSession[]) =>
+    list.every((s) => s.dateStatus === "confirmed")
+      ? "Dates confirmed"
+      : list.some((s) => s.dateStatus === "confirmed")
+        ? "Some dates confirmed"
+        : "Not confirmed yet";
+  const next = grouped[0];
 
   const hosts = (camp.hosts ?? [])
     .map((s) => campBySlug(s))
@@ -250,11 +221,9 @@ export default async function CampPage({
               </span>
             )}
             <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">
-              {confirmedCount > 0
-                ? `Dates confirmed: ${confirmedCount} camp week${confirmedCount === 1 ? "" : "s"}`
-                : nextWindow
-                  ? `${nextWindow.shortLabel}: not confirmed yet`
-                  : "Not confirmed yet"}
+              {next
+                ? `Upcoming: ${next.window.shortLabel}, ${statusOf(next.sessions).toLowerCase()}`
+                : "No upcoming camps listed"}
             </span>
           </div>
         </div>
@@ -382,44 +351,42 @@ export default async function CampPage({
         </div>
 
         {/* Sessions */}
-        <h2 className="mt-12 font-heading text-2xl font-bold text-purple-dark">
-          Camp weeks
-        </h2>
         {grouped.length === 0 && (
-          <p className="mt-4 rounded-xl border-2 border-dashed border-black/10 p-6 text-neutral-600">
-            {nextWindow
-              ? `Not confirmed yet for ${nextWindow.label}. `
-              : "Not confirmed yet. "}
-            We&rsquo;ll add the dates as soon as {camp.name} announces them.
-          </p>
+          <>
+            <h2 className="mt-12 font-heading text-2xl font-bold text-purple-dark">
+              Upcoming camps
+            </h2>
+            <p className="mt-4 rounded-xl border-2 border-dashed border-black/10 p-6 text-neutral-600">
+              Not confirmed yet. We&rsquo;ll add the next dates as soon as {camp.name} announces them.
+            </p>
+          </>
         )}
-        {grouped.map((g) => (
-          <div key={g.window.id} className="mt-6">
-            <h3 className="font-heading text-lg font-bold text-teal">
-              {g.window.label}
-            </h3>
-            {g.sessions.length > 1 &&
-            g.sessions.every((s) => s.dateStatus !== "confirmed") ? (
-              <div className="mt-3 rounded-xl border-2 border-dashed border-black/10 bg-white p-5">
-                <p className="text-sm font-semibold text-teal">Not confirmed yet</p>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-                  {(() => {
-                    const spread = lastYearSpread(g.sessions);
-                    const price = priceSpread(g.sessions);
-                    const names = Array.from(new Set(g.sessions.map((s) => s.programme)));
-                    return (
-                      <>
-                        {spread
-                          ? `Last time ${camp.name} ran camps from ${spread}. `
-                          : `${camp.name} has not announced these dates yet. `}
-                        Programmes last time: {names.join(", ")}
-                        {price ? `, from ${price}` : ""}. We&rsquo;ll add the dates as soon as they&rsquo;re confirmed.
-                      </>
-                    );
-                  })()}
-                </p>
-              </div>
-            ) : (
+        {grouped.map((g, i) => (
+          <div key={g.window.id}>
+            {i === 0 && (
+              <h2 className="mt-12 font-heading text-2xl font-bold text-purple-dark">
+                Upcoming camps
+              </h2>
+            )}
+            {i === 1 && (
+              <h2 className="mt-14 font-heading text-2xl font-bold text-purple-dark">
+                Later camps
+              </h2>
+            )}
+            <div className="mt-6 flex flex-wrap items-center gap-2">
+              <h3 className="font-heading text-lg font-bold text-teal">
+                {g.window.label}
+              </h3>
+              <span
+                className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                  statusOf(g.sessions) === "Not confirmed yet"
+                    ? "bg-neutral-100 text-neutral-600"
+                    : "bg-green-100 text-green-800"
+                }`}
+              >
+                {statusOf(g.sessions)}
+              </span>
+            </div>
             <div className="mt-3 space-y-3">
               {g.sessions.map((s) => {
                 const dates = range(s.startDate, s.endDate);
@@ -548,7 +515,6 @@ export default async function CampPage({
                 );
               })}
             </div>
-            )}
           </div>
         ))}
 

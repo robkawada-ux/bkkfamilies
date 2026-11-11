@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { CAMPS, campBySlug, isShown, isStale } from "@/lib/camps";
+import { CAMPS, campBySlug, isFinished, isStale } from "@/lib/camps";
 import { BREAK_WINDOWS } from "@/lib/schoolBreaks";
 import { COMMON_ZH, verifiedZh } from "@/lib/zh/common";
 import {
@@ -57,7 +57,7 @@ export default async function CampPageZh({
   if (!camp || !z) notFound();
 
   // Upcoming sessions only, grouped by break window in calendar order.
-  const upcoming = camp.sessions.filter((s) => isShown(s));
+  const upcoming = camp.sessions.filter((s) => !isFinished(s));
   const grouped = BREAK_WINDOWS.map((w) => ({
     window: w,
     sessions: upcoming.filter((s) => s.window === w.id),

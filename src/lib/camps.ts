@@ -1139,24 +1139,9 @@ export function isFinished(s: CampSession, today: string = bangkokToday()): bool
   return !!w && w.end < today;
 }
 
-/** The next school break that hasn't ended yet (Bangkok time). */
-export function nextWindowId(today: string = bangkokToday()): string | undefined {
-  return BREAK_WINDOWS.find((w) => w.end >= today)?.id;
-}
-
-/**
- * Whether a session belongs on the site right now: not finished, and either
- * confirmed or in the next break. Unconfirmed weeks for breaks further out
- * (next summer, say) stay in the data but are hidden until that break is next.
- */
-export function isShown(s: CampSession, today: string = bangkokToday()): boolean {
-  if (isFinished(s, today)) return false;
-  return s.dateStatus === "confirmed" || s.window === nextWindowId(today);
-}
-
-/** Sessions to show in the directory. Call at request time. */
+/** Sessions still to come, for the directory. Call at request time. */
 export function upcomingSessions(today: string = bangkokToday()): SessionWithCamp[] {
-  return ALL_SESSIONS.filter((s) => isShown(s, today));
+  return ALL_SESSIONS.filter((s) => !isFinished(s, today));
 }
 
 export function campBySlug(slug: string): Camp | undefined {

@@ -36,7 +36,7 @@ const FAQ = [
   },
   {
     q: "Why do some listings say not confirmed yet?",
-    a: "Camp operators publish dates late, often only four to six weeks ahead. For the next school break, a camp that runs every year but hasn't announced its dates yet is marked not confirmed yet, so you know who to watch. Breaks further away aren't listed until they're next.",
+    a: "Camp operators publish dates late, often only four to six weeks ahead. Rather than hide a camp that runs every year, we list it with the dates it last ran and mark it not confirmed yet, so you know who to watch.",
   },
   {
     q: "When should I book?",
@@ -113,8 +113,9 @@ export default function CampsPage() {
           </p>
           <p>
             Nobody pays to be listed here. Where a price is not published we say
-            so rather than guessing. We focus on the next school break: every
-            week is marked either dates confirmed or not confirmed yet.
+            so rather than guessing. Every week is marked either dates
+            confirmed or not confirmed yet, so you know exactly what you can
+            book now and which camps to watch.
           </p>
         </div>
 
