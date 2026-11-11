@@ -450,6 +450,16 @@ export const EVENTS: FinderItem[] = [
     start: `${Y}-11-14`, end: `${Y + 1}-01-06`,
   },
   {
+    name: "Snow Village magical snowfall",
+    venue: "Central Village, near Suvarnabhumi Airport",
+    when: "31 Oct to 10 Jan · snowfall Fri 6pm and 7pm; Sat, Sun and public holidays 5:30pm, 6:30pm and 7:30pm",
+    facets: { type: ["play", "lights"], when: SEASON },
+    flags: [],
+    badges: [{ text: "Real snowfall, 10 minutes a round", tone: "plain" }],
+    blurb: "Snow falls over a Christmas village at Central Village, Bangkok's luxury outlet near Suvarnabhumi Airport, twice on Friday evenings and three times on weekend and public holiday evenings. Each snowfall lasts about 10 minutes, so arrive a little early for a good spot and have the camera ready. Central Village says times may change, so check before you go.",
+    start: `${Y}-10-31`, end: `${Y + 1}-01-10`,
+  },
+  {
     name: "POP LAND castle, tree and bubble show",
     venue: "Siam Paragon, Siam",
     when: "11 Nov to 11 Jan · shows Fri to Sun 7pm, 8pm, 9pm",
