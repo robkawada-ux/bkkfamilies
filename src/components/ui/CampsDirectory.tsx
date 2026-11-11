@@ -269,8 +269,13 @@ export default function CampsDirectory({
               </h3>
               <p className="mt-0.5 text-sm text-neutral-600">{s.camp.name}</p>
 
-              <p className="mt-3 text-sm font-semibold text-teal">
-                {dates ?? "Dates not announced"}
+              <p className="mt-3 flex flex-wrap items-center gap-2 text-sm font-semibold text-teal">
+                {past || !dates ? "Not confirmed yet" : dates}
+                {!past && dates && (
+                  <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800">
+                    Dates confirmed
+                  </span>
+                )}
               </p>
               {past && (
                 <p className="mt-0.5 text-xs text-neutral-500">

@@ -5,8 +5,9 @@ import Link from "next/link";
 import {
   CAMPS,
   campBySlug,
-  isFinished,
+  isShown,
   isStale,
+  nextWindowId,
   type CampCategory,
   type CampFormat,
   type CampSession,
@@ -145,17 +146,15 @@ export default async function CampPage({
   if (!camp) notFound();
 
   // Upcoming sessions only, grouped by break window in calendar order.
-  const upcoming = camp.sessions.filter((s) => !isFinished(s));
+  // Confirmed weeks plus anything in the next break; later unconfirmed weeks stay hidden.
+  const upcoming = camp.sessions.filter((s) => isShown(s));
+  const nextWindow = BREAK_WINDOWS.find((w) => w.id === nextWindowId());
   const grouped = BREAK_WINDOWS.map((w) => ({
     window: w,
     sessions: upcoming.filter((s) => s.window === w.id),
   })).filter((g) => g.sessions.length > 0);
 
   const confirmedCount = upcoming.filter((s) => s.dateStatus === "confirmed").length;
-  // Windows whose weeks are all still unannounced.
-  const tbaLabels = grouped
-    .filter((g) => g.sessions.every((s) => s.dateStatus !== "confirmed"))
-    .map((g) => g.window.label);
 
   const hosts = (camp.hosts ?? [])
     .map((s) => campBySlug(s))
@@ -251,13 +250,11 @@ export default async function CampPage({
               </span>
             )}
             <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">
-              {upcoming.length === 0
-                ? "No upcoming camps listed"
-                : confirmedCount === 0
-                  ? `${tbaLabels.join(" and ")} dates to be announced`
-                  : `${confirmedCount} confirmed camp week${confirmedCount === 1 ? "" : "s"}${
-                      tbaLabels.length > 0 ? `, ${tbaLabels.join(" and ")} to be announced` : ""
-                    }`}
+              {confirmedCount > 0
+                ? `Dates confirmed: ${confirmedCount} camp week${confirmedCount === 1 ? "" : "s"}`
+                : nextWindow
+                  ? `${nextWindow.shortLabel}: not confirmed yet`
+                  : "Not confirmed yet"}
             </span>
           </div>
         </div>
@@ -390,7 +387,10 @@ export default async function CampPage({
         </h2>
         {grouped.length === 0 && (
           <p className="mt-4 rounded-xl border-2 border-dashed border-black/10 p-6 text-neutral-600">
-            Their most recent camps have finished. We&rsquo;ll add the next dates as soon as {camp.name} announces them.
+            {nextWindow
+              ? `Not confirmed yet for ${nextWindow.label}. `
+              : "Not confirmed yet. "}
+            We&rsquo;ll add the dates as soon as {camp.name} announces them.
           </p>
         )}
         {grouped.map((g) => (
@@ -401,7 +401,7 @@ export default async function CampPage({
             {g.sessions.length > 1 &&
             g.sessions.every((s) => s.dateStatus !== "confirmed") ? (
               <div className="mt-3 rounded-xl border-2 border-dashed border-black/10 bg-white p-5">
-                <p className="text-sm font-semibold text-teal">Dates to be announced</p>
+                <p className="text-sm font-semibold text-teal">Not confirmed yet</p>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-600">
                   {(() => {
                     const spread = lastYearSpread(g.sessions);
@@ -410,10 +410,10 @@ export default async function CampPage({
                     return (
                       <>
                         {spread
-                          ? `Last time ${camp.name} ran camps from ${spread}, so expect similar dates this year. `
+                          ? `Last time ${camp.name} ran camps from ${spread}. `
                           : `${camp.name} has not announced these dates yet. `}
                         Programmes last time: {names.join(", ")}
-                        {price ? `, from ${price}` : ""}. We&rsquo;ll add the dates as soon as they&rsquo;re announced.
+                        {price ? `, from ${price}` : ""}. We&rsquo;ll add the dates as soon as they&rsquo;re confirmed.
                       </>
                     );
                   })()}
@@ -443,7 +443,7 @@ export default async function CampPage({
                     </div>
 
                     <p className="mt-1 flex flex-wrap items-center gap-2 text-sm font-semibold text-teal">
-                      {dates ?? "Dates not announced"}
+                      {dates ?? "Not confirmed yet"}
                       {s.dateStatus === "confirmed" && dates && (
                         <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800">
                           Dates confirmed
