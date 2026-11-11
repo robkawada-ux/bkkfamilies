@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SCHOOLS, AREA_LABEL } from "@/lib/schools";
 import { SITE } from "@/lib/seo";
 import { EARLY_YEARS_PATH, takesEarlyYears } from "@/lib/earlyYears";
+import { PRIMARY_PATH, teachesPrimary } from "@/lib/primarySchools";
 import {
   schoolFees,
   feesOnEnquiry,
@@ -427,6 +428,11 @@ export default async function SchoolPage({
         {takesEarlyYears(school.slug) && (
           <Link href={EARLY_YEARS_PATH} className="text-sm font-semibold text-orange">
             International kindergartens and nurseries in Bangkok
+          </Link>
+        )}
+        {teachesPrimary(school.slug) && (
+          <Link href={PRIMARY_PATH} className="text-sm font-semibold text-orange">
+            International primary schools in Bangkok
           </Link>
         )}
         {school.curricula.includes("British") && (

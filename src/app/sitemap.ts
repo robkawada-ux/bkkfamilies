@@ -26,6 +26,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/schools/international-primary-schools-bangkok`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/schools/british-curriculum-schools-bangkok`,
       changeFrequency: "weekly",
       priority: 0.9,
