@@ -125,7 +125,7 @@ export default function LearningSupportPage() {
             Something is not right. Maybe reading has stalled while everyone
             else in the class moved on. Maybe the teacher keeps using the word
             &ldquo;focus.&rdquo; Maybe your three-year-old still is not talking
-            and your mother-in-law keeps telling you that boys are slow. Maybe
+            and your mother-in-law keeps telling you that boys just develop a bit slower sometimes. Maybe
             you already know exactly what you are dealing with and you have just
             arrived in a city where you do not know a single phone number.
           </p>
