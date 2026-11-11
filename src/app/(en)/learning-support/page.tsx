@@ -139,6 +139,17 @@ export default function LearningSupportPage() {
             caveats included rather than removed.
           </p>
           <p>
+            This page is personal for me. I started BKK Families in 2012
+            because I wanted to find a community of like-minded parents
+            searching for resources and answers. My daughter has learning
+            disabilities and cerebral palsy, so finding support was so
+            important for our family. That is a big reason I built this
+            resource for families.{" "}
+            <span className="font-semibold text-purple-dark">
+              Rob, founder of BKK Families
+            </span>
+          </p>
+          <p>
             Nobody pays to be on this page. Where we could not confirm
             something, we say so. Where a provider looks miscategorised or their
             website has gone bad, we say that too.
