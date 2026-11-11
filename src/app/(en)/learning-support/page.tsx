@@ -126,8 +126,8 @@ export default function LearningSupportPage() {
             because I wanted to find a community of like-minded parents
             searching for resources and answers. My daughter has learning
             disabilities and cerebral palsy, so finding support was so
-            important for our family. That is a big reason I built this
-            resource for families. -Rob, founder of BKK Families
+            important for our family. That is a big reason why I built
+            this resource for families. -Rob, founder of BKK Families
           </p>
           <p>
             Something is not right. Maybe reading has stalled while everyone
