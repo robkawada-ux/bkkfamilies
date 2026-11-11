@@ -1,3 +1,4 @@
+import WinterCampsStrip from "@/components/ui/WinterCampsStrip";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { og, SITE } from "@/lib/seo";
@@ -549,6 +550,7 @@ export default function ChristmasGuidePage() {
             has more ideas, and our <Link href="/playgroups" className="font-semibold text-[#c62f3a] hover:underline">playgroups directory</Link> covers babies and toddlers. And for 31 December, see our{" "}
             <Link href="/blog/new-years-eve-in-bangkok-with-kids" className="font-semibold text-[#c62f3a] hover:underline">New Year&rsquo;s Eve with kids guide</Link>.
           </p>
+          <WinterCampsStrip accent="text-[#c62f3a]" />
         </section>
 
         {/* POSTERS */}

@@ -1,3 +1,4 @@
+import WinterCampsStrip from "@/components/ui/WinterCampsStrip";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { og, SITE } from "@/lib/seo";
@@ -530,6 +531,10 @@ export default function LoyKrathongGuidePage() {
               </figure>
             ))}
           </div>
+        </section>
+
+        <section className="pb-4">
+          <WinterCampsStrip heading="Winter break is next: camps with confirmed dates" />
         </section>
 
         {/* FAQ */}

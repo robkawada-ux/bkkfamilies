@@ -1,3 +1,4 @@
+import WinterCampsStrip from "@/components/ui/WinterCampsStrip";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { og, SITE } from "@/lib/seo";
@@ -548,6 +549,7 @@ export default function NyeGuidePage() {
               </p>
             </div>
           </div>
+          <WinterCampsStrip accent="text-[#b7791f]" heading="Camps to fill the rest of the break" />
           <p className="mt-6 rounded-xl bg-[#f6f4ff] px-5 py-4 text-[15px] text-neutral-700">
             Still planning December? Our <Link href="/blog/christmas-in-bangkok-with-kids" className="font-semibold text-[#b7791f] hover:underline">Christmas in Bangkok with kids</Link> guide
             has 28 Christmas dinners, every place to meet Santa and the best lights.
