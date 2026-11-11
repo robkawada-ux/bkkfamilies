@@ -410,7 +410,7 @@ export default async function CampPage({
                     return (
                       <>
                         {spread
-                          ? `Last year ${camp.name} ran ${g.sessions.length} camp weeks from ${spread}, so expect a similar spread this year. `
+                          ? `Last time ${camp.name} ran camps from ${spread}, so expect similar dates this year. `
                           : `${camp.name} has not announced these dates yet. `}
                         Programmes last time: {names.join(", ")}
                         {price ? `, from ${price}` : ""}. We&rsquo;ll add the dates as soon as they&rsquo;re announced.
