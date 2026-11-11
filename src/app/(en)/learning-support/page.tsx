@@ -121,6 +121,14 @@ export default function LearningSupportPage() {
       <div className="mx-auto max-w-6xl px-4 py-12">
         {/* Intro */}
         <div className="mx-auto max-w-3xl space-y-4 leading-relaxed text-neutral-700">
+          <p className="font-bold text-purple-dark">
+            This page is personal for me. I started BKK Families in 2012
+            because I wanted to find a community of like-minded parents
+            searching for resources and answers. My daughter has learning
+            disabilities and cerebral palsy, so finding support was so
+            important for our family. That is a big reason I built this
+            resource for families. -Rob, founder of BKK Families
+          </p>
           <p>
             Something is not right. Maybe reading has stalled while everyone
             else in the class moved on. Maybe the teacher keeps using the word
@@ -137,17 +145,6 @@ export default function LearningSupportPage() {
             both time and money on the wrong one. So we built this: every learning support
             provider we could verify, described in plain language, with the
             caveats included rather than removed.
-          </p>
-          <p>
-            This page is personal for me. I started BKK Families in 2012
-            because I wanted to find a community of like-minded parents
-            searching for resources and answers. My daughter has learning
-            disabilities and cerebral palsy, so finding support was so
-            important for our family. That is a big reason I built this
-            resource for families.{" "}
-            <span className="font-semibold text-purple-dark">
-              Rob, founder of BKK Families
-            </span>
           </p>
           <p>
             Nobody pays to be on this page. Where we could not confirm
