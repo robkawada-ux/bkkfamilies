@@ -35,8 +35,8 @@ const FAQ = [
     a: "Usually not. Most international school camps in Bangkok are open to children from any school, and several actively market to outside families. It is worth confirming when you book, since a few programmes give priority to their own students.",
   },
   {
-    q: "Why do some listings say a camp has not been re-announced?",
-    a: "Camp operators publish dates late, often only four to six weeks ahead. Rather than hide a camp that reliably runs every year, we show it with the dates it last ran and mark it clearly. It tells you who to watch, and it is more useful than an empty page.",
+    q: "Why do some listings say not confirmed yet?",
+    a: "Camp operators publish dates late, often only four to six weeks ahead. For the next school break, a camp that runs every year but hasn't announced its dates yet is marked not confirmed yet, so you know who to watch. Breaks further away aren't listed until they're next.",
   },
   {
     q: "When should I book?",
@@ -113,10 +113,8 @@ export default function CampsPage() {
           </p>
           <p>
             Nobody pays to be listed here. Where a price is not published we say
-            so rather than guessing. Where a camp reliably runs every year but
-            has not announced this year&rsquo;s dates yet, we show it with the
-            dates it last ran and mark it clearly, because knowing who to watch
-            is more useful than a shorter list.
+            so rather than guessing. We focus on the next school break: every
+            week is marked either dates confirmed or not confirmed yet.
           </p>
         </div>
 
