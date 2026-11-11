@@ -474,14 +474,14 @@ export const PLAYGROUPS_ZH: Record<string, PlaygroupZh> = {
   "outdoor-school-bangkok-playgroup": {
     description:
       "一小时的户外自然主题活动，每月有一个主题引导故事、歌曲和游戏，节奏温和、以感官为主，不会太热闹。孩子可以赤脚踩在草地上，还能见到这里的“常住居民”小乌龟，这在曼谷市中心很少见。",
-    worthKnowing: "请通过 LINE 预约，电话 097 092 0924。价格未公布。",
+    worthKnowing: "请通过 LINE 预约，电话 097 092 0924。价格和年龄来自学校目前的收费页面；日期和时间来自较旧的列表，预约时请再确认。",
     transit: "BTS Phra Khanong 站，步行5分钟",
     sessions: [{}],
   },
   "first-steps-international-preschool-playgroup": {
     description:
-      "由教学人员带领的有结构的英语游戏小组，每周的主要活动不同：手工、戏水日、木偶剧、音乐、舞蹈和烹饪。活动结束后，家庭可以留下来使用学校场地。",
-    worthKnowing: "价格未公布。",
+      "每周一次的英语游戏小组，由学校幼儿部主任 Carly Harvey 带领。每周围绕一本故事书设定新主题，并据此安排活动。",
+    worthKnowing: "First Steps International Preschool 现已更名为 Future Steps International School。预约或询问本周主题，请发邮件给 Carly。",
     transit: "BTS Phrom Phong 站或 Asok 站",
     sessions: [{}],
   },
