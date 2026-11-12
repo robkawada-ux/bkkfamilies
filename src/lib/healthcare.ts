@@ -1060,6 +1060,65 @@ export const FACILITIES: Facility[] = [
     facebook: "https://www.facebook.com/MedConsultClinicAsia",
     lastVerified: "2026-10-19",
   },
+  {
+    slug: "healthdeliver-asoke",
+    name: "HealthDeliver Medical Clinic, Asoke",
+    type: "clinic",
+    area: "Watthana",
+    address: "45 Prasarnmit Plaza, Soi Sukhumvit 23, Sukhumvit Road, Khlong Toei Nuea, Watthana, Bangkok 10110",
+    nearestTransit: "BTS Asok or MRT Sukhumvit",
+    description:
+      "The Asoke branch of HealthDeliver, a small Bangkok clinic group with three branches (Asoke, Phrom Phong and Sathorn). General practice for adults and children aged six and up, health checks, blood tests and vaccinations, in English and Thai. HealthDeliver's clinical psychologist, Dr Sarunporn (Jay) Sirikietsoong, Psy.D., also offers mental health care and learning assessments by appointment across all three branches.",
+    worthKnowing:
+      "Children are seen from age six for GP consultations, blood tests and mental health services, so it is not the place for a baby or toddler. Direct billing with AXA, Luma, MSH and April; other insurers mean pay and claim back. Open 8am to 6.30pm (check which days with the clinic). Mental health and learning assessment appointments must be booked in advance.",
+    services: ["family-medicine", "vaccinations", "mental-health"],
+    languages: ["English"],
+    directBilling: "some",
+    directBillingNote: "AXA, Luma, MSH and April.",
+    website: "https://healthdeliver.asia/healthdeliver-asoke/",
+    email: "info@healthdeliver.asia",
+    phone: "+66 64 553 9506",
+    lastVerified: "2026-11-12",
+  },
+  {
+    slug: "healthdeliver-phrom-phong",
+    name: "HealthDeliver Medical Clinic, Phrom Phong",
+    type: "clinic",
+    area: "Khlong Toei",
+    address: "89 Galeri 24, 2nd floor, Room 206, Soi Sukhumvit 24, Khlong Tan, Khlong Toei, Bangkok 10110",
+    nearestTransit: "BTS Phrom Phong",
+    description:
+      "The Phrom Phong branch of HealthDeliver, a small Bangkok clinic group with three branches (Asoke, Phrom Phong and Sathorn). General practice for adults and children aged six and up, health checks, blood tests and vaccinations, in English and Thai. HealthDeliver's clinical psychologist, Dr Sarunporn (Jay) Sirikietsoong, Psy.D., also offers mental health care and learning assessments by appointment across all three branches.",
+    worthKnowing:
+      "Children are seen from age six for GP consultations, blood tests and mental health services, so it is not the place for a baby or toddler. Direct billing with AXA, Luma, MSH and April; other insurers mean pay and claim back. Open 8am to 6.30pm (check which days with the clinic). Mental health and learning assessment appointments must be booked in advance.",
+    services: ["family-medicine", "vaccinations", "mental-health"],
+    languages: ["English"],
+    directBilling: "some",
+    directBillingNote: "AXA, Luma, MSH and April.",
+    website: "https://healthdeliver.asia/healthdeliver-phrom-phong/",
+    email: "info@healthdeliver.asia",
+    phone: "+66 64 553 9506",
+    lastVerified: "2026-11-12",
+  },
+  {
+    slug: "healthdeliver-sathorn",
+    name: "HealthDeliver Medical Clinic, Sathorn",
+    type: "clinic",
+    area: "Sathon",
+    address: "480–482 Suan Phlu Road, Thung Maha Mek, Sathorn, Bangkok 10120",
+    description:
+      "The Sathorn branch of HealthDeliver, a small Bangkok clinic group with three branches (Asoke, Phrom Phong and Sathorn). General practice for adults and children aged six and up, health checks, blood tests and vaccinations, in English and Thai. HealthDeliver's clinical psychologist, Dr Sarunporn (Jay) Sirikietsoong, Psy.D., also offers mental health care and learning assessments by appointment across all three branches.",
+    worthKnowing:
+      "Children are seen from age six for GP consultations, blood tests and mental health services, so it is not the place for a baby or toddler. Direct billing with AXA, Luma, MSH and April; other insurers mean pay and claim back. Open 8am to 6.30pm (check which days with the clinic). Mental health and learning assessment appointments must be booked in advance.",
+    services: ["family-medicine", "vaccinations", "mental-health"],
+    languages: ["English"],
+    directBilling: "some",
+    directBillingNote: "AXA, Luma, MSH and April.",
+    website: "https://healthdeliver.asia/healthdeliver-sathorn/",
+    email: "info@healthdeliver.asia",
+    phone: "+66 64 553 9506",
+    lastVerified: "2026-11-12",
+  },
 ];
 
 export const ALL_AREAS: string[] = Array.from(
