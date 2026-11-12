@@ -1060,6 +1060,14 @@ export const FACILITIES: Facility[] = [
     facebook: "https://www.facebook.com/MedConsultClinicAsia",
     lastVerified: "2026-10-19",
   },
+];
+
+/**
+ * Ready but not published: HealthDeliver's three clinics (details from Prim
+ * Udomdej, 12 Nov 2026). Held until HealthDeliver links back to BKK Families
+ * from its website. To publish, move these entries into FACILITIES above.
+ */
+export const HELD_FACILITIES: Facility[] = [
   {
     slug: "healthdeliver-asoke",
     name: "HealthDeliver Medical Clinic, Asoke",
@@ -1120,6 +1128,7 @@ export const FACILITIES: Facility[] = [
     lastVerified: "2026-11-12",
   },
 ];
+
 
 export const ALL_AREAS: string[] = Array.from(
   new Set(FACILITIES.map((f) => f.area))

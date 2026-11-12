@@ -217,40 +217,6 @@ export const PROVIDERS: Provider[] = [
     checked: "September 2026",
   },
   {
-    slug: "healthdeliver-learning-assessments",
-    name: "HealthDeliver Learning Assessments (Dr Jay Sirikietsoong)",
-    category: "Assessment & diagnosis",
-    area: "Watthana",
-    address:
-      "HealthDeliver Medical Clinic branches: Asoke (Prasarnmit Plaza, Sukhumvit Soi 23), Phrom Phong (Galeri 24, Sukhumvit Soi 24) and Sathorn (480–482 Suan Phlu Road)",
-    ages: "6 and up",
-    languages: ["English", "Thai"],
-    delivery: ["At a centre"],
-    services: [
-      "Psycho-educational evaluations",
-      "Neuropsychological evaluations",
-      "Psychological evaluations",
-      "Fitness-for-school assessments",
-      "Written reports, feedback and recommendations",
-      "Psychotherapy",
-    ],
-    tags: [
-      "Assessment & diagnosis",
-      "Dyslexia & literacy",
-      "ADHD & attention",
-      "Anxiety & mood",
-      "Behaviour",
-      "Sensory processing",
-    ],
-    website: "https://mentalhealth.healthdeliverclinic.asia/",
-    phone: "+66 64 553 9506",
-    email: "info@healthdeliver.asia",
-    description:
-      "HealthDeliver is a small clinic group with branches in Asoke, Phrom Phong and Sathorn, and its learning assessments are carried out by Dr Sarunporn (Jay) Sirikietsoong, Psy.D., a clinical psychologist and neuropsychologist. She trained in the United States (BA in Psychology, University of Oregon; MA in Clinical Psychology, Pepperdine University; Psy.D., American School of Professional Psychology) and is licensed in Virginia.\n\nAssessments cover learning disabilities such as dyslexia, ADHD and oppositional defiant disorder, sensory processing, mood and anxiety, and cognitive difficulties. Families receive a written report with feedback and practical recommendations for home and school. Dr Jay works with children, adolescents and adults, and can follow an assessment with psychotherapy.\n\nAppointments are available at all three branches but must be booked in advance.",
-    note: "Dr Jay's licence is from Virginia, USA. If you need the report for exam access arrangements or a school's learning support team, ask the school which assessors it accepts before booking. Fees are not published, so ask for a quote, and check whether your insurer covers assessments. HealthDeliver bills AXA, Luma, MSH and April directly for clinic services.",
-    checked: "November 2026",
-  },
-  {
     slug: "hope-center-for-learning",
     name: "HOPE Center for Learning",
     category: "Tutoring & mentoring",
@@ -1084,6 +1050,49 @@ export const PROVIDERS: Provider[] = [
     checked: "September 2026",
   },
 ];
+
+/**
+ * Ready but not published: HealthDeliver learning assessments (Dr Jay
+ * Sirikietsoong). Held until HealthDeliver links back to BKK Families from its
+ * website. To publish, move this entry into PROVIDERS above.
+ */
+export const HELD_PROVIDERS: Provider[] = [
+  {
+    slug: "healthdeliver-learning-assessments",
+    name: "HealthDeliver Learning Assessments (Dr Jay Sirikietsoong)",
+    category: "Assessment & diagnosis",
+    area: "Watthana",
+    address:
+      "HealthDeliver Medical Clinic branches: Asoke (Prasarnmit Plaza, Sukhumvit Soi 23), Phrom Phong (Galeri 24, Sukhumvit Soi 24) and Sathorn (480–482 Suan Phlu Road)",
+    ages: "6 and up",
+    languages: ["English", "Thai"],
+    delivery: ["At a centre"],
+    services: [
+      "Psycho-educational evaluations",
+      "Neuropsychological evaluations",
+      "Psychological evaluations",
+      "Fitness-for-school assessments",
+      "Written reports, feedback and recommendations",
+      "Psychotherapy",
+    ],
+    tags: [
+      "Assessment & diagnosis",
+      "Dyslexia & literacy",
+      "ADHD & attention",
+      "Anxiety & mood",
+      "Behaviour",
+      "Sensory processing",
+    ],
+    website: "https://mentalhealth.healthdeliverclinic.asia/",
+    phone: "+66 64 553 9506",
+    email: "info@healthdeliver.asia",
+    description:
+      "HealthDeliver is a small clinic group with branches in Asoke, Phrom Phong and Sathorn, and its learning assessments are carried out by Dr Sarunporn (Jay) Sirikietsoong, Psy.D., a clinical psychologist and neuropsychologist. She trained in the United States (BA in Psychology, University of Oregon; MA in Clinical Psychology, Pepperdine University; Psy.D., American School of Professional Psychology) and is licensed in Virginia.\n\nAssessments cover learning disabilities such as dyslexia, ADHD and oppositional defiant disorder, sensory processing, mood and anxiety, and cognitive difficulties. Families receive a written report with feedback and practical recommendations for home and school. Dr Jay works with children, adolescents and adults, and can follow an assessment with psychotherapy.\n\nAppointments are available at all three branches but must be booked in advance.",
+    note: "Dr Jay's licence is from Virginia, USA. If you need the report for exam access arrangements or a school's learning support team, ask the school which assessors it accepts before booking. Fees are not published, so ask for a quote, and check whether your insurer covers assessments. HealthDeliver bills AXA, Luma, MSH and April directly for clinic services.",
+    checked: "November 2026",
+  },
+];
+
 
 export const ALL_CATEGORIES: ProviderCategory[] = Array.from(
   new Set(PROVIDERS.map((p) => p.category)),
