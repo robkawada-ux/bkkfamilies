@@ -64,6 +64,10 @@ Rebuild of bkkfamilies.com (site for the Bangkok Expat Families community) from 
 - Translations live in `src/lib/zh/<directory>.ts` (`*_ZH` maps keyed by English slug). Facts (prices, ages, times, dates, phones, URLs) are read from the English data; only free text is translated. A listing with no entry is absent from /zh (no mixed-language pages). Glossary and style rules are at the top of `src/lib/zh/common.ts`. Zh directory components in `src/components/zh/` are copies of the English ones, so a change to English filter logic must be mirrored by hand.
 - When English listing text changes, update the Chinese entry too. Reviewer notes (terms to double-check) are in `data/zh-review-notes/`.
 
+## Do not contact (check before ANY outreach email, draft, newsletter or listing check)
+These people asked not to be emailed. Never email, draft to, or add them to any list unless they write to us first; replying to a message they send is fine. The full list lives in the project doc `claude/do-not-contact.md`.
+- Kids Kingdom International Kindergarten, Sukhumvit 47: Lily Narula (Director), lily@kidskingdom.ac.th and info@kidskingdom.ac.th. Asked 12 Nov 2026. Newsletter contacts sheet row set to Unsubscribed. Her free playgroup and school listings stay up. Other Kids Kingdom branches (Ruamrudee, Sukhumvit 26) have their own contacts and are not covered.
+
 ## Tools
 - Link-checker script at `scripts/linkcheck.sh` for external school website URLs. Run with `bash ~/Projects/bkkfamilies/scripts/linkcheck.sh`. Default parallelism of 12 causes timeout false positives — use 4 instead.
 

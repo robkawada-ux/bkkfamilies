@@ -1103,6 +1103,8 @@ export const PLAYGROUPS: Playgroup[] = [
       "The Sukhumvit 47 sister to the Ruamrudee session, running on Monday mornings for toddlers from 15 months to three. The morning starts outdoors with swings, slides, sand, cycling, water and messy play, alongside indoor role play, play dough, blocks and a reading corner. Then come music and movement with instruments, a provided snack, and songs, stories, puppets, crafts and parachute and bubble time before goodbye at 11.15.",
     worthKnowing: "Book in advance. Six and ten session packages bring the price down to 550 and 540 baht a session, and they never expire, so missed Mondays are not wasted. Special Saturday playgroups are announced on the school's Facebook page.",
     bookingRequired: true,
+    // DO NOT CONTACT: Lily Narula (Director) asked on 12 Nov 2026 for no further emails. Never email this
+    // address or lily@kidskingdom.ac.th unless she writes to us first. See "Do not contact" in CLAUDE.md.
     email: "info@kidskingdom.ac.th",
     phone: "02 258 7242",
     website: "https://kidskingdom.ac.th/campuses/sukhumvit-47/",
