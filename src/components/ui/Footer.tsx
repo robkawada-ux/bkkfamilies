@@ -65,7 +65,22 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-10 border-t border-white/10 pt-6 text-xs text-white/50">
+        <div className="mt-10 rounded-xl bg-white/5 px-5 py-4 text-sm text-white/80">
+          Also from us:{" "}
+          <a href="https://www.phuketfamilies.com" className="font-semibold text-teal hover:text-white">
+            Phuket Families
+          </a>{" "}
+          and{" "}
+          <a href="https://www.chiangmaifamilies.com" className="font-semibold text-teal hover:text-white">
+            Chiang Mai Families
+          </a>
+          , schools, camps and family life in Phuket and Chiang Mai, and{" "}
+          <a href="https://www.distaclass.com" className="font-semibold text-teal hover:text-white">
+            Distaclass
+          </a>
+          , our guide to homeschooling and online school for families abroad.
+        </div>
+        <div className="mt-6 border-t border-white/10 pt-6 text-xs text-white/50">
           © {new Date().getFullYear()} BKK Families. All rights reserved.
         </div>
       </div>

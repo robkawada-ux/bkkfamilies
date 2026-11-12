@@ -82,6 +82,15 @@ export default function SchoolsPage() {
           guide compares Year 1 fees.
         </p>
         <SchoolDirectory />
+        <p className="mt-10 text-center text-sm text-neutral-600">
+          Moving elsewhere in Thailand? See{" "}
+          <a href="https://www.phuketfamilies.com/schools" className="font-semibold text-orange">international schools in Phuket</a>{" "}
+          and{" "}
+          <a href="https://www.chiangmaifamilies.com/schools" className="font-semibold text-orange">international schools in Chiang Mai</a>
+          , or{" "}
+          <a href="https://www.distaclass.com" className="font-semibold text-orange">online schools and homeschooling</a>{" "}
+          if a traditional school isn&apos;t the right fit.
+        </p>
       </div>
     </>
   );
