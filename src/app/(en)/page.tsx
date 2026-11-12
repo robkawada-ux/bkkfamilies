@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { og } from "@/lib/seo";
+import { og, SITE } from "@/lib/seo";
 import Link from "next/link";
 import StatCard from "@/components/ui/StatCard";
 import ArticleCard from "@/components/ui/ArticleCard";
@@ -36,6 +36,37 @@ const THANKS_FROM = "2026-10-30";
 const THANKS_UNTIL = "2026-11-26";
 const THANKS_DAY = "2026-11-26";
 
+// Tells search engines the site's name and who publishes it, and ties the
+// site to the Facebook group and the sister sites as one organisation.
+const orgJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "BKK Families",
+    alternateName: "bkkfamilies.com",
+    url: SITE,
+    inLanguage: "en",
+    publisher: { "@id": `${SITE}/#organization` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE}/#organization`,
+    name: "BKK Families",
+    alternateName: "Bangkok Expat Families",
+    url: SITE,
+    logo: `${SITE}/apple-icon.png`,
+    foundingDate: "2012",
+    email: "info@bkkfamilies.com",
+    areaServed: { "@type": "Place", name: "Bangkok, Thailand" },
+    sameAs: ["https://www.facebook.com/groups/395501457186828"],
+    subOrganization: [
+      { "@type": "Organization", name: "Phuket Families", url: "https://www.phuketfamilies.com" },
+      { "@type": "Organization", name: "Chiang Mai Families", url: "https://www.chiangmaifamilies.com" },
+    ],
+  },
+];
+
 export default function HomePage() {
   // Seasonal pieces published early stay off the homepage until featureFrom.
   const latest = listedArticles().filter((a) => isFeatured(a)).slice(0, 6);
@@ -54,6 +85,10 @@ export default function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
       {/* HERO */}
       <section className="bg-orange px-4 py-20 text-white md:py-28">
         <div
