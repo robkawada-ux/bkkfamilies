@@ -1166,6 +1166,8 @@ export const PLAYGROUPS: Playgroup[] = [
         frequency: "weekly",
         start: "09:30",
         end: "11:30",
+        minAgeMonths: 14,
+        maxAgeMonths: 2 * Y + 6,
         price: { amount: 450, unit: "session", note: "Snacks and craft materials included." },
       },
       {
@@ -1181,13 +1183,14 @@ export const PLAYGROUPS: Playgroup[] = [
     languages: ["English", "Mandarin"],
     description:
       "Theme-based sessions built around twelve topics such as pets, family and musical instruments, with free play, snack, songs, story time, creative art, sensory play and early STEAM. One of only two places offering a Mandarin playgroup.",
-    worthKnowing: "Tell the school which day you want and it will hold a place. Age range not published.",
+    worthKnowing: "Tell the school which day you want and it will hold a place. Snacks and craft materials are included in all sessions. Age range for the Mandarin playgroup not published.",
     bookingRequired: true,
     email: "enquiry@abcpathways.co.th",
     phone: "02 260 6888",
-    status: "check",
-    sourceUrl: "https://www.bkkkids.com/blog/where-to-find-awesome-kids-playgroups-in-bangkok/",
-    lastVerified: "2026-09-28",
+    status: "confirmed",
+    confirmedByOrganiser: true,
+    sourceUrl: "https://www.abcpathways.co.th/",
+    lastVerified: "2026-11-12",
   },
   {
     slug: "storytime-preschool-playgroup",
