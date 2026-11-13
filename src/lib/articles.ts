@@ -29,7 +29,8 @@ export interface Article {
    * above the article and every outbound link gets rel="sponsored". Never
    * set this on a review or a directory listing: those are not for sale.
    */
-  sponsored?: { sponsor: string; url?: string };
+  /** logo: optional sponsor logo under /images/sponsors/, shown in the notice. */
+  sponsored?: { sponsor: string; url?: string; logo?: string };
   /**
    * Holds the article at the front of blog listings (homepage "From the
    * Blog" and /blog) until the `until` date, Bangkok time, exclusive.

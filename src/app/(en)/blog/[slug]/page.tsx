@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ARTICLES, getArticle } from "@/lib/articles";
+import { ARTICLES, getArticle as getPublishedArticle } from "@/lib/articles";
+import { getPreviewArticle } from "@/lib/articlePreviews";
+
+/** Published articles first, then private sponsor previews (see lib/articlePreviews). */
+function getArticle(slug: string) {
+  return getPublishedArticle(slug) ?? getPreviewArticle(slug);
+}
 import { SCHOOLS } from "@/lib/schools";
 import { FACILITIES } from "@/lib/healthcare";
 import RichText, { stripRichText } from "@/components/ui/RichText";
@@ -56,9 +62,12 @@ export async function generateMetadata({
   const url = "https://www.bkkfamilies.com/blog/" + article.slug;
   const image = shareImage(article.slug, article.heroImage);
 
+  const isPreview = !getPublishedArticle(slug);
+
   return {
     title: article.title,
     description,
+    ...(isPreview ? { robots: { index: false, follow: false } } : {}),
     keywords: article.keywords,
     alternates: {
       canonical: url,
@@ -88,6 +97,7 @@ export default async function ArticlePage({
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return notFound();
+  const isPreview = !getPublishedArticle(slug);
 
   const url = "https://www.bkkfamilies.com/blog/" + article.slug;
 
@@ -164,6 +174,13 @@ export default async function ArticlePage({
         />
       )}
 
+      {isPreview && (
+        <p className="mb-6 rounded-lg border border-yellow-300 bg-yellow-50 px-4 py-3 text-sm text-neutral-700">
+          <span className="font-semibold">Private preview.</span> This article is
+          not published yet and only people with this link can see it.
+        </p>
+      )}
+
       <nav aria-label="Breadcrumb" className="mb-4 text-xs text-neutral-400">
         <Link href="/" className="hover:text-orange">Home</Link>
         <span className="mx-1.5">/</span>
@@ -211,6 +228,14 @@ export default async function ArticlePage({
             article.sponsored.sponsor
           )}
           . It is not a review, and it does not affect our directories or reviews.
+          {article.sponsored.logo && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={article.sponsored.logo}
+              alt={article.sponsored.sponsor + " logo"}
+              className="mt-3 block h-10 w-auto max-w-full"
+            />
+          )}
         </p>
       )}
 
