@@ -6,7 +6,7 @@ import CampsDirectory from "@/components/ui/CampsDirectory";
 import { CAMPS, upcomingSessions } from "@/lib/camps";
 
 // Re-render hourly so camps drop off the day after they finish.
-export const revalidate = 3600;
+export const revalidate = 86400; // daily: camp weeks drop off by date, so once a day is enough (CPU cost)
 
 const TITLE = "Holiday Camps in Bangkok";
 const DESCRIPTION =

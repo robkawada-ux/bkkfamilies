@@ -16,7 +16,7 @@ import BranchList from "@/components/ui/BranchList";
 
 
 // Re-render hourly so camps drop off the day after they finish.
-export const revalidate = 3600;
+export const revalidate = 86400; // daily: camp weeks drop off by date, so once a day is enough (CPU cost)
 const SITE = "https://www.bkkfamilies.com";
 
 const MONTHS = [

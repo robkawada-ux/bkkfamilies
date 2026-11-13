@@ -5,7 +5,7 @@ import ArticleCard from "@/components/ui/ArticleCard";
 import { listedArticles } from "@/lib/articles";
 
 // Re-render hourly so pinned articles drop back into date order on time.
-export const revalidate = 3600;
+export const revalidate = 21600; // every 6 hours (was hourly; cut for Vercel CPU cost)
 
 export const metadata: Metadata = {
   alternates: { canonical: "/blog" },

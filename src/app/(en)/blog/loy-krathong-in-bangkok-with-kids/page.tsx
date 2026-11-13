@@ -27,7 +27,7 @@ import {
 } from "@/lib/loykrathong";
 
 // Re-render hourly so the countdown stays right.
-export const revalidate = 3600;
+export const revalidate = 21600; // every 6 hours (was hourly; cut for Vercel CPU cost)
 
 const TITLE = "Loy Krathong 2026 in Bangkok with Kids: Where to Float";
 const DESCRIPTION = `Loy Krathong ${LOY_YEAR} in Bangkok with kids: ${PLACES.length} places to float a krathong rated by crowd, city venues and dates, the traditions explained and how to make one.`;

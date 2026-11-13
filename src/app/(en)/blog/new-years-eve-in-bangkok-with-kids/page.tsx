@@ -29,7 +29,7 @@ import {
 } from "@/lib/nye";
 
 // Re-render hourly so the countdown stays right.
-export const revalidate = 3600;
+export const revalidate = 21600; // every 6 hours (was hourly; cut for Vercel CPU cost)
 
 const TITLE = "New Year's Eve in Bangkok 2026 with Kids: Fireworks and Countdowns";
 const DESCRIPTION =
