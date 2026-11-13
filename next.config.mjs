@@ -126,6 +126,9 @@ const nextConfig = {
   async redirects() {
     return [
       ...legacyRedirects.map((r) => ({ ...r, permanent: true })),
+      // Sponsored article previews, now published (13 Nov 2026).
+      { source: "/blog/how-to-choose-a-level-subjects-expat-parents-260baf", destination: "/blog/how-to-choose-a-level-subjects-expat-parents", permanent: true },
+      { source: "/blog/supporting-your-child-through-the-ib-diploma-54db3f", destination: "/blog/supporting-your-child-through-the-ib-diploma", permanent: true },
       // Advertiser short links, used in Facebook posts. Not permanent, so the
       // destination can change and browsers don't cache it.
       {
