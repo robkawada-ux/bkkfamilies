@@ -1653,23 +1653,26 @@ export const PLAYGROUPS: Playgroup[] = [
     transit: "BTS Sala Daeng or MRT Silom",
     sessions: [
       {
-        days: ["Wed"],
+        days: ["Wed", "Fri"],
         frequency: "weekly",
-        start: "09:30",
-        end: "11:30",
+        start: "09:00",
+        end: "11:00",
         minAgeMonths: 0,
         maxAgeMonths: 5 * Y,
+        price: { amount: 100, unit: "session", note: "Per child, one caregiver included. Tea and coffee for adults, fruit and crackers for children." },
+        note: "Drop in, no advance booking. Fill in a registration form once on your first visit. Closed on public holidays.",
       },
     ],
     languages: ["English"],
     description:
       "A long-running parents and tots group in Christ Church's big hall on Convent Road, with a large, changing set of toys, a craft and music. It is community-run and more relaxed than school playgroups.",
     worthKnowing:
-      "The Wednesday session opens with a short Bible story. Details come from the group's Facebook page, so check it for holiday closures.",
+      "The Wednesday session opens with a short Bible story. There is a large car park, plus nappy-changing and toilet facilities. Any special closures are announced on the group's Facebook page and WhatsApp group.",
     facebook: "https://www.facebook.com/TinyTotsatCCB/",
-    status: "check",
+    email: "children'sministry@christchurchbangkok.org",
+    status: "confirmed",
     sourceUrl: "https://www.facebook.com/TinyTotsatCCB/",
-    lastVerified: "2026-09-28",
+    lastVerified: "2026-11-13",
   },
   {
     slug: "neilson-hays-library-storytime",

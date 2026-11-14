@@ -549,9 +549,14 @@ export const PLAYGROUPS_ZH: Record<string, PlaygroupZh> = {
     description:
       "Christ Church 位于 Convent Road 的大礼堂里举办的历史悠久的亲子小组，有大量不断更换的玩具、手工和音乐。由社区运营，比学校的游戏小组更轻松。",
     worthKnowing:
-      "周三的活动以简短的圣经故事开场。信息来自该小组的 Facebook 页面，请查看以确认假期是否停办。",
+      "周三的活动以简短的圣经故事开场。设有大型停车场，以及换尿布台和洗手间。如遇特殊停办，会在小组的 Facebook 页面和 WhatsApp 群公布。",
     transit: "BTS Sala Daeng 站或地铁 Silom 站",
-    sessions: [{}],
+    sessions: [
+      {
+        priceNote: "每个孩子，含一名照顾者。为成人提供茶和咖啡，为孩子提供水果和饼干。",
+        note: "直接前往，无需提前预约。首次到访时填写一次登记表。公众假期停办。",
+      },
+    ],
   },
   "neilson-hays-library-storytime": {
     description:
