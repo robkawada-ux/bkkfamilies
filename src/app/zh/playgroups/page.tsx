@@ -135,7 +135,7 @@ export default function ZhPlaygroupsPage() {
             游戏小组是为小朋友准备的，但家长也需要自己的圈子，尤其是在一座新城市生活的第一年。The Village 是一个 WhatsApp 社群，在泰国的妈妈们在里面分享推荐、提问和交朋友，并在曼谷举办仅限妈妈参加的聚会。
           </p>
           <a
-            href="https://thevillage.mom"
+            href="https://thevillage.mom/mom-groups-bangkok"
             target="_blank"
             rel="noopener"
             className="mt-4 inline-block rounded-full bg-purple px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"

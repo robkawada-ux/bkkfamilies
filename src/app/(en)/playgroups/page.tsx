@@ -158,7 +158,7 @@ export default function PlaygroupsPage() {
             Bangkok.
           </p>
           <a
-            href="https://thevillage.mom"
+            href="https://thevillage.mom/mom-groups-bangkok"
             target="_blank"
             rel="noopener"
             className="mt-4 inline-block rounded-full bg-purple px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
