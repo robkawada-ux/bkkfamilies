@@ -308,13 +308,6 @@ export const PLAYGROUPS_ZH: Record<string, PlaygroupZh> = {
     transit: "学校接驳车，从 Gateway Ekkamai 发车",
     sessions: [{ note: "偶尔也有周六快闪场次。" }],
   },
-  "st-andrews-sathorn-friday-playgroup": {
-    description:
-      "周五的平静场次，以孩子为中心，面向婴儿和年幼的学步儿，内容有故事、歌曲和儿歌、感官游戏、爬行和攀爬，以及简单的手工。这是少数专门面向两岁以下孩子的游戏小组之一，也是认识 Sathorn 一带的家庭、参观早期教育教室的机会。",
-    worthKnowing:
-      "本系列从2026年1月开始。名额有限，请提前致电确认本学期的日期。",
-    sessions: [{ priceNote: "含点心。", note: "学校假期和公共假日不举行。" }],
-  },
   "st-andrews-sukhumvit-107-teddies": {
     description:
       "这是在专用游戏小组楼里举行的以游戏为基础的上午活动，由游戏小组负责人 Ms Alex Rogan 带领，轮换主题活动，培养感官发展、运动技能和社交自信。这是乘 BTS 最容易到达的学校游戏小组。",

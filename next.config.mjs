@@ -94,6 +94,9 @@ const legacyRedirects = [
   { source: "/zh/schools/global-english-school", destination: "/zh/schools/international-christian-school-nonthaburi" },
   { source: "/learning-support/spark-centre", destination: "/learning-support" },
   { source: "/playgroups/precious-learners-world-playgroup", destination: "/playgroups" },
+  // St. Andrews Sathorn stopped its Friday Playgroup (Mona Parsons, 16 Nov 2026)
+  { source: "/playgroups/st-andrews-sathorn-friday-playgroup", destination: "/playgroups" },
+  { source: "/zh/playgroups/st-andrews-sathorn-friday-playgroup", destination: "/zh/playgroups" },
   { source: "/activities/wild-spooky-rumpus-halloween-thecommons", destination: "/activities" },
   { source: "/schools/the-ideal-classroom-bangk", destination: "/schools" },
 
