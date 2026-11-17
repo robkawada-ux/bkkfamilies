@@ -1078,7 +1078,7 @@ export const HELD_FACILITIES: Facility[] = [
     description:
       "The Asoke branch of HealthDeliver, a small Bangkok clinic group with three branches (Asoke, Phrom Phong and Sathorn). General practice for adults and children aged six and up, health checks, blood tests and vaccinations, in English and Thai. HealthDeliver's clinical psychologist, Dr Sarunporn (Jay) Sirikietsoong, Psy.D., also offers mental health care and learning assessments by appointment across all three branches.",
     worthKnowing:
-      "Children are seen from age six for GP consultations, blood tests and mental health services, so it is not the place for a baby or toddler. Direct billing with AXA, Luma, MSH and April; other insurers mean pay and claim back. Open 8am to 6.30pm (check which days with the clinic). Mental health and learning assessment appointments must be booked in advance.",
+      "Children are seen from age six for GP consultations, blood tests and mental health services. For vaccinations the clinic decides case by case, depending on the vaccine and the child, so ask before bringing a younger child. Direct billing with AXA, Luma, MSH and April; other insurers mean pay and claim back. Open every day, 8am to 6.30pm. Mental health and learning assessment appointments must be booked in advance.",
     services: ["family-medicine", "vaccinations", "mental-health"],
     languages: ["English"],
     directBilling: "some",
@@ -1098,7 +1098,7 @@ export const HELD_FACILITIES: Facility[] = [
     description:
       "The Phrom Phong branch of HealthDeliver, a small Bangkok clinic group with three branches (Asoke, Phrom Phong and Sathorn). General practice for adults and children aged six and up, health checks, blood tests and vaccinations, in English and Thai. HealthDeliver's clinical psychologist, Dr Sarunporn (Jay) Sirikietsoong, Psy.D., also offers mental health care and learning assessments by appointment across all three branches.",
     worthKnowing:
-      "Children are seen from age six for GP consultations, blood tests and mental health services, so it is not the place for a baby or toddler. Direct billing with AXA, Luma, MSH and April; other insurers mean pay and claim back. Open 8am to 6.30pm (check which days with the clinic). Mental health and learning assessment appointments must be booked in advance.",
+      "Children are seen from age six for GP consultations, blood tests and mental health services. For vaccinations the clinic decides case by case, depending on the vaccine and the child, so ask before bringing a younger child. Direct billing with AXA, Luma, MSH and April; other insurers mean pay and claim back. Open every day, 8am to 6.30pm. Mental health and learning assessment appointments must be booked in advance.",
     services: ["family-medicine", "vaccinations", "mental-health"],
     languages: ["English"],
     directBilling: "some",
@@ -1117,7 +1117,7 @@ export const HELD_FACILITIES: Facility[] = [
     description:
       "The Sathorn branch of HealthDeliver, a small Bangkok clinic group with three branches (Asoke, Phrom Phong and Sathorn). General practice for adults and children aged six and up, health checks, blood tests and vaccinations, in English and Thai. HealthDeliver's clinical psychologist, Dr Sarunporn (Jay) Sirikietsoong, Psy.D., also offers mental health care and learning assessments by appointment across all three branches.",
     worthKnowing:
-      "Children are seen from age six for GP consultations, blood tests and mental health services, so it is not the place for a baby or toddler. Direct billing with AXA, Luma, MSH and April; other insurers mean pay and claim back. Open 8am to 6.30pm (check which days with the clinic). Mental health and learning assessment appointments must be booked in advance.",
+      "Children are seen from age six for GP consultations, blood tests and mental health services. For vaccinations the clinic decides case by case, depending on the vaccine and the child, so ask before bringing a younger child. Direct billing with AXA, Luma, MSH and April; other insurers mean pay and claim back. Open Tuesday to Sunday, 8am to 6.30pm. Mental health and learning assessment appointments must be booked in advance.",
     services: ["family-medicine", "vaccinations", "mental-health"],
     languages: ["English"],
     directBilling: "some",
