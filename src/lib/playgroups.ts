@@ -1311,8 +1311,8 @@ export const PLAYGROUPS: Playgroup[] = [
       {
         days: ["Thu"],
         frequency: "weekly",
-        start: "10:00",
-        end: "11:00",
+        start: "10:30",
+        end: "11:30",
         minAgeMonths: 18,
         maxAgeMonths: 2 * Y + 6,
         price: { amount: 700, unit: "session" },
@@ -1321,13 +1321,14 @@ export const PLAYGROUPS: Playgroup[] = [
     languages: ["English"],
     description:
       "An outdoor, nature-based hour with monthly themes guiding the stories, songs and play, gentle and sensory rather than busy. Children feel grass underfoot and meet the resident turtle, which is rare in central Bangkok.",
-    worthKnowing: "Book through LINE on 097 092 0924. The price and ages are from the school's current fees page; the day and time come from an older listing, so confirm them when you book.",
+    worthKnowing: "Book through LINE on 097 092 0924.",
     bookingRequired: true,
     phone: "097 092 0924",
     website: "https://outdoorschoolbangkok.com/programs/",
-    status: "check",
+    status: "confirmed",
+    confirmedByOrganiser: true,
     sourceUrl: "https://outdoorschoolbangkok.com/admissions/tuition/",
-    lastVerified: "2026-11-11",
+    lastVerified: "2026-11-17",
   },
   {
     slug: "first-steps-international-preschool-playgroup",

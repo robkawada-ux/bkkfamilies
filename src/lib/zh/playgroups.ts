@@ -467,7 +467,7 @@ export const PLAYGROUPS_ZH: Record<string, PlaygroupZh> = {
   "outdoor-school-bangkok-playgroup": {
     description:
       "一小时的户外自然主题活动，每月有一个主题引导故事、歌曲和游戏，节奏温和、以感官为主，不会太热闹。孩子可以赤脚踩在草地上，还能见到这里的“常住居民”小乌龟，这在曼谷市中心很少见。",
-    worthKnowing: "请通过 LINE 预约，电话 097 092 0924。价格和年龄来自学校目前的收费页面；日期和时间来自较旧的列表，预约时请再确认。",
+    worthKnowing: "请通过 LINE 预约，电话 097 092 0924。",
     transit: "BTS Phra Khanong 站，步行5分钟",
     sessions: [{}],
   },
