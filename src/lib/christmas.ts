@@ -13,7 +13,7 @@ export const CHRISTMAS_SLUG = "christmas-in-bangkok-with-kids";
 export const CHRISTMAS_PATH = `/blog/${CHRISTMAS_SLUG}`;
 export const CHRISTMAS_YEAR = 2026;
 export const LAST_YEAR = 2025;
-export const CHECKED = "2026-11-06";
+export const CHECKED = "2026-11-19";
 
 /** Homepage hero box window, Bangkok time, inclusive. */
 export const PROMO_FROM = "2026-11-02";
@@ -547,6 +547,20 @@ export const EVENTS: FinderItem[] = [
     badges: [{ text: "Santa 3:30pm", tone: "santa" }, { text: "100+ stalls", tone: "plain" }],
     blurb: "A huge charity market in the ballroom, with the Mercy Centre children's choir at noon and Santa mid-afternoon.",
     start: `${Y}-11-26`, end: `${Y}-11-26`,
+  },
+  {
+    name: "Bangkok Prep Winter Fair: The Red Ribbon Wonderland",
+    venue: "Bangkok Prep, Sukhumvit 77",
+    when: "Sat 28 Nov · 2pm to 7pm",
+    facets: { type: ["market", "santa", "show", "play"], when: ["nov"] },
+    flags: ["free"],
+    free: true,
+    confirmed: true,
+    badges: [{ text: "Free entry", tone: "free" }, { text: "Santa photos", tone: "santa" }, { text: "Game rides", tone: "kids" }],
+    blurb: "A big school winter fair with more than 80 stalls for early Christmas shopping, game rides and prize booths, Santa and festive photo spots, live entertainment, and food and drinks all afternoon. Free entry with no registration, and everyone is welcome, not just Bangkok Prep families. Near BTS On Nut.",
+    link: "https://www.bangkokprep.ac.th/news-events/events/bangkok-preps-winter-fair-2026",
+    contact: "02 700 5858",
+    start: `${Y}-11-28`, end: `${Y}-11-28`,
   },
   {
     name: "German Christmas Market",

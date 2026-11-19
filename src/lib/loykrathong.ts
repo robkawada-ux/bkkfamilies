@@ -19,7 +19,7 @@ export const LOY_YEAR = 2026;
 export const LAST_YEAR = 2025;
 /** The full moon night itself, Bangkok time. */
 export const LOY_DAY = "2026-11-24";
-export const CHECKED = "2026-11-03";
+export const CHECKED = "2026-11-19";
 
 export const LOY_IMG_DIR = `/images/articles/${LOY_SLUG}`;
 export const LOY_SHARE_IMAGE = `${LOY_IMG_DIR}/loy-krathong-in-bangkok-2026-family-guide.jpg`;
@@ -80,6 +80,21 @@ export const PLACES: FinderItem[] = [
       "A daytime festival built for small children: booth games, art and craft workshops, the BAMBii mascot, and a krathong floating pond, so little ones get the whole experience without a dark riverbank. No booking needed. Near BTS Phrom Phong.",
     contact: "LINE: @BambiniVilla",
     ...night(LOY_YEAR),
+  },
+  {
+    name: "Tiny Tails Loy Krathong: Little Hands, Floating Lights",
+    venue: "Bangkok Prep, Sukhumvit 77",
+    when: "Sat 21 Nov · 8:30am to 10am, or 10:30am to noon",
+    facets: { area: ["sukhumvit"], kind: ["float"] },
+    flags: ["kids", "water"],
+    level: 1,
+    confirmed: true,
+    badges: [{ text: "฿500 a child", tone: "price" }, { text: "Toddlers to 5", tone: "kids" }, { text: "Book ahead", tone: "plain" }],
+    blurb:
+      "An early Loy Krathong for little ones at Bangkok Prep's Tiny Tails Pre-Nursery, run as a themed Prep's Pups playgroup morning. Children make their own krathong from banana leaves and fresh flowers (no foam, no plastic), enjoy Thai songs, stories and dance, then float it with their family. Walkers to 3 at 8:30am, 3 to 5 at 10:30am, with a parent or carer. 500 baht a session, members pay less. All families welcome, not just Bangkok Prep's.",
+    link: "/playgroups/bangkok-prep-pups-playgroup",
+    contact: "LINE: @622zeadm",
+    ...range("2026-11-21", "2026-11-21"),
   },
   {
     name: "The Enchanting Waterways of Rattanakosin",
