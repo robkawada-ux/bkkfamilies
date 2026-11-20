@@ -11,7 +11,7 @@ export const NYE_SLUG = "new-years-eve-in-bangkok-with-kids";
 export const NYE_PATH = `/blog/${NYE_SLUG}`;
 export const NYE_YEAR = 2026;
 export const LAST_YEAR = 2025;
-export const CHECKED = "2026-11-19";
+export const CHECKED = "2026-11-20";
 
 /** Homepage hero box window, Bangkok time, inclusive. */
 export const PROMO_FROM = "2026-12-26";
@@ -252,8 +252,8 @@ export const DINNERS: FinderItem[] = [
     flags: [],
     level: 1,
     confirmed: true,
-    badges: [{ text: "฿1,500 net", tone: "price" }, { text: "3 for ฿3,000 net by 30 Nov", tone: "price" }],
-    blurb: "A New Year's Eve dinner buffet at Chateau Botanique on the hotel's 2nd floor, on Soi Ruam Rudee 1, finishing at 10:30pm so families can be home for the countdown. Book and prepay on Megatix by 30 November for the Come 3 Pay 2 deal: three people for ฿3,000 net with two hours of free-flow drinks, instead of ฿1,500 net per person with soft drinks.",
+    badges: [{ text: "฿1,500 net", tone: "price" }, { text: "3 for ฿3,000 net by 30 Nov", tone: "price" }, { text: "Kids 6 to 12 ฿750 net", tone: "kids" }, { text: "Under 6 free", tone: "kids" }],
+    blurb: "A New Year's Eve dinner buffet at Chateau Botanique on the hotel's 2nd floor, on Soi Ruam Rudee 1, finishing at 10:30pm so families can be home for the countdown. Book and prepay on Megatix by 30 November for the Come 3 Pay 2 deal: three people for ฿3,000 net with two hours of free-flow drinks, instead of ฿1,500 net per person with soft drinks. Children aged 6 to 12 are ฿750 net, and under-6s eat free.",
     link: "https://megatix.in.th/events/exclusive-sale-festive-season-2026-at-radisson-hotel-chateau-de-bangkok",
     start: `${NYE_YEAR}-12-31`, end: `${NYE_YEAR}-12-31`,
   },
