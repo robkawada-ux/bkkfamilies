@@ -106,7 +106,7 @@ export const DINNERS: FinderItem[] = [
     venue: "Radisson Hotel Chateau de Bangkok, Chateau Botanique, Ploenchit",
     when: "Thu 24 Dec · 6pm to 10pm, and brunch 25 Dec",
     facets: { when: ["eve", "day"], budget: ["1"] },
-    flags: [],
+    flags: ["kids"],
     level: 1,
     confirmed: true,
     badges: [{ text: "฿1,500 net", tone: "price" }, { text: "3 for ฿3,000 net by 30 Nov", tone: "price" }, { text: "Kids 6 to 12 ฿750 net", tone: "kids" }, { text: "Under 6 free", tone: "kids" }],
