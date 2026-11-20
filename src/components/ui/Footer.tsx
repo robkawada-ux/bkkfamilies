@@ -74,11 +74,7 @@ export default function Footer() {
           <a href="https://www.chiangmaifamilies.com" className="font-semibold text-teal hover:text-white">
             Chiang Mai Families
           </a>
-          , schools, camps and family life in Phuket and Chiang Mai, and{" "}
-          <a href="https://www.distaclass.com" className="font-semibold text-teal hover:text-white">
-            Distaclass
-          </a>
-          , our guide to homeschooling and online school for families abroad.
+          , schools, camps and family life in Phuket and Chiang Mai.
         </div>
         <div className="mt-6 border-t border-white/10 pt-6 text-xs text-white/50">
           © {new Date().getFullYear()} BKK Families. All rights reserved.

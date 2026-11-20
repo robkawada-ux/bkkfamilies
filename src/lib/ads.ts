@@ -54,7 +54,7 @@ export const SLOT_SPECS: Record<AdSlotId, SlotSpec> = {
 };
 
 export const ADS: Record<AdSlotId, AdCreative | null> = {
-  // Distaclass, official partner (Rob's own site, unpaid). Fills the top
+  // Distaclass, official partner (no charge). Fills the top
   // banner until a paid booking. When one comes in, replace this entry.
   "home-top": {
     sponsor: "Distaclass",
