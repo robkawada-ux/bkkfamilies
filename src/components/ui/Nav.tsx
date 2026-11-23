@@ -34,7 +34,7 @@ const LINKS: NavLink[] = [
   { href: "/contact#advertise", label: "Advertise With Us", mobile: "bg-purple-dark text-white", desktop: "lg:bg-purple-dark lg:text-white", hover: "hover:brightness-150", bar: "bg-white" },
 ];
 
-export default function Nav({ zhTwins }: { zhTwins?: string[] }) {
+export default function Nav({ zhTwins, thTwins }: { zhTwins?: string[]; thTwins?: string[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -57,6 +57,12 @@ export default function Nav({ zhTwins }: { zhTwins?: string[] }) {
       ? normalized === "/" ? "/zh" : `/zh${normalized}`
       : null;
 
+  // Same for the Thai twin (only when /th is live).
+  const thHref =
+    thTwins && thTwins.includes(normalized)
+      ? normalized === "/" ? "/th" : `/th${normalized}`
+      : null;
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -70,6 +76,16 @@ export default function Nav({ zhTwins }: { zhTwins?: string[] }) {
           <p className="hidden text-sm font-extrabold uppercase tracking-widest text-purple-dark lg:block">
             Your Bangkok Roadmap
           </p>
+        {thHref && (
+          <Link
+            href={thHref}
+            lang="th"
+            hrefLang="th"
+            className="rounded-full border-2 border-purple-dark px-3 py-1.5 text-sm font-bold text-purple-dark hover:bg-purple-dark hover:text-white"
+          >
+            ไทย
+          </Link>
+        )}
         {zhHref && (
           <Link
             href={zhHref}

@@ -31,3 +31,26 @@ h1, h2, h3, h4 {
 :lang(zh-Hans) .tracking-wide,
 :lang(zh-Hans) .tracking-widest,
 :lang(zh-Hans) .tracking-tight { letter-spacing: 0; }
+
+/* Thai pages. Georgia and Arial have no Thai glyphs, so name Thai-capable fonts
+   first. Thai has no word spaces and tall marks, so drop uppercase tracking and
+   give lines more room. */
+:lang(th) body,
+:lang(th) .font-body,
+:lang(th) .font-heading,
+:lang(th) h1,
+:lang(th) h2,
+:lang(th) h3,
+:lang(th) h4 {
+  font-family: "Sukhumvit Set", "Thonburi", "Leelawadee UI", "Noto Sans Thai", "Sarabun",
+    Tahoma, Arial, sans-serif;
+}
+:lang(th) body { line-height: 1.7; }
+:lang(th) h1,
+:lang(th) h2,
+:lang(th) h3,
+:lang(th) h4 { line-height: 1.4; }
+:lang(th) .uppercase { text-transform: none; }
+:lang(th) .tracking-wide,
+:lang(th) .tracking-widest,
+:lang(th) .tracking-tight { letter-spacing: 0; }

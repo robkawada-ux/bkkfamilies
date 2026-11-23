@@ -18,7 +18,7 @@ const LINKS = [
   { href: "/zh/contact", label: "联系我们", cls: "bg-purple-dark text-white", hover: "hover:brightness-150" },
 ] as const;
 
-export default function ZhNav() {
+export default function ZhNav({ thTwins }: { thTwins?: string[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -32,6 +32,9 @@ export default function ZhNav() {
   // The English twin of this page. Every /zh page has one by construction.
   const englishHref = pathname === "/zh" ? "/" : pathname.replace(/^\/zh/, "") || "/";
 
+  // Thai twin of this page, only when /th is live and has it.
+  const thHref = thTwins && thTwins.includes(englishHref) ? (englishHref === "/" ? "/th" : `/th${englishHref}`) : null;
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -44,7 +47,24 @@ export default function ZhNav() {
             曼谷家庭指南
           </span>
         </Link>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          {thHref && (
+            <Link
+              href={thHref}
+              lang="th"
+              hrefLang="th"
+              className="rounded-full border-2 border-purple-dark px-3 py-1 text-sm font-bold text-purple-dark hover:bg-purple-dark hover:text-white"
+            >
+              ไทย
+            </Link>
+          )}
+          <span
+            lang="zh-Hans"
+            aria-current="page"
+            className="rounded-full border-2 border-purple-dark bg-purple-dark px-3 py-1 text-sm font-bold text-white"
+          >
+            中文
+          </span>
           <Link
             href={englishHref}
             hrefLang="en"

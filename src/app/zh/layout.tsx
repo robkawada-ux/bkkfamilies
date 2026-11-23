@@ -4,7 +4,8 @@ import "../globals.css";
 import ZhNav from "@/components/zh/ZhNav";
 import ZhFooter from "@/components/zh/ZhFooter";
 import { Analytics } from "@vercel/analytics/react";
-import { ZH_LAUNCHED } from "@/lib/i18n";
+import { ZH_LAUNCHED, TH_LAUNCHED } from "@/lib/i18n";
+import { thTwinPaths } from "@/lib/th/twins";
 
 // Second root layout (the English site is the (en) route group), so the HTML
 // shell can say lang="zh-Hans" in the server-rendered markup. Chrome and
@@ -37,7 +38,7 @@ export default function ZhRootLayout({ children }: { children: React.ReactNode }
             gtag('config', 'G-QMXV649DCH');
           `}
         </Script>
-        <ZhNav />
+        <ZhNav thTwins={TH_LAUNCHED ? thTwinPaths() : undefined} />
         <main className="flex-1">{children}</main>
         <ZhFooter />
         <Analytics />

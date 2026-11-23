@@ -12,7 +12,8 @@ import { INSURERS } from "@/lib/insurance";
 import { PLAYGROUPS } from "@/lib/playgroups";
 import { ACTIVITIES } from "@/lib/activities";
 import { zhTwinPaths } from "@/lib/zh/twins";
-import { ZH_LAUNCHED, hreflangLanguages, zhPath } from "@/lib/i18n";
+import { ZH_LAUNCHED, TH_LAUNCHED, hreflangLanguages, zhPath, thPath } from "@/lib/i18n";
+import { thTwinPaths } from "@/lib/th/twins";
 
 export const baseUrl = "https://www.bkkfamilies.com";
 
@@ -175,23 +176,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // English paths that have a Chinese twin. Every page here must list the
   // full set of versions, itself included, or Google ignores the pairing.
   const zhTwins = new Set<string>(zhTwinPaths());
+  const thTwins = new Set<string>(TH_LAUNCHED ? thTwinPaths() : []);
 
   const out: MetadataRoute.Sitemap = [];
   for (const entry of english) {
     const path = entry.url === baseUrl ? "/" : entry.url.slice(baseUrl.length);
-    if (!zhTwins.has(path)) {
+    if (!zhTwins.has(path) && !thTwins.has(path)) {
       out.push(entry);
       continue;
     }
     const alternates = { languages: hreflangLanguages(path) };
     out.push({ ...entry, alternates });
-    out.push({
-      ...entry,
-      url: `${baseUrl}${zhPath(path)}`,
-      // Images belong to the English entry; do not repeat them.
-      images: undefined,
-      alternates,
-    });
+    if (zhTwins.has(path)) {
+      out.push({
+        ...entry,
+        url: `${baseUrl}${zhPath(path)}`,
+        // Images belong to the English entry; do not repeat them.
+        images: undefined,
+        alternates,
+      });
+    }
+    if (thTwins.has(path)) {
+      out.push({
+        ...entry,
+        url: `${baseUrl}${thPath(path)}`,
+        images: undefined,
+        alternates,
+      });
+    }
   }
   return out;
 }
