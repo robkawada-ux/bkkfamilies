@@ -138,6 +138,7 @@ export const ARTICLES: Article[] = [
     category: "Activities",
     date: "2026-10-14",
     featureFrom: "2026-11-01",
+    pin: { order: 1, until: "2026-12-26" },
     customPage: true,
     heroImage: "/images/articles/christmas-in-bangkok-with-kids/christmas-in-bangkok-2026-family-guide.jpg",
     excerpt:
@@ -162,7 +163,7 @@ export const ARTICLES: Article[] = [
     category: "Activities",
     date: "2026-11-03",
     customPage: true,
-    pin: { order: 1, until: "2026-11-25" },
+    pin: { order: 1, until: "2026-11-24" },
     heroImage: "/images/articles/loy-krathong-in-bangkok-with-kids/loy-krathong-in-bangkok-2026-family-guide.jpg",
     excerpt:
       "Where to float a krathong in Bangkok with kids, rated by crowd level, this year's city venues and dates, the traditions explained for children, and how to make your own.",
@@ -188,6 +189,7 @@ export const ARTICLES: Article[] = [
     category: "Activities",
     date: "2026-10-14",
     featureFrom: "2026-11-01",
+    pin: { order: 2, until: "2027-01-02" },
     customPage: true,
     heroImage: "/images/articles/new-years-eve-in-bangkok-with-kids/new-years-eve-bangkok-2026-family-guide.jpg",
     excerpt:

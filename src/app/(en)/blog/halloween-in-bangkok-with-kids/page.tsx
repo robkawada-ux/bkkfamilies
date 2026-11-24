@@ -662,7 +662,7 @@ export default function HalloweenGuidePage() {
             </a>
           </div>
           <p className="mt-10 text-sm font-extrabold uppercase tracking-widest text-purple-dark">Your Bangkok Roadmap</p>
-          <p className="mt-1 text-sm text-neutral-500">Next up on the family calendar: Loy Krathong on Tuesday 24 November 2026.</p>
+          <p className="mt-1 text-sm text-neutral-500">Next up on the family calendar: Christmas on Friday 25 December and New Year's Eve on Thursday 31 December 2026.</p>
           <div className="mt-8">
             <p className="font-heading text-xl font-bold text-purple-dark">Coming up next: the festive season</p>
             <div className="mt-4 grid gap-5 sm:grid-cols-2">

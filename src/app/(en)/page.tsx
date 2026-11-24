@@ -73,7 +73,8 @@ export default function HomePage() {
   // Seasonal box in the hero: Loy Krathong until the night itself, then
   // Christmas from the day after, then New Year's Eve from 26 December.
   // No Thanksgiving box (Rob, 10 Nov 2026).
-  const loy = inWindow("2026-11-10", LOY_DAY);
+  // Loy Krathong box switched off on the night itself (Rob, 24 Nov 2026).
+  const loy = false && inWindow("2026-11-10", LOY_DAY);
   const loySleeps = daysUntil(LOY_DAY);
   const thanksgiving = false && inWindow(THANKS_FROM, THANKS_UNTIL);
   const thanksSleeps = daysUntil(THANKS_DAY);
