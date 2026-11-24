@@ -16,6 +16,10 @@ import { SCHOOLS_TH_PART3A } from "./schools/part3a";
 import { SCHOOLS_TH_PART3B } from "./schools/part3b";
 import { SCHOOLS_TH_PART4A } from "./schools/part4a";
 import { SCHOOLS_TH_PART4B } from "./schools/part4b";
+import { SCHOOLS_TH_PART5A } from "./schools/part5a";
+import { SCHOOLS_TH_PART5B } from "./schools/part5b";
+import { SCHOOLS_TH_PART6A } from "./schools/part6a";
+import { SCHOOLS_TH_PART6B } from "./schools/part6b";
 
 export type { SchoolTh };
 
@@ -29,6 +33,10 @@ export const SCHOOLS_TH: Record<string, SchoolTh> = {
   ...SCHOOLS_TH_PART3B,
   ...SCHOOLS_TH_PART4A,
   ...SCHOOLS_TH_PART4B,
+  ...SCHOOLS_TH_PART5A,
+  ...SCHOOLS_TH_PART5B,
+  ...SCHOOLS_TH_PART6A,
+  ...SCHOOLS_TH_PART6B,
 };
 
 /** The nine directory locations. Same ids and order as AREAS in schools.ts. */
