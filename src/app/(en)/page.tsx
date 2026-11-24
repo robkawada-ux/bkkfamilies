@@ -79,7 +79,8 @@ export default function HomePage() {
   const thanksgiving = false && inWindow(THANKS_FROM, THANKS_UNTIL);
   const thanksSleeps = daysUntil(THANKS_DAY);
   const christmas = !loy && !thanksgiving && inWindow(XMAS_FROM, XMAS_UNTIL);
-  const newYear = !loy && !thanksgiving && !christmas && inWindow(NYE_FROM, NYE_UNTIL);
+  // Both boxes run together now: NYE shows alongside Christmas (Rob, 24 Nov 2026).
+  const newYear = !loy && !thanksgiving && inWindow(XMAS_FROM, NYE_UNTIL);
   const seasonal = loy || thanksgiving || christmas || newYear;
   const xmasSleeps = daysUntil(`${CHRISTMAS_YEAR}-12-25`);
   const nyeSleeps = daysUntil(`${NYE_YEAR}-12-31`);
@@ -212,66 +213,54 @@ export default function HomePage() {
             </Link>
           )}
 
-          {christmas && (
-            <Link
-              href={CHRISTMAS_PATH}
-              className="group relative block overflow-hidden rounded-2xl bg-[#0f3b2e] p-7 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
-            >
-              {/* Fairy lights, decorative */}
-              <svg aria-hidden="true" viewBox="0 0 340 60" className="pointer-events-none absolute inset-x-0 top-0 h-14 w-full">
-                <path d="M0 4 Q 85 30 170 4 T 340 4" fill="none" stroke="#06180f" strokeWidth="2" />
-                {[20, 55, 90, 125, 160, 195, 230, 265, 300, 330].map((x, i) => {
-                  const y = 4 + 22 * Math.sin(((x % 170) / 170) * Math.PI);
-                  return <ellipse key={x} cx={x} cy={y + 9} rx="5" ry="7" fill={["#c62f3a", "#f4b942", "#3EC1D3", "#8DC63F"][i % 4]} />;
-                })}
-              </svg>
-              <div className="relative">
-                <span className="mt-8 inline-block rounded-full bg-[#c62f3a] px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-white">
-                  Christmas 2026
-                </span>
-                <p className="mt-4 font-heading text-2xl font-bold leading-tight">Christmas in Bangkok with kids</p>
-                <p className="mt-3 text-sm text-white/80">
-                  29 family Christmas dinners with prices, where to meet Santa, the best lights and markets.
-                </p>
-                <div className="mt-5 flex items-center justify-between gap-3">
-                  {xmasSleeps >= 0 && (
-                    <span className="font-heading text-lg font-bold text-[#f4b942]">
-                      {xmasSleeps === 0 ? "Merry Christmas!" : `${xmasSleeps} ${xmasSleeps === 1 ? "sleep" : "sleeps"} to go`}
-                    </span>
-                  )}
-                  <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0f3b2e] transition group-hover:bg-[#c62f3a] group-hover:text-white">
-                    See the guide →
+          {(christmas || newYear) && (
+            <div className="flex flex-col gap-4">
+              {christmas && (
+                <Link
+                  href={CHRISTMAS_PATH}
+                  className="group relative block overflow-hidden rounded-2xl bg-[#0f3b2e] p-4 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
+                >
+                  <span className="inline-block rounded-full bg-[#c62f3a] px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-widest text-white">
+                    Christmas 2026
                   </span>
-                </div>
-              </div>
-            </Link>
-          )}
+                  <p className="mt-2 font-heading text-lg font-bold leading-tight">Christmas in Bangkok with kids</p>
+                  <p className="mt-1 text-xs text-white/80">29 family dinners, Santa, lights and markets.</p>
+                  <div className="mt-3 flex items-center justify-between gap-3">
+                    {xmasSleeps >= 0 && (
+                      <span className="font-heading text-sm font-bold text-[#f4b942]">
+                        {xmasSleeps === 0 ? "Merry Christmas!" : `${xmasSleeps} ${xmasSleeps === 1 ? "sleep" : "sleeps"} to go`}
+                      </span>
+                    )}
+                    <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[#0f3b2e] transition group-hover:bg-[#c62f3a] group-hover:text-white">
+                      See the guide →
+                    </span>
+                  </div>
+                </Link>
+              )}
 
-          {newYear && (
-            <Link
-              href={NYE_PATH}
-              className="group relative block overflow-hidden rounded-2xl bg-[#141b44] p-7 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
-            >
-              <div className="relative">
-                <span className="inline-block rounded-full bg-[#f5c451] px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-[#141b44]">
-                  New Year&rsquo;s Eve 2026
-                </span>
-                <p className="mt-4 font-heading text-2xl font-bold leading-tight">New Year&rsquo;s Eve in Bangkok with kids</p>
-                <p className="mt-3 text-sm text-white/80">
-                  Every countdown rated by crowd level, family dinners, fireworks cruises and the 8pm midnight trick.
-                </p>
-                <div className="mt-5 flex items-center justify-between gap-3">
-                  {nyeSleeps >= 0 && (
-                    <span className="font-heading text-lg font-bold text-[#f5c451]">
-                      {nyeSleeps === 0 ? "It's tonight!" : `${nyeSleeps} ${nyeSleeps === 1 ? "sleep" : "sleeps"} to go`}
-                    </span>
-                  )}
-                  <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#141b44] transition group-hover:bg-[#f5c451]">
-                    See the guide →
+              {newYear && (
+                <Link
+                  href={NYE_PATH}
+                  className="group relative block overflow-hidden rounded-2xl bg-[#141b44] p-4 text-white shadow-2xl ring-1 ring-black/10 transition hover:-translate-y-1"
+                >
+                  <span className="inline-block rounded-full bg-[#f5c451] px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-widest text-[#141b44]">
+                    New Year&rsquo;s Eve 2026
                   </span>
-                </div>
-              </div>
-            </Link>
+                  <p className="mt-2 font-heading text-lg font-bold leading-tight">New Year&rsquo;s Eve in Bangkok with kids</p>
+                  <p className="mt-1 text-xs text-white/80">Countdowns by crowd level, dinners and fireworks cruises.</p>
+                  <div className="mt-3 flex items-center justify-between gap-3">
+                    {nyeSleeps >= 0 && (
+                      <span className="font-heading text-sm font-bold text-[#f5c451]">
+                        {nyeSleeps === 0 ? "It's tonight!" : `${nyeSleeps} ${nyeSleeps === 1 ? "sleep" : "sleeps"} to go`}
+                      </span>
+                    )}
+                    <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[#141b44] transition group-hover:bg-[#f5c451]">
+                      See the guide →
+                    </span>
+                  </div>
+                </Link>
+              )}
+            </div>
           )}
         </div>
       </section>
