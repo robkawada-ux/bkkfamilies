@@ -1,4 +1,6 @@
 import { SCHOOLS_TH } from "./schools";
+import { PLAYGROUPS_TH } from "./playgroups";
+import { CAMPS_TH } from "./camps";
 
 /**
  * English paths that have a Thai twin under /th. Used for the sitemap's
@@ -10,7 +12,11 @@ export function thTwinPaths(): string[] {
     "/",
     "/schools",
     "/contact",
+    "/playgroups",
+    "/camps",
     "/healthcare/emergency-numbers",
     ...Object.keys(SCHOOLS_TH).map((s) => `/schools/${s}`),
+    ...Object.keys(PLAYGROUPS_TH).map((s) => `/playgroups/${s}`),
+    ...Object.keys(CAMPS_TH).map((s) => `/camps/${s}`),
   ];
 }
