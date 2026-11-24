@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AREAS, type Area } from "@/lib/schools";
 import { AREA_ZH } from "@/lib/zh/schools";
+import { AREA_TH } from "@/lib/th/schools";
 
 // Chinese strings for the /zh map. Station, mall and landmark names stay in
 // English because that is what the BTS and MRT signs show.
@@ -16,6 +17,24 @@ const REGION_SHORT_ZH: Record<Area, string> = {
   onnut: "On Nut",
   bangna: "Bang Na",
   thonburi: "吞武里",
+};
+const REGION_SHORT_TH: Record<Area, string> = {
+  nonthaburi: "นนทบุรี",
+  north: "เหนือ",
+  rama9: "พระราม 9",
+  east: "ตะวันออก",
+  central: "กลางเมือง",
+  sukhumvit: "สุขุมวิท",
+  onnut: "อ่อนนุช",
+  bangna: "บางนา",
+  thonburi: "ธนบุรี",
+};
+const LINE_TH: Record<string, string> = {
+  purple: "MRT สายสีม่วง",
+  arl: "แอร์พอร์ตเรลลิงก์",
+  mrt: "MRT สายสีน้ำเงิน",
+  silom: "BTS สายสีลม",
+  sukhumvit: "BTS สายสุขุมวิท",
 };
 const LINE_ZH: Record<string, string> = {
   purple: "MRT 紫线",
@@ -138,19 +157,22 @@ export default function SchoolAreaMap({
   counts,
   onSelect,
   zh = false,
+  th = false,
 }: {
   selected: "All" | Area;
   counts: Record<Area, number>;
   onSelect: (area: "All" | Area) => void;
   /** Simplified Chinese labels for the /zh pages. */
   zh?: boolean;
+  /** Thai labels for the /th pages. */
+  th?: boolean;
 }) {
   const [hover, setHover] = useState<Area | null>(null);
   const focus = hover ?? (selected === "All" ? null : selected);
   const baseInfo = focus ? AREAS.find((a) => a.id === focus) : null;
-  const info = baseInfo && zh ? { ...baseInfo, ...AREA_ZH[baseInfo.id] } : baseInfo;
+  const info = baseInfo && zh ? { ...baseInfo, ...AREA_ZH[baseInfo.id] } : baseInfo && th ? { ...baseInfo, ...AREA_TH[baseInfo.id] } : baseInfo;
   const areaLabel = (id: Area) =>
-    zh ? AREA_ZH[id].label : AREAS.find((a) => a.id === id)?.label;
+    zh ? AREA_ZH[id].label : th ? AREA_TH[id].label : AREAS.find((a) => a.id === id)?.label;
   const region = focus ? REGIONS.find((r) => r.id === focus) : null;
 
   return (
@@ -160,7 +182,7 @@ export default function SchoolAreaMap({
           viewBox="0 0 600 520"
           className="h-auto w-full select-none"
           role="group"
-          aria-label={zh ? "曼谷地图，分为九个学校区域" : "Map of Bangkok divided into nine school locations"}
+          aria-label={zh ? "曼谷地图，分为九个学校区域" : th ? "แผนที่กรุงเทพฯ แบ่งเป็นเก้าย่านโรงเรียน" : "Map of Bangkok divided into nine school locations"}
         >
           {REGIONS.map((r) => {
             const isSelected = selected === r.id;
@@ -172,7 +194,7 @@ export default function SchoolAreaMap({
                 role="button"
                 tabIndex={0}
                 aria-pressed={isSelected}
-                aria-label={zh ? `${areaLabel(r.id)}，${counts[r.id]}所学校` : `${areaLabel(r.id)}, ${counts[r.id]} schools`}
+                aria-label={zh ? `${areaLabel(r.id)}，${counts[r.id]}所学校` : th ? `${areaLabel(r.id)} ${counts[r.id]} โรงเรียน` : `${areaLabel(r.id)}, ${counts[r.id]} schools`}
                 onClick={() => onSelect(isSelected ? "All" : r.id)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -204,7 +226,7 @@ export default function SchoolAreaMap({
             pointerEvents="none"
           />
           <text x={120} y={238} fontSize={11} fill="#2a8f9c" transform="rotate(62 120 238)" pointerEvents="none">
-            {zh ? "昭披耶河" : "Chao Phraya"}
+            {zh ? "昭披耶河" : th ? "แม่น้ำเจ้าพระยา" : "Chao Phraya"}
           </text>
           <g pointerEvents="none">
             {LINES.map((l) => (
@@ -249,7 +271,7 @@ export default function SchoolAreaMap({
                   fontWeight={700}
                   fill={isSelected ? "#FFFFFF" : "#3D1E5C"}
                 >
-                  {zh ? REGION_SHORT_ZH[r.id] : r.short}
+                  {zh ? REGION_SHORT_ZH[r.id] : th ? REGION_SHORT_TH[r.id] : r.short}
                 </text>
               </g>
             );
@@ -259,11 +281,11 @@ export default function SchoolAreaMap({
           {LINES.slice().reverse().map((l) => (
             <span key={l.id} className="inline-flex items-center gap-1.5">
               <span className="inline-block h-1 w-5 rounded-full" style={{ background: l.color }} />
-              {zh ? LINE_ZH[l.id] ?? l.name : l.name}
+              {zh ? LINE_ZH[l.id] ?? l.name : th ? LINE_TH[l.id] ?? l.name : l.name}
             </span>
           ))}
         </div>
-        <p className="mt-1 text-xs text-neutral-400">{zh ? "简化地图，比例不准确，仅标出主要车站。" : "Simplified map, not to scale. Only major stations are shown."}</p>
+        <p className="mt-1 text-xs text-neutral-400">{zh ? "简化地图，比例不准确，仅标出主要车站。" : th ? "แผนที่แบบย่อ ไม่ตรงมาตราส่วน แสดงเฉพาะสถานีหลัก" : "Simplified map, not to scale. Only major stations are shown."}</p>
       </div>
 
       <div className="rounded-xl border border-black/5 bg-neutral-50 p-5 text-sm">
@@ -272,7 +294,7 @@ export default function SchoolAreaMap({
             <h3 className="font-heading text-lg font-bold text-purple-dark">{info.label}</h3>
             <p className="mt-1 text-neutral-600">{info.covers}</p>
             <p className="mt-4 text-xs font-bold uppercase tracking-wide text-neutral-500">
-              {zh ? "地标" : "Landmarks"}
+              {zh ? "地标" : th ? "สถานที่สำคัญ" : "Landmarks"}
             </p>
             <ul className="mt-1.5 space-y-1 text-neutral-700">
               {region.landmarks.map((l) => (
@@ -282,6 +304,8 @@ export default function SchoolAreaMap({
             <p className="mt-4 font-semibold text-purple-dark">
               {zh
                 ? `${counts[info.id]} 所学校`
+                : th
+                ? `${counts[info.id]} โรงเรียน`
                 : `${counts[info.id]} ${counts[info.id] === 1 ? "school" : "schools"}`}
             </p>
             {selected === info.id ? (
@@ -290,7 +314,7 @@ export default function SchoolAreaMap({
                 onClick={() => onSelect("All")}
                 className="mt-3 text-sm font-semibold text-teal hover:underline"
               >
-                {zh ? "显示全部区域" : "Show all locations"}
+                {zh ? "显示全部区域" : th ? "แสดงทุกย่าน" : "Show all locations"}
               </button>
             ) : (
               <button
@@ -298,22 +322,24 @@ export default function SchoolAreaMap({
                 onClick={() => onSelect(info.id)}
                 className="mt-3 rounded-full bg-orange px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
               >
-                {zh ? "查看这里的学校" : "Show schools here"}
+                {zh ? "查看这里的学校" : th ? "ดูโรงเรียนในย่านนี้" : "Show schools here"}
               </button>
             )}
           </>
         ) : (
           <>
             <h3 className="font-heading text-lg font-bold text-purple-dark">
-              {zh ? "选择您所在的片区" : "Pick your side of town"}
+              {zh ? "选择您所在的片区" : th ? "เลือกฝั่งของเมืองที่คุณอยู่" : "Pick your side of town"}
             </h3>
             <p className="mt-2 text-neutral-600">
               {zh
                 ? "点击地图上的区域查看那里的学校。把鼠标移到区域上或点按区域，可以看到它的 BTS、MRT 车站和地标，帮您判断自己住在哪一区。"
+                : th
+                ? "แตะย่านบนแผนที่เพื่อดูโรงเรียนในย่านนั้น วางเมาส์หรือแตะที่ย่านเพื่อดูสถานี BTS MRT และสถานที่สำคัญ จะได้รู้ว่าคุณอยู่ย่านไหน"
                 : "Tap a region on the map to see the schools there. Hover over or tap a region to see its BTS and MRT stations and landmarks, so you can tell which one you live in."}
             </p>
             <p className="mt-3 text-neutral-600">
-              {zh ? "再次点击已选中的区域即可取消选择。" : "Tap the selected region again to clear it."}
+              {zh ? "再次点击已选中的区域即可取消选择。" : th ? "แตะย่านที่เลือกอีกครั้งเพื่อยกเลิกการเลือก" : "Tap the selected region again to clear it."}
             </p>
           </>
         )}

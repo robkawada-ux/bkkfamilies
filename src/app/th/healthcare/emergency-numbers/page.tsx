@@ -8,7 +8,7 @@ const EN_PATH = "/healthcare/emergency-numbers";
 const PATH = thPath(EN_PATH);
 // No Thai card yet, so the Thai page offers the English one.
 const PDF = "/downloads/bkk-families-emergency-card.pdf";
-const CHECKED = "9 พฤศจิกายน 2569";
+const CHECKED = "9 พฤศจิกายน 2026";
 const CHECKED_ISO = "2026-11-09";
 
 const TITLE = "เบอร์โทรฉุกเฉินในประเทศไทยและกรุงเทพฯ (2026)";
