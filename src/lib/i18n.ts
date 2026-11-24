@@ -25,7 +25,7 @@ export const ZH_PREFIX = "/zh";
  * sitemap.xml, emits no hreflang, and no header or footer links to it.
  * Flip it to true once a native Thai reader has checked the pages.
  */
-export const TH_LAUNCHED = false;
+export const TH_LAUNCHED = true;
 
 export const TH_PREFIX = "/th";
 
