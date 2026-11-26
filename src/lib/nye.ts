@@ -11,7 +11,7 @@ export const NYE_SLUG = "new-years-eve-in-bangkok-with-kids";
 export const NYE_PATH = `/blog/${NYE_SLUG}`;
 export const NYE_YEAR = 2026;
 export const LAST_YEAR = 2025;
-export const CHECKED = "2026-11-20";
+export const CHECKED = "2026-11-25";
 
 /** Homepage hero box window, Bangkok time, inclusive. */
 export const PROMO_FROM = "2026-12-26";
@@ -64,14 +64,17 @@ export const COUNTDOWNS: FinderItem[] = [
   {
     name: "Amazing Thailand Countdown",
     venue: "ICONSIAM, Charoen Nakhon",
-    when: "28 to 31 Dec · fireworks at midnight",
+    when: "27 to 31 Dec · drone shows nightly, fireworks on New Year's Eve",
     facets: { area: ["river"], crowd: ["3"] },
     flags: ["fireworks", "free"],
     level: 3,
     free: true,
     badges: [{ text: "Drones and fireworks", tone: "santa" }, { text: "Livestreamed", tone: "plain" }],
-    blurb: "The city's headline show: a 4D sky show of eco-friendly fireworks along 1,400 m of river, drone formations and pyrotechnics, with Mark Tuan, Jeff Satur, Bodyslam and BUS on stage. Riverside areas are free but fill by late afternoon; some front zones need registration. Best with teens.",
-    ...nye(Y),
+    blurb: "The city's headline show, now in its 8th year: eco-friendly sticky-rice fireworks along 1,400 m of the Chao Phraya, a drone show every evening, and more than 200 artists over five nights at River Park. K-pop group TREASURE and Nene Royal, the Phuket teen who won America's Got Talent 2026, play on 31 December, and each night has its own theme, from T-Pop on the 28th to Thai soul on the 29th. There are free public viewing areas, and reserved viewing zones can be booked through iconsiam.com. Expect the biggest crowd in the city. Best with teens.",
+    link: "https://www.iconsiam.com",
+    start: "2026-12-27",
+    end: "2026-12-31",
+    confirmed: true,
   },
   {
     name: "CentralWorld Bangkok Countdown",
